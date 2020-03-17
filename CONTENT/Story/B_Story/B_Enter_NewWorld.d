@@ -1,0 +1,2201 @@
+
+func void B_ENTER_NEWWORLD_Kapitel_1()
+{
+	if((RavenIsDead == TRUE) && Npc_IsDead(KDW_140300_Addon_Myxir_CITY))
+	{
+		Wld_InsertNpc(KDW_140300_Addon_Myxir_CITY,"CITY1");
+	};
+	if(ENTERED_ADDONWORLD == TRUE)
+	{
+		B_RemoveNpc(KDW_1400_Addon_Saturas_NW);
+		B_RemoveNpc(KDW_1401_Addon_Cronos_NW);
+		B_RemoveNpc(KDW_1402_Addon_Nefarius_NW);
+		B_RemoveNpc(KDW_1403_Addon_Myxir_NW);
+		B_RemoveNpc(KDW_1404_Addon_Riordian_NW);
+		B_RemoveNpc(KDW_1405_Addon_Merdarion_NW);
+		B_RemoveNpc(PIR_1301_Addon_Skip_NW);
+		if(SC_GotPORTALTEMPELWALKTHROUGHKey == FALSE)
+		{
+			Wld_InsertNpc(Stoneguardian_MerdarionsSchluessel,"NW_TROLLAREA_PORTALTEMPEL_22");
+			SC_GotPORTALTEMPELWALKTHROUGHKey = TRUE;
+		};
+	};
+	if((Sklaven_Flucht == TRUE) && (Sklaven_weg == FALSE))
+	{
+		Wld_InsertNpc(STRF_1123_Addon_Patrick_NW,"NW_BIGFARM_PATRICK");
+		Wld_InsertNpc(STRF_1124_Addon_Monty_NW,"NW_CITY_HABOUR_WERFT_IN_01");
+		Wld_InsertNpc(STRF_1125_Addon_Tonak_NW,"NW_FARM2_FIELD_TANOK");
+		Wld_InsertNpc(STRF_1126_Addon_Telbor_NW,"NW_FARM2_FIELD_TELBOR");
+		Wld_InsertNpc(STRF_1127_Addon_Pardos_NW,"NW_FARM3_BENGAR");
+		Sklaven_weg = TRUE;
+		MissingPeopleReturnedHome = TRUE;
+	};
+};
+
+
+var int EnterNW_Kapitel2;
+
+func void B_ENTER_NEWWORLD_Kapitel_2()
+{
+	if(GregIsBack == TRUE)
+	{
+		B_RemoveNpc(PIR_1300_Addon_Greg_NW);
+	};
+	if(EnterNW_Kapitel2 == FALSE)
+	{
+		if(hero.guild == GIL_SLD || hero.guild == GIL_DJG)
+		{
+			Wld_InsertItem(ItRi_Prot_Mage_03,"FP_FIREBEACH_RING");
+		}
+		else
+		{
+			Wld_InsertItem(ItRi_Prot_Fire_03,"FP_FIREBEACH_RING");
+		};
+		// City
+		Wld_InsertNpc(Waran,"FP_ROAM_INSEL_03");
+		Wld_InsertNpc(Waran,"FP_ROAM_INSEL_07");
+		Wld_InsertNpc(FireWaran,"FP_ROAM_FIREBEACH_01");
+		Wld_InsertNpc(Keiler,"FP_SECRETBEACH_HILL_01");
+		Wld_InsertItem(ItMi_Addon_Shell_01,"FP_SHELLSPAWN_CITY_05");
+		Wld_InsertItem(ItMi_Addon_Shell_02,"FP_SHELLSPAWN_CITY_06");
+		Wld_InsertItem(ItMi_Addon_Shell_02,"FP_SHELLSPAWN_CITY_08");
+		Wld_InsertItem(ItMi_Addon_Shell_02,"FP_SHELLSPAWN_CITY_10");
+		Wld_InsertItem(ItMi_Addon_Shell_01,"FP_SHELLSPAWN_CITY_11");
+		Wld_InsertItem(ItMi_Addon_Shell_02,"FP_SHELLSPAWN_CITY_12");
+		Wld_InsertItem(ItMi_Addon_Shell_02,"FP_SHELLSPAWN_CITY_14");
+		Wld_InsertItem(ItMi_Addon_Shell_01,"FP_SHELLSPAWN_CITY_15");
+		Wld_InsertItem(ItMi_Addon_Shell_01,"FP_SHELLSPAWN_CITY_19");
+		Wld_InsertItem(ItMi_Addon_Shell_01,"FP_SHELLSPAWN_CITY_21");
+		Wld_InsertItem(ItMi_Addon_Shell_01,"FP_FIREBEACH_SHELLSPAWN_02");
+		Wld_InsertItem(ItMi_Addon_Shell_02,"FP_FIREBEACH_SHELLSPAWN_03");
+		
+		// Lobart Farm
+		Wld_InsertNpc(Bloodfly,"NW_FARM1_PATH_SPAWN_02");
+		Wld_InsertNpc(Bloodfly,"NW_FARM1_PATH_SPAWN_02");
+		Wld_InsertNpc(Wolf,"NW_FARM1_PATH_SPAWN_07");
+		Wld_InsertNpc(Wolf,"NW_FARM1_PATH_SPAWN_07");
+		Wld_InsertNpc(Gobbo_Black,"NW_FARM1_PATH_CITY_19_B");
+		Wld_InsertNpc(Gobbo_Black,"NW_FARM1_PATH_CITY_19_B");
+		Wld_InsertNpc(Bloodfly,"NW_FARM1_PATH_CITY_10_B");
+		Wld_InsertNpc(Bloodfly,"NW_FARM1_PATH_CITY_10_B");
+		Wld_InsertNpc(Keiler,"NW_FARM1_PATH_CITY_05_B");
+		Wld_InsertNpc(Bloodfly,"NW_FARM1_CITYWALL_02_B");
+		Wld_InsertNpc(Bloodfly,"NW_FARM1_CITYWALL_02_B");
+		Wld_InsertNpc(Snapper,"NW_FARM1_CITYWALL_05");
+		Wld_InsertNpc(Wolf,"NW_FARM1_CITYWALL_FOREST_02");
+		Wld_InsertNpc(Wolf,"NW_FARM1_CITYWALL_FOREST_02");
+		Wld_InsertNpc(Wolf,"NW_FARM1_CITYWALL_FOREST_03");
+		Wld_InsertNpc(Wolf,"NW_FARM1_CITYWALL_FOREST_03");
+		Wld_InsertNpc(Shadowbeast,"NW_FARM1_CITYWALL_FOREST_04");
+		Wld_InsertNpc(Bloodfly,"NW_FARM1_CITYWALL_FOREST_06");
+		Wld_InsertNpc(Bloodfly,"NW_FARM1_CITYWALL_FOREST_06");
+		Wld_InsertNpc(Gobbo_Black,"NW_FARM1_CITYWALL_FOREST_14");
+		Wld_InsertNpc(Gobbo_Black,"NW_FARM1_CITYWALL_FOREST_15");
+		Wld_InsertNpc(Gobbo_Black,"NW_FARM1_CITYWALL_FOREST_16");
+		Wld_InsertNpc(Gobbo_Warrior,"NW_FARM1_CITYWALL_FOREST_16");
+		Wld_InsertNpc(BDT_10311_Addon_RangerBandit_M,"NW_FARM1_BANDITS_CAVE_07");
+		Wld_InsertNpc(BDT_1027_Bandit_H,"NW_FARM1_BANDITS_CAVE_07");
+		Wld_InsertNpc(BDT_10307_Addon_RangerBandit_M,"NW_FARM1_BANDITS_CAVE_03");
+		Wld_InsertNpc(Wolf,"NW_FARM1_CITYWALL_RIGHT_02");
+		Wld_InsertNpc(Wolf,"NW_FARM1_CITYWALL_RIGHT_02");
+		Wld_InsertNpc(Waran,"NW_FARM1_OUT_09");
+		Wld_InsertNpc(Waran,"NW_FARM1_OUT_09");
+		Wld_InsertNpc(Waran,"NW_FARM1_OUT_09");
+		Wld_InsertNpc(Sheep,"NW_FARM1_PATH_CITY_SHEEP_11");
+		Wld_InsertNpc(Sheep,"NW_FARM1_PATH_CITY_SHEEP_11");
+		Wld_InsertNpc(Sheep,"NW_FARM1_PATH_CITY_SHEEP_09");
+		Wld_InsertNpc(Sheep,"NW_FARM1_PATH_CITY_SHEEP_09");
+		Wld_InsertNpc(Sheep,"NW_FARM1_PATH_CITY_SHEEP_09");
+		
+		// Xardas
+		Wld_InsertNpc(Wolf,"FP_LOBART_LEDGE_02");
+		Wld_InsertNpc(Wolf,"FP_LOBART_LEDGE_02");
+		Wld_InsertNpc(Scavenger,"FP_XARDAS_LEDGE_01");
+		Wld_InsertNpc(Scavenger,"FP_XARDAS_LEDGE_01");
+		Wld_InsertNpc(Keiler,"NW_XARDAS_FORT_02");
+		Wld_InsertNpc(Keiler,"NW_XARDAS_FORT_02");
+		Wld_InsertNpc(Snapper,"NW_XARDAS_FORT_04");
+		Wld_InsertNpc(Harpie,"NW_XARDAS_FORT_06");
+		Wld_InsertItem(ItPl_Perm_Herb,"FP_NW_XARDAS_FORT_HERB_01");
+		Wld_InsertNpc(Sheep,"NW_XARDAS_TOWER_04");
+		Wld_InsertNpc(Wolf,"NW_XARDAS_PATH_FARM1_11");
+		Wld_InsertNpc(Wolf,"NW_XARDAS_PATH_FARM1_11");
+		Wld_InsertNpc(Gobbo_Black,"NW_XARDAS_GOBBO_02");
+		Wld_InsertNpc(Gobbo_Black,"NW_XARDAS_GOBBO_02");
+		Wld_InsertNpc(Keiler,"FP_ROAM_XARDAS_SECRET_23");
+		Wld_InsertNpc(Keiler,"FP_ROAM_XARDAS_SECRET_23");
+		Wld_InsertNpc(Waran,"FP_ROAM_XARDAS_SECRET_08");
+		Wld_InsertNpc(Waran,"FP_ROAM_XARDAS_SECRET_15");
+		Wld_InsertItem(ItWr_StonePlateCommon_Addon,"FP_ROAM_XARDAS_SECRET_15");
+		Wld_InsertNpc(Waran,"FP_ROAM_XARDAS_SECRET_04");
+		Wld_InsertNpc(Gobbo_Black,"NW_XARDAS_TOWER_WATERFALL_CAVE_03");
+		Wld_InsertNpc(Gobbo_Black,"NW_XARDAS_TOWER_WATERFALL_CAVE_03");
+		Wld_InsertNpc(Gobbo_Black,"NW_XARDAS_TOWER_WATERFALL_CAVE_ENTRANCE_05");
+		Wld_InsertNpc(Gobbo_Black,"NW_XARDAS_TOWER_WATERFALL_CAVE_ENTRANCE_05");
+		Wld_InsertNpc(Gobbo_Warrior,"NW_XARDAS_TOWER_WATERFALL_CAVE_ENTRANCE_05");
+		Wld_InsertNpc(Gobbo_Black,"NW_XARDAS_TOWER_WATERFALL_CAVE_ENTRANCE_05");
+		Wld_InsertNpc(Gobbo_Black,"NW_XARDAS_TOWER_WATERFALL_CAVE_ENTRANCE_GOBBO");
+		Wld_InsertNpc(Gobbo_Black,"NW_XARDAS_TOWER_WATERFALL_CAVE_ENTRANCE_GOBBO");
+		Wld_InsertNpc(Keiler,"NW_XARDAS_VALLEY_03");
+		Wld_InsertNpc(Keiler,"NW_XARDAS_VALLEY_04");
+		Wld_InsertNpc(Keiler,"NW_XARDAS_VALLEY_06");
+		Wld_InsertNpc(Keiler,"NW_XARDAS_VALLEY_08");
+		Wld_InsertNpc(Wolf,"NW_XARDAS_TOWER_VALLEY_WOLF");
+		Wld_InsertNpc(Wolf,"NW_XARDAS_TOWER_VALLEY_WOLF");
+		Wld_InsertNpc(Bloodfly,"NW_XARDAS_TOWER_VALLEY_08");
+		Wld_InsertNpc(Bloodfly,"NW_XARDAS_TOWER_VALLEY_08");
+		Wld_InsertNpc(Shadowbeast,"NW_XARDAS_TOWER_SECRET_CAVE_04");
+		
+		// Monastery
+		Wld_InsertNpc(Scavenger,"NW_PATH_TO_MONASTER_AREA_11");
+		Wld_InsertNpc(Scavenger,"NW_PATH_TO_MONASTER_MONSTER22");
+		Wld_InsertNpc(Keiler,"NW_PATH_TO_MONASTER_AREA_10");
+		Wld_InsertNpc(Keiler,"NW_PATH_TO_MONASTER_AREA_10");
+		Wld_InsertNpc(Keiler,"NW_PATH_TO_MONASTER_AREA_10");
+		Wld_InsertNpc(Giant_Bug,"NW_PATH_TO_MONASTER_AREA_08");
+		Wld_InsertNpc(Giant_Bug,"NW_PATH_TO_MONASTER_AREA_08");
+		Wld_InsertItem(ItWr_StonePlateCommon_Addon,"NW_PATH_TO_MONASTER_AREA_08");
+		Wld_InsertNpc(Wolf,"NW_SHRINE_MONSTER");
+		Wld_InsertNpc(Wolf,"NW_SHRINE_MONSTER");
+		Wld_InsertNpc(Scavenger,"NW_FOREST_CONNECT_MONSTER2");
+		Wld_InsertNpc(Scavenger,"NW_FOREST_CONNECT_MONSTER2");
+		Wld_InsertNpc(Scavenger,"NW_FOREST_CONNECT_MONSTER2");
+		Wld_InsertNpc(Scavenger,"NW_FOREST_CONNECT_MONSTER2");
+		Wld_InsertNpc(Wolf,"NW_PATH_TO_MONASTER_AREA_01");
+		Wld_InsertNpc(Wolf,"NW_PATH_TO_MONASTER_AREA_01");
+		
+		// Onar, Pastures, Saggita Wood and Dragomir Path
+		Wld_InsertItem(ItPl_Perm_Herb,"FP_BENGAR_RIVER_HERB_01");
+		Wld_InsertItem(ItPl_Perm_Herb,"FP_ONAR_TROLL_HERB_01");
+		Wld_InsertNpc(Wolf,"NW_BENGAR_HILL_09");
+		Wld_InsertNpc(Wolf,"NW_BENGAR_HILL_09");
+		Wld_InsertNpc(Razor,"NW_BENGAR_HILL_11");
+		Wld_InsertNpc(Razor,"NW_BENGAR_HILL_11");
+		Wld_InsertNpc(Bloodfly,"NW_ONAR_HILL_05");
+		Wld_InsertNpc(Bloodfly,"NW_ONAR_HILL_05");
+		Wld_InsertNpc(Scavenger,"NW_ONAR_HILL_06");
+		Wld_InsertNpc(Scavenger,"NW_ONAR_HILL_06");
+		Wld_InsertNpc(Keiler,"NW_ONAR_CAVE_01_M");
+		Wld_InsertNpc(Keiler,"NW_ONAR_CAVE_01_M");
+		Wld_InsertNpc(Harpie,"NW_TAVERN_FORT_03");
+		Wld_InsertNpc(Giant_Bug,"NW_BIGFARM_FELDREUBER");
+		Wld_InsertNpc(Giant_Bug,"NW_BIGFARM_FELDREUBER2");
+		Wld_InsertNpc(Giant_Bug,"NW_BIGFARM_FELDREUBER4");
+		Wld_InsertNpc(Giant_Bug,"NW_BIGFARM_FIELD_MONSTER_01");
+		Wld_InsertNpc(Giant_Bug,"NW_BIGFARM_FIELD_MONSTER_01");
+		Wld_InsertNpc(Giant_Bug,"NW_FARM4_WOOD_NEARPEASANT2_6_MONSTERMILL2");
+		Wld_InsertNpc(Giant_Bug,"NW_FARM4_WOOD_NEARPEASANT2_6_MONSTERMILL2");
+		Wld_InsertNpc(Giant_Bug,"NW_FARM4_WOOD_NEARPEASANT2_6_MONSTERMILL");
+		Wld_InsertNpc(Giant_Bug,"NW_FARM4_WOOD_NEARPEASANT2_6_MONSTERMILL");
+		Wld_InsertNpc(Lurker,"NW_BIGMILL_FIELD_MONSTER_03");
+		Wld_InsertNpc(Lurker,"NW_BIGMILL_FIELD_MONSTER_03");
+		Wld_InsertNpc(Giant_Bug,"NW_BIGMILL_FIELD_MONSTER_01");
+		Wld_InsertNpc(Giant_Bug,"NW_BIGMILL_FIELD_MONSTER_01");
+		Wld_InsertNpc(Giant_Bug,"NW_BIGMILL_FIELD_MONSTER_01");
+		Wld_InsertNpc(Giant_Bug,"NW_BIGFARM_FIELD_MONSTER_02");
+		Wld_InsertNpc(Giant_Bug,"NW_BIGFARM_FIELD_MONSTER_02");
+		Wld_InsertNpc(Scavenger,"NW_TAVERNE_TROLLAREA_MONSTER_01_01");
+		Wld_InsertNpc(Scavenger,"NW_TAVERNE_TROLLAREA_MONSTER_01_01");
+		Wld_InsertNpc(Scavenger,"NW_TAVERNE_TROLLAREA_MONSTER_01_01");
+		Wld_InsertNpc(Zombie02,"NW_FARM2_TAVERNCAVE1_09");
+		Wld_InsertNpc(Gobbo_Skeleton,"NW_FARM2_TAVERNCAVE1_02");
+		Wld_InsertNpc(Gobbo_Skeleton,"NW_FARM2_TAVERNCAVE1_02");
+		Wld_InsertNpc(Keiler,"NW_TAVERNE_TROLLAREA_MONSTER_04_01");
+		Wld_InsertNpc(Keiler,"NW_TAVERNE_TROLLAREA_MONSTER_04_01");
+		Wld_InsertNpc(Gobbo_Black,"NW_TAVERNE_TROLLAREA_MONSTER_05_01");
+		Wld_InsertNpc(Gobbo_Black,"NW_TAVERNE_TROLLAREA_MONSTER_05_01");
+		Wld_InsertNpc(Gobbo_Warrior,"NW_TAVERNE_TROLLAREA_MONSTER_05_01");
+		Wld_InsertNpc(Gobbo_Black,"NW_TAVERNE_TROLLAREA_MONSTER_05_01");
+		Wld_InsertNpc(Wolf,"NW_BIGFARM_LAKE_MONSTER_01_01");
+		Wld_InsertNpc(Wolf,"NW_BIGFARM_LAKE_MONSTER_01_01");
+		Wld_InsertNpc(Wolf,"NW_BIGFARM_LAKE_MONSTER_01_01");
+		Wld_InsertNpc(Lurker,"NW_BIGFARM_LAKE_MONSTER_02_01");
+		Wld_InsertNpc(Lurker,"NW_BIGFARM_LAKE_MONSTER_02_01");
+		Wld_InsertNpc(Bloodfly,"NW_BIGFARM_LAKE_MONSTER_02_01");
+		Wld_InsertNpc(Bloodfly,"NW_BIGFARM_LAKE_MONSTER_02_01");
+		Wld_InsertNpc(Wolf,"NW_BIGFARM_LAKE_MONSTER_03_01");
+		Wld_InsertNpc(Wolf,"NW_BIGFARM_LAKE_MONSTER_03_01");
+		Wld_InsertNpc(Wolf,"NW_BIGFARM_LAKE_MONSTER_03_01");
+		Wld_InsertNpc(Lurker,"NW_LAKE_GREG_TREASURE_01");
+		Wld_InsertNpc(Lurker,"NW_LAKE_GREG_TREASURE_01");
+		Wld_InsertItem(ItWr_ManaStonePlate1_Addon,"NW_LAKE_GREG_TREASURE_01");
+		Wld_InsertNpc(Warg,"NW_FARM4_WOOD_MONSTER_01");
+		Wld_InsertNpc(Bloodfly,"NW_FARM4_WOOD_MONSTER_02");
+		Wld_InsertNpc(Bloodfly,"NW_FARM4_WOOD_MONSTER_02");
+		Wld_InsertNpc(Wolf,"NW_FARM4_WOOD_MONSTER_03");
+		Wld_InsertNpc(Wolf,"NW_FARM4_WOOD_MONSTER_03");
+		Wld_InsertNpc(Keiler,"NW_FARM4_WOOD_MONSTER_05");
+		Wld_InsertNpc(Keiler,"NW_FARM4_WOOD_MONSTER_05");
+		Wld_InsertNpc(Bloodfly,"NW_FARM4_WOOD_MONSTER_06");
+		Wld_InsertNpc(Bloodfly,"NW_FARM4_WOOD_MONSTER_06");
+		//Wld_InsertNpc(Shadowbeast,"NW_FARM4_WOOD_MONSTER_09");
+		//Wld_InsertItem(ItPl_Strength_Herb_01,"NW_FARM4_WOOD_MONSTER_09");
+		Wld_InsertNpc(Bloodfly,"NW_FARM4_WOOD_MONSTER_10");
+		Wld_InsertNpc(Bloodfly,"NW_FARM4_WOOD_MONSTER_10");
+		Wld_InsertItem(ItWr_StonePlateCommon_Addon,"NW_FARM4_WOOD_MONSTER_08");
+		Wld_InsertNpc(Gobbo_Black,"FP_ROAM_NW_BIGFARMFORESTCAVE_01");
+		Wld_InsertNpc(Gobbo_Warrior,"FP_ROAM_NW_BIGFARMFORESTCAVE_02");
+		Wld_InsertNpc(Gobbo_Black,"FP_ROAM_NW_BIGFARMFORESTCAVE_03");
+		Wld_InsertNpc(Gobbo_Black,"FP_ROAM_NW_BIGFARMFORESTCAVE_04");
+		Wld_InsertNpc(Gobbo_Black,"FP_ROAM_BIGFARM_LAKE_CAVE_02");
+		Wld_InsertNpc(Gobbo_Warrior,"FP_ROAM_BIGFARM_LAKE_CAVE_07");
+		Wld_InsertNpc(Gobbo_Black,"FP_ROAM_BIGFARM_LAKE_CAVE_08");
+		Wld_InsertNpc(Gobbo_Black,"FP_ROAM_BIGFARM_LAKE_CAVE_10");
+		Wld_InsertNpc(Gobbo_Black,"FP_ROAM_BIGFARM_LAKE_CAVE_11");
+		Wld_InsertNpc(Gobbo_Warrior,"FP_ROAM_BIGFARM_LAKE_CAVE_13");
+		Wld_InsertNpc(Gobbo_Black,"FP_ROAM_NW_BIGFARMFORESTCAVE_05");
+		Wld_InsertNpc(Gobbo_Black,"FP_ROAM_NW_BIGFARMFORESTCAVE_05");
+		Wld_InsertNpc(Gobbo_Black,"FP_ROAM_NW_BIGFARMFORESTCAVE_08");
+		Wld_InsertNpc(Gobbo_Warrior,"FP_ROAM_NW_BIGFARMFORESTCAVE_07");
+		Wld_InsertNpc(Gobbo_Black,"FP_ROAM_NW_BIGFARMFORESTCAVE_08");
+		Wld_InsertNpc(Gobbo_Black,"FP_ROAM_NW_BIGFARMFORESTCAVE_10");
+		Wld_InsertNpc(Gobbo_Black,"FP_ROAM_BIGFARM_LAKE_CAVE_03");
+		Wld_InsertNpc(Gobbo_Warrior,"FP_ROAM_BIGFARM_LAKE_CAVE_03");
+		Wld_InsertNpc(Bloodfly,"NW_BIGFARM_LAKE_MONSTER_BLOODFLY");
+		Wld_InsertNpc(Bloodfly,"NW_BIGFARM_LAKE_MONSTER_BLOODFLY");
+		Wld_InsertNpc(Giant_Bug,"NW_TAVERNE_TROLLAREA_MONSTER_03_01M1");
+		Wld_InsertNpc(Giant_Bug,"NW_TAVERNE_TROLLAREA_MONSTER_03_01M1");
+		Wld_InsertNpc(Wolf,"NW_SAGITTA_MOREMONSTER_01");
+		Wld_InsertNpc(Wolf,"NW_SAGITTA_MOREMONSTER_01");
+		Wld_InsertNpc(Wolf,"NW_SAGITTA_MOREMONSTER_01");
+		Wld_InsertNpc(Giant_Bug,"NW_SAGITTA_MOREMONSTER_03");
+		Wld_InsertNpc(Giant_Bug,"NW_SAGITTA_MOREMONSTER_03");
+		Wld_InsertNpc(Bloodfly,"NW_FARM4_WOOD_NEARPEASANT7");
+		Wld_InsertNpc(Bloodfly,"NW_FARM4_WOOD_NEARPEASANT7");
+		Wld_InsertNpc(Bloodfly,"NW_FARM4_WOOD_NEARPEASANT2_14");
+		Wld_InsertNpc(Bloodfly,"NW_FARM4_WOOD_NEARPEASANT2_14");
+		Wld_InsertNpc(Bloodfly,"NW_FARM4_WOOD_NEARPEASANT2_10");
+		Wld_InsertNpc(Bloodfly,"NW_FARM4_WOOD_NEARPEASANT2_10");
+		Wld_InsertNpc(Wolf,"NW_FARM4_WOOD_NEARPEASANT2_8");
+		Wld_InsertNpc(Wolf,"NW_FARM4_WOOD_NEARPEASANT2_8");
+		Wld_InsertNpc(Scavenger,"NW_FARM4_WOOD_NEARPEASANT2_7");
+		Wld_InsertNpc(Scavenger,"NW_FARM4_WOOD_NEARPEASANT2_7");
+		Wld_InsertNpc(Scavenger,"NW_FARM4_WOOD_NEARPEASANT2_7");
+		Wld_InsertNpc(Giant_Bug,"NW_FARM4_WOOD_NEARPEASANT2_12");
+		Wld_InsertNpc(Giant_Bug,"NW_FARM4_WOOD_NEARPEASANT2_12");
+		Wld_InsertNpc(Gobbo_Skeleton,"NW_FARM4_WOOD_MONSTER_MORE_02");
+		Wld_InsertNpc(Gobbo_Skeleton,"NW_FARM4_WOOD_MONSTER_MORE_02");
+		Wld_InsertNpc(Wolf,"NW_FARM4_WOOD_MONSTER_MORE_01");
+		Wld_InsertNpc(Wolf,"NW_FARM4_WOOD_MONSTER_N_3");
+		Wld_InsertNpc(Wolf,"NW_FARM4_WOOD_MONSTER_N_3");
+		Wld_InsertNpc(Wolf,"NW_FARM4_WOOD_MONSTER_N_2");
+		Wld_InsertNpc(Wolf,"NW_FARM4_WOOD_MONSTER_N_2");
+		Wld_InsertNpc(Keiler,"NW_BIGFARM_FOREST_02");
+		Wld_InsertNpc(Keiler,"NW_BIGFARM_FOREST_02");
+		Wld_InsertNpc(Keiler,"NW_BIGFARM_FOREST_02");
+		Wld_InsertNpc(Gobbo_Skeleton,"NW_CRYPT_MONSTER08");
+		Wld_InsertNpc(Gobbo_Skeleton,"NW_CRYPT_MONSTER08");
+		Wld_InsertNpc(Skeleton,"NW_CRYPT_MONSTER02");
+		Wld_InsertNpc(Lesser_Skeleton,"NW_CRYPT_MONSTER04");
+		Wld_InsertNpc(Zombie01,"NW_CRYPT_MONSTER06");
+		Wld_InsertNpc(Zombie01,"NW_CRYPT_MONSTER06");
+		Wld_InsertItem(ItPl_Perm_Herb,"FP_ONAR_SKELETONS_HERB_01");
+		Wld_InsertNpc(Keiler,"NW_BIGFARM_FOREST_03_NAVIGATION");
+		Wld_InsertNpc(Keiler,"NW_BIGFARM_FOREST_03_NAVIGATION");
+		Wld_InsertNpc(Wisp,"NW_FARM4_WOOD_NAVIGATION_09");
+		Wld_InsertNpc(Wisp,"NW_FARM4_WOOD_NAVIGATION_09");
+		Wld_InsertNpc(Shadowbeast,"NW_FARM4_WOOD_NAVIGATION_09");
+		Wld_InsertNpc(Wolf,"NW_CASTLEMINE_TROLL_05");
+		Wld_InsertNpc(Wolf,"NW_CASTLEMINE_TROLL_05");
+		Wld_InsertNpc(Wolf,"NW_CASTLEMINE_TROLL_05");
+		Wld_InsertNpc(Wolf,"FP_ROAM_NW_BIGFARM_PEPES_WOLFS_01");
+		Wld_InsertNpc(Wolf,"FP_ROAM_NW_BIGFARM_PEPES_WOLFS_02");
+		Wld_InsertNpc(Wolf,"FP_ROAM_NW_BIGFARM_PEPES_WOLFS_03");
+		Wld_InsertNpc(Wolf,"FP_ROAM_NW_BIGFARM_PEPES_WOLFS_04");
+		Wld_InsertNpc(Wolf,"FP_ROAM_NW_BIGFARM_PEPES_WOLFS_01");
+		Wld_InsertNpc(Wolf,"FP_ROAM_NW_BIGFARM_PEPES_WOLFS_03");
+		Wld_InsertNpc(Giant_Bug,"NW_BIGFARM_ALLEE_08_N");
+		Wld_InsertNpc(Giant_Bug,"NW_BIGFARM_ALLEE_08_N_2");
+		Wld_InsertNpc(Giant_Bug,"NW_BIGFARM_ALLEE_08_N_2");
+		Wld_InsertNpc(Giant_Bug,"NW_BIGFARM_ALLEE_08_N_5");
+		Wld_InsertNpc(Giant_Bug,"NW_BIGFARM_ALLEE_08_N_5");
+		Wld_InsertNpc(Scavenger,"NW_BIGMILL_05");
+		Wld_InsertNpc(Scavenger,"NW_BIGMILL_05");
+		Wld_InsertNpc(Scavenger,"NW_BIGMILL_FARM3_03");
+		Wld_InsertNpc(Scavenger,"NW_FARM3_BIGWOOD_02");
+		Wld_InsertNpc(Scavenger,"NW_FARM3_BIGWOOD_02");
+		Wld_InsertNpc(Keiler,"NW_FARM3_BIGWOOD_03");
+		Wld_InsertNpc(Keiler,"NW_FARM3_BIGWOOD_03");
+		Wld_InsertNpc(Snapper,"NW_FARM3_BIGWOOD_03_C");
+		Wld_InsertNpc(Razor,"NW_FARM3_BIGWOOD_03_A");
+		Wld_InsertNpc(Snapper,"NW_FARM3_PATH_11_SMALLRIVER_04");
+		Wld_InsertNpc(Snapper,"NW_FARM3_PATH_11_SMALLRIVER_04");
+		Wld_InsertNpc(OrcBiter,"NW_FARM3_PATH_11_SMALLRIVER_08");
+		Wld_InsertNpc(OrcBiter,"NW_FARM3_PATH_11_SMALLRIVER_10");
+		Wld_InsertNpc(OrcBiter,"NW_FARM3_PATH_11_SMALLRIVER_10");
+		Wld_InsertNpc(Lurker,"NW_FARM3_PATH_11_SMALLRIVER_17");
+		Wld_InsertNpc(Lurker,"NW_FARM3_PATH_11_SMALLRIVER_20");
+		Wld_InsertNpc(Bloodfly,"NW_FARM3_PATH_11_SMALLRIVER_24");
+		Wld_InsertNpc(Bloodfly,"NW_FARM3_PATH_11_SMALLRIVER_24");
+		Wld_InsertNpc(Lurker,"NW_FARM3_PATH_11_SMALLRIVERMID_03");
+		Wld_InsertNpc(Lurker,"NW_FARM3_PATH_11_SMALLRIVERMID_03");
+		Wld_InsertNpc(Wolf,"NW_FARM3_PATH_12_MONSTER_01");
+		Wld_InsertNpc(Wolf,"NW_FARM3_PATH_12_MONSTER_01");
+		Wld_InsertNpc(Wolf,"NW_FARM3_PATH_12_MONSTER_01");
+		Wld_InsertNpc(Keiler,"NW_FARM3_PATH_12_MONSTER_03");
+		Wld_InsertNpc(Keiler,"NW_FARM3_PATH_12_MONSTER_03");
+		Wld_InsertNpc(Keiler,"NW_BIGFARM_LAKE_03_MOVEMENT");
+		Wld_InsertNpc(Keiler,"NW_BIGFARM_LAKE_03_MOVEMENT");
+		Wld_InsertNpc(Giant_Bug,"NW_BIGFARM_LAKE_03_MOVEMENT3");
+		Wld_InsertNpc(Giant_Bug,"NW_BIGFARM_LAKE_03_MOVEMENT3");
+		Wld_InsertNpc(Gobbo_Skeleton,"NW_BIGFARM_LAKE_03_MOVEMENT5");
+		Wld_InsertNpc(Gobbo_Skeleton,"NW_BIGFARM_LAKE_03_MOVEMENT5");
+		Wld_InsertNpc(Lurker,"NW_FARM3_MOUNTAINLAKE_03");
+		Wld_InsertNpc(Lurker,"NW_FARM3_MOUNTAINLAKE_02");
+		Wld_InsertNpc(Sheep,"NW_BIGFARM_SHEEP1_02");
+		Wld_InsertNpc(Sheep,"NW_BIGFARM_SHEEP1_02");
+		Wld_InsertNpc(Sheep,"NW_BIGFARM_SHEEP1_02");
+		Wld_InsertNpc(Sheep,"NW_BIGFARM_SHEEP1_03");
+		Wld_InsertNpc(Sheep,"NW_BIGFARM_SHEEP1_03");
+		Wld_InsertNpc(Sheep,"NW_BIGFARM_SHEEP2_03");
+		Wld_InsertNpc(Sheep,"NW_BIGFARM_SHEEP2_03");
+		Wld_InsertNpc(Sheep,"NW_CASTLEMINE_PATH_14");
+		Wld_InsertNpc(Sheep,"NW_BIGFARM_SHEEP2_01");
+		Wld_InsertNpc(Sheep,"NW_BIGFARM_SHEEP2_01");
+		Wld_InsertNpc(Sheep,"NW_BIGFARM_SHEEP2_02");
+		Wld_InsertNpc(Sheep,"NW_BIGFARM_SHEEP2_02");
+		Wld_InsertNpc(Sheep,"NW_FARM3_MALAK");
+		Wld_InsertNpc(Sheep,"NW_FARM3_MALAK");
+		Wld_InsertNpc(Sheep,"NW_FARM4_BALTHASAR");
+		Wld_InsertNpc(Sheep,"NW_FARM4_BALTHASAR");
+		Wld_InsertNpc(Sheep,"NW_FARM4_BALTHASAR");
+		
+		// Pass
+		Wld_InsertNpc(Scavenger,"NW_PASS_BACKAREA_05");
+		Wld_InsertNpc(Waran,"NW_PASS_BACKAREA_04");
+		Wld_InsertNpc(Keiler,"NW_PASS_06");
+		Wld_InsertNpc(Wolf,"NW_PASS_SECRET_15");
+		Wld_InsertNpc(Wolf,"NW_PASS_SECRET_16");
+		Wld_InsertNpc(Molerat,"NW_PASS_SECRET_05");
+		Wld_InsertNpc(Gobbo_Black,"NW_PASS_GRAT_05");
+		Wld_InsertNpc(Gobbo_Black,"NW_PASS_GRAT_06");
+		Wld_InsertNpc(OrcShaman_Sit,"NW_PASS_ORKS_02");
+		Wld_InsertNpc(OrcWarrior_Roam,"NW_PASS_13");
+		Wld_InsertNpc(OrcWarrior_Roam,"NW_PASS_ORKS_03");
+		
+		// Akil and Woods
+		Wld_InsertNpc(Scavenger,"NW_LIGHTHOUSE_HILL_04");
+		Wld_InsertNpc(Scavenger,"NW_LIGHTHOUSE_HILL_04");
+		Wld_InsertNpc(Scavenger,"NW_LIGHTHOUSE_HILL_04");
+		Wld_InsertNpc(Scavenger,"NW_AKIL_OUTCROPPING_01");
+		Wld_InsertNpc(Scavenger,"NW_AKIL_OUTCROPPING_01");
+		Wld_InsertNpc(Bloodfly,"FP_ROAM_NW_CITYHILL_01");
+		Wld_InsertNpc(Bloodfly,"FP_ROAM_NW_CITYHILL_01");
+		Wld_InsertNpc(Scavenger,"FP_ROAM_MEDIUMFOREST_KAP2_28");
+		Wld_InsertNpc(Scavenger,"FP_ROAM_MEDIUMFOREST_KAP2_29");
+		Wld_InsertNpc(Scavenger,"FP_ROAM_MEDIUMFOREST_KAP2_17");
+		Wld_InsertNpc(Scavenger,"FP_ROAM_MEDIUMFOREST_KAP2_13");
+		Wld_InsertNpc(Scavenger,"FP_ROAM_MEDIUMFOREST_KAP2_13");
+		Wld_InsertNpc(Wolf,"FP_ROAM_MEDIUMFOREST_KAP2_36");
+		Wld_InsertNpc(Wolf,"FP_ROAM_MEDIUMFOREST_KAP2_34");
+		Wld_InsertNpc(Wolf,"FP_ROAM_MEDIUMFOREST_KAP2_36");
+		Wld_InsertNpc(Wolf,"FP_ROAM_MEDIUMFOREST_KAP2_34");
+		Wld_InsertNpc(Warg,"FP_ROAM_MEDIUMFOREST_KAP3_12");
+		Wld_InsertNpc(Giant_Bug,"FP_ROAM_MEDIUMFOREST_KAP3_15");
+		Wld_InsertNpc(Giant_Bug,"FP_ROAM_MEDIUMFOREST_KAP3_15");
+		Wld_InsertNpc(Wolf,"FP_ROAM_MEDIUMFOREST_KAP3_17");
+		Wld_InsertNpc(Wolf,"FP_ROAM_MEDIUMFOREST_KAP3_17");
+		Wld_InsertNpc(Keiler,"FP_ROAM_MEDIUMFOREST_KAP3_21");
+		Wld_InsertNpc(Keiler,"FP_ROAM_MEDIUMFOREST_KAP3_21");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_27_04");
+		Wld_InsertItem(ItWr_StonePlateCommon_Addon,"FP_ROAM_MEDIUMFOREST_KAP3_32");
+		Wld_InsertNpc(Bloodfly,"NW_CITY_TO_LIGHTHOUSE_03");
+		Wld_InsertNpc(Bloodfly,"NW_CITY_TO_LIGHTHOUSE_03");
+		Wld_InsertNpc(Waran,"FP_ROAM_SHIPWRECK_04");
+		Wld_InsertNpc(Waran,"FP_ROAM_FISHERMAN_04");
+		Wld_InsertNpc(Waran,"FP_ROAM_FISHERMAN_04");
+		Wld_InsertNpc(Wolf,"NW_CITY_TO_FOREST_05");
+		Wld_InsertNpc(Wolf,"NW_CITY_TO_FOREST_07");
+		Wld_InsertNpc(Wolf,"NW_CITY_TO_FOREST_07");
+		Wld_InsertNpc(Wolf,"FP_ROAM_CITY_TO_FOREST_47");
+		Wld_InsertNpc(Wolf,"FP_ROAM_CITY_TO_FOREST_49");
+		Wld_InsertNpc(Wolf,"FP_ROAM_CITY_TO_FOREST_49");
+		Wld_InsertNpc(Gobbo_Black,"FP_ROAM_CITYFOREST_KAP3_06");
+		Wld_InsertNpc(Gobbo_Black,"FP_ROAM_CITYFOREST_KAP3_07");
+		Wld_InsertNpc(Gobbo_Warrior,"FP_ROAM_CITYFOREST_KAP3_08");
+		Wld_InsertNpc(OrcBiter,"FP_ROAM_CITYFOREST_KAP3_23");
+		Wld_InsertNpc(OrcBiter,"FP_ROAM_CITYFOREST_KAP3_23");
+		Wld_InsertNpc(Giant_Bug,"FP_ROAM_CITYFOREST_KAP3_27");
+		Wld_InsertNpc(Giant_Bug,"FP_ROAM_CITYFOREST_KAP3_29");
+		Wld_InsertNpc(Waran,"FP_ROAM_CITY_TO_FOREST_32");
+		Wld_InsertNpc(Waran,"FP_ROAM_CITY_TO_FOREST_31");
+		Wld_InsertNpc(Molerat,"FP_ROAM_CITY_TO_FOREST_42");
+		Wld_InsertNpc(Molerat,"FP_ROAM_CITY_TO_FOREST_41");
+		Wld_InsertNpc(Molerat,"FP_ROAM_CITY_TO_FOREST_41");
+		//Wld_InsertNpc(Shadowbeast,"FP_ROAM_CITYFOREST_KAP3_08");
+		Wld_InsertNpc(Warg,"FP_ROAM_CITYFOREST_KAP3_09");
+		Wld_InsertNpc(Warg,"FP_ROAM_CITYFOREST_KAP3_14");
+		Wld_InsertNpc(Gobbo_Black,"NW_FOREST_VINOSKELLEREI_01");
+		Wld_InsertNpc(Gobbo_Black,"NW_FOREST_VINOSKELLEREI_01");
+		Wld_InsertNpc(Keiler,"NW_CITY_SMFOREST_05");
+		Wld_InsertNpc(Keiler,"NW_CITY_SMFOREST_05");
+		Wld_InsertNpc(Wolf,"NW_CITY_TO_FOREST_04_09");
+		Wld_InsertNpc(Wolf,"NW_CITY_TO_FOREST_04_09");
+		Wld_InsertNpc(Molerat,"NW_TAVERN_TO_FOREST_05_05");
+		Wld_InsertNpc(Molerat,"NW_TAVERN_TO_FOREST_05_05");
+		Wld_InsertNpc(Molerat,"NW_TAVERN_TO_FOREST_05_06");
+		Wld_InsertNpc(Gobbo_Black,"NW_CITYFOREST_CAVE_A01");
+		Wld_InsertNpc(Gobbo_Warrior,"NW_CITYFOREST_CAVE_A01");
+		Wld_InsertNpc(Gobbo_Black,"NW_CITYFOREST_CAVE_A01");
+		Wld_InsertNpc(Molerat,"NW_CITYFOREST_CAVE_06");
+		Wld_InsertNpc(Molerat,"NW_CITYFOREST_CAVE_06");
+		//Wld_InsertNpc(Shadowbeast,"NW_CITYFOREST_CAVE_A06");
+		Wld_InsertNpc(Scavenger,"NW_FOREST_PATH_38_MONSTER");
+		Wld_InsertNpc(Scavenger,"NW_FOREST_PATH_38_MONSTER");
+		Wld_InsertNpc(Keiler,"NW_CITY_TO_LIGHTHOUSE_13_MONSTER");
+		Wld_InsertNpc(Keiler,"NW_CITY_TO_LIGHTHOUSE_13_MONSTER");
+		Wld_InsertNpc(Wolf,"NW_FOREST_PATH_35_01");
+		Wld_InsertNpc(Wolf,"NW_FOREST_PATH_35_01");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_31_MONSTER");
+		Wld_InsertNpc(OrcBiter,"NW_FARM2_TO_TAVERN_09_MONSTER2");
+		Wld_InsertNpc(OrcBiter,"NW_FARM2_TO_TAVERN_09_MONSTER2");
+		Wld_InsertNpc(Bloodfly,"NW_FARM2_TO_TAVERN_09_MONSTER5");
+		Wld_InsertNpc(Bloodfly,"NW_FARM2_TO_TAVERN_09_MONSTER5");
+		Wld_InsertNpc(Wolf,"NW_CITY_TO_FOREST_04");
+		Wld_InsertNpc(Wolf,"NW_FOREST_CAVE1_01");
+		Wld_InsertNpc(Giant_Bug,"NW_FOREST_PATH_75_2_MONSTER");
+		Wld_InsertNpc(Giant_Bug,"NW_FOREST_PATH_75_2_MONSTER");
+		Wld_InsertNpc(Keiler,"NW_FOREST_PATH_79");
+		Wld_InsertNpc(Keiler,"NW_FOREST_PATH_79");
+		Wld_InsertNpc(Keiler,"NW_FOREST_PATH_80_1");
+		Wld_InsertNpc(Keiler,"NW_FOREST_PATH_80_1");
+		Wld_InsertNpc(Waran,"NW_FOREST_PATH_82");
+		Wld_InsertNpc(Waran,"NW_FOREST_PATH_82");
+		Wld_InsertNpc(Waran,"NW_FOREST_PATH_82_M");
+		Wld_InsertNpc(Waran,"NW_FOREST_PATH_82_M");
+		Wld_InsertNpc(Wolf,"NW_FOREST_PATH_66_M");
+		Wld_InsertNpc(Wolf,"NW_FOREST_PATH_66_M");
+		Wld_InsertNpc(Gobbo_Skeleton,"NW_FOREST_PATH_62_M");
+		Wld_InsertNpc(Gobbo_Skeleton,"NW_FOREST_PATH_62_M");
+		Wld_InsertNpc(Bloodfly,"NW_FOREST_PATH_35_01_MONSTER");
+		Wld_InsertNpc(Bloodfly,"NW_FOREST_PATH_35_01_MONSTER");
+		Wld_InsertNpc(Giant_Bug,"NW_FOREST_PATH_80_1_MOVEMENTF");
+		Wld_InsertNpc(Giant_Bug,"NW_FOREST_PATH_80_1_MOVEMENTF");
+		Wld_InsertNpc(Giant_Bug,"NW_FOREST_PATH_31_NAVIGATION3");
+		Wld_InsertNpc(Giant_Bug,"NW_FOREST_PATH_31_NAVIGATION3");
+		//Wld_InsertNpc(Snapper,"NW_FOREST_PATH_80_1_MOVEMENT6");
+		//Wld_InsertNpc(Snapper,"NW_FOREST_PATH_80_1_MOVEMENT15");
+		Wld_InsertNpc(Snapper,"NW_FOREST_PATH_80_1_MOVEMENT15");
+		Wld_InsertNpc(Snapper,"NW_FOREST_PATH_80_1_MOVEMENT8_M");
+		Wld_InsertNpc(Snapper,"NW_FOREST_PATH_80_1_MOVEMENT8_M5");
+		Wld_InsertNpc(Snapper,"NW_FOREST_PATH_80_1_MOVEMENT8_M3");
+		Wld_InsertItem(ItWr_StonePlateCommon_Addon,"NW_FOREST_PATH_80_1_MOVEMENT8_M5");
+		//Wld_InsertNpc(Warg,"NW_FOREST_PATH_04_16_MONSTER");
+		//Wld_InsertNpc(Warg,"NW_FOREST_PATH_04_16_MONSTER2");
+		Wld_InsertNpc(Giant_Bug,"NW_FOREST_PATH_04_13");
+		Wld_InsertNpc(Giant_Bug,"NW_FOREST_PATH_04_3");
+		Wld_InsertNpc(Giant_Bug,"NW_FOREST_PATH_04_4");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_72_MONSTER");
+		Wld_InsertNpc(Bloodfly,"NW_FOREST_PATH_62_06");
+		Wld_InsertNpc(Bloodfly,"NW_FOREST_PATH_62_06");
+		Wld_InsertNpc(Bloodfly,"NW_FOREST_PATH_27_03");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_27_02");
+		Wld_InsertNpc(Scavenger,"NW_CITY_TO_LIGHTHOUSE_13_MONSTER7");
+		Wld_InsertNpc(Scavenger,"NW_CITY_TO_LIGHTHOUSE_13_MONSTER7");
+		Wld_InsertNpc(Scavenger,"NW_CITY_TO_LIGHTHOUSE_13_MONSTER7");
+		Wld_InsertNpc(Bloodfly,"NW_CITY_TO_LIGHTHOUSE_13_MONSTER8");
+		Wld_InsertNpc(Bloodfly,"NW_CITY_TO_LIGHTHOUSE_13_MONSTER8");
+		Wld_InsertNpc(Keiler,"NW_FOREST_PATH_35_MONSTER");
+		Wld_InsertNpc(Keiler,"NW_FOREST_PATH_35_MONSTER");
+		Wld_InsertNpc(Keiler,"NW_FOREST_PATH_35_MONSTER");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_18_MONSTER");
+		//Wld_InsertNpc(Warg,"NW_FOREST_PATH_18_MONSTER");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_72_MONSTER23");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_72_MONSTER23");
+		Wld_InsertNpc(Molerat,"NW_FOREST_PATH_76");
+		Wld_InsertNpc(Molerat,"NW_FOREST_PATH_76");
+		Wld_InsertNpc(Molerat,"NW_FOREST_PATH_76");
+		Wld_InsertNpc(Keiler,"NW_FOREST_PATH_04_14_MONSTER");
+		Wld_InsertNpc(Keiler,"NW_FOREST_PATH_04_14_MONSTER");
+		Wld_InsertNpc(Keiler,"NW_FOREST_PATH_04_14_MONSTER");
+		Wld_InsertNpc(Keiler,"NW_CITY_SMFOREST_03_M");
+		Wld_InsertNpc(Keiler,"NW_CITY_SMFOREST_03_M");
+		//Wld_InsertNpc(BDT_10305_Addon_RangerBandit_L,"NW_FARM2_TO_TAVERN_RANGERBANDITS_01");
+		Wld_InsertNpc(BDT_1000_Bandit_L,"NW_CITY_SMFOREST_07");
+		Wld_InsertNpc(BDT_1026_Bandit_H,"NW_CITY_SMFOREST_07");
+		Wld_InsertNpc(BDT_1002_Bandit_L,"NW_CITY_SMFOREST_BANDIT_02");
+		Wld_InsertNpc(BDT_1011_Bandit_M,"NW_CITY_SMFOREST_BANDIT_02");
+		Wld_InsertNpc(BDT_1009_Bandit_L,"NW_FOREST_CAVE1_IN_04");
+		Wld_InsertNpc(BDT_1026_Bandit_H,"NW_FOREST_CAVE1_IN_05");
+		Wld_InsertNpc(BDT_1011_Bandit_M,"NW_FOREST_CAVE1_IN_06");
+		Wld_InsertNpc(BDT_1011_Bandit_M,"NW_FOREST_CAVE1_IN_06");
+		
+		// Pyramid Area
+		Wld_InsertNpc(Bloodfly,"FP_STONECIRCLE_01");
+		Wld_InsertNpc(Wolf,"FP_STONECIRCLE_02");
+		Wld_InsertNpc(Wolf,"FP_STONECIRCLE_02");
+		Wld_InsertNpc(Keiler,"FP_STONECIRCLE_03");
+		Wld_InsertNpc(Keiler,"FP_STONECIRCLE_03");
+		Wld_InsertNpc(Snapper,"FP_STONECIRCLE_04");
+		Wld_InsertNpc(Razor,"FP_STONECIRCLE_05");
+		Wld_InsertNpc(Razor,"FP_STONECIRCLE_05");
+		Wld_InsertNpc(Waran,"FP_STONECIRCLE_HILL_01");
+		Wld_InsertNpc(Waran,"FP_STONECIRCLE_HILL_03");
+		Wld_InsertNpc(Scavenger,"NW_STONECIRCLE_SIDE_02");
+		Wld_InsertNpc(Scavenger,"NW_STONECIRCLE_SIDE_02");
+		Wld_InsertNpc(OrcBiter,"NW_FOREST_PATH_83");
+		Wld_InsertNpc(OrcBiter,"NW_FOREST_PATH_83");
+		Wld_InsertNpc(Gobbo_Black,"NW_TROLLAREA_GOBBO_01");
+		Wld_InsertNpc(Gobbo_Black,"NW_TROLLAREA_GOBBO_01");
+		Wld_InsertNpc(Wolf,"NW_MAGICGOLEM_HILL_03");
+		Wld_InsertNpc(Wolf,"NW_MAGICGOLEM_HILL_03");
+		Wld_InsertItem(ItPl_Perm_Herb,"FP_NW_TROLLAREA_STONECIRCLE_HERB_01");
+		Wld_InsertNpc(Giant_Bug,"NW_TROLLAREA_GOLEM_02_M");
+		Wld_InsertNpc(Giant_Bug,"NW_TROLLAREA_GOLEM_02_M");
+		Wld_InsertNpc(Scavenger,"NW_TROLLAREA_GOLEM_01_M");
+		Wld_InsertNpc(Scavenger,"NW_TROLLAREA_GOLEM_01_M");
+		Wld_InsertNpc(Waran,"NW_TROLLAREA_GOLEM_04");
+		Wld_InsertNpc(Waran,"NW_TROLLAREA_GOLEM_04");
+		Wld_InsertNpc(Snapper,"NW_TROLLAREA_GOLEM_07");
+		Wld_InsertNpc(Snapper,"NW_TROLLAREA_GOLEM_07");
+		Wld_InsertNpc(StoneGolem,"FP_MAGICGOLEM");
+		Wld_InsertNpc(Waran,"NW_MONASTERY_RIVER_10");
+		Wld_InsertNpc(Waran,"NW_MONASTERY_RIVER_10");
+		Wld_InsertNpc(Bloodfly,"NW_MONASTERY_RIVER_08");
+		Wld_InsertNpc(Snapper,"NW_TROLLAREA_STONE_02_M");
+		Wld_InsertNpc(Snapper,"NW_TROLLAREA_STONE_02_M");
+		Wld_InsertNpc(Wolf,"NW_TROLLAREA_STONE_06");
+		Wld_InsertNpc(Wolf,"NW_TROLLAREA_STONE_06");
+		Wld_InsertNpc(Keiler,"NW_TROLLAREA_STONE_03");
+		Wld_InsertNpc(OrcBiter,"NW_MONASTERY_RIVER_01");
+		Wld_InsertNpc(OrcBiter,"NW_MONASTERY_RIVER_01");
+		Wld_InsertNpc(Keiler,"NW_MONASTERY_RIVER_03");
+		Wld_InsertNpc(Keiler,"NW_MONASTERY_RIVER_03");
+		Wld_InsertNpc(Minecrawler,"NW_MAGECAVE_23");
+		Wld_InsertNpc(Minecrawler,"NW_MAGECAVE_27");
+		Wld_InsertNpc(Bloodfly,"FP_ROAM_TROLLAREA_SEA_01");
+		Wld_InsertNpc(Bloodfly,"FP_ROAM_TROLLAREA_SEA_04");
+		Wld_InsertNpc(Giant_Rat,"NW_TROLLAREA_RITUALFOREST_CAVE_01");
+		Wld_InsertNpc(Minecrawler,"NW_RITUALFOREST_CAVE_08");
+		Wld_InsertNpc(Lesser_Skeleton,"NW_RITUALFOREST_CAVE_02");
+		Wld_InsertNpc(Giant_Bug,"FP_ROAM_NW_TROLLAREA_RUINS_01");
+		Wld_InsertNpc(Giant_Bug,"FP_ROAM_NW_TROLLAREA_RUINS_01");
+		Wld_InsertNpc(Snapper,"FP_ROAM_NW_TROLLAREA_RUINS_05");
+		Wld_InsertNpc(Snapper,"FP_ROAM_NW_TROLLAREA_RUINS_09");
+		Wld_InsertNpc(Waran,"FP_ROAM_NW_TROLLAREA_RUINS_29");
+		Wld_InsertNpc(Gobbo_Black,"FP_ROAM_NW_TROLLAREA_RUINS_CAVE_01");
+		Wld_InsertNpc(Gobbo_Black,"FP_ROAM_NW_TROLLAREA_RUINS_CAVE_05");
+		Wld_InsertNpc(Gobbo_Black,"FP_ROAM_NW_TROLLAREA_RUINS_CAVE_06");
+		Wld_InsertNpc(Gobbo_Black,"FP_ROAM_NW_TROLLAREA_RUINS_CAVE_11");
+		Wld_InsertNpc(Gobbo_Warrior,"FP_ROAM_NW_TROLLAREA_RUINS_CAVE_12");
+		Wld_InsertNpc(Minecrawler,"FP_ROAM_NW_TROLLAREA_RUINS_CAVE_16");
+		Wld_InsertNpc(Minecrawler,"FP_ROAM_NW_TROLLAREA_RUINS_CAVE_23");
+		Wld_InsertNpc(Wolf,"NW_TROLLAREA_PATH_66_MONSTER");
+		Wld_InsertNpc(Wolf,"NW_TROLLAREA_PATH_66_MONSTER");
+		Wld_InsertNpc(Scavenger,"NW_TROLLAREA_PLANE_07");
+		Wld_InsertNpc(Scavenger,"NW_TROLLAREA_PLANE_07");
+		Wld_InsertNpc(Molerat,"NW_TROLLAREA_NOVCHASE_01");
+		Wld_InsertNpc(Molerat,"NW_TROLLAREA_NOVCHASE_01");
+		Wld_InsertNpc(Bloodfly,"NW_TROLLAREA_PATH_38_MONSTER");
+		Wld_InsertNpc(Bloodfly,"NW_TROLLAREA_PATH_38_MONSTER");
+		Wld_InsertNpc(Bloodfly,"NW_TROLLAREA_PATH_38_MONSTER");
+		Wld_InsertNpc(Scavenger,"NW_TROLLAREA_PLANE_04");
+		Wld_InsertNpc(Scavenger,"NW_TROLLAREA_PLANE_04");
+		Wld_InsertNpc(OrcBiter,"NW_TROLLAREA_RUINS_17");
+		Wld_InsertNpc(OrcBiter,"NW_TROLLAREA_RUINS_17");
+		Wld_InsertNpc(Waran,"NW_TROLLAREA_RUINS_32");
+		Wld_InsertNpc(Waran,"NW_TROLLAREA_RUINS_32");
+		Wld_InsertNpc(Lurker,"NW_TROLLAREA_PATH_71_MONSTER");
+		Wld_InsertNpc(Lurker,"NW_TROLLAREA_PATH_71_MONSTER");
+		Wld_InsertNpc(Scavenger,"NW_TROLLAREA_PATH_71_MONSTER2");
+		Wld_InsertNpc(Scavenger,"NW_TROLLAREA_PATH_71_MONSTER2");
+		Wld_InsertNpc(Keiler,"NW_TROLLAREA_PATH_15_MONSTER");
+		Wld_InsertNpc(Keiler,"NW_TROLLAREA_PATH_15_MONSTER");
+		Wld_InsertNpc(Molerat,"NW_TROLLAREA_RITUALFOREST_04_MONSTER");
+		Wld_InsertNpc(Molerat,"NW_TROLLAREA_RITUALFOREST_04_MONSTER");
+		Wld_InsertNpc(Molerat,"NW_TROLLAREA_RITUALFOREST_04_MONSTER");
+		Wld_InsertNpc(Scavenger,"NW_TROLLAREA_RITUALPATH_04");
+		Wld_InsertNpc(Scavenger,"NW_TROLLAREA_RITUALPATH_04");
+		Wld_InsertNpc(OrcBiter,"NW_TROLLAREA_RITUAL_14");
+		Wld_InsertNpc(Gobbo_Skeleton,"NW_TROLLAREA_RITUAL_13");
+		Wld_InsertNpc(Gobbo_Skeleton,"NW_TROLLAREA_RITUAL_13");
+		Wld_InsertItem(ItWr_StonePlateCommon_Addon,"NW_TROLLAREA_RITUAL_13");
+		Wld_InsertNpc(Bloodfly,"NW_TROLLAREA_RITUALPATH_032");
+		Wld_InsertNpc(Bloodfly,"NW_TROLLAREA_RITUALPATH_032");
+		Wld_InsertNpc(Bloodfly,"NW_TROLLAREA_RITUALPATH_032");
+		Wld_InsertNpc(Keiler,"NW_TROLLAREA_PLANE_01");
+		Wld_InsertNpc(Keiler,"NW_TROLLAREA_PLANE_01");
+		Wld_InsertNpc(OrcBiter,"NW_TROLLAREA_PATH_22_MONSTER");
+		Wld_InsertNpc(OrcBiter,"NW_TROLLAREA_PATH_22_MONSTER");
+		Wld_InsertNpc(OrcBiter,"NW_TROLLAREA_PATH_22_MONSTER");
+		Wld_InsertNpc(Molerat,"NW_TROLLAREA_RITUALFOREST_06_MONSTER");
+		Wld_InsertNpc(Molerat,"NW_TROLLAREA_RITUALFOREST_06_MONSTER");
+		Wld_InsertNpc(Lurker,"NW_TROLLAREA_PATH_08");
+		Wld_InsertNpc(Lurker,"NW_TROLLAREA_PATH_10");
+		Wld_InsertNpc(Lurker,"NW_TROLLAREA_BRIGDE_05");
+		Wld_InsertNpc(Skeleton,"NW_TROLLAREA_TROLLROCKCAVE_05");
+		Wld_InsertNpc(Giant_Rat,"NW_TROLLAREA_TROLLLAKECAVE_02");		
+		Wld_InsertNpc(Giant_Rat,"NW_TROLLAREA_TROLLLAKECAVE_05");
+		Wld_InsertNpc(Giant_Rat,"NW_TROLLAREA_TROLLLAKECAVE_05");	
+		Wld_InsertNpc(Gobbo_Warrior,"NW_TROLLAREA_TROLLLAKECAVE_08");
+		Wld_InsertNpc(Gobbo_Black,"NW_TROLLAREA_TROLLLAKECAVE_08");
+		Wld_InsertNpc(Gobbo_Black,"NW_TROLLAREA_TROLLLAKECAVE_09");
+		Wld_InsertNpc(Keiler,"FP_HILL_NW_TROLLAREA_BRIDGE_04");
+		Wld_InsertNpc(Bloodfly,"FP_HILL_NW_TROLLAREA_BRIDGE_08");
+		Wld_InsertNpc(Bloodfly,"FP_HILL_NW_TROLLAREA_BRIDGE_07");
+		Wld_InsertNpc(Razor,"NW_TROLLAREA_PATH_82_M");
+		Wld_InsertNpc(Snapper,"NW_TROLLAREA_BRIGDE_04");
+		Wld_InsertNpc(Snapper,"NW_TROLLAREA_BRIGDE_04");
+		Wld_InsertItem(ItWr_HitPointStonePlate3_Addon,"FP_ITEM_MAGICGOLEM_STPLATE");
+	
+		// Original
+		Wld_InsertNpc(Gobbo_Skeleton,"FP_ROAM_MEDIUMFOREST_KAP2_24");
+		Wld_InsertNpc(Skeleton,"FP_ROAM_MEDIUMFOREST_KAP2_22");
+		Wld_InsertNpc(Lesser_Skeleton,"FP_ROAM_MEDIUMFOREST_KAP2_23");
+		Wld_InsertNpc(Wolf,"FP_ROAM_MEDIUMFOREST_KAP2_25");
+		Wld_InsertNpc(Wolf,"FP_ROAM_MEDIUMFOREST_KAP2_26");
+		Wld_InsertNpc(Bloodfly,"FP_ROAM_CITY_TO_FOREST_50");
+		Wld_InsertNpc(Bloodfly,"FP_ROAM_CITY_TO_FOREST_49");
+		Wld_InsertNpc(Sheep,"NW_FARM3_MOUNTAINLAKE_05");
+		Wld_InsertNpc(Sheep,"NW_FARM3_MOUNTAINLAKE_05");
+		Wld_InsertNpc(Scavenger,"NW_TROLLAREA_PLANE_05");
+		Wld_InsertNpc(Scavenger,"NW_TROLLAREA_PLANE_05");
+		Wld_InsertNpc(Scavenger,"NW_TROLLAREA_PLANE_06");
+		Wld_InsertNpc(Scavenger,"NW_TROLLAREA_PLANE_11");
+		Wld_InsertNpc(Scavenger,"NW_TROLLAREA_PLANE_11");
+		Wld_InsertNpc(Scavenger,"NW_TROLLAREA_PLANE_11");
+		Wld_InsertNpc(Lurker,"NW_TROLLAREA_PATH_72");
+		Wld_InsertNpc(Lurker,"NW_TROLLAREA_PATH_72");
+		Wld_InsertNpc(Lurker,"NW_TROLLAREA_PATH_75");
+		Wld_InsertNpc(Molerat,"NW_FOREST_PATH_62_02");
+		Wld_InsertNpc(Molerat,"NW_FOREST_PATH_62_02");
+		Wld_InsertNpc(Wolf,"NW_FARM1_PATH_CITY_10_B");
+		Wld_InsertNpc(Wolf,"NW_FARM1_PATH_CITY_SHEEP_04");
+		Wld_InsertNpc(Wolf,"NW_FARM1_PATH_CITY_SHEEP_04");
+		Wld_InsertNpc(Giant_Bug,"NW_FARM1_PATH_SPAWN_07");
+		Wld_InsertNpc(Bloodfly,"FP_ROAM_CITY_TO_FOREST_34");
+		Wld_InsertNpc(Bloodfly,"FP_ROAM_CITY_TO_FOREST_36");
+		Wld_InsertNpc(Scavenger,"NW_TAVERNE_BIGFARM_MONSTER_01");
+		Wld_InsertNpc(Scavenger,"NW_TAVERNE_BIGFARM_MONSTER_01");
+		Wld_InsertNpc(Lurker,"NW_BIGFARM_LAKE_MONSTER_02_01");
+		Wld_InsertNpc(Gobbo_Black,"NW_TAVERNE_TROLLAREA_MONSTER_05_01");
+		if((hero.guild == GIL_MIL) || (hero.guild == GIL_PAL))
+		{
+			Wld_InsertItem(ItAm_Dex_01,"FP_ROAM_XARDAS_SECRET_26");
+		}
+		else if((hero.guild == GIL_SLD) || (hero.guild == GIL_DJG))
+		{
+			Wld_InsertItem(ItAm_Hp_01,"FP_ROAM_XARDAS_SECRET_26");
+		}
+		else
+		{
+			Wld_InsertItem(ItAm_Hp_Mana_01,"FP_ROAM_XARDAS_SECRET_26");
+		};
+		if(hero.guild == GIL_KDF)
+		{
+			B_StartOtherRoutine(Agon,"StillAlive");
+		};
+		EnterNW_Kapitel2 = TRUE;
+	};
+};
+
+
+var int EnterNW_Kapitel3;
+
+func void B_ENTER_NEWWORLD_Kapitel_3()
+{
+	if(EnterNW_Kapitel3 == FALSE)
+	{
+		if(Npc_IsDead(Salandril) == FALSE)
+		{
+			Salandril.aivar[AIV_ToughGuy] = TRUE;
+		};
+		Cornelius.flags = 0;
+		if(!Npc_IsDead(Hodges))
+		{
+			B_StartOtherRoutine(Hodges,"BENNETWEG");
+		};
+		if(Npc_IsDead(DiegoNW))
+		{
+			Wld_InsertNpc(PC_Thief_NW,"NW_CITY_ENTRANCE_01");
+			B_StartOtherRoutine(DiegoNW,"START");
+		};
+		if(Npc_IsDead(GornNW_vor_DJG))
+		{
+			Wld_InsertNpc(PC_Fighter_NW_vor_DJG,"BIGFARM");
+			B_StartOtherRoutine(GornNW_vor_DJG,"START");
+		};
+		if(Npc_IsDead(Lares) == FALSE)
+		{
+			B_StartOtherRoutine(Lares,"START");
+		};
+		Wld_InsertNpc(DMT_DementorAmbientSpeaker,"NW_PASS_GATE_02");
+		B_KillNpc(PAL_297_Ritter);
+		B_KillNpc(PAL_298_Ritter);
+		if(hero.guild == GIL_KDF)
+		{
+			B_KillNpc(Ulf);
+		};
+		Wld_InsertNpc(Giant_Bug,"FP_ROAM_MEDIUMFOREST_KAP2_01");
+		Wld_InsertNpc(Giant_Bug,"FP_ROAM_MEDIUMFOREST_KAP2_02");
+		Wld_InsertNpc(Giant_Bug,"FP_ROAM_MEDIUMFOREST_KAP2_05");
+		if(Npc_IsDead(Sekob) == FALSE)
+		{
+			B_StartOtherRoutine(Sekob,"FleeDMT");
+			B_StartOtherRoutine(Rosi,"FleeDMT");
+			B_StartOtherRoutine(Till,"FleeDMT");
+			B_StartOtherRoutine(Balthasar,"FleeDMT");
+			B_StartOtherRoutine(BAU_933_Rega,"FleeDMT");
+			B_StartOtherRoutine(BAU_934_Babera,"FleeDMT");
+			B_StartOtherRoutine(BAU_937_Bauer,"FleeDMT");
+			B_StartOtherRoutine(BAU_938_Bauer,"FleeDMT");
+			Wld_InsertNpc(DMT_DementorAmbientSekob1,"NW_FARM4_IN_06");
+			Wld_InsertNpc(DMT_DementorAmbientSekob2,"NW_FARM4_IN_02");
+			Wld_InsertNpc(DMT_DementorAmbientSekob3,"NW_FARM4_IN_03");
+			Wld_InsertNpc(DMT_DementorAmbientSekob4,"NW_FARM4_IN_04");
+			Sekob.flags = NPC_FLAG_IMMORTAL;
+		};
+		B_StartOtherRoutine(Lester,"WAITFORPLAYER");
+		B_StartOtherRoutine(Bennet,"PRISON");
+		B_StartOtherRoutine(Sergio,"WAIT");
+		B_StartOtherRoutine(Peck,"STORAGE");
+		B_RemoveNpc(PAL_203_Lothar);
+		
+		// City
+		Wld_InsertNpc(FireWaran,"FP_ROAM_INSEL_05");
+		Wld_InsertNpc(Waran,"FP_ROAM_INSEL_05");
+		Wld_InsertNpc(Waran,"FP_ROAM_INSEL_07");
+		Wld_InsertNpc(FireWaran,"FP_ROAM_FIREBEACH_01");
+		
+		// Lobart Farm
+		Wld_InsertNpc(OrcBiter,"NW_FARM1_OUT_13");
+		Wld_InsertNpc(OrcBiter,"NW_FARM1_OUT_15");
+		Wld_InsertNpc(OrcBiter,"NW_FARM1_OUT_15");
+		Wld_InsertNpc(Bloodfly,"NW_FARM1_CITYWALL_02_B");
+		Wld_InsertNpc(Bloodfly,"NW_FARM1_CITYWALL_02_B");
+		Wld_InsertNpc(Snapper,"NW_FARM1_CITYWALL_05");
+		Wld_InsertNpc(Snapper,"NW_FARM1_CITYWALL_05");
+		Wld_InsertNpc(BDT_1025_Bandit_H,"NW_FARM1_BANDITS_CAVE_08");
+		Wld_InsertNpc(BDT_10101_Addon_TowerBandit,"NW_FARM1_BANDITS_CAVE_07");
+		Wld_InsertNpc(BDT_1027_Bandit_H,"NW_FARM1_BANDITS_CAVE_02");
+		Wld_InsertNpc(StoneGolem,"NW_FARM1_OUT_09_M");
+		Wld_InsertNpc(Sheep,"NW_FARM1_PATH_CITY_SHEEP_11");
+		Wld_InsertNpc(Sheep,"NW_FARM1_PATH_CITY_SHEEP_11");
+		Wld_InsertNpc(Sheep,"NW_FARM1_PATH_CITY_SHEEP_11");
+		Wld_InsertNpc(Sheep,"NW_FARM1_PATH_CITY_SHEEP_09");
+		Wld_InsertNpc(Sheep,"NW_FARM1_PATH_CITY_SHEEP_09");
+		Wld_InsertNpc(Sheep,"NW_FARM1_PATH_CITY_SHEEP_09");
+		Wld_InsertItem(ItWr_CrsBowStonePlate2_Addon,"FP_NW_LOBART_CAVE_ITEM_01");
+		
+		// Xardas
+		Wld_InsertNpc(Warg,"FP_LOBART_LEDGE_02");
+		Wld_InsertNpc(Warg,"FP_LOBART_LEDGE_02");
+		//Wld_InsertNpc(Warg,"FP_LOBART_LEDGE_02");
+		Wld_InsertItem(ItWr_StonePlateCommon_Addon,"FP_XARDAS_LEDGE_ITEM_01");
+		Wld_InsertNpc(Keiler,"NW_XARDAS_FORT_02");
+		Wld_InsertNpc(Keiler,"NW_XARDAS_FORT_02");
+		Wld_InsertNpc(Snapper,"NW_XARDAS_FORT_04");
+		Wld_InsertNpc(Snapper,"NW_XARDAS_FORT_04");
+		Wld_InsertNpc(Harpie,"NW_XARDAS_FORT_06");
+		Wld_InsertNpc(Harpie,"NW_XARDAS_FORT_09");
+		Wld_InsertNpc(Sheep,"NW_XARDAS_TOWER_04");
+		//Wld_InsertNpc(Shadowbeast,"NW_XARDAS_TOWER_SECRET_CAVE_04");
+		Wld_InsertItem(ItPl_Perm_Herb,"FP_ITEM_XARDAS_01");
+
+		
+		// Monastery
+		Wld_InsertNpc(OrcBiter,"NW_PATH_TO_MONASTER_AREA_11");
+		Wld_InsertNpc(OrcBiter,"NW_PATH_TO_MONASTER_AREA_11");
+		Wld_InsertNpc(Keiler,"NW_PATH_TO_MONASTER_AREA_02");
+		Wld_InsertNpc(Keiler,"NW_PATH_TO_MONASTER_AREA_10");
+		Wld_InsertNpc(Keiler,"NW_PATH_TO_MONASTER_AREA_10");
+		Wld_InsertNpc(OrcBiter,"NW_PATH_TO_MONASTER_AREA_08");
+		Wld_InsertNpc(OrcBiter,"NW_PATH_TO_MONASTER_AREA_08");
+		Wld_InsertNpc(Wolf,"NW_SHRINE_MONSTER");
+		Wld_InsertNpc(Wolf,"NW_SHRINE_MONSTER");
+		
+		// Onar, Pastures, Saggita Wood and Dragomir Path
+		Wld_InsertItem(ItPl_Perm_Herb,"FP_TAVERN_CAVE_HERB_01");
+		Wld_InsertItem(ItPl_Perm_Herb,"FP_TAVERN_MOUNTAIN_HERB_01");	
+		Wld_InsertNpc(Razor,"NW_BENGAR_HILL_11");
+		Wld_InsertNpc(Razor,"NW_BENGAR_HILL_11");
+		Wld_InsertNpc(Keiler,"NW_ONAR_CAVE_01_M");
+		Wld_InsertNpc(Keiler,"NW_ONAR_CAVE_01_M");
+		//Wld_InsertNpc(Shadowbeast,"NW_ONAR_CAVE_04");
+		Wld_InsertNpc(FireWaran,"NW_TAVERN_MOUNTAIN_19_M1");
+		Wld_InsertNpc(FireWaran,"NW_TAVERN_MOUNTAIN_20");
+		Wld_InsertNpc(Troll_Black,"FP_TAVERN_MOUNTAIN_TROLL");
+		Wld_InsertItem(ItRi_Prot_Total_03,"FP_NW_TAVERN_MOUNTAIN_ITEM_01");
+		Wld_InsertNpc(Harpie,"NW_TAVERN_FORT_03");
+		Wld_InsertNpc(Harpie,"NW_TAVERN_FORT_03");
+		Wld_InsertNpc(Snapper,"FP_ROAM_MONSTERMILL_11");
+		Wld_InsertNpc(Snapper,"FP_ROAM_MONSTERMILL_13");
+		Wld_InsertNpc(Snapper,"FP_ROAM_MONSTERMILL_04");
+		Wld_InsertNpc(Snapper,"FP_ROAM_MONSTERMILL_03");
+		Wld_InsertNpc(OrcBiter,"NW_TAVERNE_TROLLAREA_MONSTER_01_01");
+		Wld_InsertNpc(OrcBiter,"NW_TAVERNE_TROLLAREA_MONSTER_01_01");
+		Wld_InsertNpc(OrcBiter,"NW_TAVERNE_TROLLAREA_MONSTER_01_01");
+		Wld_InsertNpc(Zombie02,"NW_FARM2_TAVERNCAVE1_09");
+		Wld_InsertNpc(Zombie02,"NW_FARM2_TAVERNCAVE1_09");
+		Wld_InsertNpc(Skeleton,"NW_FARM2_TAVERNCAVE1_08");
+		Wld_InsertNpc(Lesser_Skeleton,"NW_FARM2_TAVERNCAVE1_02");
+		Wld_InsertNpc(Warg,"NW_TAVERNE_TROLLAREA_MONSTER_04_01");
+		Wld_InsertNpc(Warg,"NW_TAVERNE_TROLLAREA_MONSTER_04_01");
+		Wld_InsertNpc(Warg,"NW_TAVERNE_TROLLAREA_MONSTER_04_01");
+		Wld_InsertNpc(Warg,"NW_BIGFARM_LAKE_MONSTER_01_01");
+		Wld_InsertNpc(Warg,"NW_BIGFARM_LAKE_MONSTER_01_01");
+		Wld_InsertNpc(Warg,"NW_BIGFARM_LAKE_MONSTER_01_01");
+		Wld_InsertNpc(Lurker,"NW_BIGFARM_LAKE_MONSTER_02_01");
+		Wld_InsertNpc(Lurker,"NW_BIGFARM_LAKE_MONSTER_02_01");
+		Wld_InsertNpc(Lurker,"NW_BIGFARM_LAKE_MONSTER_02_01");
+		Wld_InsertNpc(Warg,"NW_BIGFARM_LAKE_MONSTER_03_01");
+		Wld_InsertNpc(Warg,"NW_BIGFARM_LAKE_MONSTER_03_01");
+		Wld_InsertNpc(Lurker,"NW_LAKE_GREG_TREASURE_01");
+		Wld_InsertNpc(Lurker,"NW_LAKE_GREG_TREASURE_01");
+		Wld_InsertNpc(Warg,"NW_FARM4_WOOD_MONSTER_03");
+		Wld_InsertNpc(Warg,"NW_FARM4_WOOD_MONSTER_03");
+		Wld_InsertNpc(Warg,"NW_FARM4_WOOD_MONSTER_03");
+		Wld_InsertNpc(Razor,"NW_FARM4_WOOD_MONSTER_05");
+		Wld_InsertNpc(Razor,"NW_FARM4_WOOD_MONSTER_05");
+		Wld_InsertNpc(Warg,"NW_FARM4_WOOD_MONSTER_10");
+		Wld_InsertNpc(Warg,"NW_FARM4_WOOD_MONSTER_10");
+		Wld_InsertNpc(Warg,"NW_FARM4_WOOD_MONSTER_10");
+		Wld_InsertNpc(Troll,"NW_CASTLEMINE_TROLL_07");
+		Wld_InsertNpc(Skeleton,"FP_ROAM_CASTLEMINE2_01");
+		Wld_InsertNpc(Skeleton,"FP_ROAM_CASTLEMINE2_04");
+		Wld_InsertNpc(SkeletonMage,"FP_ROAM_CASTLEMINE2_05");
+		Wld_InsertNpc(Zombie03,"FP_ROAM_CASTLEMINE2_11");
+		Wld_InsertNpc(Minecrawler,"NW_CASTLEMINE_06");
+		Wld_InsertNpc(Minecrawler,"NW_CASTLEMINE_13");
+		Wld_InsertNpc(MinecrawlerWarrior,"NW_CASTLEMINE_12");
+		Wld_InsertNpc(Keiler,"NW_TAVERNE_TROLLAREA_MONSTER_03_01M1");
+		Wld_InsertNpc(Keiler,"NW_TAVERNE_TROLLAREA_MONSTER_03_01M1");
+		Wld_InsertNpc(Keiler,"NW_TAVERNE_TROLLAREA_MONSTER_03_01M1");
+		Wld_InsertNpc(Warg,"NW_SAGITTA_MOREMONSTER_01");
+		Wld_InsertNpc(Warg,"NW_SAGITTA_MOREMONSTER_01");
+		Wld_InsertNpc(Warg,"NW_SAGITTA_MOREMONSTER_03");
+		Wld_InsertNpc(Warg,"NW_SAGITTA_MOREMONSTER_03");
+		Wld_InsertNpc(Wolf,"NW_FARM4_WOOD_NEARPEASANT2_8");
+		Wld_InsertNpc(Wolf,"NW_FARM4_WOOD_NEARPEASANT2_8");
+		Wld_InsertNpc(Keiler,"NW_FARM4_WOOD_NEARPEASANT2_7");
+		Wld_InsertNpc(Keiler,"NW_FARM4_WOOD_NEARPEASANT2_7");
+		Wld_InsertNpc(Keiler,"NW_FARM4_WOOD_NEARPEASANT2_7");
+		Wld_InsertNpc(Shadowbeast,"NW_FARM4_WOOD_NEARPEASANT2_12");
+		Wld_InsertNpc(Skeleton,"NW_FARM4_WOOD_MONSTER_MORE_02");
+		Wld_InsertNpc(Lesser_Skeleton,"NW_FARM4_WOOD_MONSTER_MORE_02");
+		Wld_InsertNpc(Zombie01,"NW_FARM4_WOOD_MONSTER_MORE_02");
+		Wld_InsertNpc(Zombie02,"NW_FARM4_WOOD_MONSTER_MORE_02");
+		Wld_InsertNpc(Skeleton,"NW_CRYPT_MONSTER08");
+		Wld_InsertNpc(Lesser_Skeleton,"NW_CRYPT_MONSTER08");
+		Wld_InsertNpc(Shadowbeast,"NW_BIGFARM_FOREST_03_NAVIGATION");
+		Wld_InsertNpc(Keiler,"NW_CASTLEMINE_TROLL_05");
+		Wld_InsertNpc(Warg,"FP_ROAM_NW_BIGFARM_PEPES_WOLFS_01");
+		Wld_InsertNpc(Warg,"FP_ROAM_NW_BIGFARM_PEPES_WOLFS_02");
+		Wld_InsertNpc(Warg,"FP_ROAM_NW_BIGFARM_PEPES_WOLFS_03");
+		Wld_InsertNpc(Warg,"FP_ROAM_NW_BIGFARM_PEPES_WOLFS_04");
+		Wld_InsertNpc(OrcBiter,"NW_BIGFARM_ALLEE_08_N_5");
+		Wld_InsertNpc(OrcBiter,"NW_BIGFARM_ALLEE_08_N_5");
+		Wld_InsertNpc(OrcBiter,"NW_BIGFARM_ALLEE_08_N_5");
+		Wld_InsertNpc(Bloodhound,"NW_BIGMILL_05");
+		Wld_InsertNpc(Razor,"NW_FARM3_PATH_11_SMALLRIVER_04");
+		Wld_InsertNpc(Razor,"NW_FARM3_PATH_11_SMALLRIVER_04");
+		Wld_InsertNpc(Razor,"NW_FARM3_PATH_11_SMALLRIVER_04");
+		Wld_InsertNpc(Razor,"NW_FARM3_BIGWOOD_03_C");
+		Wld_InsertNpc(Razor,"NW_FARM3_BIGWOOD_03_C");
+		Wld_InsertNpc(DragonSnapper,"NW_FARM3_BIGWOOD_03_A");
+		Wld_InsertNpc(Lurker,"NW_FARM3_PATH_11_SMALLRIVER_17");
+		Wld_InsertNpc(Lurker,"NW_FARM3_PATH_11_SMALLRIVER_20");
+		Wld_InsertNpc(Lurker,"NW_FARM3_PATH_11_SMALLRIVERMID_03");
+		Wld_InsertNpc(Lurker,"NW_FARM3_PATH_11_SMALLRIVERMID_03");
+		Wld_InsertNpc(Warg,"NW_FARM3_PATH_12_MONSTER_01");
+		Wld_InsertNpc(Warg,"NW_FARM3_PATH_12_MONSTER_01");
+		Wld_InsertNpc(Warg,"NW_FARM3_PATH_12_MONSTER_01");
+		Wld_InsertNpc(Wolf,"NW_FARM3_PATH_12_MONSTER_01");
+		Wld_InsertNpc(Keiler,"NW_FARM3_PATH_12_MONSTER_03");
+		Wld_InsertNpc(Keiler,"NW_FARM3_PATH_12_MONSTER_03");
+		Wld_InsertNpc(Razor,"NW_FARM3_BIGWOOD_04");
+		Wld_InsertNpc(Razor,"NW_FARM3_BIGWOOD_04");
+		Wld_InsertNpc(Lesser_Skeleton,"NW_BIGFARM_LAKE_03_MOVEMENT5");
+		Wld_InsertNpc(Lesser_Skeleton,"NW_BIGFARM_LAKE_03_MOVEMENT5");
+		Wld_InsertNpc(Lurker,"NW_FARM3_MOUNTAINLAKE_03");
+		Wld_InsertNpc(Lurker,"NW_FARM3_MOUNTAINLAKE_MONSTER_01");
+		Wld_InsertNpc(Sheep,"NW_BIGFARM_SHEEP1_02");
+		Wld_InsertNpc(Sheep,"NW_BIGFARM_SHEEP1_02");
+		Wld_InsertNpc(Sheep,"NW_BIGFARM_SHEEP1_02");
+		Wld_InsertNpc(Sheep,"NW_BIGFARM_SHEEP1_03");
+		Wld_InsertNpc(Sheep,"NW_BIGFARM_SHEEP1_03");
+		Wld_InsertNpc(Sheep,"NW_BIGFARM_SHEEP2_03");
+		Wld_InsertNpc(Sheep,"NW_BIGFARM_SHEEP2_03");
+		Wld_InsertNpc(Sheep,"NW_CASTLEMINE_PATH_14");
+		Wld_InsertNpc(Sheep,"NW_BIGFARM_SHEEP2_01");
+		Wld_InsertNpc(Sheep,"NW_BIGFARM_SHEEP2_01");
+		Wld_InsertNpc(Sheep,"NW_BIGFARM_SHEEP2_02");
+		Wld_InsertNpc(Sheep,"NW_BIGFARM_SHEEP2_02");
+		Wld_InsertNpc(Sheep,"NW_FARM3_MALAK");
+		Wld_InsertNpc(Sheep,"NW_FARM3_MALAK");
+		Wld_InsertNpc(Sheep,"NW_FARM4_BALTHASAR");
+		Wld_InsertNpc(Sheep,"NW_FARM4_BALTHASAR");
+		Wld_InsertNpc(Sheep,"NW_FARM4_BALTHASAR");
+		
+		// Pass
+		Wld_InsertNpc(Razor,"NW_PASS_BACKAREA_04");
+		Wld_InsertNpc(Razor,"NW_PASS_BACKAREA_04");
+		Wld_InsertNpc(Razor,"NW_PASS_BACKAREA_04");
+		Wld_InsertItem(ItPl_Perm_Herb,"FP_PASS_HERB_01");
+		Wld_InsertNpc(Snapper,"NW_PASS_06");
+		Wld_InsertNpc(Snapper,"NW_PASS_06");
+		Wld_InsertNpc(Snapper,"NW_PASS_06");
+		Wld_InsertNpc(Warg,"NW_PASS_SECRET_14");
+		Wld_InsertNpc(Warg,"NW_PASS_SECRET_15");
+		Wld_InsertNpc(Warg,"NW_PASS_SECRET_15");
+		Wld_InsertNpc(Warg,"NW_PASS_SECRET_16");
+		Wld_InsertNpc(Warg,"NW_PASS_SECRET_17");
+		Wld_InsertNpc(Gobbo_Warrior,"NW_PASS_GRAT_04");
+		Wld_InsertNpc(Gobbo_Warrior,"NW_PASS_GRAT_05");
+		Wld_InsertNpc(Gobbo_Black,"NW_PASS_GRAT_06");
+		Wld_InsertNpc(Gobbo_Warrior,"NW_PASS_GRAT_05");
+		Wld_InsertNpc(Gobbo_Black,"NW_PASS_GRAT_06");
+		Wld_InsertNpc(Gobbo_Warrior,"NW_PASS_GRAT_06");
+		Wld_InsertNpc(Gobbo_Black,"NW_PASS_GRAT_06");
+		Wld_InsertNpc(OrcShaman_Sit,"NW_PASS_ORKS_02");
+		Wld_InsertNpc(OrcShaman_Sit,"NW_PASS_ORKS_02");
+		Wld_InsertNpc(OrcWarrior_Roam,"NW_PASS_13");
+		Wld_InsertNpc(OrcWarrior_Roam,"NW_PASS_14");
+		Wld_InsertNpc(OrcWarrior_Roam,"NW_PASS_ORKS_03");
+		Wld_InsertNpc(OrcWarrior_Roam,"NW_PASS_ORKS_07");
+		Wld_InsertNpc(OrcWarrior_Roam,"NW_PASS_ORKS_06");
+		Wld_InsertNpc(OrcWarrior_Roam,"NW_PASS_ORKS_01");
+		Wld_InsertNpc(OrcWarrior_Roam,"NW_PASS_ORKS_08");
+		Wld_InsertNpc(OrcWarrior_Roam,"NW_PASS_ORKS_10");
+		Wld_InsertNpc(OrcWarrior_Roam,"NW_PASS_ORKS_12");
+		Wld_InsertNpc(OrcElite_Roam,"NW_PASS_ORKS_12");
+		
+		// Akil and Woods
+		Wld_InsertItem(ItPl_Perm_Herb,"FP_STONECIRCLE_FOREST_HERB_01");
+		Wld_InsertNpc(OrcBiter,"NW_LIGHTHOUSE_HILL_04");
+		Wld_InsertNpc(OrcBiter,"NW_LIGHTHOUSE_HILL_04");
+		Wld_InsertItem(ItPl_Perm_Herb,"FP_LIGHTHOUSE_HERB_02");
+		Wld_InsertNpc(OrcBiter,"FP_ROAM_MEDIUMFOREST_KAP2_12");
+		Wld_InsertNpc(OrcBiter,"FP_ROAM_MEDIUMFOREST_KAP2_10");
+		Wld_InsertNpc(OrcBiter,"FP_ROAM_MEDIUMFOREST_KAP2_10");
+		Wld_InsertNpc(Warg,"FP_ROAM_MEDIUMFOREST_KAP2_36");
+		Wld_InsertNpc(Warg,"FP_ROAM_MEDIUMFOREST_KAP2_34");
+		Wld_InsertNpc(Warg,"FP_ROAM_MEDIUMFOREST_KAP2_34");
+		Wld_InsertNpc(Skeleton,"FP_ROAM_MEDIUMFOREST_KAP3_04");
+		Wld_InsertNpc(Lesser_Skeleton,"FP_ROAM_MEDIUMFOREST_KAP3_05");
+		Wld_InsertNpc(Lesser_Skeleton,"FP_ROAM_MEDIUMFOREST_KAP3_01");
+		Wld_InsertNpc(Zombie02,"FP_ROAM_MEDIUMFOREST_KAP3_02");
+		Wld_InsertNpc(Warg,"FP_ROAM_MEDIUMFOREST_KAP3_08");
+		Wld_InsertNpc(Warg,"FP_ROAM_MEDIUMFOREST_KAP3_08");
+		Wld_InsertNpc(Warg,"FP_ROAM_MEDIUMFOREST_KAP3_17");
+		Wld_InsertNpc(Warg,"FP_ROAM_MEDIUMFOREST_KAP3_17");
+		Wld_InsertNpc(Warg,"FP_ROAM_MEDIUMFOREST_KAP3_17");
+		Wld_InsertNpc(Warg,"FP_ROAM_MEDIUMFOREST_KAP3_17");
+		Wld_InsertNpc(Keiler,"FP_ROAM_MEDIUMFOREST_KAP3_21");
+		Wld_InsertNpc(Keiler,"FP_ROAM_MEDIUMFOREST_KAP3_21");
+		Wld_InsertNpc(Keiler,"FP_ROAM_MEDIUMFOREST_KAP3_21");
+		Wld_InsertNpc(Warg,"FP_ROAM_MEDIUMFOREST_KAP3_29");
+		Wld_InsertNpc(Warg,"FP_ROAM_MEDIUMFOREST_KAP3_29");
+		Wld_InsertNpc(OrcWarrior_Roam,"FP_ROAM_MEDIUMFOREST_KAP3_29");
+		Wld_InsertNpc(Waran,"FP_ROAM_MEDIUMFOREST_KAP3_27");
+		Wld_InsertNpc(Waran,"FP_ROAM_MEDIUMFOREST_KAP3_26");
+		Wld_InsertNpc(Waran,"FP_ROAM_MEDIUMFOREST_KAP3_27");
+		Wld_InsertNpc(Waran,"FP_ROAM_MEDIUMFOREST_KAP3_26");
+		Wld_InsertNpc(OrcWarrior_Roam,"FP_ROAM_MEDIUMFOREST_KAP3_32");
+		Wld_InsertNpc(Bloodfly,"NW_CITY_TO_LIGHTHOUSE_03");
+		Wld_InsertNpc(Bloodfly,"NW_CITY_TO_LIGHTHOUSE_03");
+		Wld_InsertNpc(Waran,"FP_ROAM_SHIPWRECK_04");
+		Wld_InsertNpc(Waran,"FP_ROAM_FISHERMAN_04");
+		Wld_InsertNpc(Waran,"FP_ROAM_FISHERMAN_04");
+		Wld_InsertNpc(FireWaran,"FP_ROAM_FISHERMAN_04");
+		Wld_InsertNpc(Warg,"NW_CITY_TO_FOREST_05");
+		Wld_InsertNpc(Warg,"NW_CITY_TO_FOREST_07");
+		Wld_InsertNpc(Warg,"NW_CITY_TO_FOREST_07");
+		Wld_InsertNpc(Warg,"FP_ROAM_CITY_TO_FOREST_47");
+		Wld_InsertNpc(Warg,"FP_ROAM_CITY_TO_FOREST_47");
+		Wld_InsertNpc(OrcBiter_Strong,"FP_ROAM_CITYFOREST_KAP3_22");
+		Wld_InsertNpc(OrcBiter_Strong,"FP_ROAM_CITYFOREST_KAP3_20");
+		Wld_InsertNpc(Warg,"FP_ROAM_CITYFOREST_KAP3_27");
+		Wld_InsertNpc(Warg,"FP_ROAM_CITYFOREST_KAP3_28");
+		Wld_InsertNpc(Warg,"FP_ROAM_CITYFOREST_KAP3_29");
+		Wld_InsertNpc(Waran,"FP_ROAM_CITY_TO_FOREST_32");
+		Wld_InsertNpc(Waran,"FP_ROAM_CITY_TO_FOREST_31");
+		Wld_InsertNpc(Bloodhound,"FP_ROAM_CITY_TO_FOREST_42");
+		Wld_InsertNpc(Shadowbeast,"NW_CITYFOREST_08");
+		Wld_InsertItem(ItPl_Perm_Herb,"FP_NW_CITY_FOREST_HERB_01");		
+		Wld_InsertNpc(Warg,"FP_ROAM_CITYFOREST_KAP3_09");
+		Wld_InsertNpc(Warg,"FP_ROAM_CITYFOREST_KAP3_10");
+		Wld_InsertNpc(Warg,"FP_ROAM_CITYFOREST_KAP3_11");
+		Wld_InsertNpc(Warg,"FP_ROAM_CITYFOREST_KAP3_14");
+		Wld_InsertNpc(Warg,"FP_ROAM_CITYFOREST_KAP3_17");
+		Wld_InsertNpc(OrcWarrior_Rest,"NW_CITY_SMFOREST_09");
+		Wld_InsertNpc(Warg,"NW_CITY_SMFOREST_03");
+		Wld_InsertNpc(Warg,"NW_CITY_SMFOREST_03");
+		Wld_InsertNpc(Shadowbeast,"NW_FOREST_PATH_35_06");
+		Wld_InsertNpc(OrcWarrior_Rest,"NW_CITY_TO_FOREST_04_08");
+		Wld_InsertNpc(OrcWarrior_Rest,"NW_CITY_TO_FOREST_04_08");
+		Wld_InsertNpc(Warg,"NW_CITY_TO_FOREST_04_09");
+		Wld_InsertNpc(Warg,"NW_CITY_TO_FOREST_04_09");
+		Wld_InsertNpc(Warg,"NW_CITY_TO_FOREST_04_09");
+		Wld_InsertNpc(Warg,"NW_CITY_TO_FOREST_04_09");
+		Wld_InsertNpc(Shadowbeast,"NW_FARM2_TO_TAVERN_09_MONSTER4");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_FARM1_CITYWALL_RIGHT_04");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_FARM1_CITYWALL_RIGHT_04");
+		Wld_InsertNpc(Keiler,"NW_CITY_TO_LIGHTHOUSE_13_MONSTER");
+		Wld_InsertNpc(Keiler,"NW_CITY_TO_LIGHTHOUSE_13_MONSTER");
+		Wld_InsertNpc(Keiler,"NW_CITY_TO_LIGHTHOUSE_13_MONSTER");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_35_01");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_35_01");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_35_01");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_35_01");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_31_MONSTER");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_31_MONSTER");
+		Wld_InsertNpc(OrcBiter,"NW_FARM2_TO_TAVERN_09_MONSTER");
+		Wld_InsertNpc(OrcBiter,"NW_FARM2_TO_TAVERN_09_MONSTER");
+		Wld_InsertNpc(OrcBiter,"NW_FARM2_TO_TAVERN_09_MONSTER");
+		Wld_InsertNpc(OrcBiter,"NW_FARM2_TO_TAVERN_09_MONSTER2");
+		Wld_InsertNpc(OrcBiter,"NW_FARM2_TO_TAVERN_09_MONSTER2");
+		Wld_InsertNpc(Bloodfly,"NW_FARM2_TO_TAVERN_09_MONSTER5");
+		Wld_InsertNpc(Bloodfly,"NW_FARM2_TO_TAVERN_09_MONSTER5");
+		Wld_InsertNpc(Bloodfly,"NW_FARM2_TO_TAVERN_09_MONSTER5");
+		Wld_InsertNpc(Warg,"NW_CITY_TO_FOREST_04");
+		Wld_InsertNpc(Warg,"NW_CITY_TO_FOREST_04");
+		Wld_InsertNpc(Warg,"NW_CITY_TO_FOREST_04");
+		Wld_InsertNpc(Bloodhound,"NW_FOREST_PATH_75_2_MONSTER");
+		Wld_InsertNpc(Bloodhound,"NW_FOREST_PATH_75_2_MONSTER");
+		Wld_InsertNpc(Keiler,"NW_FOREST_PATH_79");
+		Wld_InsertNpc(Keiler,"NW_FOREST_PATH_79");
+		Wld_InsertNpc(Keiler,"NW_FOREST_PATH_80_1");
+		Wld_InsertNpc(Keiler,"NW_FOREST_PATH_80_1");
+		Wld_InsertNpc(Waran,"NW_FOREST_PATH_82");
+		Wld_InsertNpc(FireWaran,"NW_FOREST_PATH_82");
+		Wld_InsertNpc(Waran,"NW_FOREST_PATH_82_M");
+		Wld_InsertNpc(Waran,"NW_FOREST_PATH_82_M");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_66_M");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_66_M");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_66_M");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_66_M");
+		Wld_InsertNpc(Lesser_Skeleton,"NW_FOREST_PATH_62_M");
+		Wld_InsertNpc(Skeleton,"NW_FOREST_PATH_62_M");
+		Wld_InsertNpc(Lesser_Skeleton,"NW_FOREST_PATH_62_M");
+		Wld_InsertNpc(Lesser_Skeleton,"NW_FOREST_PATH_62_M");
+		Wld_InsertItem(ItWr_StonePlateCommon_Addon,"NW_FOREST_PATH_62_M");
+		Wld_InsertNpc(Bloodfly,"NW_FOREST_PATH_35_01_MONSTER");
+		Wld_InsertNpc(Bloodfly,"NW_FOREST_PATH_35_01_MONSTER");
+		Wld_InsertNpc(Razor,"NW_FOREST_PATH_80_1_MOVEMENT6");
+		Wld_InsertNpc(Razor,"NW_FOREST_PATH_80_1_MOVEMENT6");
+		Wld_InsertNpc(Razor,"NW_FOREST_PATH_80_1_MOVEMENT6");
+		Wld_InsertNpc(Razor,"NW_FOREST_PATH_80_1_MOVEMENT15");
+		Wld_InsertNpc(Razor,"NW_FOREST_PATH_80_1_MOVEMENT15");
+		Wld_InsertNpc(Razor,"NW_FOREST_PATH_80_1_MOVEMENT8_M5");
+		Wld_InsertNpc(Razor,"NW_FOREST_PATH_80_1_MOVEMENT8_M5");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_04_16_MONSTER");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_04_16_MONSTER2");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_04_16_MONSTER");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_04_16_MONSTER2");
+		Wld_InsertNpc(Bloodhound,"NW_FOREST_PATH_72_MONSTER");
+		Wld_InsertNpc(Bloodfly,"NW_FOREST_PATH_27_03");
+		Wld_InsertNpc(Bloodfly,"NW_FOREST_PATH_27_03");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_27_02");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_27_02");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_27_02");
+		Wld_InsertNpc(OrcBiter,"NW_CITY_TO_LIGHTHOUSE_13_MONSTER7");
+		Wld_InsertNpc(OrcBiter,"NW_CITY_TO_LIGHTHOUSE_13_MONSTER7");
+		Wld_InsertNpc(OrcBiter,"NW_CITY_TO_LIGHTHOUSE_13_MONSTER7");
+		Wld_InsertNpc(Keiler,"NW_FOREST_PATH_35_MONSTER");
+		Wld_InsertNpc(Keiler,"NW_FOREST_PATH_35_MONSTER");
+		Wld_InsertNpc(OrcWarrior_Roam,"NW_FOREST_PATH_31_NAVIGATION19");
+		Wld_InsertNpc(OrcElite_Roam,"NW_FOREST_PATH_18_MONSTER");
+		Wld_InsertNpc(OrcWarrior_Roam,"NW_FOREST_PATH_31_NAVIGATION_M");
+		Wld_InsertNpc(OrcWarrior_Roam,"NW_FOREST_PATH_31_NAVIGATION_M");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_18_MONSTER");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_18_MONSTER");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_72_MONSTER23");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_72_MONSTER23");
+		Wld_InsertNpc(Bloodhound,"NW_FOREST_PATH_04_14_MONSTER");
+		Wld_InsertNpc(Shadowbeast,"FP_ROAM_MEDIUMFOREST_KAP3_19");
+		
+		// Pyramid Area
+		Wld_InsertItem(ItPl_Strength_Herb_01,"FP_STONECIRCLE_HILL_HERB_01");
+		Wld_InsertNpc(Warg,"FP_STONECIRCLE_02");
+		Wld_InsertNpc(Warg,"FP_STONECIRCLE_02");
+		Wld_InsertNpc(Razor,"FP_STONECIRCLE_04");
+		Wld_InsertNpc(Razor,"FP_STONECIRCLE_05");
+		Wld_InsertNpc(DragonSnapper,"FP_STONECIRCLE_05");
+		Wld_InsertNpc(OrcBiter,"NW_STONECIRCLE_SIDE_02");
+		Wld_InsertNpc(OrcBiter,"NW_STONECIRCLE_SIDE_02");
+		Wld_InsertNpc(OrcBiter,"NW_FOREST_PATH_83");
+		Wld_InsertNpc(OrcBiter,"NW_FOREST_PATH_83");
+		Wld_InsertNpc(OrcBiter,"NW_FOREST_PATH_83");
+		Wld_InsertNpc(OrcBiter,"NW_FOREST_PATH_83");
+		Wld_InsertNpc(FireWaran,"FP_STONECIRCLE_HILL_03");
+		Wld_InsertNpc(FireWaran,"FP_STONECIRCLE_HILL_01");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_TROLLAREA_RITUAL_14");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_TROLLAREA_RITUAL_14");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_TROLLAREA_RITUAL_14");
+		Wld_InsertNpc(Troll,"FP_STONECIRCLE_HILL_02");
+		Wld_InsertNpc(OrcWarrior_Roam,"NW_MAGICGOLEM_HILL_03");
+		Wld_InsertItem(ItPl_Perm_Herb,"FP_MAGICGOLEM_HILL_HERB_01");
+		Wld_InsertItem(ItPl_Mana_Herb_03,"FP_MAGICGOLEM_HILL_HERB_02");
+		Wld_InsertItem(ItPl_Mana_Herb_01,"FP_MAGICGOLEM_HILL_HERB_03");
+		Wld_InsertItem(ItPl_Mana_Herb_02,"FP_MAGICGOLEM_HILL_HERB_04");
+		Wld_InsertItem(ItPl_Mana_Herb_01,"FP_MAGICGOLEM_HILL_HERB_05");
+		Wld_InsertNpc(Waran,"NW_TROLLAREA_GOLEM_04");
+		Wld_InsertNpc(FireWaran,"NW_TROLLAREA_GOLEM_04");
+		Wld_InsertNpc(Razor,"NW_TROLLAREA_GOLEM_07");
+		Wld_InsertNpc(Razor,"NW_TROLLAREA_GOLEM_07");
+		Wld_InsertNpc(StoneGolem,"NW_TROLLAREA_GOLEM_10");
+		Wld_InsertNpc(Bloodhound,"NW_TROLLAREA_GOLEM_12");
+		Wld_InsertNpc(StoneGolem,"FP_MAGICGOLEM");
+		Wld_InsertNpc(Troll,"FP_PYRAMID_TROLL_01");
+		Wld_InsertNpc(Waran,"NW_MONASTERY_RIVER_10");
+		Wld_InsertNpc(FireWaran,"NW_MONASTERY_RIVER_10");
+		Wld_InsertNpc(Waran,"NW_MONASTERY_RIVER_10");
+		Wld_InsertNpc(Waran,"NW_MONASTERY_RIVER_10");
+		Wld_InsertNpc(Razor,"NW_TROLLAREA_STONE_02_M");
+		Wld_InsertNpc(Razor,"NW_TROLLAREA_STONE_02_M");
+		Wld_InsertNpc(Warg,"NW_TROLLAREA_STONE_06");
+		Wld_InsertNpc(Warg,"NW_TROLLAREA_STONE_06");
+		Wld_InsertNpc(Warg,"NW_TROLLAREA_STONE_06");
+		Wld_InsertNpc(Warg,"NW_TROLLAREA_STONE_06");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_MONASTERY_RIVER_01");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_MONASTERY_RIVER_01");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_MONASTERY_RIVER_01");
+		Wld_InsertNpc(OrcWarrior_Roam,"NW_MONASTERY_RIVER_05");
+		Wld_InsertNpc(Troll_Black,"NW_TROLLAREA_PATH_84");
+		Wld_InsertNpc(Bloodhound,"NW_TROLLAREA_PATH_56");
+		Wld_InsertNpc(OrcBiter_Strong,"FP_ROAM_TROLLAREA_SEA_01");
+		Wld_InsertNpc(OrcBiter_Strong,"FP_ROAM_TROLLAREA_SEA_02");
+		Wld_InsertNpc(OrcBiter_Strong,"FP_ROAM_TROLLAREA_SEA_03");
+		Wld_InsertNpc(MinecrawlerWarrior,"NW_RITUALFOREST_CAVE_08");
+		Wld_InsertNpc(MinecrawlerWarrior,"NW_RITUALFOREST_CAVE_09");
+		Wld_InsertNpc(Skeleton,"NW_RITUALFOREST_CAVE_04");
+		Wld_InsertNpc(Skeleton,"NW_RITUALFOREST_CAVE_05");
+		Wld_InsertNpc(Razor,"FP_ROAM_NW_TROLLAREA_RUINS_05");
+		Wld_InsertNpc(Razor,"FP_ROAM_NW_TROLLAREA_RUINS_09");
+		Wld_InsertNpc(Razor,"FP_ROAM_NW_TROLLAREA_RUINS_07");
+		Wld_InsertNpc(FireWaran,"NW_TROLLAREA_RUINS_21");
+		Wld_InsertNpc(FireWaran,"FP_ROAM_NW_TROLLAREA_RUINS_28");
+		Wld_InsertNpc(MinecrawlerWarrior,"FP_ROAM_NW_TROLLAREA_RUINS_CAVE_16");
+		Wld_InsertNpc(MinecrawlerWarrior,"FP_ROAM_NW_TROLLAREA_RUINS_CAVE_23");
+		Wld_InsertNpc(MinecrawlerMonarch,"FP_ROAM_NW_TROLLAREA_RUINS_CAVE_26");
+		Wld_InsertNpc(OrcBiter,"NW_TROLLAREA_PLANE_07");
+		Wld_InsertNpc(OrcBiter,"NW_TROLLAREA_PLANE_07");
+		Wld_InsertNpc(OrcBiter,"NW_TROLLAREA_PLANE_07");
+		Wld_InsertNpc(Warg,"NW_TROLLAREA_NOVCHASE_01");
+		Wld_InsertNpc(Warg,"NW_TROLLAREA_NOVCHASE_01");
+		Wld_InsertNpc(Warg,"NW_TROLLAREA_NOVCHASE_01");
+		Wld_InsertNpc(Warg,"NW_TROLLAREA_NOVCHASE_01");
+		Wld_InsertNpc(Lurker,"NW_TROLLAREA_PATH_71_MONSTER");
+		Wld_InsertNpc(OrcBiter,"NW_TROLLAREA_RITUALPATH_04");
+		Wld_InsertNpc(OrcBiter,"NW_TROLLAREA_RITUALPATH_04");
+		Wld_InsertNpc(OrcBiter,"NW_TROLLAREA_RITUALPATH_04");
+		Wld_InsertNpc(Skeleton,"NW_TROLLAREA_RITUAL_13");
+		Wld_InsertNpc(Skeleton,"NW_TROLLAREA_RITUAL_13");
+		Wld_InsertNpc(Keiler,"NW_TROLLAREA_PLANE_01");
+		Wld_InsertNpc(Keiler,"NW_TROLLAREA_PLANE_01");
+		Wld_InsertNpc(Keiler,"NW_TROLLAREA_PLANE_01");
+		Wld_InsertNpc(Lurker,"NW_TROLLAREA_PATH_08");
+		Wld_InsertNpc(Lurker,"NW_TROLLAREA_PATH_10");
+		Wld_InsertNpc(Skeleton,"NW_TROLLAREA_TROLLROCKCAVE_05");
+		Wld_InsertNpc(Skeleton,"NW_TROLLAREA_TROLLROCKCAVE_05");
+		Wld_InsertNpc(Zombie03,"NW_TROLLAREA_TROLLROCKCAVE_05");
+		Wld_InsertNpc(Zombie02,"NW_TROLLAREA_TROLLROCKCAVE_05");
+		Wld_InsertNpc(Lesser_Skeleton,"NW_TROLLAREA_TROLLROCKCAVE_05");
+		Wld_InsertNpc(Minecrawler,"NW_TROLLAREA_TROLLLAKECAVE_02");
+		Wld_InsertNpc(Minecrawler,"NW_TROLLAREA_TROLLLAKECAVE_03");
+		Wld_InsertNpc(MinecrawlerWarrior,"NW_TROLLAREA_TROLLLAKECAVE_05");
+		Wld_InsertNpc(Shadowbeast,"NW_TROLLAREA_RIVERSIDECAVE_02");
+		Wld_InsertNpc(Razor,"NW_TROLLAREA_PATH_82_M");
+		Wld_InsertNpc(Razor,"NW_TROLLAREA_PATH_82_M");
+		Wld_InsertNpc(Razor,"NW_TROLLAREA_BRIGDE_04");
+		Wld_InsertNpc(Razor,"NW_TROLLAREA_BRIGDE_04");
+		Wld_InsertNpc(Razor,"NW_TROLLAREA_BRIGDE_04");
+		Wld_InsertItem(ItAm_Prot_Total_02,"FP_ITEM_TROLLAREA_AMULET");
+		Wld_InsertItem(ItPl_Perm_Herb,"FP_ITEM_RIVERSIDECAVE_HERB");
+		Wld_InsertItem(ItWr_StrStonePlate1_Addon,"FP_NW_ITEM_TROLL_09");
+		
+		// Original
+		Wld_InsertNpc(Giant_Bug,"NW_FARM4_WOOD_MONSTER_N_1_MONSTER");
+		Wld_InsertNpc(Giant_Bug,"NW_FARM4_WOOD_MONSTER_N_1_MONSTER");
+		Wld_InsertNpc(Bloodfly,"NW_TROLLAREA_RIVERSIDE_09");
+		Wld_InsertNpc(Bloodfly,"NW_TROLLAREA_RIVERSIDE_09");
+		Wld_InsertNpc(Giant_Bug,"NW_TAVERNE_TROLLAREA_MONSTER_05_01M1");
+		Wld_InsertNpc(Giant_Bug,"NW_TAVERNE_TROLLAREA_MONSTER_05_01M1");
+		Wld_InsertNpc(Lurker,"NW_TROLLAREA_RIVERSIDE_05");
+		Wld_InsertNpc(Scavenger,"NW_TROLLAREA_PLANE_05");
+		Wld_InsertNpc(Scavenger,"NW_TROLLAREA_PLANE_06");
+		Wld_InsertNpc(Snapper,"NW_TROLLAREA_RUINS_36");
+		Wld_InsertNpc(Snapper,"NW_TROLLAREA_RUINS_36");
+		Wld_InsertNpc(Wolf,"NW_PATH_TO_MONASTER_AREA_10");
+		Wld_InsertNpc(Warg,"NW_XARDAS_GOBBO_01");
+		Wld_InsertNpc(Warg,"NW_XARDAS_GOBBO_01");
+		Wld_InsertNpc(Zombie02,"NW_FARM4_WOOD_MONSTER_MORE_02");
+		Wld_InsertNpc(Zombie01,"NW_FARM4_WOOD_MONSTER_MORE_02");
+		Wld_InsertNpc(Zombie02,"NW_BIGFARM_LAKE_03_MOVEMENT5");
+		Wld_InsertNpc(Skeleton,"NW_FARM4_WOOD_MONSTER_MORE_01");
+		Wld_InsertNpc(Skeleton,"NW_FARM4_WOOD_MONSTER_MORE_01");
+		Wld_InsertNpc(Giant_Bug,"NW_FARM4_WOOD_MONSTER_N_3");
+		//Wld_InsertNpc(Shadowbeast,"NW_FARM4_WOOD_MONSTER_05");
+		Wld_InsertNpc(Razor,"NW_FARM4_WOOD_MONSTER_05");
+		Wld_InsertNpc(Razor,"NW_FARM4_WOOD_MONSTER_05");
+		Wld_InsertNpc(Warg,"NW_CASTLEMINE_TROLL_02");
+		Wld_InsertNpc(Warg,"NW_CASTLEMINE_TROLL_02");
+		Wld_InsertNpc(Lurker,"NW_FARM3_PATH_11_SMALLRIVER_10");
+		Wld_InsertNpc(Lurker,"NW_FARM3_PATH_11_SMALLRIVER_10");
+		Wld_InsertNpc(DMT_DementorAmbientSpeaker,"NW_CITY_TO_FARM2_03");
+		Wld_InsertNpc(DMT_DementorAmbient,"FP_ROAM_NW_BIGFARM_FELDREUBER11");
+		Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_02");
+		Wld_InsertNpc(DMT_DementorAmbientSpeaker,"FP_STAND_DEMENTOR_03");
+		Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_04");
+		Wld_InsertNpc(DMT_DementorAmbientSpeaker,"FP_STAND_DEMENTOR_05");
+		Wld_InsertNpc(DMT_DementorAmbientSpeaker,"FP_STAND_DEMENTOR_06");
+		Wld_InsertNpc(DMT_DementorAmbientSpeaker,"FP_ROAM_CITY_TO_FOREST_01");
+		Wld_InsertNpc(DMT_DementorAmbientSpeaker,"FP_ROAM_CITY_TO_FOREST_15");
+		Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_07");
+		Wld_InsertNpc(DMT_DementorAmbientSpeaker,"FP_STAND_DEMENTOR_08");
+		Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_09");
+		Wld_InsertNpc(DMT_DementorAmbientSpeaker,"FP_STAND_DEMENTOR_10");
+		Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_11");
+		Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_12");
+		Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_13");
+		Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_14");
+		Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_15");
+		Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_16");
+		Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_17");
+		Wld_InsertNpc(DMT_DementorAmbientSpeaker,"FP_STAND_DEMENTOR_18");
+		Wld_InsertNpc(DMT_DementorAmbientWalker11,"CITY1");
+		Wld_InsertNpc(DMT_DementorAmbientWalker9,"CITY1");
+		Wld_InsertNpc(DMT_DementorAmbientWalker6,"CITY1");
+		Wld_InsertNpc(DMT_DementorAmbientWalker3,"CITY1");
+		Wld_InsertNpc(DMT_DementorAmbientWalker1,"CITY1");
+		Wld_InsertNpc(BDT_1025_Bandit_H,"NW_FOREST_CAVE1_02");
+		Wld_InsertNpc(BDT_1026_Bandit_H,"NW_FOREST_CAVE1_03");
+		Wld_InsertNpc(BDT_1027_Bandit_H,"NW_FOREST_CAVE1_04");
+		Wld_InsertNpc(Follow_Sheep_AKIL,"NW_FOREST_CAVE1_IN_02");
+		if(Npc_IsDead(Malak) == FALSE)
+		{
+			B_StartOtherRoutine(Malak,"FleeFromPass");
+			Malak_isAlive_Kap3 = TRUE;
+			B_StartOtherRoutine(BAU_962_Bauer,"FleeFromPass");
+			B_StartOtherRoutine(BAU_964_Bauer,"FleeFromPass");
+			B_StartOtherRoutine(BAU_965_Bauer,"FleeFromPass");
+			B_StartOtherRoutine(BAU_966_Bauer,"FleeFromPass");
+			B_StartOtherRoutine(BAU_967_Bauer,"FleeFromPass");
+			B_StartOtherRoutine(BAU_968_Bauer,"FleeFromPass");
+			B_StartOtherRoutine(BAU_969_Bauer,"FleeFromPass");
+			if(hero.guild == GIL_KDF)
+			{
+				CreateInvItems(Malak,ITWR_DementorObsessionBook_MIS,1);
+			};
+		};
+		if((hero.guild == GIL_MIL) || (hero.guild == GIL_PAL))
+		{
+			B_StartOtherRoutine(Hilda,"Krank");
+		};
+		if((hero.guild == GIL_SLD) || (hero.guild == GIL_DJG))
+		{
+			Wld_InsertItem(ItMw_MalethsGehstock_MIS,"FP_ITEM_FARM1_01");
+			Wld_InsertNpc(Shadowbeast,"NW_LITTLESTONEHENDGE");
+			Wld_InsertNpc(BDT_1024_MalethsBandit,"NW_FARM1_BANDITS_CAVE_08");
+			Wld_InsertNpc(BDT_1006_Bandit_H,"FP_STAND_DEMENTOR_KDF_29");
+			Wld_InsertNpc(BDT_1007_Bandit_H,"FP_STAND_DEMENTOR_KDF_30");
+			Wld_InsertNpc(BDT_1008_Bandit_H,"NW_FARM1_BANDITS_CAVE_03");
+			Wld_InsertNpc(BDT_1004_Bandit_M,"NW_FARM1_BANDITS_CAVE_02");
+			Wld_InsertNpc(BDT_1005_Bandit_M,"NW_FARM1_BANDITS_CAVE_04");
+		};
+		if(hero.guild == GIL_KDF)
+		{
+			Wld_InsertItem(ItMi_KarrasBlessedStone_Mis,"FP_ITEM_FARM1_03");
+			Wld_InsertItem(ItMi_KarrasBlessedStone_Mis,"FP_NW_ITEM_TROLL_10");
+			B_StartOtherRoutine(Hilda,"KRANK");
+			if(Npc_IsDead(Vino) == FALSE)
+			{
+				B_StartOtherRoutine(Vino,"OBESESSIONRITUAL");
+				CreateInvItems(Vino,ITWR_DementorObsessionBook_MIS,1);
+				Vino_isAlive_Kap3 = TRUE;
+				B_StartOtherRoutine(Lobart,"OBESESSIONRITUAL");
+				Wld_InsertNpc(DMT_DementorSpeakerVino1,"FP_STAND_DEMENTOR_KDF_31");
+				Wld_InsertNpc(DMT_DementorSpeakerVino2,"FP_STAND_DEMENTOR_KDF_32");
+				Wld_InsertNpc(DMT_DementorSpeakerVino3,"FP_STAND_DEMENTOR_KDF_33");
+				Wld_InsertNpc(DMT_DementorSpeakerVino4,"NW_LITTLESTONEHENDGE_02");
+				B_KillNpc(YGiant_Bug_VinoRitual1);
+				B_KillNpc(YGiant_Bug_VinoRitual2);
+			};
+			if(Npc_IsDead(Bromor) == FALSE)
+			{
+				CreateInvItems(Bromor,ITWR_DementorObsessionBook_MIS,1);
+			};
+		};
+		if((MIS_Canthars_KomproBrief != LOG_SUCCESS) && (MIS_Canthars_KomproBrief != FALSE) && (Canthar_Pay == FALSE) && (Npc_IsDead(Canthar) == FALSE))
+		{
+			B_StartOtherRoutine(Canthar,"START");
+			AI_Teleport(Canthar,"NW_CITY_SARAH");
+			Canthar_Sperre = TRUE;
+			Canthar_WiederRaus = TRUE;
+		};
+		CreateInvItems(Lester,ItMw_1h_Bau_Axe,1);
+		CreateInvItems(Ehnim,ItMi_Moleratlubric_MIS,1);
+		ShrineIsObsessed_NW_TROLLAREA_PATH_37 = TRUE;
+		ShrineIsObsessed_NW_FARM1_CONNECT_XARDAS = TRUE;
+		ShrineIsObsessed_NW_TROLLAREA_PATH_66 = TRUE;
+		ShrineIsObsessed_NW_TROLLAREA_PATH_04 = TRUE;
+		ShrineIsObsessed_SAGITTA = TRUE;
+		ShrineIsObsessed_NW_BIGMILL_MALAKSVERSTECK_02 = TRUE;
+		ShrineIsObsessed_NW_FARM3_BIGWOOD_02 = TRUE;
+		if((hero.guild == GIL_MIL) || (hero.guild == GIL_PAL))
+		{
+			IntroduceChapter(KapWechsel_3,KapWechsel_3_Text,"chapter3_MIL.tga","chapter_01.wav",6000);
+		}
+		else if(hero.guild == GIL_KDF)
+		{
+			IntroduceChapter(KapWechsel_3,KapWechsel_3_Text,"chapter3_KDF.tga","chapter_01.wav",6000);
+		}
+		else
+		{
+			IntroduceChapter(KapWechsel_3,KapWechsel_3_Text,"chapter3_SLD.tga","chapter_01.wav",6000);
+		};
+		EnterNW_Kapitel3 = TRUE;
+	};
+};
+
+
+var int EnterNW_Kapitel4;
+
+func void B_ENTER_NEWWORLD_Kapitel_4()
+{
+	if(EnterNW_Kapitel4 == FALSE)
+	{
+		// City
+		Wld_InsertNpc(FireWaran,"FP_ROAM_INSEL_05");
+		Wld_InsertNpc(Waran,"FP_ROAM_INSEL_05");
+		Wld_InsertNpc(Waran,"FP_ROAM_INSEL_07");
+		Wld_InsertNpc(FireWaran,"FP_ROAM_FIREBEACH_01");
+		
+		// Lobart Farm
+		Wld_InsertNpc(OrcBiter_Strong,"NW_FARM1_OUT_13");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_FARM1_OUT_15");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_FARM1_OUT_15");
+		Wld_InsertNpc(Razor,"NW_FARM1_CITYWALL_05");
+		Wld_InsertNpc(Razor,"NW_FARM1_CITYWALL_05");
+		Wld_InsertNpc(Razor,"NW_FARM1_CITYWALL_05");
+		Wld_InsertNpc(Razor,"NW_FARM1_CITYWALL_05");
+		Wld_InsertNpc(Warg,"NW_FARM1_CITYWALL_FOREST_03");
+		Wld_InsertNpc(Warg,"NW_FARM1_CITYWALL_FOREST_03");
+		Wld_InsertNpc(Warg,"NW_FARM1_CITYWALL_FOREST_03");
+		Wld_InsertNpc(Shadowbeast,"NW_FARM1_CITYWALL_FOREST_04_B");
+		Wld_InsertNpc(Sheep,"NW_FARM1_PATH_CITY_SHEEP_11");
+		Wld_InsertNpc(Sheep,"NW_FARM1_PATH_CITY_SHEEP_11");
+		Wld_InsertNpc(Sheep,"NW_FARM1_PATH_CITY_SHEEP_09");
+		Wld_InsertNpc(Sheep,"NW_FARM1_PATH_CITY_SHEEP_09");
+		
+		// Xardas
+		Wld_InsertNpc(OrcBiter,"FP_XARDAS_LEDGE_01");
+		Wld_InsertNpc(OrcBiter,"FP_XARDAS_LEDGE_01");
+		Wld_InsertNpc(OrcBiter,"FP_XARDAS_LEDGE_01");
+		Wld_InsertNpc(FireWaran,"FP_ROAM_XARDAS_SECRET_14");
+		Wld_InsertNpc(FireWaran,"FP_ROAM_XARDAS_SECRET_13");
+		Wld_InsertNpc(Waran,"FP_ROAM_XARDAS_SECRET_08");
+		Wld_InsertNpc(Waran,"FP_ROAM_XARDAS_SECRET_07");
+		Wld_InsertNpc(Waran,"FP_ROAM_XARDAS_SECRET_04");
+		Wld_InsertNpc(MinecrawlerWarrior,"NW_XARDAS_TOWER_WATERFALL_CAVE_SIDE_02");
+		Wld_InsertNpc(MinecrawlerWarrior,"NW_XARDAS_TOWER_WATERFALL_CAVE_SIDE_02");
+		Wld_InsertNpc(Warg,"NW_XARDAS_TOWER_VALLEY_WOLF");
+		Wld_InsertNpc(Warg,"NW_XARDAS_TOWER_VALLEY_WOLF");
+		Wld_InsertNpc(Warg,"NW_XARDAS_TOWER_VALLEY_08");
+		Wld_InsertNpc(Warg,"NW_XARDAS_TOWER_VALLEY_08");
+		Wld_InsertNpc(Shadowbeast,"NW_XARDAS_VALLEY_03");
+		Wld_InsertNpc(Bloodhound,"FP_LOBART_LEDGE_02");
+		Wld_InsertNpc(Bloodhound,"FP_LOBART_LEDGE_02");
+		Wld_InsertItem(ItPl_Perm_Herb,"FP_XARDAS_SECRET_HERB_01");
+		Wld_InsertNpc(Razor,"NW_XARDAS_FORT_04");
+		Wld_InsertNpc(Razor,"NW_XARDAS_FORT_04");
+		Wld_InsertNpc(Razor,"NW_XARDAS_FORT_04");
+		Wld_InsertNpc(StoneGolem,"NW_XARDAS_FORT_09");
+		Wld_InsertNpc(StoneGolem,"NW_FARM1_OUT_09_M");
+		Wld_InsertNpc(Shadowbeast,"NW_XARDAS_VALLEY_04");
+		
+		// Monastery
+		
+		// Onar, Pastures, Saggita Wood and Dragomir Path
+		Wld_InsertNpc(Warg,"NW_BENGAR_HILL_09");
+		Wld_InsertNpc(Warg,"NW_BENGAR_HILL_09");
+		Wld_InsertNpc(Warg,"NW_BENGAR_HILL_09");
+		Wld_InsertNpc(DragonSnapper,"NW_BENGAR_HILL_11");
+		Wld_InsertNpc(DragonSnapper,"NW_BENGAR_HILL_11");
+		Wld_InsertNpc(FireWaran,"NW_TAVERN_MOUNTAIN_19_M1");
+		Wld_InsertNpc(FireWaran,"NW_TAVERN_MOUNTAIN_20");
+		Wld_InsertNpc(StoneGolem,"FP_TAVERN_MOUNTAIN_GOLEM");
+		Wld_InsertNpc(Harpie,"NW_TAVERN_FORT_03");
+		Wld_InsertNpc(OrcBiter,"FP_ROAM_MONSTERMILL_11");
+		Wld_InsertNpc(OrcBiter,"FP_ROAM_MONSTERMILL_13");
+		Wld_InsertNpc(OrcBiter,"FP_ROAM_MONSTERMILL_10");
+		Wld_InsertNpc(OrcBiter,"FP_ROAM_MONSTERMILL_12");
+		Wld_InsertNpc(Zombie02,"NW_FARM2_TAVERNCAVE1_09");
+		Wld_InsertNpc(Zombie03,"NW_FARM2_TAVERNCAVE1_09");
+		Wld_InsertNpc(Skeleton,"NW_FARM2_TAVERNCAVE1_08");
+		Wld_InsertNpc(SkeletonMage,"NW_FARM2_TAVERNCAVE1_08");
+		Wld_InsertNpc(Skeleton,"NW_FARM2_TAVERNCAVE1_02");
+		Wld_InsertNpc(Zombie03,"NW_FARM2_TAVERNCAVE1_02");
+		Wld_InsertNpc(Warg,"NW_BIGFARM_LAKE_MONSTER_01_01");
+		Wld_InsertNpc(Warg,"NW_BIGFARM_LAKE_MONSTER_01_01");
+		Wld_InsertNpc(Warg,"NW_BIGFARM_LAKE_MONSTER_03_01");
+		Wld_InsertNpc(Warg,"NW_BIGFARM_LAKE_MONSTER_03_01");
+		Wld_InsertNpc(Razor,"NW_LAKE_GREG_TREASURE_01");
+		Wld_InsertNpc(Razor,"NW_LAKE_GREG_TREASURE_01");
+		//Wld_InsertNpc(Shadowbeast,"NW_FARM4_WOOD_MONSTER_08");
+		//Wld_InsertItem(ItPl_Strength_Herb_01,"NW_FARM4_WOOD_MONSTER_09");
+		Wld_InsertNpc(Warg,"NW_FARM4_WOOD_MONSTER_10");
+		Wld_InsertNpc(Warg,"NW_FARM4_WOOD_MONSTER_10");
+		Wld_InsertNpc(Warg,"NW_FARM4_WOOD_MONSTER_10");
+		Wld_InsertNpc(Warg,"NW_FARM4_WOOD_MONSTER_10");
+		//Wld_InsertNpc(Troll_Black,"NW_CASTLEMINE_TROLL_08");
+		Wld_InsertNpc(Troll,"NW_CASTLEMINE_TROLL_08");
+		// Wld_InsertNpc(Skeleton,"FP_ROAM_CASTLEMINE2_01");
+		// Wld_InsertNpc(Skeleton,"FP_ROAM_CASTLEMINE2_03");
+		// Wld_InsertNpc(Skeleton,"FP_ROAM_CASTLEMINE2_04");
+		// Wld_InsertNpc(Skeleton,"FP_ROAM_CASTLEMINE2_07");
+		// Wld_InsertNpc(SkeletonMage,"FP_ROAM_CASTLEMINE2_05");
+		// Wld_InsertNpc(Zombie03,"FP_ROAM_CASTLEMINE2_11");
+		// Wld_InsertNpc(Zombie04,"FP_ROAM_CASTLEMINE2_12");
+		Wld_InsertNpc(MinecrawlerWarrior,"NW_CASTLEMINE_13");
+		Wld_InsertNpc(MinecrawlerWarrior,"NW_CASTLEMINE_06");
+		Wld_InsertNpc(MinecrawlerMonarch,"NW_CASTLEMINE_10");
+		Wld_InsertNpc(Skeleton,"NW_FARM4_WOOD_MONSTER_MORE_02");
+		Wld_InsertNpc(Skeleton,"NW_FARM4_WOOD_MONSTER_MORE_02");
+		Wld_InsertNpc(Skeleton,"NW_FARM4_WOOD_MONSTER_MORE_02");
+		Wld_InsertNpc(Zombie01,"NW_FARM4_WOOD_MONSTER_MORE_02");
+		Wld_InsertNpc(Zombie02,"NW_FARM4_WOOD_MONSTER_MORE_02");
+		Wld_InsertNpc(DragonSnapper,"NW_FARM3_PATH_11_SMALLRIVER_04");
+		Wld_InsertNpc(DragonSnapper,"NW_FARM3_PATH_11_SMALLRIVER_04");
+		Wld_InsertNpc(Razor,"NW_FARM4_WOOD_MONSTER_05");
+		Wld_InsertNpc(Razor,"NW_FARM4_WOOD_MONSTER_05");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_FARM3_PATH_12_MONSTER_01");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_FARM3_PATH_12_MONSTER_01");
+		// Wld_InsertNpc(Keiler,"NW_FARM3_PATH_12_MONSTER_03");
+		// Wld_InsertNpc(Keiler,"NW_FARM3_PATH_12_MONSTER_03");
+		Wld_InsertNpc(Skeleton,"NW_BIGFARM_LAKE_03_MOVEMENT5");
+		Wld_InsertNpc(Skeleton,"NW_BIGFARM_LAKE_03_MOVEMENT5");
+		Wld_InsertNpc(BDT_1026_Bandit_H,"NW_FARM4_WOOD_RANGERBANDITS_04");
+		Wld_InsertNpc(BDT_1027_Bandit_H,"NW_FARM4_WOOD_RANGERBANDITS_03");
+		Wld_InsertNpc(BDT_1025_Bandit_H,"NW_FARM4_WOOD_RANGERBANDITS_03");
+		Wld_InsertNpc(BDT_1027_Bandit_H,"NW_FARM4_WOOD_RANGERBANDITS_04");
+		Wld_InsertNpc(BDT_1025_Bandit_H,"NW_FARM4_WOOD_RANGERBANDITS_05");
+		Wld_InsertNpc(BDT_1026_Bandit_H,"NW_FARM4_WOOD_RANGERBANDITS_05");
+		Wld_InsertNpc(Sheep,"NW_BIGFARM_SHEEP1_02");
+		Wld_InsertNpc(Sheep,"NW_BIGFARM_SHEEP1_03");
+		Wld_InsertNpc(Sheep,"NW_BIGFARM_SHEEP2_03");
+		Wld_InsertNpc(Sheep,"NW_BIGFARM_SHEEP2_03");
+		Wld_InsertNpc(Sheep,"NW_BIGFARM_SHEEP2_01");
+		Wld_InsertNpc(Sheep,"NW_BIGFARM_SHEEP2_02");
+		Wld_InsertNpc(Sheep,"NW_BIGFARM_SHEEP2_02");
+		Wld_InsertNpc(Sheep,"NW_FARM3_MALAK");
+		Wld_InsertNpc(Sheep,"NW_FARM3_MALAK");
+		Wld_InsertNpc(Sheep,"NW_FARM4_BALTHASAR");
+		Wld_InsertNpc(Sheep,"NW_FARM4_BALTHASAR");
+		
+		// Pass
+		Wld_InsertNpc(DragonSnapper,"NW_PASS_BACKAREA_05");
+		Wld_InsertNpc(DragonSnapper,"NW_PASS_BACKAREA_04");
+		Wld_InsertNpc(Warg,"NW_PASS_SECRET_15");
+		Wld_InsertNpc(Warg,"NW_PASS_SECRET_15");
+		Wld_InsertNpc(Warg,"NW_PASS_SECRET_16");
+		Wld_InsertNpc(Warg,"NW_PASS_SECRET_17");
+		Wld_InsertNpc(OrcShaman_Sit,"NW_PASS_ORKS_02");
+		Wld_InsertNpc(OrcShaman_Sit,"NW_PASS_13");
+		Wld_InsertNpc(OrcElite_Roam,"NW_PASS_14");
+		Wld_InsertNpc(OrcShaman_Sit,"NW_PASS_ORKS_03");
+		Wld_InsertNpc(OrcShaman_Sit,"NW_PASS_ORKS_07");
+		Wld_InsertNpc(OrcWarrior_Roam,"NW_PASS_ORKS_06");
+		Wld_InsertNpc(OrcElite_Roam,"NW_PASS_ORKS_01");
+		Wld_InsertNpc(OrcWarrior_Roam,"NW_PASS_ORKS_08");
+		Wld_InsertNpc(OrcElite_Roam,"NW_PASS_ORKS_10");
+		Wld_InsertNpc(OrcWarrior_Roam,"NW_PASS_ORKS_12");
+		
+		// Akil and Woods
+		Wld_InsertNpc(OrcBiter_Strong,"NW_LIGHTHOUSE_HILL_04");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_LIGHTHOUSE_HILL_04");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_LIGHTHOUSE_HILL_04");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_LIGHTHOUSE_HILL_04");
+		Wld_InsertItem(ITPL_DEX_HERB_01,"FP_LIGHTHOUSE_HERB_01");
+		Wld_InsertNpc(Bloodhound,"NW_FOREST_CAVE1_IN_04");
+		Wld_InsertNpc(Bloodhound,"NW_FOREST_CAVE1_IN_06");
+		Wld_InsertNpc(OrcElite_Roam,"FP_ROAM_MEDIUMFOREST_KAP3_29");
+		Wld_InsertNpc(OrcElite_Roam,"FP_ROAM_MEDIUMFOREST_KAP3_32");
+		Wld_InsertNpc(FireWaran,"FP_ROAM_FISHERMAN_04");
+		Wld_InsertNpc(FireWaran,"FP_ROAM_FISHERMAN_04");
+		Wld_InsertNpc(Shadowbeast,"NW_FOREST_PATH_04_18");
+		Wld_InsertNpc(OrcElite_Roam,"NW_CITY_TO_FOREST_04_08");
+		Wld_InsertNpc(OrcElite_Roam,"NW_CITY_TO_FOREST_04_08");
+		Wld_InsertNpc(MinecrawlerWarrior,"NW_CITYFOREST_CAVE_04");
+		Wld_InsertNpc(MinecrawlerMonarch,"NW_CITYFOREST_CAVE_06");
+		Wld_InsertNpc(Shadowbeast,"NW_CITYFOREST_CAVE_A06");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_FARM1_CITYWALL_RIGHT_04");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_FARM1_CITYWALL_RIGHT_04");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_FARM1_CITYWALL_RIGHT_04");
+		Wld_InsertNpc(Skeleton,"NW_FOREST_PATH_62_M");
+		Wld_InsertNpc(Skeleton,"NW_FOREST_PATH_62_M");
+		Wld_InsertItem(ItWr_StonePlateCommon_Addon,"NW_FOREST_PATH_62_M");
+		Wld_InsertNpc(Bloodhound,"NW_FOREST_PATH_72_MONSTER");
+		Wld_InsertNpc(OrcElite_Roam,"NW_FOREST_PATH_31_NAVIGATION19");
+		Wld_InsertNpc(OrcElite_Roam,"NW_FOREST_PATH_18_MONSTER");
+		Wld_InsertNpc(OrcElite_Roam,"NW_FOREST_PATH_31_NAVIGATION_M");
+		
+		// Pyramid Area
+		Wld_InsertItem(ItPl_Perm_Herb,"FP_STONECIRCLE_HERB_01");
+		Wld_InsertNpc(DragonSnapper,"FP_STONECIRCLE_04");
+		Wld_InsertNpc(DragonSnapper,"FP_STONECIRCLE_04");
+		Wld_InsertNpc(DragonSnapper,"FP_STONECIRCLE_04");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_STONECIRCLE_SIDE_02");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_STONECIRCLE_SIDE_02");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_STONECIRCLE_SIDE_02");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_FOREST_PATH_83");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_FOREST_PATH_83");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_FOREST_PATH_83");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_FOREST_PATH_83");
+		Wld_InsertNpc(StoneGolem,"NW_TROLLAREA_GOLEM_10");
+		Wld_InsertNpc(Bloodhound,"NW_TROLLAREA_GOLEM_12");
+		Wld_InsertNpc(OrcBiter,"NW_TROLLAREA_GOLEM_01_M");
+		Wld_InsertNpc(OrcBiter,"NW_TROLLAREA_GOLEM_01_M");
+		Wld_InsertNpc(OrcBiter,"NW_TROLLAREA_GOLEM_01_M");
+		Wld_InsertNpc(FireWaran,"NW_TROLLAREA_GOLEM_04");
+		Wld_InsertNpc(Troll,"FP_PYRAMID_TROLL_02");
+		//Wld_InsertNpc(Troll_Black,"NW_TROLLAREA_PATH_84");
+		Wld_InsertNpc(DragonSnapper,"FP_ROAM_NW_TROLLAREA_RUINS_05");
+		Wld_InsertNpc(DragonSnapper,"FP_ROAM_NW_TROLLAREA_RUINS_09");
+		Wld_InsertNpc(DragonSnapper,"FP_ROAM_NW_TROLLAREA_RUINS_09");
+		Wld_InsertNpc(FireWaran,"NW_TROLLAREA_RUINS_21");
+		Wld_InsertNpc(FireWaran,"FP_ROAM_NW_TROLLAREA_RUINS_21");
+		Wld_InsertNpc(FireWaran,"NW_TROLLAREA_RUINS_21");
+		Wld_InsertNpc(FireWaran,"FP_ROAM_NW_TROLLAREA_RUINS_21");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_TROLLAREA_PLANE_07");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_TROLLAREA_PLANE_07");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_TROLLAREA_PLANE_07");
+		Wld_InsertNpc(Razor,"NW_TROLLAREA_BRIGDE_01");
+		Wld_InsertNpc(Razor,"NW_TROLLAREA_BRIGDE_01");
+		Wld_InsertNpc(Razor,"NW_TROLLAREA_BRIGDE_01");
+		Wld_InsertNpc(Razor,"NW_TROLLAREA_BRIGDE_01");
+		Wld_InsertNpc(DragonSnapper,"NW_TROLLAREA_PATH_82_M");
+		Wld_InsertNpc(DragonSnapper,"NW_TROLLAREA_PATH_82_M");
+		Wld_InsertNpc(OrcBiter,"NW_TROLLAREA_PATH_22_MONSTER");
+		Wld_InsertNpc(OrcBiter,"NW_TROLLAREA_PATH_22_MONSTER");
+		Wld_InsertNpc(OrcBiter,"NW_TROLLAREA_PATH_22_MONSTER");
+		Wld_InsertNpc(Shadowbeast,"NW_TROLLAREA_RIVERSIDECAVE_07");
+		Wld_InsertNpc(MinecrawlerWarrior,"NW_TROLLAREA_TROLLLAKECAVE_03");
+		Wld_InsertNpc(MinecrawlerMonarch,"NW_TROLLAREA_TROLLLAKECAVE_05");
+		Wld_InsertNpc(DragonSnapper,"NW_TROLLAREA_BRIGDE_04");
+		Wld_InsertNpc(DragonSnapper,"NW_TROLLAREA_BRIGDE_04");
+	
+		if(Npc_GetDistToWP(Salandril,"ALTAR") < 10000)
+		{
+			B_StartOtherRoutine(Salandril,"Start");
+		};
+		B_StartOtherRoutine(Jorgen,"Kloster");
+		B_KillNpc(BDT_1050_Landstreicher);
+		Wld_InsertItem(ItAt_DragonEgg_MIS,"FP_ITEM_XARDAS_01");
+		Wld_InsertNpc(Draconian,"FP_ROAM_XARDASCAVE_DJG_01");
+		Wld_InsertNpc(Draconian,"FP_ROAM_XARDASCAVE_DJG_02");
+		Wld_InsertNpc(Draconian,"FP_ROAM_XARDASCAVE_DJG_03");
+		Wld_InsertNpc(Draconian,"FP_ROAM_XARDAS_CAVE_12");
+		Wld_InsertNpc(Draconian,"FP_ROAM_XARDAS_CAVE_10");
+		Wld_InsertNpc(Draconian,"FP_ROAM_XARDAS_CAVE_09");
+		Wld_InsertNpc(Draconian,"FP_ROAM_XARDAS_TOWER_VALLEY_03");
+		Wld_InsertNpc(Draconian,"FP_ROAM_XARDAS_TOWER_VALLEY_01");
+		Wld_InsertNpc(OrcElite_AntiPaladin,"NW_TROLLAREA_PLANE_05");
+		Wld_InsertNpc(OrcWarrior_Roam,"NW_TROLLAREA_PATH_44");
+		Wld_InsertNpc(OrcWarrior_Roam,"NW_TROLLAREA_PLANE_06");
+		Wld_InsertNpc(DragonSnapper,"NW_FARM3_BIGWOOD_04");
+		Wld_InsertNpc(DragonSnapper,"NW_FARM3_BIGWOOD_04");
+		Wld_InsertNpc(Maya_Troll,"NW_TROLLAREA_RUINS_41");
+		if(hero.guild == GIL_PAL)
+		{
+			Wld_InsertNpc(OrcElite_AntiPaladin1,"NW_FARM3_PATH_BRIDGE");
+			Wld_InsertNpc(OrcElite_AntiPaladin2,"NW_FARM1_PATH_CITY_13");
+			Wld_InsertNpc(OrcElite_AntiPaladin3,"NW_CITY_TO_FOREST_11");
+			Wld_InsertNpc(OrcElite_AntiPaladin,"NW_FARM3_PATH_12_MONSTER_03");
+			Wld_InsertNpc(OrcWarrior_Roam,"NW_FARM3_PATH_12_MONSTER_03");
+			Wld_InsertNpc(OrcElite_AntiPaladin,"NW_FARM3_PATH_10");
+			Wld_InsertNpc(OrcElite_AntiPaladin,"NW_BIGFARM_LAKE_06");
+			Wld_InsertNpc(OrcWarrior_Roam,"FP_ROAM_NW_BIGFARM_LAKE_MONSTER_01_04");
+			Wld_InsertNpc(OrcWarrior_Roam,"FP_ROAM_NW_BIGFARM_LAKE_MONSTER_01_02");
+			Wld_InsertNpc(OrcElite_AntiPaladin,"NW_TAVERNE_TROLLAREA_08");
+			Wld_InsertNpc(OrcElite_AntiPaladin,"FP_ROAM_TAVERNE_TROLLAREA_03_02");
+			Wld_InsertNpc(OrcWarrior_Roam,"FP_ROAM_TAVERNE_TROLLAREA_03_01");
+			Wld_InsertNpc(OrcWarrior_Roam,"FP_ROAM_TAVERNE_TROLLAREA_03_03");
+			Wld_InsertNpc(OrcWarrior_Roam,"FP_ROAM_TAVERNE_TROLLAREA_03_04");
+			Wld_InsertNpc(OrcWarrior_Roam,"FP_ROAM_TAVERNE_TROLLAREA_03_05");
+			Wld_InsertNpc(OrcElite_AntiPaladin,"NW_TROLLAREA_PATH_62");
+			Wld_InsertNpc(OrcWarrior_Roam,"NW_TROLLAREA_PATH_62");
+			Wld_InsertNpc(OrcWarrior_Roam,"NW_TROLLAREA_RIVERSIDE_07");
+			Wld_InsertNpc(OrcElite_AntiPaladin,"NW_TROLLAREA_RITUAL_01");
+			Wld_InsertNpc(OrcWarrior_Roam,"NW_TROLLAREA_RITUAL_02");
+			Wld_InsertNpc(OrcWarrior_Roam,"NW_TROLLAREA_RITUAL_03");
+			Wld_InsertNpc(OrcWarrior_Roam,"NW_TROLLAREA_RITUAL_04");
+			Wld_InsertNpc(OrcElite_AntiPaladin,"NW_FOREST_PATH_32");
+			Wld_InsertNpc(OrcWarrior_Roam,"NW_FARM2_TO_TAVERN_10");
+			Wld_InsertNpc(OrcWarrior_Roam,"NW_FARM3_PATH_12_MONSTER_01");
+			Wld_InsertNpc(OrcWarrior_Roam,"NW_FARM3_PATH_12_MONSTER_02");
+			Wld_InsertNpc(OrcElite_AntiPaladin,"FP_ROAM_XARDAS_GOBBO_01");
+			Wld_InsertNpc(OrcWarrior_Rest,"FP_ROAM_XARDAS_GOBBO_02");
+			Wld_InsertNpc(OrcWarrior_Rest,"FP_ROAM_XARDAS_GOBBO_03");
+			Wld_InsertNpc(OrcWarrior_Rest,"FP_ROAM_FARM1_GOBBO_02");
+			Wld_InsertNpc(OrcWarrior_Rest,"FP_ROAM_FARM1_GOBBO_03");
+			Wld_InsertNpc(OrcWarrior_Rest,"FP_ROAM_FARM1_GOBBO_04");
+			Wld_InsertNpc(OrcWarrior_Rest,"FP_ROAM_FARM1_Wolf_01");
+			Wld_InsertNpc(OrcWarrior_Rest,"FP_ROAM_FARM1_Wolf_02");
+			Wld_InsertNpc(OrcWarrior_Rest,"FP_ROAM_FARM1_Wolf_03");
+			Wld_InsertNpc(OrcWarrior_Roam,"FP_ROAM_CITY_TO_FOREST_39");
+			Wld_InsertNpc(OrcWarrior_Roam,"FP_ROAM_CITY_TO_FOREST_42");
+			Wld_InsertNpc(OrcWarrior_Roam,"FP_ROAM_CITY_TO_FOREST_41");
+			Wld_InsertNpc(OrcElite_AntiPaladin,"XARDAS");
+			Wld_InsertNpc(OrcElite_AntiPaladin,"NW_BIGFARM_FARM4_PATH_04");
+			Wld_InsertNpc(OrcWarrior_Roam,"FP_PICK_NW_FARM4_FIELD_01");
+			Wld_InsertNpc(OrcWarrior_Roam,"FP_PICK_NW_FARM4_FIELD_04");
+			Wld_InsertNpc(OrcWarrior_Roam,"FP_PICK_NW_FARM4_FIELD_05");
+			Wld_InsertNpc(OrcWarrior_Roam,"FP_PICK_NW_FARM4_FIELD_02");
+			Wld_InsertNpc(OrcWarrior_Roam,"FP_PICK_NW_FARM4_FIELD_06");
+			Wld_InsertNpc(OrcWarrior_Roam,"NW_FARM4_BRONKO");
+			Wld_InsertNpc(OrcElite_AntiPaladin,"NW_PATH_TO_MONASTERY_06");
+			Wld_InsertNpc(OrcWarrior_Roam,"NW_PATH_TO_MONASTER_AREA_03");
+			Wld_InsertNpc(OrcWarrior_Roam,"NW_PATH_TO_MONASTERY_05");
+			Wld_InsertNpc(OrcWarrior_Roam,"NW_PATH_TO_MONASTER_AREA_09");
+			Wld_InsertNpc(OrcWarrior_Roam,"NW_PATH_TO_MONASTER_AREA_05");
+			Wld_InsertNpc(OrcElite_AntiPaladin,"BIGCROSS");
+			Wld_InsertNpc(OrcElite_AntiPaladin,"NW_FARM2_TO_TAVERN_05");
+			Wld_InsertNpc(OrcWarrior_Roam,"FP_CAMPFIRE_CITY_TO_FOREST_43");
+			Wld_InsertNpc(OrcWarrior_Roam,"FP_CAMPFIRE_CITY_TO_FOREST_46");
+			Wld_InsertNpc(OrcWarrior_Roam,"FP_CAMPFIRE_CITY_TO_FOREST_44");
+			Wld_InsertNpc(OrkElite_AntiPaladinOrkOberst,"NW_FARM1_BANDITS_CAVE_08");
+			Wld_InsertNpc(OrcElite_AntiPaladin,"FP_STAND_DEMENTOR_KDF_29");
+			Wld_InsertNpc(OrcElite_AntiPaladin,"FP_STAND_DEMENTOR_KDF_30");
+			Wld_InsertNpc(OrcElite_AntiPaladin,"NW_FARM1_BANDITS_CAVE_03");
+			Wld_InsertNpc(OrcElite_AntiPaladin,"NW_FARM1_BANDITS_CAVE_07");
+		};
+		if((hero.guild == GIL_DJG) || (hero.guild == GIL_PAL))
+		{
+			Wld_InsertNpc(OrcWarrior_Lobart1,"NW_FARM1_PATH_CITY_SHEEP_04");
+			Wld_InsertNpc(OrcWarrior_Lobart2,"NW_FARM1_PATH_CITY_SHEEP_04");
+			Wld_InsertNpc(OrcWarrior_Lobart3,"NW_FARM1_PATH_CITY_SHEEP_04");
+			Wld_InsertNpc(OrcWarrior_Lobart4,"NW_FARM1_PATH_CITY_SHEEP_01");
+			Wld_InsertNpc(OrcWarrior_Lobart5,"NW_FARM1_PATH_CITY_SHEEP_01");
+			Wld_InsertNpc(OrcWarrior_Lobart6,"NW_FARM1_PATH_CITY_SHEEP_01");
+			B_StartOtherRoutine(Vino,"BugsThere");
+			B_StartOtherRoutine(LobartsBauer1,"BugsThere");
+			B_StartOtherRoutine(LobartsBauer2,"BugsThere");
+		};
+		if((hero.guild == GIL_KDF) || (hero.guild == GIL_DJG))
+		{
+			ShrineIsObsessed_NW_TROLLAREA_PATH_37 = FALSE;
+			ShrineIsObsessed_NW_FARM1_CONNECT_XARDAS = FALSE;
+			ShrineIsObsessed_NW_TROLLAREA_PATH_66 = FALSE;
+			ShrineIsObsessed_NW_TROLLAREA_PATH_04 = FALSE;
+			ShrineIsObsessed_SAGITTA = FALSE;
+			ShrineIsObsessed_NW_BIGMILL_MALAKSVERSTECK_02 = FALSE;
+			ShrineIsObsessed_NW_FARM3_BIGWOOD_02 = FALSE;
+		};
+		if(hero.guild == GIL_DJG)
+		{
+			Wld_InsertItem(ItAt_DragonEgg_MIS,"FP_NW_ITEM_RIVERSIDE_EGG");
+			Wld_InsertNpc(Draconian,"FP_ROAM_TROLLAREA_06");
+			Wld_InsertNpc(Draconian,"NW_TROLLAREA_RIVERSIDE_05");
+			Wld_InsertNpc(Draconian,"NW_TROLLAREA_RIVERSIDE_04");
+			Wld_InsertNpc(Draconian,"FP_ROAM_TROLLAREA_07");
+			Wld_InsertItem(ItAt_DragonEgg_MIS,"FP_NW_ITEM_MAGECAVE_EGG");
+			Wld_InsertNpc(Draconian,"FP_ROAM_MAGECAVE_16");
+			Wld_InsertNpc(Draconian,"FP_ROAM_MAGECAVE_19");
+			Wld_InsertNpc(Draconian,"FP_ROAM_MAGECAVE_19");
+			Wld_InsertNpc(Draconian,"FP_ROAM_MAGECAVE_19");
+			Wld_InsertNpc(Draconian,"FP_ROAM_MAGECAVE_01");
+			Wld_InsertNpc(Draconian,"FP_ROAM_MAGECAVE_02");
+			Wld_InsertNpc(Draconian,"FP_ROAM_MAGECAVE_11");
+			Wld_InsertNpc(Draconian,"FP_ROAM_MAGECAVE_06");
+			Wld_InsertNpc(Draconian,"FP_ROAM_MAGECAVE_07");
+			Wld_InsertNpc(Draconian,"FP_ROAM_MAGECAVE_08");
+			Wld_InsertNpc(Draconian,"NW_TROLLAREA_PATH_01_01");
+			Wld_InsertNpc(Draconian,"NW_TROLLAREA_PATH_01");
+			Wld_InsertNpc(Draconian,"NW_TROLLAREA_PATH_01_02");
+			Wld_InsertNpc(Draconian,"FP_ROAM_MAGECAVE_08");
+			Wld_InsertItem(ItAt_DragonEgg_MIS,"FP_NW_ITEM_RITUALFOREST_CAVE_EGG");
+			Wld_InsertNpc(Draconian,"NW_RITUALFOREST_CAVE_06");
+			Wld_InsertNpc(Draconian,"FP_ROAM_RITUALFOREST_CAVE_01");
+			Wld_InsertNpc(Draconian,"FP_ROAM_RITUALFOREST_CAVE_02");
+			Wld_InsertItem(ItAt_DragonEgg_MIS,"FP_ROAM_NW_CITY_SMFOREST_09_04");
+			Wld_InsertNpc(Draconian,"FP_ROAM_NW_CITY_SMFOREST_09_03");
+			Wld_InsertNpc(Draconian,"FP_ROAM_NW_CITY_SMFOREST_09_02");
+			Wld_InsertNpc(Draconian,"FP_ROAM_NW_CITY_SMFOREST_09_01");
+			Wld_InsertItem(ItAt_DragonEgg_MIS,"FP_ROAM_NW_CITY_SMFOREST_05_03");
+			Wld_InsertNpc(Draconian,"FP_ROAM_NW_CITY_SMFOREST_05_04");
+			Wld_InsertNpc(Draconian,"FP_ROAM_NW_CITY_SMFOREST_05_02");
+			Wld_InsertNpc(Draconian,"FP_ROAM_NW_CITY_SMFOREST_05_01");
+			Wld_InsertItem(ItAt_DragonEgg_MIS,"FP_ROAM_CITYFOREST_KAP3_07");
+			Wld_InsertNpc(Draconian,"FP_ROAM_CITYFOREST_KAP3_06");
+			Wld_InsertNpc(Draconian,"FP_ROAM_CITYFOREST_KAP3_08");
+			Wld_InsertNpc(Draconian,"FP_ROAM_CITYFOREST_KAP3_05");
+			Wld_InsertItem(ItAt_DragonEgg_MIS,"FP_ROAM_CITYFOREST_KAP3_07");
+			Wld_InsertNpc(Draconian,"FP_ROAM_NW_BIGFARMFORESTCAVE_01");
+			Wld_InsertNpc(Draconian,"FP_ROAM_NW_BIGFARMFORESTCAVE_02");
+			Wld_InsertNpc(Draconian,"FP_ROAM_NW_BIGFARMFORESTCAVE_03");
+			Wld_InsertItem(ItAt_DragonEgg_MIS,"FP_NW_ITEM_CASTLEMINE_EGG");
+			Wld_InsertNpc(Draconian,"FP_ROAM_CASTLEMINE_01");
+			Wld_InsertNpc(Draconian,"FP_ROAM_CASTLEMINE_02");
+			Wld_InsertNpc(Draconian,"FP_ROAM_CASTLEMINE_03");
+			Wld_InsertItem(ItAt_DragonEgg_MIS,"FP_NW_ITEM_CASTLEMINE_EGG2");
+			Wld_InsertNpc(Draconian,"FP_ROAM_CASTLEMINE_04");
+			Wld_InsertNpc(Draconian,"FP_ROAM_CASTLEMINE_05");
+			Wld_InsertItem(ItAt_DragonEgg_MIS,"FP_NW_ITEM_BIGFARMLAKECAVE_EGG");
+			Wld_InsertNpc(Draconian,"FP_ROAM_BIGFARM_LAKE_CAVE_01");
+			Wld_InsertNpc(Draconian,"FP_ROAM_BIGFARM_LAKE_CAVE_02");
+			Wld_InsertNpc(Draconian,"FP_ROAM_BIGFARM_LAKE_CAVE_03");
+			Wld_InsertNpc(Draconian,"FP_ROAM_BIGFARM_LAKE_CAVE_04");
+			Wld_InsertItem(ItAt_DragonEgg_MIS,"FP_NW_ITEM_CASTLEMINE2_EGG");
+			Wld_InsertNpc(Draconian,"FP_ROAM_CASTLEMINE2_16");
+			Wld_InsertNpc(Draconian,"FP_ROAM_CASTLEMINE2_15");
+			Wld_InsertNpc(Draconian,"FP_ROAM_CASTLEMINE2_14");
+			Wld_InsertNpc(Draconian,"FP_ROAM_CASTLEMINE2_13");
+			Wld_InsertItem(ItAt_DragonEgg_MIS,"FP_ITEM_FARM1_02");
+			Wld_InsertNpc(Draconian,"NW_FARM1_BANDITS_CAVE_08");
+			Wld_InsertNpc(Draconian,"FP_STAND_DEMENTOR_KDF_29");
+			Wld_InsertNpc(Draconian,"FP_STAND_DEMENTOR_KDF_30");
+			Wld_InsertNpc(Draconian,"NW_FARM1_BANDITS_CAVE_03");
+			Wld_InsertNpc(Draconian,"NW_FARM1_BANDITS_CAVE_02");
+			Wld_InsertNpc(Draconian,"NW_FARM1_BANDITS_CAVE_04");
+			Wld_InsertNpc(Draconian,"NW_FARM1_BANDITS_CAVE_07");
+			Wld_InsertNpc(Draconian,"FP_ROAM_CASTLEMINE2_03");
+			Wld_InsertNpc(Draconian,"FP_ROAM_CASTLEMINE2_04");
+			Wld_InsertNpc(Draconian,"FP_ROAM_CASTLEMINE2_05");
+			Wld_InsertNpc(Draconian,"FP_ROAM_XARDAS_VALLEY_01");
+			Wld_InsertNpc(Draconian,"FP_ROAM_XARDAS_VALLEY_03");
+			Wld_InsertNpc(Draconian,"FP_ROAM_XARDAS_VALLEY_04");
+			Wld_InsertNpc(Draconian,"FP_ROAM_XARDAS_MONSTER_02_01");
+			Wld_InsertNpc(Draconian,"FP_ROAM_XARDAS_MONSTER_02_02");
+			Wld_InsertNpc(Draconian,"FP_ROAM_XARDAS_MONSTER_02_03");
+			Wld_InsertNpc(Draconian,"FP_ROAM_XARDAS_MONSTER_02_04");
+			Wld_InsertNpc(Draconian,"NW_XARDAS_GOBBO_01");
+			Wld_InsertNpc(Draconian,"NW_XARDAS_GOBBO_01");
+			Wld_InsertNpc(Draconian,"NW_XARDAS_GOBBO_02");
+			Wld_InsertNpc(Draconian,"FP_ROAM_XARDAS_TOWER_4_01");
+			Wld_InsertNpc(Draconian,"FP_ROAM_XARDAS_TOWER_4_02");
+			Wld_InsertNpc(Draconian,"FP_ROAM_XARDAS_TOWER_4_03");
+			Wld_InsertNpc(Draconian,"FP_ROAM_XARDAS_TOWER_4_04");
+			Wld_InsertNpc(Draconian,"FP_ROAM_XARDAS_CAVE_01");
+			Wld_InsertNpc(Draconian,"FP_ROAM_XARDAS_CAVE_02");
+			Wld_InsertNpc(Draconian,"FP_ROAM_XARDAS_CAVE_03");
+			Wld_InsertNpc(Draconian,"FP_ROAM_XARDAS_CAVE_04");
+			Wld_InsertNpc(Draconian,"FP_ROAM_TROLLAREA_11");
+			Wld_InsertNpc(Draconian,"FP_ROAM_TROLLAREA_09");
+			Wld_InsertNpc(Draconian,"FP_ROAM_TROLLAREA_10");
+			Wld_InsertNpc(Draconian,"FP_ROAM_TROLLAREA_08");
+		};
+		if(hero.guild == GIL_KDF)
+		{
+			Wld_InsertNpc(DMT_DementorAmbientSpeaker,"NW_TROLLAREA_PATH_80");
+			Wld_InsertNpc(DMT_DementorAmbientSpeaker,"FP_ROAM_TROLLAREA_19");
+			Wld_InsertNpc(DMT_DementorAmbientSpeaker,"NW_FARM2_TO_TAVERN_08");
+			Wld_InsertNpc(DMT_DementorAmbientSpeaker,"FP_ROAM_MEDIUMFOREST_KAP2_13");
+			Wld_InsertNpc(DMT_DementorAmbientSpeaker,"FP_ROAM_XARDAS_TOWER_3_02");
+			Wld_InsertNpc(DMT_DementorAmbientSpeaker,"FP_ROAM_XARDAS_TOWER_3_02");
+			Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_KDF_04");
+			Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_KDF_05");
+			Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_KDF_06");
+			Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_KDF_07");
+			Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_KDF_08");
+			Wld_InsertNpc(DMT_DementorAmbientSpeaker,"FP_STAND_DEMENTOR_KDF_09");
+			Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_KDF_10");
+			Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_KDF_11");
+			Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_KDF_13");
+			Wld_InsertNpc(DMT_DementorAmbientSpeaker,"FP_STAND_DEMENTOR_KDF_14");
+			Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_KDF_22");
+			Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_KDF_23");
+			Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_KDF_24");
+			Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_KDF_25");
+			Wld_InsertNpc(DMT_DementorAmbientWalker10,"CITY1");
+			Wld_InsertNpc(DMT_DementorAmbientWalker8,"CITY1");
+			Wld_InsertNpc(DMT_DementorAmbientWalker7,"CITY1");
+			CreateInvItems(Randolph,ITWR_DementorObsessionBook_MIS,1);
+			B_StartOtherRoutine(Randolph,"Obsessed");
+		};
+		EnterNW_Kapitel4 = TRUE;
+	};
+	if(Talbin_FollowsThroughPass == LOG_Running)
+	{
+		Wld_InsertNpc(VLK_4132_Talbin_NW,"LEVELCHANGE");
+		Talbin_FollowsThroughPass = LOG_SUCCESS;
+	};
+};
+
+
+var int EnterNW_Kapitel5;
+var int Pal_Schiffswache_Exchange_onetime;
+var int Rosi_FleeFromSekob_Kap5;
+
+func void B_ENTER_NEWWORLD_Kapitel_5()
+{
+	if(EnterNW_Kapitel5 == FALSE)
+	{
+		//City
+		Wld_InsertNpc(FireWaran,"FP_ROAM_FIREBEACH_01");
+		Wld_InsertNpc(Keiler,"FP_SECRETBEACH_HILL_01");
+		Wld_InsertNpc(Keiler,"FP_SECRETBEACH_HILL_01");
+		Wld_InsertNpc(Keiler,"FP_SECRETBEACH_HILL_01");
+		
+		// Lobart Farm
+		//Wld_InsertNpc(Shadowbeast,"NW_FARM1_CITYWALL_FOREST_11");
+		Wld_InsertNpc(Shadowbeast,"NW_FARM1_CITYWALL_FOREST_06");
+		Wld_InsertNpc(Sheep,"NW_FARM1_PATH_CITY_SHEEP_11");
+		Wld_InsertNpc(Sheep,"NW_FARM1_PATH_CITY_SHEEP_09");
+		
+		// Xardas
+		
+		// Monastery
+		
+		// Onar, Pastures, Saggita Wood and Dragomir Path
+		Wld_InsertNpc(DragonSnapper,"NW_BENGAR_HILL_11");
+		Wld_InsertNpc(DragonSnapper,"NW_BENGAR_HILL_11");
+		//Wld_InsertNpc(Shadowbeast,"NW_ONAR_CAVE_04");
+		Wld_InsertNpc(FireWaran,"NW_TAVERN_MOUNTAIN_19_M1");
+		Wld_InsertNpc(FireWaran,"NW_TAVERN_MOUNTAIN_20");
+		Wld_InsertNpc(FireWaran,"NW_TAVERN_MOUNTAIN_20");
+		Wld_InsertNpc(StoneGolem,"FP_TAVERN_MOUNTAIN_GOLEM");
+		Wld_InsertNpc(Razor,"FP_ROAM_MONSTERMILL_13");
+		Wld_InsertNpc(Razor,"FP_ROAM_MONSTERMILL_04");
+		Wld_InsertNpc(Razor,"FP_ROAM_MONSTERMILL_03");
+		Wld_InsertNpc(Zombie02,"NW_FARM2_TAVERNCAVE1_09");
+		Wld_InsertNpc(Zombie02,"NW_FARM2_TAVERNCAVE1_09");
+		Wld_InsertNpc(Skeleton,"NW_FARM2_TAVERNCAVE1_08");
+		Wld_InsertNpc(Skeleton,"NW_FARM2_TAVERNCAVE1_02");
+		Wld_InsertNpc(SkeletonMage,"NW_FARM2_TAVERNCAVE1_02");
+		Wld_InsertNpc(Warg,"NW_BIGFARM_LAKE_MONSTER_03_01");
+		Wld_InsertNpc(Warg,"NW_BIGFARM_LAKE_MONSTER_03_01");
+		Wld_InsertNpc(Warg,"NW_BIGFARM_LAKE_MONSTER_03_01");
+		Wld_InsertNpc(Warg,"NW_BIGFARM_LAKE_MONSTER_03_01");
+		Wld_InsertNpc(Shadowbeast,"NW_FARM4_WOOD_MONSTER_01");
+		Wld_InsertNpc(Troll_Black,"NW_CASTLEMINE_TROLL_08");
+		//Wld_InsertNpc(Troll,"NW_CASTLEMINE_TROLL_08");
+		Wld_InsertNpc(Skeleton,"NW_FARM4_WOOD_MONSTER_MORE_02");
+		Wld_InsertNpc(Skeleton,"NW_FARM4_WOOD_MONSTER_MORE_02");
+		Wld_InsertNpc(Zombie01,"NW_FARM4_WOOD_MONSTER_MORE_02");
+		Wld_InsertNpc(Zombie02,"NW_FARM4_WOOD_MONSTER_MORE_02");
+		Wld_InsertNpc(Bloodhound,"NW_CRYPT_MONSTER08");
+		Wld_InsertNpc(Shadowbeast,"NW_BIGFARM_FOREST_03_NAVIGATION");
+		Wld_InsertNpc(DragonSnapper,"NW_FARM3_PATH_11_SMALLRIVER_04");
+		Wld_InsertNpc(DragonSnapper,"NW_FARM3_PATH_11_SMALLRIVER_04");
+		Wld_InsertNpc(DragonSnapper,"NW_FARM3_PATH_11_SMALLRIVER_04");
+		Wld_InsertNpc(Warg,"NW_FARM3_PATH_12_MONSTER_01");
+		Wld_InsertNpc(Warg,"NW_FARM3_PATH_12_MONSTER_01");
+		Wld_InsertNpc(Warg,"NW_FARM3_PATH_12_MONSTER_01");
+		Wld_InsertNpc(Razor,"NW_FARM3_PATH_11_SMALLRIVER_08");
+		Wld_InsertNpc(Razor,"NW_FARM3_PATH_11_SMALLRIVER_08");
+		Wld_InsertNpc(Razor,"NW_FARM3_PATH_11_SMALLRIVER_08");
+		Wld_InsertNpc(DragonSnapper,"NW_FARM3_PATH_11_SMALLRIVER_11");
+		Wld_InsertNpc(DragonSnapper,"NW_FARM3_PATH_11_SMALLRIVER_11");
+		Wld_InsertNpc(Lurker,"NW_FARM3_MOUNTAINLAKE_05");
+		Wld_InsertNpc(Lurker,"NW_FARM3_MOUNTAINLAKE_05");
+		
+		// Pass
+		Wld_InsertNpc(DragonSnapper,"NW_PASS_BACKAREA_05");
+		Wld_InsertNpc(DragonSnapper,"NW_PASS_BACKAREA_04");
+		Wld_InsertNpc(DragonSnapper,"NW_PASS_BACKAREA_04");
+		Wld_InsertNpc(DragonSnapper,"NW_PASS_06");
+		Wld_InsertNpc(DragonSnapper,"NW_PASS_06");
+		Wld_InsertNpc(DragonSnapper,"NW_PASS_06");
+		Wld_InsertNpc(FireWaran,"NW_PASS_11");
+		Wld_InsertNpc(FireWaran,"NW_PASS_11");
+		Wld_InsertNpc(Warg,"NW_PASS_SECRET_15");
+		Wld_InsertNpc(Warg,"NW_PASS_SECRET_15");
+		Wld_InsertNpc(Warg,"NW_PASS_SECRET_16");
+		Wld_InsertNpc(Warg,"NW_PASS_SECRET_16");
+		Wld_InsertNpc(Warg,"NW_PASS_SECRET_17");
+		Wld_InsertNpc(OrcShaman_Sit,"NW_PASS_ORKS_02");
+		Wld_InsertNpc(OrcShaman_Sit,"NW_PASS_ORKS_02");
+		Wld_InsertNpc(OrcElite_Roam,"NW_PASS_13");
+		Wld_InsertNpc(OrcWarrior_Roam,"NW_PASS_14");
+		Wld_InsertNpc(OrcShaman_Sit,"NW_PASS_ORKS_03");
+		Wld_InsertNpc(OrcElite_Roam,"NW_PASS_ORKS_07");
+		Wld_InsertNpc(OrcShaman_Sit,"NW_PASS_ORKS_06");
+		Wld_InsertNpc(OrcWarrior_Roam,"NW_PASS_ORKS_01");
+		Wld_InsertNpc(OrcShaman_Sit,"NW_PASS_ORKS_08");
+		Wld_InsertNpc(OrcElite_Roam,"NW_PASS_ORKS_10");
+		Wld_InsertNpc(OrcElite_Roam,"NW_PASS_ORKS_12");
+		Wld_InsertNpc(OrcElite_Roam,"NW_PASS_ORKS_10");
+		Wld_InsertNpc(OrcElite_Roam,"NW_PASS_ORKS_12");
+		
+		// Akil and Woods
+		Wld_InsertNpc(OrcBiter,"FP_LIGHTHOUSE_HILL_01");
+		Wld_InsertNpc(OrcBiter,"FP_LIGHTHOUSE_HILL_01");
+		Wld_InsertNpc(OrcBiter,"FP_LIGHTHOUSE_HILL_01");
+		Wld_InsertNpc(OrcBiter,"FP_LIGHTHOUSE_HILL_01");
+		Wld_InsertNpc(OrcBiter,"FP_LIGHTHOUSE_HILL_01");
+		Wld_InsertNpc(OrcBiter,"FP_LIGHTHOUSE_HILL_01");
+		Wld_InsertNpc(Bloodhound,"NW_FOREST_CAVE1_IN_04");
+		Wld_InsertNpc(Bloodhound,"NW_FOREST_CAVE1_IN_06");
+		Wld_InsertNpc(OrcBiter_Strong,"FP_ROAM_MEDIUMFOREST_KAP2_12");
+		Wld_InsertNpc(OrcBiter_Strong,"FP_ROAM_MEDIUMFOREST_KAP2_10");
+		Wld_InsertNpc(OrcBiter_Strong,"FP_ROAM_MEDIUMFOREST_KAP2_10");
+		Wld_InsertNpc(Skeleton,"FP_ROAM_MEDIUMFOREST_KAP3_04");
+		Wld_InsertNpc(Skeleton,"FP_ROAM_MEDIUMFOREST_KAP3_05");
+		Wld_InsertNpc(Skeleton,"FP_ROAM_MEDIUMFOREST_KAP3_01");
+		Wld_InsertNpc(Zombie01,"FP_ROAM_MEDIUMFOREST_KAP3_02");
+		Wld_InsertNpc(Zombie02,"FP_ROAM_MEDIUMFOREST_KAP3_02");
+		Wld_InsertNpc(Zombie03,"FP_ROAM_MEDIUMFOREST_KAP3_02");
+		Wld_InsertNpc(Warg,"FP_ROAM_MEDIUMFOREST_KAP3_08");
+		Wld_InsertNpc(Warg,"FP_ROAM_MEDIUMFOREST_KAP3_08");
+		Wld_InsertNpc(Warg,"FP_ROAM_MEDIUMFOREST_KAP3_29");
+		Wld_InsertNpc(Warg,"FP_ROAM_MEDIUMFOREST_KAP3_29");
+		Wld_InsertNpc(OrcElite_Roam,"FP_ROAM_MEDIUMFOREST_KAP3_29");
+		Wld_InsertNpc(OrcElite_Roam,"FP_ROAM_MEDIUMFOREST_KAP3_32");
+		Wld_InsertNpc(FireWaran,"FP_ROAM_FISHERMAN_04");
+		Wld_InsertNpc(FireWaran,"FP_ROAM_FISHERMAN_04");
+		Wld_InsertNpc(FireWaran,"FP_ROAM_FISHERMAN_04");
+		Wld_InsertNpc(Shadowbeast,"FP_ROAM_CITYFOREST_KAP3_04");
+		Wld_InsertNpc(OrcElite_Roam,"NW_CITY_SMFOREST_09");
+		Wld_InsertNpc(Warg,"NW_CITY_SMFOREST_03");
+		Wld_InsertNpc(Warg,"NW_CITY_SMFOREST_03");
+		Wld_InsertNpc(Warg,"NW_CITY_SMFOREST_03");
+		Wld_InsertNpc(Warg,"NW_CITY_SMFOREST_03");
+		Wld_InsertNpc(OrcElite_Roam,"NW_CITY_TO_FOREST_04_08");
+		Wld_InsertNpc(OrcShaman_Sit,"NW_CITY_TO_FOREST_04_08");
+		Wld_InsertNpc(OrcElite_Roam,"NW_CITY_TO_FOREST_04_08");
+		Wld_InsertNpc(MinecrawlerMonarch,"NW_CITYFOREST_CAVE_04");
+		Wld_InsertNpc(MinecrawlerMonarch,"NW_CITYFOREST_CAVE_04");
+		Wld_InsertNpc(MinecrawlerMonarch,"NW_CITYFOREST_CAVE_06");
+		Wld_InsertNpc(OrcBiter,"NW_FARM1_CITYWALL_RIGHT_04");
+		Wld_InsertNpc(OrcBiter,"NW_FARM1_CITYWALL_RIGHT_04");
+		Wld_InsertNpc(OrcBiter,"NW_FARM1_CITYWALL_RIGHT_04");
+		Wld_InsertNpc(OrcBiter,"NW_FARM1_CITYWALL_RIGHT_04");
+		Wld_InsertNpc(Razor,"NW_FOREST_PATH_80_1_MOVEMENT6");
+		Wld_InsertNpc(Razor,"NW_FOREST_PATH_80_1_MOVEMENT15");
+		Wld_InsertNpc(Razor,"NW_FOREST_PATH_80_1_MOVEMENT15");
+		Wld_InsertNpc(Razor,"NW_FOREST_PATH_80_1_MOVEMENT8_M5");
+		Wld_InsertNpc(Razor,"NW_FOREST_PATH_80_1_MOVEMENT8_M3");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_04_16_MONSTER");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_04_16_MONSTER2");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_04_16_MONSTER");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_04_16_MONSTER2");
+		Wld_InsertNpc(Bloodhound,"NW_FOREST_PATH_72_MONSTER");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_27_02");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_27_02");
+		Wld_InsertNpc(Warg,"NW_FOREST_PATH_27_02");
+		Wld_InsertNpc(OrcWarrior_Roam,"NW_FOREST_PATH_31_NAVIGATION_M");
+		Wld_InsertNpc(OrcElite_Roam,"NW_FOREST_PATH_31_NAVIGATION_M");
+		
+		// Pyramid Area
+		Wld_InsertNpc(Warg,"FP_STONECIRCLE_02");
+		Wld_InsertNpc(Warg,"FP_STONECIRCLE_02");
+		Wld_InsertNpc(Warg,"FP_STONECIRCLE_02");
+		Wld_InsertNpc(Warg,"FP_STONECIRCLE_02");
+		Wld_InsertNpc(DragonSnapper,"FP_STONECIRCLE_04");
+		Wld_InsertNpc(DragonSnapper,"FP_STONECIRCLE_04");
+		Wld_InsertNpc(DragonSnapper,"FP_STONECIRCLE_05");
+		Wld_InsertNpc(DragonSnapper,"FP_STONECIRCLE_05");
+		Wld_InsertNpc(DragonSnapper,"FP_STONECIRCLE_05");
+		Wld_InsertNpc(FireWaran,"FP_STONECIRCLE_HILL_03");
+		Wld_InsertNpc(FireWaran,"FP_STONECIRCLE_HILL_01");
+		Wld_InsertNpc(FireWaran,"FP_STONECIRCLE_HILL_03");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_STONECIRCLE_SIDE_02");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_STONECIRCLE_SIDE_02");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_STONECIRCLE_SIDE_02");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_STONECIRCLE_SIDE_02");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_STONECIRCLE_SIDE_02");
+		Wld_InsertNpc(StoneGolem,"NW_TROLLAREA_GOLEM_10");
+		Wld_InsertNpc(Bloodhound,"NW_TROLLAREA_GOLEM_12");
+		Wld_InsertNpc(DragonSnapper,"NW_TROLLAREA_GOLEM_01_M");
+		Wld_InsertNpc(DragonSnapper,"NW_TROLLAREA_GOLEM_01_M");
+		Wld_InsertNpc(DragonSnapper,"NW_TROLLAREA_GOLEM_01_M");
+		Wld_InsertNpc(DragonSnapper,"NW_TROLLAREA_GOLEM_01_M");
+		Wld_InsertNpc(StoneGolem,"FP_MAGICGOLEM");
+		Wld_InsertNpc(Troll_Black,"NW_TROLLAREA_PATH_84");
+		Wld_InsertNpc(MinecrawlerMonarch,"NW_MAGECAVE_23");
+		Wld_InsertNpc(Minecrawler,"NW_MAGECAVE_23");
+		Wld_InsertNpc(MinecrawlerMonarch,"NW_MAGECAVE_27");
+		Wld_InsertNpc(MinecrawlerMonarch,"NW_MAGECAVE_27");
+		Wld_InsertNpc(Bloodhound,"NW_TROLLAREA_PATH_56");
+		Wld_InsertNpc(FireWaran,"NW_TROLLAREA_RUINS_21");
+		Wld_InsertNpc(FireWaran,"FP_ROAM_NW_TROLLAREA_RUINS_21");
+		Wld_InsertNpc(MinecrawlerMonarch,"FP_ROAM_NW_TROLLAREA_RUINS_CAVE_16");
+		Wld_InsertNpc(MinecrawlerMonarch,"FP_ROAM_NW_TROLLAREA_RUINS_CAVE_23");
+		Wld_InsertNpc(Warg,"NW_TROLLAREA_NOVCHASE_01");
+		Wld_InsertNpc(Warg,"NW_TROLLAREA_NOVCHASE_01");
+		Wld_InsertNpc(Warg,"NW_TROLLAREA_NOVCHASE_01");
+		Wld_InsertNpc(Warg,"NW_TROLLAREA_NOVCHASE_01");
+		Wld_InsertNpc(FireWaran,"NW_TROLLAREA_RUINS_32");
+		Wld_InsertNpc(DragonSnapper,"NW_TROLLAREA_BRIGDE_01");
+		Wld_InsertNpc(DragonSnapper,"NW_TROLLAREA_BRIGDE_01");
+		Wld_InsertNpc(DragonSnapper,"NW_TROLLAREA_PATH_82_M");
+		Wld_InsertNpc(DragonSnapper,"NW_TROLLAREA_PATH_82_M");
+		Wld_InsertNpc(DragonSnapper,"NW_TROLLAREA_PATH_82_M");
+		Wld_InsertNpc(Skeleton_Lord,"NW_TROLLAREA_RITUAL_13");
+		Wld_InsertNpc(Skeleton_Lord,"NW_TROLLAREA_RITUAL_13");
+		Wld_InsertNpc(Skeleton,"NW_TROLLAREA_RITUAL_13");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_TROLLAREA_PATH_22_MONSTER");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_TROLLAREA_PATH_22_MONSTER");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_TROLLAREA_PATH_22_MONSTER");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_TROLLAREA_PATH_22_MONSTER");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_TROLLAREA_PATH_22_MONSTER");
+		Wld_InsertNpc(Skeleton_Lord,"NW_TROLLAREA_TROLLROCKCAVE_05");
+		Wld_InsertNpc(Skeleton,"NW_TROLLAREA_TROLLROCKCAVE_05");
+		Wld_InsertNpc(Zombie03,"NW_TROLLAREA_TROLLROCKCAVE_05");
+		Wld_InsertNpc(SkeletonMage,"NW_TROLLAREA_TROLLROCKCAVE_05");
+		Wld_InsertNpc(Lesser_Skeleton,"NW_TROLLAREA_TROLLROCKCAVE_05");
+		Wld_InsertNpc(MinecrawlerMonarch,"NW_TROLLAREA_TROLLLAKECAVE_04");
+		Wld_InsertNpc(DragonSnapper,"NW_TROLLAREA_BRIGDE_04");
+		Wld_InsertNpc(DragonSnapper,"NW_TROLLAREA_BRIGDE_04");
+	
+		if(Npc_GetDistToWP(Salandril,"ALTAR") < 10000)
+		{
+			B_StartOtherRoutine(Salandril,"Start");
+		};
+		if(Npc_IsDead(Sekob) == FALSE)
+		{
+			B_StartOtherRoutine(Rosi,"FleeFromSekob");
+			B_StartOtherRoutine(Till,"FleeFromSekob");
+			Rosi_FleeFromSekob_Kap5 = TRUE;
+		};
+		if(GornDJG_is_alive == TRUE)
+		{
+			Wld_InsertNpc(PC_Fighter_NW_nach_DJG,"Bigfarm");
+		};
+		if(DJG_Angar_is_alive == TRUE)
+		{
+			Wld_InsertNpc(DJG_705_Angar_NW,"Bigfarm");
+		};
+
+		Wld_InsertNpc(None_101_Mario,"NW_CITY_ENTRANCE_01");
+		Wld_InsertItem(ItWr_HallsofIrdorath_Mis,"FP_NW_ITEM_LIBRARY_IRDORATHBOOK");
+		Wld_InsertItem(ItWr_Seamap_Irdorath,"FP_NW_ITEM_LIBRARY_SEAMAP");
+		Wld_InsertItem(ItWr_XardasSeamapBook_Mis,"FP_NW_ITEM_LIBRARY_SEAMAP");
+		Wld_InsertItem(ItPo_PotionOfDeath_01_Mis,"FP_NW_ITEM_LIBRARY_SEAMAP2");
+		if(hero.guild == GIL_PAL)
+		{
+			Wld_InsertItem(ItAr_PAl_H,"FP_ITEM_PALFINALARMOR");
+			Wld_InsertItem(ItMi_RuneBlank,"FP_NW_ITEM_LIBRARY_SEAMAP");
+		};
+		if(hero.guild == GIL_DJG)
+		{
+		};
+		if(hero.guild == GIL_KDF)
+		{
+			Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_KDF_01");
+			Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_KDF_02");
+			Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_KDF_03");
+			Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_KDF_15");
+			Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_KDF_16");
+			Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_KDF_17");
+			Wld_InsertNpc(DMT_DementorAmbientSpeaker,"FP_STAND_DEMENTOR_KDF_18");
+			Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_KDF_19");
+			Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_KDF_20");
+			Wld_InsertNpc(DMT_DementorAmbientSpeaker,"FP_STAND_DEMENTOR_KDF_21");
+			Wld_InsertItem(ITWR_DementorObsessionBook_MIS,"FP_ITEM_FARM1_01");
+			Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_KDF_29");
+			Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_KDF_30");
+			Wld_InsertNpc(DMT_DementorAmbient,"NW_FARM1_BANDITS_CAVE_08");
+			Wld_InsertNpc(DMT_DementorAmbient,"NW_FARM1_BANDITS_CAVE_03");
+			Wld_InsertNpc(DMT_DementorAmbient,"NW_FARM1_BANDITS_CAVE_02");
+			Wld_InsertNpc(DMT_DementorAmbient,"NW_FARM1_BANDITS_CAVE_04");
+			Wld_InsertNpc(DMT_DementorAmbient,"NW_FARM1_BANDITS_CAVE_07");
+			Wld_InsertNpc(DMT_DementorAmbientSpeaker,"FP_STAND_DEMENTOR_KDF_34");
+			Wld_InsertNpc(DMT_DementorAmbientSpeaker,"FP_STAND_DEMENTOR_KDF_35");
+			Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_KDF_26");
+			Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_KDF_27");
+			Wld_InsertNpc(DMT_DementorAmbient,"FP_STAND_DEMENTOR_KDF_28");
+			Wld_InsertNpc(DMT_DementorAmbientWalker5,"CITY1");
+			Wld_InsertNpc(DMT_DementorAmbientWalker4,"CITY1");
+			Wld_InsertNpc(DMT_DementorAmbientWalker2,"CITY1");
+			if(Npc_IsDead(Sekob) == FALSE)
+			{
+				CreateInvItems(Sekob,ITWR_DementorObsessionBook_MIS,1);
+				B_StartOtherRoutine(Sekob,"Obsessed");
+			};
+		};
+		Wld_InsertNpc(Pal_285_Ritter,"CITY1");
+		Wld_InsertNpc(Pal_286_RITTER,"CITY1");
+		Wld_InsertNpc(Pal_287_Ritter,"CITY1");
+		Wld_InsertNpc(Pal_288_Ritter,"CITY1");
+		Wld_InsertNpc(Pal_289_Ritter,"CITY1");
+		Wld_InsertNpc(Pal_290_Ritter,"CITY1");
+		Wld_InsertNpc(Pal_291_Ritter,"CITY1");
+		Wld_InsertNpc(Pal_292_Ritter,"CITY1");
+		Wld_InsertNpc(Pal_293_Ritter,"CITY1");
+		Schiffswache_212.flags = 0;
+		Schiffswache_213.flags = 0;
+		Pal_220_Schiffswache.flags = 0;
+		Pal_221_Schiffswache.flags = 0;
+		Pal_222_Schiffswache.flags = 0;
+		Pal_223_Schiffswache.flags = 0;
+		Pal_224_Schiffswache.flags = 0;
+		Pal_225_Schiffswache.flags = 0;
+		Pal_226_Schiffswache.flags = 0;
+		Pal_227_Schiffswache.flags = 0;
+		Pal_228_Schiffswache.flags = 0;
+		B_StartOtherRoutine(Pal_220_Schiffswache,"ShipFree");
+		B_StartOtherRoutine(Pal_221_Schiffswache,"ShipFree");
+		B_StartOtherRoutine(Pal_222_Schiffswache,"ShipFree");
+		B_StartOtherRoutine(Pal_223_Schiffswache,"ShipFree");
+		B_StartOtherRoutine(Pal_224_Schiffswache,"ShipFree");
+		B_StartOtherRoutine(Pal_225_Schiffswache,"ShipFree");
+		B_StartOtherRoutine(Pal_226_Schiffswache,"ShipFree");
+		B_StartOtherRoutine(Pal_227_Schiffswache,"ShipFree");
+		B_StartOtherRoutine(Pal_228_Schiffswache,"ShipFree");
+		B_StartOtherRoutine(Pal_230_Ritter,"ShipFree");
+		B_StartOtherRoutine(Pal_231_Ritter,"ShipFree");
+		B_StartOtherRoutine(Pal_240_Ritter,"ShipFree");
+		B_StartOtherRoutine(Pal_241_Ritter,"ShipFree");
+		if((hero.guild == GIL_MIL) || (hero.guild == GIL_PAL))
+		{
+			IntroduceChapter(KapWechsel_5,KapWechsel_5_Text,"chapter5_PAL.tga","chapter_01.wav",6000);
+		}
+		else if(hero.guild == GIL_KDF)
+		{
+			IntroduceChapter(KapWechsel_5,KapWechsel_5_Text,"chapter5_KDF.tga","chapter_01.wav",6000);
+		}
+		else
+		{
+			IntroduceChapter(KapWechsel_5,KapWechsel_5_Text,"chapter5_DJG.tga","chapter_01.wav",6000);
+		};
+		EnterNW_Kapitel5 = TRUE;
+	};
+	if((MIS_OCGateOpen == TRUE) && (Pal_Schiffswache_Exchange_onetime == FALSE))
+	{
+		B_StartOtherRoutine(PAL_212_Schiffswache,"ShipFree");
+		B_StartOtherRoutine(PAL_213_Schiffswache,"ShipFree");
+		Pal_Schiffswache_Exchange_onetime = TRUE;
+		MIS_ShipIsFree = TRUE;
+	};
+	if(Biff_FollowsThroughPass == LOG_Running)
+	{
+		Wld_InsertNpc(DJG_713_Biff_NW,"LEVELCHANGE");
+		Biff_FollowsThroughPass = LOG_SUCCESS;
+	};
+};
+
+
+var int EnterNW_Kapitel6;
+
+func void B_ENTER_NEWWORLD_Kapitel_6()
+{
+	if(EnterNW_Kapitel6 == FALSE)
+	{
+		EnterNW_Kapitel6 = TRUE;
+	};
+};
+
+func void b_enter_newworld()
+{
+	B_InitNpcGlobals();
+	if(Kapitel >= 1)
+	{
+		B_ENTER_NEWWORLD_Kapitel_1();
+	};
+	if(Kapitel >= 2)
+	{
+		B_ENTER_NEWWORLD_Kapitel_2();
+	};
+	if(Kapitel >= 3)
+	{
+		B_ENTER_NEWWORLD_Kapitel_3();
+	};
+	if(Kapitel >= 4)
+	{
+		B_ENTER_NEWWORLD_Kapitel_4();
+	};
+	if(Kapitel >= 5)
+	{
+		B_ENTER_NEWWORLD_Kapitel_5();
+	};
+	if(Kapitel >= 6)
+	{
+		B_ENTER_NEWWORLD_Kapitel_6();
+	};
+	CurrentLevel = NEWWORLD_ZEN;
+	B_InitNpcGlobals();
+};
+
