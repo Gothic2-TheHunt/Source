@@ -28,7 +28,6 @@ func void B_GiveTradeInv_Isgaroth(var C_Npc slf)
 		CreateInvItems(slf,ItRi_Hp_Mana_01,1);
 		CreateInvItems(slf,ItSc_IceCube,2);
 		CreateInvItems(slf,ItSc_LightningFlash,1);
-		CreateInvItems(slf,ItAm_Mana_01,1);
 		CreateInvItems(slf,ItSc_TrfSheep,1);
 		CreateInvItems(slf,ItSc_TrfScavenger,1);
 		CreateInvItems(slf,ItSc_TrfGiantBug,1);
@@ -45,6 +44,7 @@ func void B_GiveTradeInv_Isgaroth(var C_Npc slf)
 		CreateInvItems(slf,ItPo_Health_01,7);
 		CreateInvItems(slf,ItPo_Health_02,2);
 		CreateInvItems(slf,ItPo_Mana_01,7);
+		CreateInvItems(slf,ItAm_Mana_01,1);
 		CreateInvItems(slf,ItSc_Whirlwind,2);
 		CreateInvItems(slf,ItSc_LightningFlash,2);
 		CreateInvItems(slf,ItSc_SumSkel,1);

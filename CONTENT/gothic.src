@@ -1659,6 +1659,7 @@ Story\Events\evt_addon_adanosdoor_entrance_voicescript.d
 Story\Events\evt_archoldead_func.d
 Story\Events\evt_challenger_switch.d
 Story\Events\evt_cavalornsgobbos_func.d
+Story\Events\evt_matteo_guard_func.d
 Story\Events\evt_crypt_01.d
 Story\Events\evt_dibridge_open_func.d
 Story\Events\evt_final_door_say_01.d

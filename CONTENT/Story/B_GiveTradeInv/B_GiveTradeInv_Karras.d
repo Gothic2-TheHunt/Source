@@ -25,6 +25,7 @@ func void B_GiveTradeInv_Karras(var C_Npc slf)
 		CreateInvItems(slf,ItMi_Gold,100);
 		CreateInvItems(slf,ItSc_TrfSheep,1);
 		CreateInvItems(slf,ItSc_TrfScavenger,1);
+		CreateInvItems(slf,ItRi_Mana_02,1);
 		CreateInvItems(slf,ItSc_TrfGiantRat,1);
 		CreateInvItems(slf,ItSc_TrfGiantBug,1);
 		CreateInvItems(slf,ItSc_TrfWolf,1);

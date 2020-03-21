@@ -338,32 +338,38 @@ func int DIA_Thorben_PleaseTeach_Condition()
 func void DIA_Thorben_PleaseTeach_Info()
 {
 	AI_Output(other,self,"DIA_Thorben_PleaseTeach_15_00");	//Can you teach me how to pick locks?
-	if(Npc_HasItems(self,ItWr_Schuldenbuch) > 0)
+	//	if(Npc_HasItems(self,ItWr_Schuldenbuch) > 0)
+	if(Npc_KnowsInfo(other,DIA_Thorben_Schuldenbuch))
 	{
 		AI_Output(self,other,"DIA_Thorben_PleaseTeach_06_01");	//If it weren't for you, I'd be paying Lehmar for the rest of my life.
 		AI_Output(self,other,"DIA_Thorben_PleaseTeach_06_02");	//I shall teach you what you want to know.
-		Thorben_TeachPlayer = TRUE;
-	}
-	else if(Thorben_GotGold == TRUE)
-	{
-		AI_Output(self,other,"DIA_Thorben_PleaseTeach_06_03");	//You have brought me the 100 gold pieces. That was very decent of you.
-		AI_Output(self,other,"DIA_Thorben_PleaseTeach_06_04");	//I am almost embarrassed, but I must ask even more of you.
-		AI_Output(self,other,"DIA_Thorben_PleaseTeach_06_05");	//If I cannot pay back my debt to Lehmar soon, he's going to send his thugs after me.
+		AI_Output(self,other,"DIA_Thorben_PleaseTeach_06_08");	//However, I cannot do it for free. I still have a mountain of debts, and I need the money.
 		AI_Output(self,other,"DIA_Thorben_PleaseTeach_06_06");	//Give me another 100 gold pieces, and I shall instruct you.
+		//Thorben_TeachPlayer = TRUE;
 		Info_ClearChoices(DIA_Thorben_PleaseTeach);
-		Info_AddChoice(DIA_Thorben_PleaseTeach,"How much do you charge?",DIA_Thorben_PleaseTeach_Later);
+		Info_AddChoice(DIA_Thorben_PleaseTeach,"Maybe later ...",DIA_Thorben_PleaseTeach_Later);
 		Info_AddChoice(DIA_Thorben_PleaseTeach,"Fine. Here are 100 gold pieces.",DIA_Thorben_PleaseTeach_Pay100);
 	}
-	else if(MIS_Matteo_Gold == LOG_SUCCESS)
-	{
-		AI_Output(self,other,"DIA_Thorben_PleaseTeach_06_07");	//You have paid Gritta's debt with Matteo. You seem to be a decent fellow. I shall teach you what you want to know.
-		AI_Output(self,other,"DIA_Thorben_PleaseTeach_06_08");	//However, I cannot do it for free. I still have a mountain of debts, and I need the money.
-		AI_Output(other,self,"DIA_Thorben_PleaseTeach_15_09");	//How much do you charge?
-		AI_Output(self,other,"DIA_Thorben_PleaseTeach_06_10");	//200 gold pieces.
-		Info_ClearChoices(DIA_Thorben_PleaseTeach);
-		Info_AddChoice(DIA_Thorben_PleaseTeach,"How much do you charge?",DIA_Thorben_PleaseTeach_Later);
-		Info_AddChoice(DIA_Thorben_PleaseTeach,"Fine. Here are 200 gold pieces.",DIA_Thorben_PleaseTeach_Pay200);
-	}
+	//else if(Thorben_GotGold == TRUE)
+	//{
+	//	AI_Output(self,other,"DIA_Thorben_PleaseTeach_06_03");	//You have brought me the 100 gold pieces. That was very decent of you.
+	//	AI_Output(self,other,"DIA_Thorben_PleaseTeach_06_04");	//I am almost embarrassed, but I must ask even more of you.
+	//	AI_Output(self,other,"DIA_Thorben_PleaseTeach_06_05");	//If I cannot pay back my debt to Lehmar soon, he's going to send his thugs after me.
+	//	AI_Output(self,other,"DIA_Thorben_PleaseTeach_06_06");	//Give me another 100 gold pieces, and I shall instruct you.
+	//	Info_ClearChoices(DIA_Thorben_PleaseTeach);
+	//	Info_AddChoice(DIA_Thorben_PleaseTeach,"How much do you charge?",DIA_Thorben_PleaseTeach_Later);
+	//	Info_AddChoice(DIA_Thorben_PleaseTeach,"Fine. Here are 100 gold pieces.",DIA_Thorben_PleaseTeach_Pay100);
+	//}
+	//else if(MIS_Matteo_Gold == LOG_SUCCESS)
+	//{
+	//	AI_Output(self,other,"DIA_Thorben_PleaseTeach_06_07");	//You have paid Gritta's debt with Matteo. You seem to be a decent fellow. I shall teach you what you want to know.
+	//	AI_Output(self,other,"DIA_Thorben_PleaseTeach_06_08");	//However, I cannot do it for free. I still have a mountain of debts, and I need the money.
+	//	AI_Output(other,self,"DIA_Thorben_PleaseTeach_15_09");	//How much do you charge?
+	//	AI_Output(self,other,"DIA_Thorben_PleaseTeach_06_10");	//200 gold pieces.
+	//	Info_ClearChoices(DIA_Thorben_PleaseTeach);
+	//	Info_AddChoice(DIA_Thorben_PleaseTeach,"How much do you charge?",DIA_Thorben_PleaseTeach_Later);
+	//	Info_AddChoice(DIA_Thorben_PleaseTeach,"Fine. Here are 200 gold pieces.",DIA_Thorben_PleaseTeach_Pay200);
+	//}
 	else
 	{
 		AI_Output(self,other,"DIA_Thorben_PleaseTeach_06_11");	//Hmm ... I don't know whether you can be trusted or not.

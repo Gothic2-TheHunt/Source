@@ -37,7 +37,6 @@ func void B_GiveTradeInv_Gorax(var C_Npc slf)
 		CreateInvItems(slf,ItMW_Addon_Stab01,2);
 		CreateInvItems(slf,ItMW_Addon_Stab02,2);
 		CreateInvItems(slf,ItSc_Whirlwind,1);
-		CreateInvItems(slf,ItRi_Mana_02,1);
 		Gorax_ItemsGiven_Chapter_1 = TRUE;
 	};
 	if((Kapitel >= 1) && (Gorax_ItemsGiven_JoinGuild == FALSE) && hero.guild != GIL_NONE)

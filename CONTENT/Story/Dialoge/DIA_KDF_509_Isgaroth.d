@@ -71,8 +71,9 @@ func void DIA_Isgaroth_Segen_Info()
 	Isgaroth_Segen = TRUE;
 	if((MIS_Thorben_GetBlessings == LOG_Running) && (Player_IsApprentice == APP_NONE) && (Isgaroth_XP_Blessing == FALSE))
 	{
-		B_GivePlayerXP(100);
+		B_GivePlayerXP(XP_InnosSegen * 3);
 		Isgaroth_XP_Blessing = TRUE;
+		B_LogEntry(TOPIC_Thorben,"Isgaroth the Fire Magician has given me his blessing.");
 	};
 };
 

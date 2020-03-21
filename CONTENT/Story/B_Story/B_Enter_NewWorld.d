@@ -636,6 +636,8 @@ func void B_ENTER_NEWWORLD_Kapitel_2()
 		Wld_InsertNpc(Razor,"NW_TROLLAREA_PATH_82_M");
 		Wld_InsertNpc(Snapper,"NW_TROLLAREA_BRIGDE_04");
 		Wld_InsertNpc(Snapper,"NW_TROLLAREA_BRIGDE_04");
+		Wld_InsertNpc(OrcBiter,"NW_TROLLAREA_STONE_11");
+		Wld_InsertNpc(OrcBiter,"NW_TROLLAREA_STONE_11");
 		Wld_InsertItem(ItWr_HitPointStonePlate3_Addon,"FP_ITEM_MAGICGOLEM_STPLATE");
 	
 		// Original
@@ -1201,6 +1203,8 @@ func void B_ENTER_NEWWORLD_Kapitel_3()
 		Wld_InsertNpc(Razor,"NW_TROLLAREA_BRIGDE_04");
 		Wld_InsertNpc(Razor,"NW_TROLLAREA_BRIGDE_04");
 		Wld_InsertNpc(Razor,"NW_TROLLAREA_BRIGDE_04");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_TROLLAREA_STONE_11");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_TROLLAREA_STONE_11");
 		Wld_InsertItem(ItAm_Prot_Total_02,"FP_ITEM_TROLLAREA_AMULET");
 		Wld_InsertItem(ItPl_Perm_Herb,"FP_ITEM_RIVERSIDECAVE_HERB");
 		Wld_InsertItem(ItWr_StrStonePlate1_Addon,"FP_NW_ITEM_TROLL_09");
@@ -1575,6 +1579,7 @@ func void B_ENTER_NEWWORLD_Kapitel_4()
 		Wld_InsertNpc(MinecrawlerMonarch,"NW_TROLLAREA_TROLLLAKECAVE_05");
 		Wld_InsertNpc(DragonSnapper,"NW_TROLLAREA_BRIGDE_04");
 		Wld_InsertNpc(DragonSnapper,"NW_TROLLAREA_BRIGDE_04");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_TROLLAREA_STONE_11");
 	
 		if(Npc_GetDistToWP(Salandril,"ALTAR") < 10000)
 		{
@@ -2029,6 +2034,8 @@ func void B_ENTER_NEWWORLD_Kapitel_5()
 		Wld_InsertNpc(MinecrawlerMonarch,"NW_TROLLAREA_TROLLLAKECAVE_04");
 		Wld_InsertNpc(DragonSnapper,"NW_TROLLAREA_BRIGDE_04");
 		Wld_InsertNpc(DragonSnapper,"NW_TROLLAREA_BRIGDE_04");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_TROLLAREA_STONE_11");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_TROLLAREA_STONE_11");
 	
 		if(Npc_GetDistToWP(Salandril,"ALTAR") < 10000)
 		{

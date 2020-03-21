@@ -66,6 +66,7 @@ func void B_GiveTradeInv_Addon_Cronos_ADW(var C_Npc slf)
 		CreateInvItems(slf,ItSc_ThunderBall,2);
 		CreateInvItems(slf,ItSc_SumSkel,3);
 		CreateInvItems(slf,ItSc_Fear,2);
+		CreateInvItems(slf,ItRi_Mana_02,1);
 		CreateInvItems(slf,ItSc_IceCube,3);
 		CreateInvItems(slf,ItMi_Flask,10);
 		CreateInvItems(slf,ItSc_Icelance,2);

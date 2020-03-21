@@ -3131,6 +3131,8 @@ func void STARTUP_NewWorld_Part_TrollArea_01()
 	Wld_InsertNpc(Keiler,"FP_HILL_NW_TROLLAREA_BRIDGE_03");
 	Wld_InsertNpc(Bloodfly,"FP_HILL_NW_TROLLAREA_BRIDGE_06");
 	Wld_InsertNpc(Bloodfly,"FP_HILL_NW_TROLLAREA_BRIDGE_07");
+	Wld_InsertNpc(OrcBiter,"NW_TROLLAREA_STONE_11");
+	Wld_InsertNpc(OrcBiter,"NW_TROLLAREA_STONE_11");
 	Wld_InsertItem(ItWr_HitPointStonePlate1_Addon,"FP_NW_ITEM_TROLL_07");
 	Wld_InsertItem(ItWr_CrsBowStonePlate1_Addon,"FP_ROAM_NW_TROLLAREA_PORTALTEMPEL_26");
 	Wld_InsertItem(ItWr_HitPointStonePlate1_Addon,"FP_ROAM_NW_TROLLAREA_RUINS_CAVE_05");
@@ -3149,6 +3151,7 @@ func void STARTUP_NewWorld_Part_TrollArea_01()
 	Wld_InsertItem(ItWr_CrsBowStonePlate1_Addon,"FP_ITEM_TROLLAREA_STPLATE_12");
 	Wld_InsertItem(ItWr_TwoHStonePlate2_Addon,"FP_ITEM_TROLLAREA_STPLATE_13");
 	Wld_InsertItem(ItWr_OneHStonePlate2_Addon,"FP_ITEM_TROLLAREA_STPLATE_14");
+	Wld_InsertItem(ItWr_OneHStonePlate1_Addon,"FP_ITEM_TROLLAREA_STONE_11_STPLATE");
 	Wld_InsertItem(ITWR_DEXSTONEPLATE1_ADDON,"FP_ITEM_PYRAMID_STPLATE");
 	Wld_InsertItem(ItWr_StonePlateCommon_Addon,"FP_ITEM_TROLLAREA_STPLATE_07");
 	Wld_InsertItem(ItWr_StonePlateCommon_Addon,"FP_ROAM_NW_TROLLAREA_PORTALTEMPEL_DEADALLIGATOR");
