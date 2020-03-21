@@ -429,13 +429,13 @@ instance ItSc_Sleep(C_Item)
 	material = MAT_LEATHER;
 	spell = SPL_Sleep;
 	cond_atr[2] = ATR_MANA_MAX;
-	cond_value[2] = SPL_Cost_Scroll_Circle3;
+	cond_value[2] = SPL_Cost_Scroll_Sleep;
 	wear = WEAR_EFFECT;
 	effect = "SPELLFX_WEAKGLIMMER";
 	description = NAME_SPL_Sleep;
 	text[0] = NAME_MageScroll;
 	text[1] = NAME_Mana_needed;
-	count[1] = SPL_Cost_Scroll_Circle3;
+	count[1] = SPL_Cost_Scroll_Sleep;
 	text[2] = NAME_Sec_Duration;
 	count[2] = SPL_TIME_Sleep;
 	text[5] = NAME_Value;

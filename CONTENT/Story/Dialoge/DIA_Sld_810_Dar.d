@@ -560,8 +560,8 @@ func void DIA_Dar_BRINGORCELITERING_was_am()
 	AI_Output(other,self,"DIA_Dar_BRINGORCELITERING_was_am_15_00");	//Give me the amulet.
 	AI_Output(self,other,"DIA_Dar_BRINGORCELITERING_was_am_03_01");	//Sure thing. Have fun with it. Now gimme that ring.
 	B_GiveInvItems(other,self,ItRi_OrcEliteRing,1);
-	CreateInvItems(self,ItAm_Dex_01,1);
-	B_GiveInvItems(self,other,ItAm_Dex_01,1);
+	CreateInvItems(self,ItAm_Dex_Strg_01,1);
+	B_GiveInvItems(self,other,ItAm_Dex_Strg_01,1);
 	B_GivePlayerXP(XP_Dar_BringOrcEliteRing);
 	AI_Output(self,other,"DIA_Dar_BRINGORCELITERING_was_am_03_02");	//It was a pleasure.
 	Info_ClearChoices(DIA_Dar_BRINGORCELITERING);

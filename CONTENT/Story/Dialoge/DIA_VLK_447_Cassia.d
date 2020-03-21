@@ -804,7 +804,7 @@ func void DIA_Cassia_Belohnung_Info()
 	Info_ClearChoices(DIA_Cassia_Belohnung);
 	Info_AddChoice(DIA_Cassia_Belohnung,"400 pieces of gold.",DIA_Cassia_Belohnung_Gold);
 	Info_AddChoice(DIA_Cassia_Belohnung,"4 elixirs of healing",DIA_Cassia_Belohnung_Trank);
-	Info_AddChoice(DIA_Cassia_Belohnung,NAME_ADDON_CASSIASBELOHNUNGSRING,DIA_Cassia_Belohnung_Ring);
+	Info_AddChoice(DIA_Cassia_Belohnung,"Ring of Inconquerability",DIA_Cassia_Belohnung_Ring);
 };
 
 func void DIA_Cassia_Belohnung_Gold()
@@ -824,7 +824,7 @@ func void DIA_Cassia_Belohnung_Trank()
 func void DIA_Cassia_Belohnung_Ring()
 {
 	AI_Output(other,self,"DIA_Cassia_Belohnung_15_04");	//Give me the ring.
-	B_GiveInvItems(self,other,ItRi_HP_01,1);
+	B_GiveInvItems(self,other,ItRi_Prot_Total_01,1);
 	Info_ClearChoices(DIA_Cassia_Belohnung);
 };
 

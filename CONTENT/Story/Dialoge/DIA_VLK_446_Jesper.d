@@ -322,7 +322,7 @@ instance DIA_Jesper_Tuer(C_Info)
 
 func int DIA_Jesper_Tuer_Condition()
 {
-	if((MIS_CassiaRing == LOG_SUCCESS) && (Kapitel >= 3))
+	if((MIS_CassiaRing == LOG_SUCCESS) && (Kapitel >= 2))
 	{
 		return TRUE;
 	};
@@ -352,7 +352,7 @@ instance DIA_Jesper_Truhe(C_Info)
 
 func int DIA_Jesper_Truhe_Condition()
 {
-	if((Mob_HasItems("MOB_FINGERS",ItMi_Gold) < 300) || (Mob_HasItems("MOB_FINGERS",ItMi_SilverCup) < 5) || (Mob_HasItems("MOB_FINGERS",ItMi_GoldCup) < 1) || (Mob_HasItems("MOB_FINGERS",ItAm_Strg_01) < 1) || (Mob_HasItems("MOB_FINGERS",ItPo_Perm_DEX) < 1))
+	if((Mob_HasItems("MOB_FINGERS",ItMi_Gold) < 300) || (Mob_HasItems("MOB_FINGERS",ItMi_SilverCup) < 5) || (Mob_HasItems("MOB_FINGERS",ItMi_GoldCup) < 1) || (Mob_HasItems("MOB_FINGERS",ItAm_Dex_01) < 1) || (Mob_HasItems("MOB_FINGERS",ItPo_Perm_DEX) < 1))
 	{
 		return TRUE;
 	};

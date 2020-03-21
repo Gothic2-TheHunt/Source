@@ -28,6 +28,7 @@ func void B_GiveTradeInv_Isgaroth(var C_Npc slf)
 		CreateInvItems(slf,ItRi_Hp_Mana_01,1);
 		CreateInvItems(slf,ItSc_IceCube,2);
 		CreateInvItems(slf,ItSc_LightningFlash,1);
+		CreateInvItems(slf,ItAm_Mana_01,1);
 		CreateInvItems(slf,ItSc_TrfSheep,1);
 		CreateInvItems(slf,ItSc_TrfScavenger,1);
 		CreateInvItems(slf,ItSc_TrfGiantBug,1);
@@ -101,7 +102,6 @@ func void B_GiveTradeInv_Isgaroth(var C_Npc slf)
 		CreateInvItems(slf,ItSc_SumGol,4);
 		CreateInvItems(slf,ItSc_TrfDragonSnapper,1);
 		CreateInvItems(slf,ItSc_ChargeFireBall,2);
-		CreateInvItems(slf,ItAm_Mana_01,1);
 		Isgaroth_ItemsGiven_Chapter_4 = TRUE;
 	};
 	if((Kapitel >= 5) && (Isgaroth_ItemsGiven_Chapter_5 == FALSE))

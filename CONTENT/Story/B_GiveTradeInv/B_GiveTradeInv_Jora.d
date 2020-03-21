@@ -22,7 +22,6 @@ func void B_GiveTradeInv_Jora(var C_Npc slf)
 		CreateInvItems(slf,ItMw_Richtstab,2);
 		CreateInvItems(slf,ItRw_Bow_L_02,2);
 		CreateInvItems(slf,ItRw_Bow_L_03,2);
-		CreateInvItems(slf,ItRw_Bow_M_01,2);
 		CreateInvItems(slf,ItRw_Crossbow_L_01,2);
 		CreateInvItems(slf,ItRw_Crossbow_L_02,2);
 		Jora_ItemsGiven_Chapter_1 = TRUE;
@@ -31,6 +30,7 @@ func void B_GiveTradeInv_Jora(var C_Npc slf)
 	{
 		CreateInvItems(slf,ItMi_Gold,100);
 		CreateInvItems(slf,ItSc_Light,1);
+		CreateInvItems(slf,ItRw_Bow_M_01,2);
 		CreateInvItems(slf,ItPl_Health_Herb_02,2);
 		CreateInvItems(slf,ItPl_Mushroom_01,3);
 		CreateInvItems(slf,ItPl_Mushroom_02,2);
@@ -49,7 +49,6 @@ func void B_GiveTradeInv_Jora(var C_Npc slf)
 		CreateInvItems(slf,ItPl_Health_Herb_01,3);
 		CreateInvItems(slf,ItPl_Mushroom_01,4);
 		CreateInvItems(slf,ItPl_Mushroom_02,2);
-		CreateInvItems(slf,ItRw_Bow_M_01,2);
 		CreateInvItems(slf,ItFo_FishSoup,3);
 		CreateInvItems(slf,ItRw_Arrow,160);
 		CreateInvItems(slf,ItRw_Bolt,160);

@@ -1,4 +1,4 @@
-
+const int SPL_Cost_Scroll_Sleep = 15;
 const int SPL_Cost_Sleep = 30;
 const int SPL_TIME_Sleep = 30;
 
@@ -12,11 +12,11 @@ instance Spell_Sleep(C_Spell_Proto)
 
 func int Spell_Logic_Sleep(var int manaInvested)
 {
-	if((Npc_GetActiveSpellIsScroll(self) && (self.attribute[ATR_MANA] >= SPL_Cost_Scroll_Circle3)) || (self.attribute[ATR_MANA] >= SPL_Cost_Sleep))
+	if((Npc_GetActiveSpellIsScroll(self) && (self.attribute[ATR_MANA] >= SPL_Cost_Scroll_Sleep)) || (self.attribute[ATR_MANA] >= SPL_Cost_Sleep))
 	{
 		if(Npc_GetActiveSpellIsScroll(self))
 		{
-			self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll_Circle3;
+			self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll_Sleep;
 		}
 		else
 		{

@@ -110,7 +110,6 @@ func void B_GiveTradeInv_Gorax(var C_Npc slf)
 		CreateInvItems(slf,ItSc_ThunderBall,5);
 		CreateInvItems(slf,ItSc_LightningFlash,2);
 		CreateInvItems(slf,ItSc_Thunderstorm,3);
-		CreateInvItems(slf,ItPo_Perm_Health,1);	
 		CreateInvItems(slf,ItPo_Perm_Mana,1);
 		CreateInvItems(slf,ItSc_Pyrokinesis,5);
 		CreateInvItems(slf,ItSc_Geyser,3);
@@ -141,6 +140,7 @@ func void B_GiveTradeInv_Gorax(var C_Npc slf)
 		CreateInvItems(slf,ItMi_Coal,4);
 		CreateInvItems(slf,ItMi_Aquamarine,2);
 		CreateInvItems(slf,ItMi_Pitch,1);
+		CreateInvItems(slf,ItPo_Perm_Health,1);	
 		CreateInvItems(slf,ItPo_Health_02,15);
 		CreateInvItems(slf,ItPo_Health_03,10);
 		CreateInvItems(slf,ItFo_Cheese,2);
