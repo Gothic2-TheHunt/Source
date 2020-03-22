@@ -1064,3 +1064,4 @@ var int saw_permanent;
 var int rake_permanent;
 var int skills_Tried;
 var int smoke_bonus;
+var int Knows_BulkBrewing;

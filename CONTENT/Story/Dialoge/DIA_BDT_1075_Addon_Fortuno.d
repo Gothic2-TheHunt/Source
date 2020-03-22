@@ -243,6 +243,11 @@ func void B_Fortuno_InfoManager()
 		Info_AddChoice(DIA_Addon_Fortuno_Trade,"(hand over all swampweed)",DIA_Addon_Fortuno_Trade_all);
 		Info_AddChoice(DIA_Addon_Fortuno_Trade,"(hand over 1 swampweed)",DIA_Addon_Fortuno_Trade_1);
 	};
+	if(Npc_HasItems(other,ItMi_Joint) >= 1)
+	{
+		Info_AddChoice(DIA_Addon_Fortuno_Trade,"(hand over all reefers)",DIA_Addon_Fortuno_Trade_tokes_all);
+		Info_AddChoice(DIA_Addon_Fortuno_Trade,"(hand over 1 reefer)",DIA_Addon_Fortuno_Trade_tokes_1);
+	};
 };
 
 
@@ -296,6 +301,30 @@ func void DIA_Addon_Fortuno_Trade_1()
 		Npc_RemoveInvItems(self,ItPl_SwampHerb,Npc_HasItems(self,ItPl_SwampHerb));
 	};
 	B_GiveInvItems(self,other,ItMi_Gold,Value_SwampHerb);
+	B_GivePlayerXP(10);
+	B_Fortuno_InfoManager();
+};
+
+func void DIA_Addon_Fortuno_Trade_tokes_all()
+{
+	var int amount;
+	amount = Npc_HasItems(other,ItMi_Joint);
+	if(B_GiveInvItems(other,self,ItMi_Joint,amount))
+	{
+		Npc_RemoveInvItems(self,ItMi_Joint,Npc_HasItems(self,ItMi_Joint));
+	};
+	B_GiveInvItems(self,other,ItMi_Gold,amount * (Value_Joint / 2));
+	B_GivePlayerXP(amount * 10);
+	B_Fortuno_InfoManager();
+};
+
+func void DIA_Addon_Fortuno_Trade_tokes_1()
+{
+	if(B_GiveInvItems(other,self,ItMi_Joint,1))
+	{
+		Npc_RemoveInvItems(self,ItMi_Joint,Npc_HasItems(self,ItMi_Joint));
+	};
+	B_GiveInvItems(self,other,ItMi_Gold,(Value_Joint / 2));
 	B_GivePlayerXP(10);
 	B_Fortuno_InfoManager();
 };

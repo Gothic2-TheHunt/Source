@@ -15,7 +15,7 @@ func int B_TeachPlayerTalentAlchemy(var C_Npc slf,var C_Npc oth,var int potion)
 	if(potion == POTION_Health_01)
 	{
 		PLAYER_TALENT_ALCHEMY[POTION_Health_01] = TRUE;
-		B_LogEntry(TOPIC_TalentAlchemy,"Ingredients 'ESSENCE OF HEALING':2 Healing Plants and 1 Meadow Knotweed.");
+		B_LogEntry(TOPIC_TalentAlchemy,"Ingredients 'ESSENCE OF HEALING':2 Healing Plants.");
 	};
 	if(potion == POTION_Health_02)
 	{
@@ -30,7 +30,7 @@ func int B_TeachPlayerTalentAlchemy(var C_Npc slf,var C_Npc oth,var int potion)
 	if(potion == POTION_Mana_01)
 	{
 		PLAYER_TALENT_ALCHEMY[POTION_Mana_01] = TRUE;
-		B_LogEntry(TOPIC_TalentAlchemy,"Ingredients 'MANA ESSENCE': 2 Fire Nettles and 1 Meadow Knotweed.");
+		B_LogEntry(TOPIC_TalentAlchemy,"Ingredients 'MANA ESSENCE': 2 Fire Nettles.");
 	};
 	if(potion == POTION_Mana_02)
 	{

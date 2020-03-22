@@ -6,6 +6,10 @@ const int ThiefXP = 50;
 
 func void B_GiveThiefXP()
 {
+	var string concatText;
+	concatText = ConcatStrings("I have pickpocketed ",self.name);
+	Log_CreateTopic(Topic_Pickpocket,LOG_NOTE);
+	B_LogEntry(Topic_Pickpocket,concatText);
 	VictimCount = VictimCount + 1;
 	if(VictimLevel == 0)
 	{

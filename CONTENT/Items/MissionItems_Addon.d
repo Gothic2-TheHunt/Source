@@ -1338,3 +1338,51 @@ instance itmi_erolskelch(C_Item)
 	count[5] = value;
 };
 
+instance ItWr_Bulk_Potions_Recipe(C_Item)
+{
+	name = "Bulk Potions Brewing";
+	mainflag = ITEM_KAT_DOCS;
+	flags = ITEM_MISSION;
+	value = 650;
+	visual = "ItWr_Book_02_04.3ds";
+	material = MAT_LEATHER;
+	on_state[0] = UseBulkPotionsRecipe;
+	scemeName = "MAP";
+	description = "Bulk Potions Brewing";
+};
+
+
+func void UseBulkPotionsRecipe()
+{
+	var int nDocID;
+	nDocID = Doc_Create();
+	Doc_SetPages(nDocID,2);
+	Doc_SetPage(nDocID,0,"Book_Mage_L.tga",0);
+	Doc_SetPage(nDocID,1,"Book_Mage_R.tga",0);
+	Doc_SetFont(nDocID,-1,FONT_Book);
+	Doc_SetMargins(nDocID,0,275,20,30,20,1);
+	Doc_PrintLine(nDocID,0,"Bulk Potions Brewing");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLines(nDocID,0,"An experienced alchemist can learn how to brew normal potions in bulk.");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLines(nDocID,0,"The potions brewed must be of the same kind and the ingredients should all fit in a brewing flask.");
+	Doc_PrintLines(nDocID,0,"Crush all the ingredients to powder before placing them in the brewing flask.");
+	Doc_SetMargins(nDocID,-1,30,20,275,20,1);
+	Doc_PrintLine(nDocID,1,"");
+	Doc_PrintLine(nDocID,1,"");
+	Doc_PrintLines(nDocID,1,"The brewing should be done at a slightly higher temperature to account for the extra ingredients.");
+	Doc_PrintLines(nDocID,1,"Stir the mixture constantly, to keep the temperature equal everywhere.");
+	Doc_PrintLine(nDocID,1,"");
+	Doc_PrintLines(nDocID,1,"Lastly pour the concentration divided equaly into the target flasks and add water.");
+	Doc_PrintLines(nDocID,1,"Stir the contents of the flasks until the concentration disolves.");
+	Doc_PrintLine(nDocID,1,"");
+	Doc_Show(nDocID);
+	if(Knows_BulkBrewing == FALSE)
+	{
+		Knows_BulkBrewing = TRUE;
+		Log_CreateTopic(Topic_Bonus,LOG_NOTE);
+		B_LogEntry(Topic_Bonus,"Bulk Potions Brewing - I can now brew 5 potions at the same time by using 5 times the ingredients.");
+		B_GivePlayerXP(XP_AmbientKap2);
+	};
+};

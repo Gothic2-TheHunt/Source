@@ -80,7 +80,7 @@ instance Living_Rock(Mst_Default_StoneGolem)
 	protection[PROT_MAGIC] = 120;
 	B_SetVisuals_StoneGolem();
 	Npc_SetToFistMode(self);
-	CreateInvItems(self,ItWr_HitPointStonePlate3_Addon,1);
+	CreateInvItems(self,ItWr_HitPointStonePlate3_Addon,2);
 };
 
 

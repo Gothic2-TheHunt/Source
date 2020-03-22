@@ -18,3 +18,4 @@ const string TOPIC_WispDetector = "The searching will-o'-the-wisp";
 const string TOPIC_Language = "The language of the builders";
 const string Topic_Bonus = "Specials";
 const string Topic_Diebesgilde = "Thieves' Guild";
+const string Topic_Pickpocket = "Pickpocket";

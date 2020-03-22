@@ -216,7 +216,7 @@ func void DIA_Gritta_WINE_Info()
 	AI_Output(self,other,"DIA_Gritta_WINE_16_02");	//Also, I'm going to spread the news around. At last there's somebody in town whose virtue ...
 	AI_Output(other,self,"DIA_Gritta_WINE_15_03");	//Yeah, yeah, never mind.
 	B_GivePlayerXP(XP_PayForGritta);
-	B_GiveInvItems(self,other,ItFo_Wine,1);
+	B_GiveInvItems(self,other,ItFo_VinoWine,1);
 	AI_StopProcessInfos(self);
 };
 

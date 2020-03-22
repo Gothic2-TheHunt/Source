@@ -10,7 +10,7 @@ func void B_GiveTradeInv_Addon_Samuel(var C_Npc slf)
 	if((Kapitel >= 1) && (Samuel_ItemsGiven_Chapter_1 == FALSE))
 	{
 		CreateInvItems(slf,ItMi_Gold,100);
-		CreateInvItems(slf,ItFo_Addon_Rum,2);
+		CreateInvItems(slf,ItFo_Addon_Rum,6);
 		CreateInvItems(slf,ItFo_Booze,3);
 		CreateInvItems(slf,ItFo_Beer,6);
 		CreateInvItems(slf,ItFo_Wine,2);
@@ -24,13 +24,14 @@ func void B_GiveTradeInv_Addon_Samuel(var C_Npc slf)
 	if((Kapitel >= 2) && (Samuel_ItemsGiven_Chapter_2 == FALSE))
 	{
 		CreateInvItems(slf,ItMi_Gold,100);
-		CreateInvItems(slf,ItFo_Addon_Rum,4);
+		CreateInvItems(slf,ItFo_Addon_Rum,7);
 		CreateInvItems(slf,ItFo_Booze,3);
 		CreateInvItems(slf,ItFo_Beer,6);
 		CreateInvItems(slf,ItFo_Wine,2);
 		CreateInvItems(slf,ItFo_Apple,4);
 		CreateInvItems(slf,ItFo_Bacon,2);
 		CreateInvItems(slf,ItFo_Cheese,2);
+		CreateInvItems(slf,ItWr_Bulk_Potions_Recipe,1);
 		CreateInvItems(slf,ItMi_Flask,4);
 		CreateInvItems(slf,ItPl_SwampHerb,4);
 		CreateInvItems(slf,ItMi_Joint,1);
@@ -39,7 +40,7 @@ func void B_GiveTradeInv_Addon_Samuel(var C_Npc slf)
 	if((Kapitel >= 3) && (Samuel_ItemsGiven_Chapter_3 == FALSE))
 	{
 		CreateInvItems(slf,ItMi_Gold,100);
-		CreateInvItems(slf,ItFo_Addon_Rum,3);
+		CreateInvItems(slf,ItFo_Addon_Rum,5);
 		CreateInvItems(slf,ItFo_Booze,3);
 		CreateInvItems(slf,ItFo_Beer,6);
 		CreateInvItems(slf,ItFo_Cheese,7);
@@ -54,7 +55,7 @@ func void B_GiveTradeInv_Addon_Samuel(var C_Npc slf)
 	if((Kapitel >= 4) && (Samuel_ItemsGiven_Chapter_4 == FALSE))
 	{
 		CreateInvItems(slf,ItMi_Gold,100);
-		CreateInvItems(slf,ItFo_Addon_Rum,2);
+		CreateInvItems(slf,ItFo_Addon_Rum,3);
 		CreateInvItems(slf,ItFo_Booze,3);
 		CreateInvItems(slf,ItFo_Beer,6);
 		CreateInvItems(slf,ItFo_Wine,2);
@@ -69,7 +70,7 @@ func void B_GiveTradeInv_Addon_Samuel(var C_Npc slf)
 	if((Kapitel >= 5) && (Samuel_ItemsGiven_Chapter_5 == FALSE))
 	{
 		CreateInvItems(slf,ItMi_Gold,100);
-		CreateInvItems(slf,ItFo_Addon_Rum,2);
+		CreateInvItems(slf,ItFo_Addon_Rum,5);
 		CreateInvItems(slf,ItFo_Booze,3);
 		CreateInvItems(slf,ItFo_Beer,6);
 		CreateInvItems(slf,ItFo_Wine,2);

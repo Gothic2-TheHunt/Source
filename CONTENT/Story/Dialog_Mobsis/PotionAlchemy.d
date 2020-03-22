@@ -345,10 +345,46 @@ func void PC_ItPo_Mana_01_Info()
 	b_endproductiondialog();
 };
 
+instance PC_ItPo_Mana_01_Bulk(C_Info)
+{
+	nr = 3;
+	npc = PC_Hero;
+	condition = PC_ItPo_Mana_01_Bulk_Condition;
+	information = PC_ItPo_Mana_01_Bulk_Info;
+	permanent = TRUE;
+	description = "Mana essence x5 (10 fire nettles, 5 flasks)";
+};
+
+
+func int PC_ItPo_Mana_01_Bulk_Condition()
+{
+	if((PLAYER_MOBSI_PRODUCTION == MOBSI_PotionAlchemy) && (PLAYER_TALENT_ALCHEMY[POTION_Mana_01] == TRUE) && (Knows_BulkBrewing == TRUE) && (ManaStart == TRUE))
+	{
+		return TRUE;
+	};
+};
+
+func void PC_ItPo_Mana_01_Bulk_Info()
+{
+	if((Npc_HasItems(hero,ItPl_Mana_Herb_01) >= 10) && (Npc_HasItems(hero,ItMi_Flask) >= 4))
+	{
+		Npc_RemoveInvItems(hero,ItPl_Mana_Herb_01,10);
+		Npc_RemoveInvItems(hero,ItMi_Flask,4);
+		CreateInvItems(hero,ItPo_Mana_01,5);
+		Print(PRINT_AlchemySuccess);
+	}
+	else
+	{
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_Flask,1);
+	};
+	b_endproductiondialog();
+};
+
 
 instance PC_ItPo_Mana_02(C_Info)
 {
-	nr = 3;
+	nr = 4;
 	npc = PC_Hero;
 	condition = PC_ItPo_Mana_02_Condition;
 	information = PC_ItPo_Mana_02_Info;
@@ -382,10 +418,47 @@ func void PC_ItPo_Mana_02_Info()
 	b_endproductiondialog();
 };
 
+instance PC_ItPo_Mana_02_Bulk(C_Info)
+{
+	nr = 5;
+	npc = PC_Hero;
+	condition = PC_ItPo_Mana_02_Bulk_Condition;
+	information = PC_ItPo_Mana_02_Bulk_Info;
+	permanent = TRUE;
+	description = "Mana extract x5 (10 fireweeds, 5 meadow knotweed, 5 flasks) ";
+};
+
+
+func int PC_ItPo_Mana_02_Bulk_Condition()
+{
+	if((PLAYER_MOBSI_PRODUCTION == MOBSI_PotionAlchemy) && (PLAYER_TALENT_ALCHEMY[POTION_Mana_02] == TRUE) && (Knows_BulkBrewing == TRUE) && (ManaStart == TRUE))
+	{
+		return TRUE;
+	};
+};
+
+func void PC_ItPo_Mana_02_Bulk_Info()
+{
+	if((Npc_HasItems(hero,ItPl_Mana_Herb_02) >= 10) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 5) && (Npc_HasItems(hero,ItMi_Flask) >= 4))
+	{
+		Npc_RemoveInvItems(hero,ItPl_Mana_Herb_02,10);
+		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,5);
+		Npc_RemoveInvItems(hero,ItMi_Flask,4);
+		CreateInvItems(hero,ItPo_Mana_02,5);
+		Print(PRINT_AlchemySuccess);
+	}
+	else
+	{
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_Flask,1);
+	};
+	b_endproductiondialog();
+};
+
 
 instance PC_ItPo_Mana_03(C_Info)
 {
-	nr = 4;
+	nr = 6;
 	npc = PC_Hero;
 	condition = PC_ItPo_Mana_03_Condition;
 	information = PC_ItPo_Mana_03_Info;
@@ -419,10 +492,47 @@ func void PC_ItPo_Mana_03_Info()
 	b_endproductiondialog();
 };
 
+instance PC_ItPo_Mana_03_Bulk(C_Info)
+{
+	nr = 7;
+	npc = PC_Hero;
+	condition = PC_ItPo_Mana_03_Bulk_Condition;
+	information = PC_ItPo_Mana_03_Bulk_Info;
+	permanent = TRUE;
+	description = "Mana elixir x5 (10 fire roots, 5 meadow knotweed, 5 flasks)";
+};
+
+
+func int PC_ItPo_Mana_03_Bulk_Condition()
+{
+	if((PLAYER_MOBSI_PRODUCTION == MOBSI_PotionAlchemy) && (PLAYER_TALENT_ALCHEMY[POTION_Mana_03] == TRUE) && (Knows_BulkBrewing == TRUE) && (ManaStart == TRUE))
+	{
+		return TRUE;
+	};
+};
+
+func void PC_ItPo_Mana_03_Bulk_Info()
+{
+	if((Npc_HasItems(hero,ItPl_Mana_Herb_03) >= 10) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 5) && (Npc_HasItems(hero,ItMi_Flask) >= 4))
+	{
+		Npc_RemoveInvItems(hero,ItPl_Mana_Herb_03,10);
+		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,5);
+		Npc_RemoveInvItems(hero,ItMi_Flask,4);
+		CreateInvItems(hero,ItPo_Mana_03,5);
+		Print(PRINT_AlchemySuccess);
+	}
+	else
+	{
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_Flask,1);
+	};
+	b_endproductiondialog();
+};
+
 
 instance PC_ItPo_Mana_04(C_Info)
 {
-	nr = 4;
+	nr = 8;
 	npc = PC_Hero;
 	condition = PC_ItPo_Mana_04_Condition;
 	information = PC_ItPo_Mana_04_Info;
@@ -446,6 +556,43 @@ func void PC_ItPo_Mana_04_Info()
 		Npc_RemoveInvItems(hero,ItPo_Mana_01,3);
 		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1);
 		CreateInvItems(hero,ItPo_Mana_Addon_04,1);
+		Print(PRINT_AlchemySuccess);
+	}
+	else
+	{
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_Flask,1);
+	};
+	b_endproductiondialog();
+};
+
+instance PC_ItPo_Mana_04_Bulk(C_Info)
+{
+	nr = 9;
+	npc = PC_Hero;
+	condition = PC_ItPo_Mana_04_Bulk_Condition;
+	information = PC_ItPo_Mana_04_Bulk_Info;
+	permanent = TRUE;
+	description = "Mana potion x5 (15 Mana essences, 5 meadow knotweed, 5 flasks)";
+};
+
+
+func int PC_ItPo_Mana_04_Bulk_Condition()
+{
+	if((PLAYER_MOBSI_PRODUCTION == MOBSI_PotionAlchemy) && (PLAYER_TALENT_ALCHEMY[POTION_Mana_04] == TRUE) && (Knows_BulkBrewing == TRUE) && (ManaStart == TRUE))
+	{
+		return TRUE;
+	};
+};
+
+func void PC_ItPo_Mana_04_Bulk_Info()
+{
+	if((Npc_HasItems(hero,ItPo_Mana_01) >= 15) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 5) && (Npc_HasItems(hero,ItMi_Flask) >= 4))
+	{
+		Npc_RemoveInvItems(hero,ItPo_Mana_01,15);
+		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,5);
+		Npc_RemoveInvItems(hero,ItMi_Flask,4);
+		CreateInvItems(hero,ItPo_Mana_Addon_04,5);
 		Print(PRINT_AlchemySuccess);
 	}
 	else
@@ -544,10 +691,46 @@ func void PC_ItPo_Health_01_Info()
 	b_endproductiondialog();
 };
 
+instance PC_ItPo_Health_01_Bulk(C_Info)
+{
+	nr = 3;
+	npc = PC_Hero;
+	condition = PC_ItPo_Health_01_Bulk_Condition;
+	information = PC_ItPo_Health_01_Bulk_Info;
+	permanent = TRUE;
+	description = "Essence of healing x5 (10 healing plants, 5 flasks)";
+};
+
+
+func int PC_ItPo_Health_01_Bulk_Condition()
+{
+	if((PLAYER_MOBSI_PRODUCTION == MOBSI_PotionAlchemy) && (PLAYER_TALENT_ALCHEMY[POTION_Health_01] == TRUE) && (Knows_BulkBrewing == TRUE) && (HealthStart == TRUE))
+	{
+		return TRUE;
+	};
+};
+
+func void PC_ItPo_Health_01_Bulk_Info()
+{
+	if((Npc_HasItems(hero,ItPl_Health_Herb_01) >= 10) && (Npc_HasItems(hero,ItMi_Flask) >= 4))
+	{
+		Npc_RemoveInvItems(hero,ItPl_Health_Herb_01,10);
+		Npc_RemoveInvItems(hero,ItMi_Flask,4);
+		CreateInvItems(hero,ItPo_Health_01,5);
+		Print(PRINT_AlchemySuccess);
+	}
+	else
+	{
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_Flask,1);
+	};
+	b_endproductiondialog();
+};
+
 
 instance PC_ItPo_Health_02(C_Info)
 {
-	nr = 3;
+	nr = 4;
 	npc = PC_Hero;
 	condition = PC_ItPo_Health_02_Condition;
 	information = PC_ItPo_Health_02_Info;
@@ -581,10 +764,47 @@ func void PC_ItPo_Health_02_Info()
 	b_endproductiondialog();
 };
 
+instance PC_ItPo_Health_02_Bulk(C_Info)
+{
+	nr = 5;
+	npc = PC_Hero;
+	condition = PC_ItPo_Health_02_Bulk_Condition;
+	information = PC_ItPo_Health_02_Bulk_Info;
+	permanent = TRUE;
+	description = "Extract of healing x5 (10 healing herbs, 5 meadow knotweed, 5 flasks)";
+};
+
+
+func int PC_ItPo_Health_02_Bulk_Condition()
+{
+	if((PLAYER_MOBSI_PRODUCTION == MOBSI_PotionAlchemy) && (PLAYER_TALENT_ALCHEMY[POTION_Health_02] == TRUE) && (Knows_BulkBrewing == TRUE) && (HealthStart == TRUE))
+	{
+		return TRUE;
+	};
+};
+
+func void PC_ItPo_Health_02_Bulk_Info()
+{
+	if((Npc_HasItems(hero,ItPl_Health_Herb_02) >= 10) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 5) && (Npc_HasItems(hero,ItMi_Flask) >= 4))
+	{
+		Npc_RemoveInvItems(hero,ItPl_Health_Herb_02,10);
+		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,5);
+		Npc_RemoveInvItems(hero,ItMi_Flask,4);
+		CreateInvItems(hero,ItPo_Health_02,5);
+		Print(PRINT_AlchemySuccess);
+	}
+	else
+	{
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_Flask,1);
+	};
+	b_endproductiondialog();
+};
+
 
 instance PC_ItPo_Health_03(C_Info)
 {
-	nr = 4;
+	nr = 6;
 	npc = PC_Hero;
 	condition = PC_ItPo_Health_03_Condition;
 	information = PC_ItPo_Health_03_Info;
@@ -618,10 +838,47 @@ func void PC_ItPo_Health_03_Info()
 	b_endproductiondialog();
 };
 
+instance PC_ItPo_Health_03_Bulk(C_Info)
+{
+	nr = 7;
+	npc = PC_Hero;
+	condition = PC_ItPo_Health_03_Bulk_Condition;
+	information = PC_ItPo_Health_03_Bulk_Info;
+	permanent = TRUE;
+	description = "Elixir of healing x5 (10 healing roots, 5 meadow knotweed, 5 flasks)";
+};
+
+
+func int PC_ItPo_Health_03_Bulk_Condition()
+{
+	if((PLAYER_MOBSI_PRODUCTION == MOBSI_PotionAlchemy) && (PLAYER_TALENT_ALCHEMY[POTION_Health_03] == TRUE) && (Knows_BulkBrewing == TRUE) && (HealthStart == TRUE))
+	{
+		return TRUE;
+	};
+};
+
+func void PC_ItPo_Health_03_Bulk_Info()
+{
+	if((Npc_HasItems(hero,ItPl_Health_Herb_03) >= 10) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 5) && (Npc_HasItems(hero,ItMi_Flask) >= 4))
+	{
+		Npc_RemoveInvItems(hero,ItPl_Health_Herb_03,10);
+		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,5);
+		Npc_RemoveInvItems(hero,ItMi_Flask,4);
+		CreateInvItems(hero,ItPo_Health_03,5);
+		Print(PRINT_AlchemySuccess);
+	}
+	else
+	{
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_Flask,1);
+	};
+	b_endproductiondialog();
+};
+
 
 instance PC_ItPo_Health_04(C_Info)
 {
-	nr = 4;
+	nr = 8;
 	npc = PC_Hero;
 	condition = PC_ItPo_Health_04_Condition;
 	information = PC_ItPo_Health_04_Info;
@@ -645,6 +902,43 @@ func void PC_ItPo_Health_04_Info()
 		Npc_RemoveInvItems(hero,ItPo_Health_01,3);
 		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1);
 		CreateInvItems(hero,ItPo_Health_Addon_04,1);
+		Print(PRINT_AlchemySuccess);
+	}
+	else
+	{
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_Flask,1);
+	};
+	b_endproductiondialog();
+};
+
+instance PC_ItPo_Health_04_Bulk(C_Info)
+{
+	nr = 9;
+	npc = PC_Hero;
+	condition = PC_ItPo_Health_04_Bulk_Condition;
+	information = PC_ItPo_Health_04_Bulk_Info;
+	permanent = TRUE;
+	description = "Healing potions x5 (15 essences of healing, 5 meadow knotweed, 5 flasks)";
+};
+
+
+func int PC_ItPo_Health_04_Bulk_Condition()
+{
+	if((PLAYER_MOBSI_PRODUCTION == MOBSI_PotionAlchemy) && (PLAYER_TALENT_ALCHEMY[POTION_Health_04] == TRUE)  && (Knows_BulkBrewing == TRUE) && (HealthStart == TRUE))
+	{
+		return TRUE;
+	};
+};
+
+func void PC_ItPo_Health_04_Bulk_Info()
+{
+	if((Npc_HasItems(hero,ItPo_Health_01) >= 15) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 5) && (Npc_HasItems(hero,ItMi_Flask) >= 4))
+	{
+		Npc_RemoveInvItems(hero,ItPo_Health_01,15);
+		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,5);
+		Npc_RemoveInvItems(hero,ItMi_Flask,4);
+		CreateInvItems(hero,ItPo_Health_Addon_04,5);
 		Print(PRINT_AlchemySuccess);
 	}
 	else

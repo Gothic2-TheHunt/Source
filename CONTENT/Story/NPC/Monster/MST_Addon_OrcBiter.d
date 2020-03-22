@@ -57,7 +57,7 @@ instance OrcBiter_Strong(Mst_Default_OrcBiter)
 	protection[PROT_FLY] = 60;
 	protection[PROT_MAGIC] = 20;
 	Set_OrcBiter_Visuals();
-	Mdl_SetModelScale(self,1.1,1.1,1.1);
+	Mdl_SetModelScale(self,1.2,1.2,1.2);
 	Npc_SetToFistMode(self);
 	CreateInvItems(self,ItFoMuttonRaw,2);
 };

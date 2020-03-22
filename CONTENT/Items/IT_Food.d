@@ -31,11 +31,11 @@ const int Value_Booze = 20;
 const int HP_Booze = 3;
 const int Mana_Booze = 6;
 const int Value_Wine = 25;
-const int Value_VinoWine = 500;
+const int Value_VinoWine = 300;
 const int HP_Wine = 4;
 const int Mana_Wine = 8;
-const int HP_VinoWine = 4;
-const int Mana_VinoWine = 4;
+const int HP_VinoWine = 2;
+const int Mana_VinoWine = 2;
 const int Value_Milk = 30;
 const int HP_Milk = 7;
 const int Mana_Milk = 7;
@@ -584,7 +584,7 @@ func void Use_Wine()
 
 instance ItFo_VinoWine(C_Item)
 {
-	name = "Wine";
+	name = "Southern Wine";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
 	value = Value_VinoWine;
@@ -592,7 +592,7 @@ instance ItFo_VinoWine(C_Item)
 	material = MAT_GLAS;
 	scemeName = "POTION";
 	on_state[0] = Use_VinoWine;
-	description = "Vino's Special Wine";
+	description = "Southern Wine";
 	text[1] = NAME_Bonus_HP;
 	count[1] = HP_VinoWine;
 	text[2] = NAME_Bonus_Mana;

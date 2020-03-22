@@ -340,7 +340,7 @@ func void UseBloodMIS()
 		Knows_Bloodfly = TRUE;
 		Log_CreateTopic(Topic_Bonus,LOG_NOTE);
 		B_LogEntry(Topic_Bonus,"Now I know what to do in order to extract healing juices from the stingers of bloodflies.");
-		B_GivePlayerXP(XP_Ambient);
+		B_GivePlayerXP(XP_AmbientKap3);
 	};
 };
 
