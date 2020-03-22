@@ -779,7 +779,7 @@ func void DIA_Alrik_Teach_Info()
 
 func void DIA_Alrik_Teach_Back()
 {
-	if(other.HitChance[NPC_TALENT_1H] >= (60 - 30))
+	if(other.HitChance[NPC_TALENT_1H] >= 35)
 	{
 		AI_Output(self,other,"DIA_Alrik_Teach_Back_09_00");	//You're no longer a beginner!
 	}

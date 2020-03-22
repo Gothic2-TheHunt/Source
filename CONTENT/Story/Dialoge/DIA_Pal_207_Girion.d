@@ -348,7 +348,7 @@ instance DIA_Girion_PICKPOCKET(C_Info)
 
 func int DIA_Girion_PICKPOCKET_Condition()
 {
-	return C_Beklauen(73,280);
+	return C_Beklauen(98,280);
 };
 
 func void DIA_Girion_PICKPOCKET_Info()

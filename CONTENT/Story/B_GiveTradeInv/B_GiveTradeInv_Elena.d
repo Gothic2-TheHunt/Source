@@ -49,7 +49,7 @@ func void B_GiveTradeInv_Elena(var C_Npc slf)
 		CreateInvItems(slf,ItMi_Gold,100);
 		CreateInvItems(slf,ItFo_Cheese,2);
 		CreateInvItems(slf,ItFo_Bacon,2);
-		CreateInvItems(slf,ItFo_Apple,12);
+		CreateInvItems(slf,ItFo_Apple,10);
 		CreateInvItems(slf,ItFoMutton,3);
 		CreateInvItems(slf,ItFo_Honey,2);
 		CreateInvItems(slf,ItFo_Stew,5);
@@ -63,7 +63,7 @@ func void B_GiveTradeInv_Elena(var C_Npc slf)
 		CreateInvItems(slf,ItFo_Wine,5);
 		CreateInvItems(slf,ItFo_Cheese,2);
 		CreateInvItems(slf,ItFo_Milk,10);
-		CreateInvItems(slf,ItFo_Apple,11);
+		CreateInvItems(slf,ItFo_Apple,9);
 		CreateInvItems(slf,ItFoMutton,5);
 		CreateInvItems(slf,ItFo_Stew,1);
 		CreateInvItems(slf,ItFo_Sausage,5);
@@ -75,6 +75,7 @@ func void B_GiveTradeInv_Elena(var C_Npc slf)
 		CreateInvItems(slf,ItMi_Gold,200);
 		CreateInvItems(slf,ItFo_Wine,2);
 		CreateInvItems(slf,ItFo_Milk,5);
+		CreateInvItems(slf,ItFo_Apple,4);
 		CreateInvItems(slf,ItFoMutton,5);
 		CreateInvItems(slf,ItFo_Stew,3);
 		CreateInvItems(slf,ItFo_Sausage,5);
