@@ -14,6 +14,7 @@ func void B_GiveTradeInv_Karras(var C_Npc slf)
 		CreateInvItems(slf,ItSc_SumWolf,1);
 		CreateInvItems(slf,ItSc_TrfWaran,1);
 		CreateInvItems(slf,ItSc_Fear,2);
+		CreateInvItems(slf,ItSc_TrfGiantRat,1);
 		CreateInvItems(slf,ItSc_TrfGiantBug,1);
 		CreateInvItems(slf,ItSc_TrfWolf,1);
 		CreateInvItems(slf,ItSc_TrfSheep,1);
@@ -29,6 +30,9 @@ func void B_GiveTradeInv_Karras(var C_Npc slf)
 		CreateInvItems(slf,ItSc_TrfGiantRat,1);
 		CreateInvItems(slf,ItSc_TrfGiantBug,1);
 		CreateInvItems(slf,ItSc_TrfWolf,1);
+		CreateInvItems(slf,ItSc_TrfWaran,2);
+		CreateInvItems(slf,ItSc_TrfLurker,1);
+		CreateInvItems(slf,ItSc_TrfSnapper,1);
 		CreateInvItems(slf,ItSc_SumGobSkel,3);
 		CreateInvItems(slf,ItSc_SumWolf,2);
 		Karras_ItemsGiven_Chapter_2 = TRUE;
@@ -40,12 +44,15 @@ func void B_GiveTradeInv_Karras(var C_Npc slf)
 		CreateInvItems(slf,ItSc_TrfScavenger,3);
 		CreateInvItems(slf,ItSc_TrfGiantRat,3);
 		CreateInvItems(slf,ItSc_TrfGiantBug,3);
-		CreateInvItems(slf,ItSc_TrfWolf,3);
-		CreateInvItems(slf,ItSc_TrfWaran,3);
-		CreateInvItems(slf,ItSc_TrfSnapper,3);
+		CreateInvItems(slf,ItSc_TrfWolf,1);
+		CreateInvItems(slf,ItSc_TrfWaran,2);
+		CreateInvItems(slf,ItSc_TrfLurker,2);
+		CreateInvItems(slf,ItSc_TrfSnapper,2);
+		CreateInvItems(slf,ItSc_TrfWarg,1);
 		CreateInvItems(slf,ItSc_SumGobSkel,1);
 		CreateInvItems(slf,ItSc_SumWolf,3);
 		CreateInvItems(slf,ItSc_SumSkel,2);
+		CreateInvItems(slf,ItSc_Shrink,1);
 		CreateInvItems(slf,ItMi_RuneBlank,1);
 		CreateInvItems(slf,ItSc_SumGol,2);
 		Karras_ItemsGiven_Chapter_3 = TRUE;
@@ -53,15 +60,11 @@ func void B_GiveTradeInv_Karras(var C_Npc slf)
 	if((Kapitel >= 4) && (Karras_ItemsGiven_Chapter_4 == FALSE))
 	{
 		CreateInvItems(slf,ItMi_Gold,150);
-		CreateInvItems(slf,ItSc_TrfSheep,4);
-		CreateInvItems(slf,ItSc_TrfScavenger,4);
-		CreateInvItems(slf,ItSc_TrfGiantRat,4);
-		CreateInvItems(slf,ItSc_TrfGiantBug,2);
-		CreateInvItems(slf,ItSc_TrfWolf,2);
-		CreateInvItems(slf,ItSc_TrfWaran,2);
 		CreateInvItems(slf,ItSc_TrfSnapper,2);
 		CreateInvItems(slf,ItSc_TrfWarg,2);
-		CreateInvItems(slf,ItSc_TrfFireWaran,2);
+		CreateInvItems(slf,ItSc_TrfFireWaran,1);
+		CreateInvItems(slf,ItSc_TrfShadowbeast,2);
+		CreateInvItems(slf,ItSc_TrfDragonSnapper,1);
 		CreateInvItems(slf,ItSc_SumGobSkel,1);
 		CreateInvItems(slf,ItSc_SumWolf,1);
 		CreateInvItems(slf,ItSc_SumSkel,3);
@@ -73,18 +76,12 @@ func void B_GiveTradeInv_Karras(var C_Npc slf)
 	if((Kapitel >= 5) && (Karras_ItemsGiven_Chapter_5 == FALSE))
 	{
 		CreateInvItems(slf,ItMi_Gold,200);
-		CreateInvItems(slf,ItSc_TrfSheep,4);
-		CreateInvItems(slf,ItSc_TrfScavenger,4);
-		CreateInvItems(slf,ItSc_TrfGiantRat,4);
-		CreateInvItems(slf,ItSc_TrfGiantBug,2);
-		CreateInvItems(slf,ItSc_TrfWolf,2);
-		CreateInvItems(slf,ItSc_TrfWaran,2);
+		CreateInvItems(slf,ItSc_TrfSheep,1);
+		CreateInvItems(slf,ItSc_TrfDragonSnapper,1);
 		CreateInvItems(slf,ItSc_TrfSnapper,2);
 		CreateInvItems(slf,ItSc_TrfWarg,2);
+		CreateInvItems(slf,ItSc_TrfShadowbeast,1);
 		CreateInvItems(slf,ItSc_TrfFireWaran,2);
-		CreateInvItems(slf,ItSc_TrfLurker,2);
-		CreateInvItems(slf,ItSc_TrfShadowbeast,2);
-		CreateInvItems(slf,ItSc_TrfDragonSnapper,2);
 		CreateInvItems(slf,ItSc_SumGobSkel,1);
 		CreateInvItems(slf,ItSc_SumWolf,1);
 		CreateInvItems(slf,ItSc_SumSkel,2);

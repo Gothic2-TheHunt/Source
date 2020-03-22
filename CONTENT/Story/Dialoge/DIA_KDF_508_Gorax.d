@@ -37,7 +37,7 @@ instance DIA_Gorax_PICKPOCKET(C_Info)
 
 func int DIA_Gorax_PICKPOCKET_Condition()
 {
-	if((self.aivar[AIV_PlayerHasPickedMyPocket] == FALSE) && (Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == TRUE) && (other.attribute[ATR_DEXTERITY] >= (80 - Theftdiff)))
+	if((self.aivar[AIV_PlayerHasPickedMyPocket] == FALSE) && (Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == TRUE) && (other.attribute[ATR_DEXTERITY] >= (101 - Theftdiff)))
 	{
 		return 1;
 	};
@@ -52,7 +52,7 @@ func void DIA_Gorax_PICKPOCKET_Info()
 
 func void DIA_Gorax_PICKPOCKET_DoIt()
 {
-	if(other.attribute[ATR_DEXTERITY] >= 80)
+	if(other.attribute[ATR_DEXTERITY] >= 101)
 	{
 		CreateInvItems(self,ItKe_KlosterSchatz,1);
 		B_GiveInvItems(self,other,ItKe_KlosterSchatz,1);

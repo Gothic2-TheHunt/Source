@@ -150,7 +150,6 @@ func void B_GiveTradeInv_Gorax(var C_Npc slf)
 		CreateInvItems(slf,ItSc_SumGol,2);
 		CreateInvItems(slf,ItSc_HarmUndead,2);
 		CreateInvItems(slf,ItSc_ChargeFireBall,3);
-		CreateInvItems(slf,ItSc_SumDemon,1);
 		CreateInvItems(slf,ItSc_IceWave,1);
 		CreateInvItems(slf,ItSc_TrfSnapper,1);
 		CreateInvItems(slf,ItSc_TrfWarg,1);

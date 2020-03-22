@@ -103,6 +103,8 @@ func void B_GiveTradeInv_Addon_Cronos_ADW(var C_Npc slf)
 		CreateInvItems(slf,ItSc_ChargeFireBall,3);
 		CreateInvItems(slf,ItSc_TrfSnapper,1);
 		CreateInvItems(slf,ItSc_TrfWarg,1);
+		CreateInvItems(slf,ItSc_BreathOfDeath,1);
+		CreateInvItems(slf,ItSc_Shrink,1);
 		CreateInvItems(slf,ItSc_Icelance,3);
 		CreateInvItems(slf,ItSc_Whirlwind,3);
 		CreateInvItems(slf,ItSc_Geyser,3);
@@ -128,7 +130,6 @@ func void B_GiveTradeInv_Addon_Cronos_ADW(var C_Npc slf)
 		CreateInvItems(slf,ItPo_Health_03,15);
 		CreateInvItems(slf,ItPo_Mana_01,50);
 		CreateInvItems(slf,ItPo_Mana_02,40);
-		CreateInvItems(slf,ItSc_SumDemon,1);
 		CreateInvItems(slf,ItSc_FullHeal,3);
 		CreateInvItems(slf,ItSc_Icelance,3);
 		CreateInvItems(slf,ItSc_Whirlwind,3);

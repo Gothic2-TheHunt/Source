@@ -2125,6 +2125,7 @@ func void STARTUP_NewWorld_Part_Monastery_01()
 	Wld_InsertNpc(Keiler,"NW_MONASTERY_HILL_02");
 	Wld_InsertItem(ItWr_BowStonePlate1_Addon,"FP_ROAM_NW_NW_PATH_TO_MONASTER_MONSTER22_03");
 	Wld_InsertItem(ItWr_StonePlateCommon_Addon,"FP_ITEM_MONASTERY_01");
+	Wld_InsertItem(ItWr_ManaStonePlate3_Addon,"FP_ITEM_KLOSTER_02");
 };
 
 func void INIT_SUB_NewWorld_Part_Monastery_01()

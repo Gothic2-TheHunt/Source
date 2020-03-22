@@ -80,6 +80,7 @@ func void B_GiveTradeInv_Isgaroth(var C_Npc slf)
 		CreateInvItems(slf,ItSc_HarmUndead,2);
 		CreateInvItems(slf,ItSc_Firestorm,2);
 		CreateInvItems(slf,ItSc_Pyrokinesis,2);
+		CreateInvItems(slf,ItSc_BreathOfDeath,1);
 		CreateInvItems(slf,ItSc_SumSkel,3);
 		CreateInvItems(slf,ItSc_TrfShadowbeast,1);
 		CreateInvItems(slf,ItSc_TrfWarg,1);
@@ -99,6 +100,7 @@ func void B_GiveTradeInv_Isgaroth(var C_Npc slf)
 		CreateInvItems(slf,ItPo_Health_03,10);
 		CreateInvItems(slf,ItPo_Mana_01,25);
 		CreateInvItems(slf,ItPo_Mana_02,25);
+		CreateInvItems(slf,ItSc_BreathOfDeath,2);
 		CreateInvItems(slf,ItSc_SumGol,4);
 		CreateInvItems(slf,ItSc_TrfDragonSnapper,1);
 		CreateInvItems(slf,ItSc_ChargeFireBall,2);

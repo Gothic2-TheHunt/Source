@@ -52,6 +52,7 @@ func void B_GiveTradeInv_Sengrath(var C_Npc slf)
 		CreateInvItems(slf,ItSc_Geyser,4);
 		CreateInvItems(slf,ItSc_ChargeFireBall,4);
 		CreateInvItems(slf,ItSc_Waterfist,4);
+		CreateInvItems(slf,ItSc_BreathOfDeath,1);
 		CreateInvItems(slf,ItPo_Mana_02,5);
 		Sengrath_ItemsGiven_Chapter_3 = TRUE;
 	};
@@ -60,9 +61,12 @@ func void B_GiveTradeInv_Sengrath(var C_Npc slf)
 		CreateInvItems(slf,ItMi_Gold,150);
 		CreateInvItems(slf,ItWr_DexStonePlate3_Addon,1);
 		CreateInvItems(slf,ItPo_Mana_02,10);
+		CreateInvItems(slf,ItSc_Shrink,1);
+		CreateInvItems(slf,ItSc_SumDemon,1);
 		CreateInvItems(slf,ItPo_Mana_03,5);
 		CreateInvItems(slf,ItPo_Mana_Addon_04,5);
 		CreateInvItems(slf,ItPo_Health_Addon_04,5);
+		CreateInvItems(slf,ItSc_ArmyOfDarkness,1);
 		Sengrath_ItemsGiven_Chapter_4 = TRUE;
 	};
 	if((Kapitel >= 5) && (Sengrath_ItemsGiven_Chapter_5 == FALSE))

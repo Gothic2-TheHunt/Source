@@ -82,7 +82,6 @@ func void B_GiveTradeInv_Engor(var C_Npc slf)
 	{
 		CreateInvItems(slf,ItMi_Gold,150);
 		CreateInvItems(slf,ItMiSwordraw,2);
-		CreateInvItems(slf,ItSc_SumDemon,1);
 		CreateInvItems(slf,ItPo_Health_01,10);
 		CreateInvItems(slf,ItPo_Health_02,5);
 		CreateInvItems(slf,ItPo_Health_03,5);

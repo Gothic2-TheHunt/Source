@@ -31,7 +31,7 @@ func void B_GiveTradeInv_Salandril(var C_Npc slf)
 		CreateInvItems(slf,ItPo_Health_02,5);
 		CreateInvItems(slf,ItPo_Mana_03,2);
 		CreateInvItems(slf,ItPo_Perm_Mana,1);
-		CreateInvItems(slf,ItSc_Thunderstorm,2);
+		CreateInvItems(slf,ItSc_Thunderstorm,1);
 		CreateInvItems(slf,ItSc_Waterfist,2);
 		CreateInvItems(slf,ItPo_Health_03,2);
 		Salandril_ItemsGiven_Chapter_2 = TRUE;
