@@ -239,6 +239,7 @@ func void Use_StonePlate()
 			logBonus = ConcatStrings(logBonus, " one-handed from reading Stone plates");
 			Log_CreateTopic(Topic_Onehanded,LOG_NOTE);
 			B_LogEntry(Topic_Onehanded,logBonus);
+			PrintScreen(concatText,-1,-1,FONT_Screen,2);
 		}
 		else if(StoneplateItem == TwoHStonePlate)
 		{
@@ -272,6 +273,7 @@ func void Use_StonePlate()
 			logBonus = ConcatStrings(logBonus, " two-handed from reading Stone plates");
 			Log_CreateTopic(Topic_Twohanded,LOG_NOTE);
 			B_LogEntry(Topic_Twohanded,logBonus);
+			PrintScreen(concatText,-1,-1,FONT_Screen,2);			
 		}
 		else if(StoneplateItem == BowStonePlate)
 		{
@@ -305,6 +307,7 @@ func void Use_StonePlate()
 			logBonus = ConcatStrings(logBonus, " bow skill from reading Stone plates");
 			Log_CreateTopic(Topic_Bow,LOG_NOTE);
 			B_LogEntry(Topic_Bow,logBonus);
+			PrintScreen(concatText,-1,-1,FONT_Screen,2);
 		}
 		else if(StoneplateItem == CrsBowStonePlate)
 		{
@@ -338,8 +341,9 @@ func void Use_StonePlate()
 			logBonus = ConcatStrings(logBonus, " crossbow skill from reading Stone plates");
 			Log_CreateTopic(Topic_Crossbow,LOG_NOTE);
 			B_LogEntry(Topic_Crossbow,logBonus);
+			PrintScreen(concatText,-1,-1,FONT_Screen,2);
 		};
-		PrintScreen(concatText,-1,-1,FONT_Screen,2);
+		//PrintScreen(concatText,-1,-1,FONT_Screen,2);
 		Wld_PlayEffect("spellFX_LIGHTSTAR_ORANGE",hero,hero,0,0,0,FALSE);
 		Snd_Play("SFX_HealObsession");
 	};

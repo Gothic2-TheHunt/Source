@@ -395,11 +395,11 @@ instance ItPo_MegaDrink(C_Item)
 
 func void UseItPo_MegaDrink()
 {
+	var string logBonus;
 	if(self.attribute[ATR_STRENGTH] < self.attribute[ATR_DEXTERITY])
 	{
 		B_RaiseAttribute(self,ATR_DEXTERITY,STRorDEX_MegaDrink);
 		Embarla_Firgasto_Dexterity_Total_Bonus = Embarla_Firgasto_Dexterity_Total_Bonus + STRorDEX_MegaDrink;
-		var string logBonus;
 		logBonus = ConcatStrings("I have now gained a total of ", IntToString(Embarla_Firgasto_Dexterity_Total_Bonus));
 		logBonus = ConcatStrings(logBonus, " dexterity from drinking Embarla Firgasto");
 		Log_CreateTopic(Topic_Dexterity,LOG_NOTE);
@@ -409,7 +409,6 @@ func void UseItPo_MegaDrink()
 	{
 		B_RaiseAttribute(self,ATR_STRENGTH,STRorDEX_MegaDrink);
 		Embarla_Firgasto_Strength_Total_Bonus = Embarla_Firgasto_Strength_Total_Bonus + STRorDEX_MegaDrink;
-		var string logBonus;
 		logBonus = ConcatStrings("I have now gained a total of ", IntToString(Embarla_Firgasto_Strength_Total_Bonus));
 		logBonus = ConcatStrings(logBonus, " strength from drinking Embarla Firgasto");
 		Log_CreateTopic(Topic_Strength,LOG_NOTE);
