@@ -163,6 +163,11 @@ func void DIA_Dragomir_Armbrust_Info()
 	// CreateInvItems(self,ItMi_Gold,150);
 	// B_GiveInvItems(self,other,ItMi_Gold,150);
 	B_RaiseFightTalent(other,NPC_TALENT_CROSSBOW,2);
+	var string logBonus;
+	logBonus = ConcatStrings("I have now gained a total of ", IntToString(2));
+	logBonus = ConcatStrings(logBonus, " crossbow skill for returning Dragomir's crossbow.");
+	Log_CreateTopic(Topic_Crossbow,LOG_NOTE);
+	B_LogEntry(Topic_Crossbow,logBonus);
 	PrintScreen(PRINT_LearnCrossbow,-1,-1,FONT_Screen,2);
 	MIS_DragomirsArmbrust = LOG_SUCCESS;
 	B_GivePlayerXP(XP_DragomirsArmbrust);

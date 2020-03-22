@@ -519,6 +519,11 @@ func void DIA_Addon_Erol_Teach_Info()
 		AI_Output(self,other,"DIA_Addon_Erol_Teach_Add_10_02");	//Turn your hip, bring your shoulder to the front, and stretch out your arm at the same time.
 		AI_Output(self,other,"DIA_Addon_Erol_Teach_Add_10_03");	//(laughs) If you hit right, you'll notice the difference!
 		B_RaiseAttribute(other,ATR_STRENGTH,1);
+		var string logBonus;
+		logBonus = ConcatStrings("I have now gained a total of ", IntToString(1));
+		logBonus = ConcatStrings(logBonus, " strength for helping Erol get his stone plates.");
+		Log_CreateTopic(Topic_Strength,LOG_NOTE);
+		B_LogEntry(Topic_Strength,logBonus);
 		Erol_Bonus = TRUE;
 	}
 	else

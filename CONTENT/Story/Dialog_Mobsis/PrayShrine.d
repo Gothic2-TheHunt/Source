@@ -318,6 +318,7 @@ func void PC_PrayShrine_Pray_MediumPay()
 func void PC_PrayShrine_Pray_BigPay()
 {
 	var int zufall;
+	var string logBonus;
 	zufall = Hlp_Random(100);
 	Npc_RemoveInvItems(hero,ItMi_Gold,200);
 	if(PrayDay == Wld_GetDay())
@@ -328,21 +329,41 @@ func void PC_PrayShrine_Pray_BigPay()
 	{
 		B_BlessAttribute(hero,ATR_STRENGTH,1);
 		Shrine_STR_Bonus += 1;
+		Shrine_Strength_Total_Bonus = Shrine_Strength_Total_Bonus + 1;
+		logBonus = ConcatStrings("I have now gained a total of ", IntToString(Shrine_Strength_Total_Bonus));
+		logBonus = ConcatStrings(logBonus, " strength for praying at Innos's shrine.");
+		Log_CreateTopic(Topic_Strength,LOG_NOTE);
+		B_LogEntry(Topic_Strength,logBonus);
 	}
 	else if((Shrine_DEX_Bonus < 10) && (zufall >= 50))
 	{
 		B_BlessAttribute(hero,ATR_DEXTERITY,1);
 		Shrine_DEX_Bonus += 1;
+		Shrine_Dexterity_Total_Bonus = Shrine_Dexterity_Total_Bonus + 1;
+		logBonus = ConcatStrings("I have now gained a total of ", IntToString(Shrine_Dexterity_Total_Bonus));
+		logBonus = ConcatStrings(logBonus, " dexterity for praying at Innos's shrine.");
+		Log_CreateTopic(Topic_Dexterity,LOG_NOTE);
+		B_LogEntry(Topic_Dexterity,logBonus);
 	}
 	else if((Shrine_HEALTH_Bonus < 20) && (zufall < 25 || zufall > 75))
 	{
 		B_BlessAttribute(hero,ATR_HITPOINTS_MAX,1);
 		Shrine_HEALTH_Bonus += 1;
+		Shrine_Health_Total_Bonus = Shrine_Health_Total_Bonus + 1;
+		logBonus = ConcatStrings("I have now gained a total of ", IntToString(Shrine_Health_Total_Bonus));
+		logBonus = ConcatStrings(logBonus, " health for praying at Innos's shrine.");
+		Log_CreateTopic(Topic_Health,LOG_NOTE);
+		B_LogEntry(Topic_Health,logBonus);
 	}
 	else if(Shrine_MANA_Bonus < 20)
 	{
 		B_BlessAttribute(hero,ATR_MANA_MAX,1);
 		Shrine_MANA_Bonus += 1;
+		Shrine_Mana_Total_Bonus = Shrine_Mana_Total_Bonus + 1;
+		logBonus = ConcatStrings("I have now gained a total of ", IntToString(Shrine_Mana_Total_Bonus));
+		logBonus = ConcatStrings(logBonus, " mana for praying at Innos's shrine.");
+		Log_CreateTopic(Topic_Mana,LOG_NOTE);
+		B_LogEntry(Topic_Mana,logBonus);
 	}
 	else
 	{

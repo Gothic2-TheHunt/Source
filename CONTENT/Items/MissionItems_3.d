@@ -558,6 +558,11 @@ func void Use_Astronomy()
 	if(Astronomy_once == FALSE)
 	{
 		B_RaiseAttribute(self,ATR_MANA_MAX,2);
+		var string logBonus;
+		logBonus = ConcatStrings("I have now gained a total of ", IntToString(2));
+		logBonus = ConcatStrings(logBonus, " mana from reading The Divine Power of the Stars");
+		Log_CreateTopic(Topic_Mana,LOG_NOTE);
+		B_LogEntry(Topic_Mana,logBonus);
 		Print(Print_ReadAstronomy);
 		Astronomy_once = TRUE;
 	};

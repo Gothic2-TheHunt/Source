@@ -78,6 +78,12 @@ func void Use_Apple()
 		{
 			Print(PRINT_Eat3);
 			B_RaiseAttribute(self,ATR_STRENGTH,1);
+			Apple_Total_Bonus = Apple_Total_Bonus + 1;
+			var string logBonus;
+			logBonus = ConcatStrings("I have now gained a total of ", IntToString(Apple_Total_Bonus));
+			logBonus = ConcatStrings(logBonus, " strength from eating Apples");
+			Log_CreateTopic(Topic_Strength,LOG_NOTE);
+			B_LogEntry(Topic_Strength,logBonus);
 			Snd_Play("LevelUp");
 			Apple_Bonus = 0;
 		};
@@ -116,6 +122,12 @@ func void Use_Cheese()
 		if(Cheese_Bonus == 16)
 		{
 			B_RaiseAttribute(self,ATR_DEXTERITY,1);
+			Cheese_Total_Bonus = Cheese_Total_Bonus + 1;
+			var string logBonus;
+			logBonus = ConcatStrings("I have now gained a total of ", IntToString(Cheese_Total_Bonus));
+			logBonus = ConcatStrings(logBonus, " dexterity from eating Cheese");
+			Log_CreateTopic(Topic_Dexterity,LOG_NOTE);
+			B_LogEntry(Topic_Dexterity,logBonus);
 			Snd_Play("LevelUp");
 			Cheese_Bonus = 0;
 		};
@@ -150,6 +162,12 @@ func void Use_Bacon()
 		if(Bacon_Bonus == 14)
 		{
 			B_RaiseAttribute(self,ATR_HITPOINTS_MAX,3);
+			Bacon_Total_Bonus = Bacon_Total_Bonus + 3;
+			var string logBonus;
+			logBonus = ConcatStrings("I have now gained a total of ", IntToString(Bacon_Total_Bonus));
+			logBonus = ConcatStrings(logBonus, " health from eating Ham");
+			Log_CreateTopic(Topic_Health,LOG_NOTE);
+			B_LogEntry(Topic_Health,logBonus);
 			Snd_Play("LevelUp");
 			Bacon_Bonus = 0;
 		};
@@ -184,6 +202,12 @@ func void Use_Bread()
 		if(Bread_Bonus == 18)
 		{
 			B_RaiseAttribute(self,ATR_HITPOINTS_MAX,1);
+			Bread_Total_Bonus = Bread_Total_Bonus + 1;
+			var string logBonus;
+			logBonus = ConcatStrings("I have now gained a total of ", IntToString(Bread_Total_Bonus));
+			logBonus = ConcatStrings(logBonus, " health from eating Bread");
+			Log_CreateTopic(Topic_Health,LOG_NOTE);
+			B_LogEntry(Topic_Health,logBonus);
 			Snd_Play("LevelUp");
 			Bread_Bonus = 0;
 		};
@@ -290,6 +314,12 @@ func void Use_Stew()
 		if(Stew_Bonus == 20)
 		{
 			B_RaiseAttribute(self,ATR_HITPOINTS_MAX,2);
+			Stew_Total_Bonus = Stew_Total_Bonus + 2;
+			var string logBonus;
+			logBonus = ConcatStrings("I have now gained a total of ", IntToString(Stew_Total_Bonus));
+			logBonus = ConcatStrings(logBonus, " health from eating Stew");
+			Log_CreateTopic(Topic_Health,LOG_NOTE);
+			B_LogEntry(Topic_Health,logBonus);
 			Snd_Play("LevelUp");
 			Stew_Bonus = 0;
 		};
@@ -322,6 +352,12 @@ func void Use_XPStew()
 	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Stew);
 	Snd_Play("LevelUp");
 	B_RaiseAttribute(self,ATR_STRENGTH,1);
+	Thekla_Total_Bonus = Thekla_Total_Bonus + 1;
+	var string logBonus;
+	logBonus = ConcatStrings("I have now gained a total of ", IntToString(Thekla_Total_Bonus));
+	logBonus = ConcatStrings(logBonus, " strength from eating Thekla's stew");
+	Log_CreateTopic(Topic_Strength,LOG_NOTE);
+	B_LogEntry(Topic_Strength,logBonus);
 };
 
 
@@ -352,6 +388,18 @@ func void Use_CoragonsBeerBeer()
 	B_RaiseAttribute(self,ATR_HITPOINTS_MAX,HP_Beer);
 	Npc_ChangeAttribute(self,ATR_MANA,Mana_Beer);
 	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Beer);
+	Coragon_Health_Total_Bonus = Coragon_Health_Total_Bonus + HP_Beer;
+	Coragon_Mana_Total_Bonus = Coragon_Mana_Total_Bonus + Mana_Beer;
+	var string logBonus;
+	logBonus = ConcatStrings("I have now gained a total of ", IntToString(Coragon_Health_Total_Bonus));
+	logBonus = ConcatStrings(logBonus, " health from drinking Coragon's beer");
+	Log_CreateTopic(Topic_Health,LOG_NOTE);
+	B_LogEntry(Topic_Health,logBonus);
+	var string logBonus2;
+	logBonus2 = ConcatStrings("I have now gained a total of ", IntToString(Coragon_Mana_Total_Bonus));
+	logBonus2 = ConcatStrings(logBonus2, " mana from drinking Coragon's beer");
+	Log_CreateTopic(Topic_Mana,LOG_NOTE);
+	B_LogEntry(Topic_Mana,logBonus2);
 };
 
 
@@ -382,6 +430,12 @@ func void Use_FishSoup()
 		if(FishSoup_Bonus == 20)
 		{
 			B_RaiseAttribute(self,ATR_HITPOINTS_MAX,1);
+			FishSoup_Total_Bonus = FishSoup_Total_Bonus + 1;
+			var string logBonus;
+			logBonus = ConcatStrings("I have now gained a total of ", IntToString(FishSoup_Total_Bonus));
+			logBonus = ConcatStrings(logBonus, " health from eating Fish soup");
+			Log_CreateTopic(Topic_Health,LOG_NOTE);
+			B_LogEntry(Topic_Health,logBonus);
 			Snd_Play("LevelUp");
 			FishSoup_Bonus = 0;
 		};
@@ -416,6 +470,12 @@ func void Use_Sausage()
 		if(Sausage_Bonus == 13)
 		{
 			B_RaiseAttribute(self,ATR_HITPOINTS_MAX,2);
+			Sausage_Total_Bonus = Sausage_Total_Bonus + 2;
+			var string logBonus;
+			logBonus = ConcatStrings("I have now gained a total of ", IntToString(Sausage_Total_Bonus));
+			logBonus = ConcatStrings(logBonus, " health from eating Sausage");
+			Log_CreateTopic(Topic_Health,LOG_NOTE);
+			B_LogEntry(Topic_Health,logBonus);
 			Snd_Play("LevelUp");
 			Sausage_Bonus = 0;
 		};
@@ -450,6 +510,12 @@ func void Use_Honey()
 		if(Honey_Bonus == 16)
 		{
 			B_RaiseAttribute(self,ATR_HITPOINTS_MAX,3);
+			Honey_Total_Bonus = Honey_Total_Bonus + 3;
+			var string logBonus;
+			logBonus = ConcatStrings("I have now gained a total of ", IntToString(Honey_Total_Bonus));
+			logBonus = ConcatStrings(logBonus, " health from eating Honey");
+			Log_CreateTopic(Topic_Health,LOG_NOTE);
+			B_LogEntry(Topic_Health,logBonus);
 			Snd_Play("LevelUp");
 			Honey_Bonus = 0;
 		};
@@ -539,6 +605,12 @@ func void Use_Booze()
 		if(Gin_Bonus == 19)
 		{
 			B_RaiseAttribute(self,ATR_MANA_MAX,1);
+			Gin_Total_Bonus = Gin_Total_Bonus + 1;
+			var string logBonus;
+			logBonus = ConcatStrings("I have now gained a total of ", IntToString(Gin_Total_Bonus));
+			logBonus = ConcatStrings(logBonus, " mana from drinking Gin");
+			Log_CreateTopic(Topic_Mana,LOG_NOTE);
+			B_LogEntry(Topic_Mana,logBonus);
 			Snd_Play("LevelUp");
 			Gin_Bonus = 0;
 		};
@@ -576,6 +648,12 @@ func void Use_Wine()
 		if(Wine_Bonus == 22)
 		{
 			B_RaiseAttribute(self,ATR_MANA_MAX,2);
+			Wine_Total_Bonus = Wine_Total_Bonus + 2;
+			var string logBonus;
+			logBonus = ConcatStrings("I have now gained a total of ", IntToString(Wine_Total_Bonus));
+			logBonus = ConcatStrings(logBonus, " mana from drinking Wine");
+			Log_CreateTopic(Topic_Mana,LOG_NOTE);
+			B_LogEntry(Topic_Mana,logBonus);
 			Snd_Play("LevelUp");
 			Wine_Bonus = 0;
 		};
@@ -607,6 +685,18 @@ func void Use_VinoWine()
 	B_RaiseAttribute(self,ATR_HITPOINTS_MAX,HP_VinoWine);
 	Npc_ChangeAttribute(self,ATR_MANA,Mana_VinoWine);
 	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_VinoWine);
+	Vino_Health_Total_Bonus = Vino_Health_Total_Bonus + HP_VinoWine;
+	Vino_Mana_Total_Bonus = Vino_Mana_Total_Bonus + Mana_VinoWine;
+	var string logBonus;
+	logBonus = ConcatStrings("I have now gained a total of ", IntToString(Vino_Health_Total_Bonus));
+	logBonus = ConcatStrings(logBonus, " health from drinking Southern Wine");
+	Log_CreateTopic(Topic_Health,LOG_NOTE);
+	B_LogEntry(Topic_Health,logBonus);
+	var string logBonus2;
+	logBonus2 = ConcatStrings("I have now gained a total of ", IntToString(Vino_Mana_Total_Bonus));
+	logBonus2 = ConcatStrings(logBonus2, " mana from drinking Southern Wine");
+	Log_CreateTopic(Topic_Mana,LOG_NOTE);
+	B_LogEntry(Topic_Mana,logBonus2);
 };
 
 
@@ -641,6 +731,18 @@ func void Use_Milk()
 		{
 			B_RaiseAttribute(self,ATR_HITPOINTS_MAX,1);
 			B_RaiseAttribute(self,ATR_MANA_MAX,1);
+			Milk_Health_Total_Bonus = Milk_Health_Total_Bonus + 1;
+			Milk_Mana_Total_Bonus = Milk_Mana_Total_Bonus + 1;
+			var string logBonus;
+			logBonus = ConcatStrings("I have now gained a total of ", IntToString(Milk_Health_Total_Bonus));
+			logBonus = ConcatStrings(logBonus, " health from drinking Milk");
+			Log_CreateTopic(Topic_Health,LOG_NOTE);
+			B_LogEntry(Topic_Health,logBonus);
+			var string logBonus2;
+			logBonus2 = ConcatStrings("I have now gained a total of ", IntToString(Milk_Mana_Total_Bonus));
+			logBonus2 = ConcatStrings(logBonus2, " mana from drinking Milk");
+			Log_CreateTopic(Topic_Mana,LOG_NOTE);
+			B_LogEntry(Topic_Mana,logBonus2);
 			Snd_Play("LevelUp");
 			Milk_Bonus = 0;
 		};

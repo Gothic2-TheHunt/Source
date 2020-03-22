@@ -25,7 +25,7 @@ func void B_RaiseAttribute(var C_Npc oth,var int attrib,var int points)
 	{
 		oth.attribute[ATR_STRENGTH] = oth.attribute[ATR_STRENGTH] + points;
 		concatText = ConcatStrings(PRINT_LearnSTR,IntToString(points));
-		PrintScreen(concatText,-1,-1,FONT_Screen,2);
+		PrintScreen(concatText,-1,40,FONT_Screen,2);
 	};
 	if(attrib == ATR_DEXTERITY)
 	{

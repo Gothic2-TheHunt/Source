@@ -1000,6 +1000,11 @@ func void DIA_Addon_Vatras_Free_Info()
 	AI_Output(self,other,"DIA_Addon_Vatras_Free_05_02");	//But your own journey must go on. So go with the blessing of Adanos.
 	AI_Output(self,other,"DIA_Addon_Vatras_Free_05_03");	//(praying) Adanos, bless this man. Light his path and grant him the strength to withstand all dangers.
 	B_RaiseAttribute(other,ATR_MANA_MAX,5);
+	var string logBonus;
+	logBonus = ConcatStrings("I have now gained a total of ", IntToString(5));
+	logBonus = ConcatStrings(logBonus, " mana from Vatras for rescuing the missing citizens.");
+	Log_CreateTopic(Topic_Mana,LOG_NOTE);
+	B_LogEntry(Topic_Mana,logBonus);
 	other.attribute[ATR_MANA] = other.attribute[ATR_MANA_MAX];
 	other.attribute[ATR_HITPOINTS] = other.attribute[ATR_HITPOINTS_MAX];
 	Snd_Play("Levelup");
@@ -1226,6 +1231,12 @@ func void DIA_Addon_Vatras_SellStonplate_Info()
 		AI_Output(self,other,"DIA_Addon_Vatras_SellStonplate_05_02");	//I shall increase your magical power!
 		B_RaiseAttribute(other,ATR_MANA_MAX,anzahl);
 		Npc_ChangeAttribute(other,ATR_MANA,anzahl);
+		Vatras_StonePlates_Total_Bonus = Vatras_StonePlates_Total_Bonus + anzahl;
+		var string logBonus;
+		logBonus = ConcatStrings("I have now gained a total of ", IntToString(Vatras_StonePlates_Total_Bonus));
+		logBonus = ConcatStrings(logBonus, " mana from Vatras for bringing him stone plates.");
+		Log_CreateTopic(Topic_Mana,LOG_NOTE);
+		B_LogEntry(Topic_Mana,logBonus);
 	}
 	else if(anzahl >= 5)
 	{

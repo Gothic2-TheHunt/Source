@@ -74,6 +74,7 @@ func int C_SCHasStPlSkill()
 func void Use_StonePlate()
 {
 	var string concatText;
+	var string logBonus;
 	if(C_SCHasStPlSkill() == FALSE)
 	{
 		B_Say(self,self,"$CANTREADTHIS");
@@ -86,21 +87,29 @@ func void Use_StonePlate()
 			if(StoneplateLevel == 1)
 			{
 				B_RaiseAttribute(self,ATR_STRENGTH,STR_StPlLevel1);
+				Strength_Stoneplate_Total_Bonus = Strength_Stoneplate_Total_Bonus + STR_StPlLevel1;
 				concatText = ConcatStrings(concatText,IntToString(STR_StPlLevel1));
 				B_Say(self,self,"STONEPLATE_1");
 			}
 			else if(StoneplateLevel == 2)
 			{
 				B_RaiseAttribute(self,ATR_STRENGTH,STR_StPlLevel2);
+				Strength_Stoneplate_Total_Bonus = Strength_Stoneplate_Total_Bonus + STR_StPlLevel2;
 				concatText = ConcatStrings(concatText,IntToString(STR_StPlLevel2));
 				B_Say(self,self,"STONEPLATE_2");
 			}
 			else if(StoneplateLevel == 3)
 			{
 				B_RaiseAttribute(self,ATR_STRENGTH,STR_StPlLevel3);
+				Strength_Stoneplate_Total_Bonus = Strength_Stoneplate_Total_Bonus + STR_StPlLevel3;
 				concatText = ConcatStrings(concatText,IntToString(STR_StPlLevel3));
 				B_Say(self,self,"STONEPLATE_3");
 			};
+			
+			logBonus = ConcatStrings("I have now gained a total of ", IntToString(Strength_Stoneplate_Total_Bonus));
+			logBonus = ConcatStrings(logBonus, " strength from reading Stone plates");
+			Log_CreateTopic(Topic_Strength,LOG_NOTE);
+			B_LogEntry(Topic_Strength,logBonus);
 		}
 		else if(StoneplateItem == DexStonePlate)
 		{
@@ -108,21 +117,29 @@ func void Use_StonePlate()
 			if(StoneplateLevel == 1)
 			{
 				B_RaiseAttribute(self,ATR_DEXTERITY,DEX_StPlLevel1);
+				Dexterity_Stoneplate_Total_Bonus = Dexterity_Stoneplate_Total_Bonus + DEX_StPlLevel1;
 				concatText = ConcatStrings(concatText,IntToString(DEX_StPlLevel1));
 				B_Say(self,self,"STONEPLATE_1");
 			}
 			else if(StoneplateLevel == 2)
 			{
 				B_RaiseAttribute(self,ATR_DEXTERITY,DEX_StPlLevel2);
+				Dexterity_Stoneplate_Total_Bonus = Dexterity_Stoneplate_Total_Bonus + DEX_StPlLevel2;
 				concatText = ConcatStrings(concatText,IntToString(DEX_StPlLevel2));
 				B_Say(self,self,"STONEPLATE_2");
 			}
 			else if(StoneplateLevel == 3)
 			{
 				B_RaiseAttribute(self,ATR_DEXTERITY,DEX_StPlLevel3);
+				Dexterity_Stoneplate_Total_Bonus = Dexterity_Stoneplate_Total_Bonus + DEX_StPlLevel3;
 				concatText = ConcatStrings(concatText,IntToString(DEX_StPlLevel3));
 				B_Say(self,self,"STONEPLATE_3");
 			};
+			
+			logBonus = ConcatStrings("I have now gained a total of ", IntToString(Dexterity_Stoneplate_Total_Bonus));
+			logBonus = ConcatStrings(logBonus, " dexterity from reading Stone plates");
+			Log_CreateTopic(Topic_Dexterity,LOG_NOTE);
+			B_LogEntry(Topic_Dexterity,logBonus);
 		}
 		else if(StoneplateItem == HitPointStonePlate)
 		{
@@ -130,6 +147,7 @@ func void Use_StonePlate()
 			if(StoneplateLevel == 1)
 			{
 				B_RaiseAttribute(self,ATR_HITPOINTS_MAX,HPMax_StPlLevel1);
+				Health_Stoneplate_Total_Bonus = Health_Stoneplate_Total_Bonus + HPMax_StPlLevel1;
 				Npc_ChangeAttribute(self,ATR_HITPOINTS,HPMax_StPlLevel1);
 				concatText = ConcatStrings(concatText,IntToString(HPMax_StPlLevel1));
 				B_Say(self,self,"STONEPLATE_1");
@@ -137,6 +155,7 @@ func void Use_StonePlate()
 			else if(StoneplateLevel == 2)
 			{
 				B_RaiseAttribute(self,ATR_HITPOINTS_MAX,HPMax_StPlLevel2);
+				Health_Stoneplate_Total_Bonus = Health_Stoneplate_Total_Bonus + HPMax_StPlLevel2;
 				Npc_ChangeAttribute(self,ATR_HITPOINTS,HPMax_StPlLevel2);
 				concatText = ConcatStrings(concatText,IntToString(HPMax_StPlLevel2));
 				B_Say(self,self,"STONEPLATE_2");
@@ -144,10 +163,16 @@ func void Use_StonePlate()
 			else if(StoneplateLevel == 3)
 			{
 				B_RaiseAttribute(self,ATR_HITPOINTS_MAX,HPMax_StPlLevel3);
+				Health_Stoneplate_Total_Bonus = Health_Stoneplate_Total_Bonus + HPMax_StPlLevel3;
 				Npc_ChangeAttribute(self,ATR_HITPOINTS,HPMax_StPlLevel3);
 				concatText = ConcatStrings(concatText,IntToString(HPMax_StPlLevel3));
 				B_Say(self,self,"STONEPLATE_3");
 			};
+			
+			logBonus = ConcatStrings("I have now gained a total of ", IntToString(Health_Stoneplate_Total_Bonus));
+			logBonus = ConcatStrings(logBonus, " health from reading Stone plates");
+			Log_CreateTopic(Topic_Health,LOG_NOTE);
+			B_LogEntry(Topic_Health,logBonus);
 		}
 		else if(StoneplateItem == ManaStonePlate)
 		{
@@ -155,6 +180,7 @@ func void Use_StonePlate()
 			if(StoneplateLevel == 1)
 			{
 				B_RaiseAttribute(self,ATR_MANA_MAX,ManaMax_StPlLevel1);
+				Mana_Stoneplate_Total_Bonus = Mana_Stoneplate_Total_Bonus + ManaMax_StPlLevel1;
 				Npc_ChangeAttribute(self,ATR_MANA,ManaMax_StPlLevel1);
 				concatText = ConcatStrings(concatText,IntToString(ManaMax_StPlLevel1));
 				B_Say(self,self,"STONEPLATE_1");
@@ -162,6 +188,7 @@ func void Use_StonePlate()
 			else if(StoneplateLevel == 2)
 			{
 				B_RaiseAttribute(self,ATR_MANA_MAX,ManaMax_StPlLevel2);
+				Mana_Stoneplate_Total_Bonus = Mana_Stoneplate_Total_Bonus + ManaMax_StPlLevel2;
 				Npc_ChangeAttribute(self,ATR_MANA,ManaMax_StPlLevel2);
 				concatText = ConcatStrings(concatText,IntToString(ManaMax_StPlLevel2));
 				B_Say(self,self,"STONEPLATE_2");
@@ -169,10 +196,16 @@ func void Use_StonePlate()
 			else if(StoneplateLevel == 3)
 			{
 				B_RaiseAttribute(self,ATR_MANA_MAX,ManaMax_StPlLevel3);
+				Mana_Stoneplate_Total_Bonus = Mana_Stoneplate_Total_Bonus + ManaMax_StPlLevel3;
 				Npc_ChangeAttribute(self,ATR_MANA,ManaMax_StPlLevel3);
 				concatText = ConcatStrings(concatText,IntToString(ManaMax_StPlLevel3));
 				B_Say(self,self,"STONEPLATE_3");
 			};
+			
+			logBonus = ConcatStrings("I have now gained a total of ", IntToString(Mana_Stoneplate_Total_Bonus));
+			logBonus = ConcatStrings(logBonus, " mana from reading Stone plates");
+			Log_CreateTopic(Topic_Mana,LOG_NOTE);
+			B_LogEntry(Topic_Mana,logBonus);
 		}
 		else if(StoneplateItem == OneHStonePlate)
 		{
@@ -180,6 +213,7 @@ func void Use_StonePlate()
 			if(StoneplateLevel == 1)
 			{
 				B_RaiseFightTalent(self,NPC_TALENT_1H,OneH_StPlLevel1);
+				Onehanded_Stoneplate_Total_Bonus = Onehanded_Stoneplate_Total_Bonus + OneH_StPlLevel1;
 				concatText = ConcatStrings(concatText," + ");
 				concatText = ConcatStrings(concatText,IntToString(OneH_StPlLevel1));
 				B_Say(self,self,"STONEPLATE_1");
@@ -187,6 +221,7 @@ func void Use_StonePlate()
 			else if(StoneplateLevel == 2)
 			{
 				B_RaiseFightTalent(self,NPC_TALENT_1H,OneH_StPlLevel2);
+				Onehanded_Stoneplate_Total_Bonus = Onehanded_Stoneplate_Total_Bonus + OneH_StPlLevel2;
 				concatText = ConcatStrings(concatText," + ");
 				concatText = ConcatStrings(concatText,IntToString(OneH_StPlLevel2));
 				B_Say(self,self,"STONEPLATE_2");
@@ -194,10 +229,16 @@ func void Use_StonePlate()
 			else if(StoneplateLevel == 3)
 			{
 				B_RaiseFightTalent(self,NPC_TALENT_1H,OneH_StPlLevel3);
+				Onehanded_Stoneplate_Total_Bonus = Onehanded_Stoneplate_Total_Bonus + OneH_StPlLevel3;
 				concatText = ConcatStrings(concatText," + ");
 				concatText = ConcatStrings(concatText,IntToString(OneH_StPlLevel3));
 				B_Say(self,self,"STONEPLATE_3");
 			};
+			
+			logBonus = ConcatStrings("I have now gained a total of ", IntToString(Onehanded_Stoneplate_Total_Bonus));
+			logBonus = ConcatStrings(logBonus, " one-handed from reading Stone plates");
+			Log_CreateTopic(Topic_Onehanded,LOG_NOTE);
+			B_LogEntry(Topic_Onehanded,logBonus);
 		}
 		else if(StoneplateItem == TwoHStonePlate)
 		{
@@ -205,6 +246,7 @@ func void Use_StonePlate()
 			if(StoneplateLevel == 1)
 			{
 				B_RaiseFightTalent(self,NPC_TALENT_2H,TwoH_StPlLevel1);
+				Twohanded_Stoneplate_Total_Bonus = Twohanded_Stoneplate_Total_Bonus + TwoH_StPlLevel1;
 				concatText = ConcatStrings(concatText," + ");
 				concatText = ConcatStrings(concatText,IntToString(TwoH_StPlLevel1));
 				B_Say(self,self,"STONEPLATE_1");
@@ -212,6 +254,7 @@ func void Use_StonePlate()
 			else if(StoneplateLevel == 2)
 			{
 				B_RaiseFightTalent(self,NPC_TALENT_2H,TwoH_StPlLevel2);
+				Twohanded_Stoneplate_Total_Bonus = Twohanded_Stoneplate_Total_Bonus + TwoH_StPlLevel2;
 				concatText = ConcatStrings(concatText," + ");
 				concatText = ConcatStrings(concatText,IntToString(TwoH_StPlLevel2));
 				B_Say(self,self,"STONEPLATE_2");
@@ -219,10 +262,16 @@ func void Use_StonePlate()
 			else if(StoneplateLevel == 3)
 			{
 				B_RaiseFightTalent(self,NPC_TALENT_2H,TwoH_StPlLevel3);
+				Twohanded_Stoneplate_Total_Bonus = Twohanded_Stoneplate_Total_Bonus + TwoH_StPlLevel3;
 				concatText = ConcatStrings(concatText," + ");
 				concatText = ConcatStrings(concatText,IntToString(TwoH_StPlLevel3));
 				B_Say(self,self,"STONEPLATE_3");
 			};
+			
+			logBonus = ConcatStrings("I have now gained a total of ", IntToString(Twohanded_Stoneplate_Total_Bonus));
+			logBonus = ConcatStrings(logBonus, " two-handed from reading Stone plates");
+			Log_CreateTopic(Topic_Twohanded,LOG_NOTE);
+			B_LogEntry(Topic_Twohanded,logBonus);
 		}
 		else if(StoneplateItem == BowStonePlate)
 		{
@@ -230,6 +279,7 @@ func void Use_StonePlate()
 			if(StoneplateLevel == 1)
 			{
 				B_RaiseFightTalent(self,NPC_TALENT_BOW,Bow_StPlLevel1);
+				Bow_Stoneplate_Total_Bonus = Bow_Stoneplate_Total_Bonus + Bow_StPlLevel1;
 				concatText = ConcatStrings(concatText," + ");
 				concatText = ConcatStrings(concatText,IntToString(Bow_StPlLevel1));
 				B_Say(self,self,"STONEPLATE_1");
@@ -237,6 +287,7 @@ func void Use_StonePlate()
 			else if(StoneplateLevel == 2)
 			{
 				B_RaiseFightTalent(self,NPC_TALENT_BOW,Bow_StPlLevel2);
+				Bow_Stoneplate_Total_Bonus = Bow_Stoneplate_Total_Bonus + Bow_StPlLevel2;
 				concatText = ConcatStrings(concatText," + ");
 				concatText = ConcatStrings(concatText,IntToString(Bow_StPlLevel2));
 				B_Say(self,self,"STONEPLATE_2");
@@ -244,10 +295,16 @@ func void Use_StonePlate()
 			else if(StoneplateLevel == 3)
 			{
 				B_RaiseFightTalent(self,NPC_TALENT_BOW,Bow_StPlLevel3);
+				Bow_Stoneplate_Total_Bonus = Bow_Stoneplate_Total_Bonus + Bow_StPlLevel3;
 				concatText = ConcatStrings(concatText," + ");
 				concatText = ConcatStrings(concatText,IntToString(Bow_StPlLevel3));
 				B_Say(self,self,"STONEPLATE_3");
 			};
+			
+			logBonus = ConcatStrings("I have now gained a total of ", IntToString(Bow_Stoneplate_Total_Bonus));
+			logBonus = ConcatStrings(logBonus, " bow skill from reading Stone plates");
+			Log_CreateTopic(Topic_Bow,LOG_NOTE);
+			B_LogEntry(Topic_Bow,logBonus);
 		}
 		else if(StoneplateItem == CrsBowStonePlate)
 		{
@@ -255,6 +312,7 @@ func void Use_StonePlate()
 			if(StoneplateLevel == 1)
 			{
 				B_RaiseFightTalent(self,NPC_TALENT_CROSSBOW,CrsBow_StPlLevel1);
+				Crossbow_Stoneplate_Total_Bonus = Crossbow_Stoneplate_Total_Bonus + CrsBow_StPlLevel1;
 				concatText = ConcatStrings(concatText," + ");
 				concatText = ConcatStrings(concatText,IntToString(CrsBow_StPlLevel1));
 				B_Say(self,self,"STONEPLATE_1");
@@ -262,6 +320,7 @@ func void Use_StonePlate()
 			else if(StoneplateLevel == 2)
 			{
 				B_RaiseFightTalent(self,NPC_TALENT_CROSSBOW,CrsBow_StPlLevel2);
+				Crossbow_Stoneplate_Total_Bonus = Crossbow_Stoneplate_Total_Bonus + CrsBow_StPlLevel2;
 				concatText = ConcatStrings(concatText," + ");
 				concatText = ConcatStrings(concatText,IntToString(CrsBow_StPlLevel2));
 				B_Say(self,self,"STONEPLATE_2");
@@ -269,10 +328,16 @@ func void Use_StonePlate()
 			else if(StoneplateLevel == 3)
 			{
 				B_RaiseFightTalent(self,NPC_TALENT_CROSSBOW,CrsBow_StPlLevel3);
+				Crossbow_Stoneplate_Total_Bonus = Crossbow_Stoneplate_Total_Bonus + CrsBow_StPlLevel3;
 				concatText = ConcatStrings(concatText," + ");
 				concatText = ConcatStrings(concatText,IntToString(CrsBow_StPlLevel3));
 				B_Say(self,self,"STONEPLATE_3");
 			};
+			
+			logBonus = ConcatStrings("I have now gained a total of ", IntToString(Crossbow_Stoneplate_Total_Bonus));
+			logBonus = ConcatStrings(logBonus, " crossbow skill from reading Stone plates");
+			Log_CreateTopic(Topic_Crossbow,LOG_NOTE);
+			B_LogEntry(Topic_Crossbow,logBonus);
 		};
 		PrintScreen(concatText,-1,-1,FONT_Screen,2);
 		Wld_PlayEffect("spellFX_LIGHTSTAR_ORANGE",hero,hero,0,0,0,FALSE);

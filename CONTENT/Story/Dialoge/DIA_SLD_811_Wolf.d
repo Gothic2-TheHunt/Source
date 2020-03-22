@@ -74,6 +74,11 @@ func void DIA_Wolf_Bonus_Info()
 	AI_Output(other,self,"DIA_Addon_10023_Wache_Hi_15_01");	//Well sure, why not?
 	AI_Output(self,other,"DIA_Wolf_Teach_BACK_08_00");	//There you go. Your aim is more accurate already.
 	B_RaiseFightTalent(other,NPC_TALENT_BOW,2);
+	var string logBonus;
+	logBonus = ConcatStrings("I have now gained a total of ", IntToString(2));
+	logBonus = ConcatStrings(logBonus, " bow skill from Wolf's archery tip.");
+	Log_CreateTopic(Topic_Bow,LOG_NOTE);
+	B_LogEntry(Topic_Bow,logBonus);
 	PrintScreen(PRINT_LearnBow,-1,-1,FONT_Screen,2);
 };
 

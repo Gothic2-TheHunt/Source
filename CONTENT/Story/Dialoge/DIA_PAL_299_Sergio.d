@@ -89,6 +89,11 @@ func void DIA_Sergio_Isgaroth_XP()
 	AI_Output(other,self,"DIA_Sergio_Isgaroth_XP_15_00");	//Let me share your fighting experience.
 	AI_Output(self,other,"DIA_Sergio_Isgaroth_XP_04_01");	//When you fight, always make sure that no one can attack you from behind.
 	B_RaiseFightTalent(other,NPC_TALENT_2H,2);
+	var string logBonus;
+	logBonus = ConcatStrings("I have now gained a total of ", IntToString(2));
+	logBonus = ConcatStrings(logBonus, " two-handed skill from Sergio for saying a prayer for the paladins.");
+	Log_CreateTopic(Topic_Twohanded,LOG_NOTE);
+	B_LogEntry(Topic_Twohanded,logBonus);
 	PrintScreen(PRINT_Learn2H,-1,-1,FONT_ScreenSmall,2);
 	Info_ClearChoices(DIA_Sergio_Isgaroth);
 };

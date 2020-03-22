@@ -337,6 +337,11 @@ func void Use_Joint()
 		else if(smoke_bonus == 10)
 		{
 			B_RaiseAttribute(self,ATR_MANA_MAX,2);
+			var string logBonus;
+			logBonus = ConcatStrings("I have now gained a total of ", IntToString(2));
+			logBonus = ConcatStrings(logBonus, " mana from smoking swamp reefers");
+			Log_CreateTopic(Topic_Mana,LOG_NOTE);
+			B_LogEntry(Topic_Mana,logBonus);
 		};
 	}
 	

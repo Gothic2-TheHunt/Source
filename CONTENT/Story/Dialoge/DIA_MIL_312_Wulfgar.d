@@ -363,6 +363,11 @@ func void DIA_Wulfgar_Bonus_Info()
 	AI_Output(self,other,"DIA_Wulfgar_Bonus_04_01");	//So pay attention. You can deceive some opponents if you dodge their blows and attack at the right moment.
 	AI_Output(self,other,"DIA_Wulfgar_Bonus_04_02");	//Remember that in your next fight!
 	B_RaiseFightTalent(other,NPC_TALENT_1H,2);
+	var string logBonus;
+	logBonus = ConcatStrings("I have now gained a total of ", IntToString(2));
+	logBonus = ConcatStrings(logBonus, " one-handed from Wulfgar's training tip.");
+	Log_CreateTopic(Topic_Onehanded,LOG_NOTE);
+	B_LogEntry(Topic_Onehanded,logBonus);
 	PrintScreen(PRINT_Learn1H,-1,-1,FONT_Screen,2);
 };
 

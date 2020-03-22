@@ -693,6 +693,12 @@ func void UseItPo_LittleMana()
 {
 	B_RaiseAttribute(self,ATR_MANA_MAX,3);
 	Npc_ChangeAttribute(self,ATR_MANA,3);
+	Mana_Potion_Total_Bonus = Mana_Potion_Total_Bonus + 3;
+	var string logBonus;
+	logBonus = ConcatStrings("I have now gained a total of ", IntToString(Mana_Potion_Total_Bonus));
+	logBonus = ConcatStrings(logBonus, " mana from drinking Essences/Elixirs of Spirit");
+	Log_CreateTopic(Topic_Mana,LOG_NOTE);
+	B_LogEntry(Topic_Mana,logBonus);
 };
 
 

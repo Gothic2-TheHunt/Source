@@ -261,6 +261,12 @@ instance ItPl_Dex_Herb_01(C_Item)
 func void Use_Dex_Herb_01()
 {
 	B_RaiseAttribute(self,ATR_DEXTERITY,1);
+	Dexterity_Herb_Total_Bonus = Dexterity_Herb_Total_Bonus + 1;
+	var string logBonus;
+	logBonus = ConcatStrings("I have now gained a total of ", IntToString(Dexterity_Herb_Total_Bonus));
+	logBonus = ConcatStrings(logBonus, " dexterity from eating Goblin Berries");
+	Log_CreateTopic(Topic_Dexterity,LOG_NOTE);
+	B_LogEntry(Topic_Dexterity,logBonus);
 };
 
 
@@ -285,6 +291,12 @@ instance ItPl_Strength_Herb_01(C_Item)
 func void Use_Strength_Herb_01()
 {
 	B_RaiseAttribute(self,ATR_STRENGTH,1);
+	Strength_Herb_Total_Bonus = Strength_Herb_Total_Bonus + 1;
+	var string logBonus;
+	logBonus = ConcatStrings("I have now gained a total of ", IntToString(Strength_Herb_Total_Bonus));
+	logBonus = ConcatStrings(logBonus, " strength from eating Dragonroot");
+	Log_CreateTopic(Topic_Strength,LOG_NOTE);
+	B_LogEntry(Topic_Strength,logBonus);
 };
 
 
@@ -340,6 +352,12 @@ func void Use_Mushroom_01()
 		{
 			B_RaiseAttribute(self,ATR_MANA_MAX,5);
 			Npc_ChangeAttribute(self,ATR_MANA,5);
+			Dunkelpilz_Total_Bonus = Dunkelpilz_Total_Bonus + 5;
+			var string logBonus;
+			logBonus = ConcatStrings("I have now gained a total of ", IntToString(Dunkelpilz_Total_Bonus));
+			logBonus = ConcatStrings(logBonus, " mana from eating Dark mushrooms");
+			Log_CreateTopic(Topic_Mana,LOG_NOTE);
+			B_LogEntry(Topic_Mana,logBonus);
 			Snd_Play("LevelUp");
 			Dunkelpilz_Bonus = 0;
 		};

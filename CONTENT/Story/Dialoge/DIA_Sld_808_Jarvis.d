@@ -407,6 +407,11 @@ func void DIA_Jarvis_HowManyLeft_Info()
 		{
 			AI_Output(self,other,"DIA_Jarvis_HowManyLeft_04_16");	//You really whupped every single one of them, eh?
 			B_RaiseAttribute(other,ATR_STRENGTH,1);
+			var string logBonus;
+			logBonus = ConcatStrings("I have now gained a total of ", IntToString(1));
+			logBonus = ConcatStrings(logBonus, " strength for beating all of Sylvio's men");
+			Log_CreateTopic(Topic_Strength,LOG_NOTE);
+			B_LogEntry(Topic_Strength,logBonus);
 		};
 		AI_Output(self,other,"DIA_Jarvis_HowManyLeft_04_17");	//I'm impressed - if Lee asks me, I can vote for you without hesitation.
 		MIS_Jarvis_SldKO = LOG_SUCCESS;

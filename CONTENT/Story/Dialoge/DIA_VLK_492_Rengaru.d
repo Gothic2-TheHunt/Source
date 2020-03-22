@@ -333,6 +333,11 @@ func void DIA_Rengaru_Zeichen_Info()
 	AI_Output(self,other,"DIA_Rengaru_Zeichen_07_02");	//They are pretty sharp at watching their stuff. But I can give you a tip.
 	AI_Output(self,other,"DIA_Rengaru_Zeichen_07_03");	//Try to grab the desired object with one hand, and wave about with the other. That distracts them.
 	B_RaiseAttribute(other,ATR_DEXTERITY,1);
+	var string logBonus;
+	logBonus = ConcatStrings("I have now gained a total of ", IntToString(1));
+	logBonus = ConcatStrings(logBonus, " dexterity for showing Rengaru the thief's signal.");
+	Log_CreateTopic(Topic_Dexterity,LOG_NOTE);
+	B_LogEntry(Topic_Dexterity,logBonus);
 	Snd_Play("LEVELUP");
 };
 

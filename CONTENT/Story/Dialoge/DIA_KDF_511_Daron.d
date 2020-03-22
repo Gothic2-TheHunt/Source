@@ -6,6 +6,7 @@ func void B_DaronSegen()
 	var int Bonus_2;
 	var int Bonus_3;
 	var int Bonus_4;
+	var string logBonus;
 	Daron_Segen = TRUE;
 	if(Daron_Spende < 100)
 	{
@@ -18,24 +19,42 @@ func void B_DaronSegen()
 	else if((Daron_Spende < 250) && (Bonus_1 == FALSE))
 	{
 		B_RaiseAttribute(other,ATR_MANA_MAX,2);
+		logBonus = ConcatStrings("I have now gained a total of ", IntToString(2));
+		logBonus = ConcatStrings(logBonus, " mana from Daron's blessings");
+		Log_CreateTopic(Topic_Mana,LOG_NOTE);
+		B_LogEntry(Topic_Mana,logBonus);
 		other.attribute[ATR_MANA] = other.attribute[ATR_MANA_MAX];
 		Bonus_1 = TRUE;
 	}
 	else if((Daron_Spende >= 250) && (Daron_Spende < 500) && (Bonus_2 == FALSE))
 	{
 		B_RaiseAttribute(other,ATR_DEXTERITY,1);
+		logBonus = ConcatStrings("I have now gained a total of ", IntToString(1));
+		logBonus = ConcatStrings(logBonus, " dexterity from Daron's blessings");
+		Log_CreateTopic(Topic_Dexterity,LOG_NOTE);
+		B_LogEntry(Topic_Dexterity,logBonus);
 		Bonus_2 = TRUE;
 	}
 	else if((Daron_Spende >= 500) && (Daron_Spende < 750) && (Bonus_3 == FALSE))
 	{
 		B_RaiseAttribute(other,ATR_STRENGTH,1);
+		logBonus = ConcatStrings("I have now gained a total of ", IntToString(1));
+		logBonus = ConcatStrings(logBonus, " strength from Daron's blessings");
+		Log_CreateTopic(Topic_Strength,LOG_NOTE);
+		B_LogEntry(Topic_Strength,logBonus);
 		Bonus_3 = TRUE;
 	}
 	else if((Daron_Spende < 500))
 	{
 		other.attribute[ATR_HITPOINTS] = other.attribute[ATR_HITPOINTS_MAX];
 		other.attribute[ATR_MANA] = other.attribute[ATR_MANA_MAX];
-		other.attribute[ATR_HITPOINTS_MAX] = other.attribute[ATR_HITPOINTS_MAX] + 1;
+		//other.attribute[ATR_HITPOINTS_MAX] = other.attribute[ATR_HITPOINTS_MAX] + 1;
+		B_RaiseAttribute(other,ATR_HITPOINTS_MAX,1);
+		Daron_Health_Total_Bonus = Daron_Health_Total_Bonus + 1;
+		logBonus = ConcatStrings("I have now gained a total of ", IntToString(Daron_Health_Total_Bonus));
+		logBonus = ConcatStrings(logBonus, " health from Daron's blessings");
+		Log_CreateTopic(Topic_Health,LOG_NOTE);
+		B_LogEntry(Topic_Health,logBonus);
 		concatText = ConcatStrings(PRINT_Learnhitpoints_MAX,IntToString(1));
 		PrintScreen(concatText,-1,-1,FONT_Screen,2);
 	}
@@ -50,7 +69,13 @@ func void B_DaronSegen()
 	{
 		other.attribute[ATR_HITPOINTS] = other.attribute[ATR_HITPOINTS_MAX];
 		other.attribute[ATR_MANA] = other.attribute[ATR_MANA_MAX];
-		other.attribute[ATR_HITPOINTS_MAX] = other.attribute[ATR_HITPOINTS_MAX] + 1;
+		//other.attribute[ATR_HITPOINTS_MAX] = other.attribute[ATR_HITPOINTS_MAX] + 1;
+		B_RaiseAttribute(other,ATR_HITPOINTS_MAX,1);
+		Daron_Health_Total_Bonus = Daron_Health_Total_Bonus + 1;
+		logBonus = ConcatStrings("I have now gained a total of ", IntToString(Daron_Health_Total_Bonus));
+		logBonus = ConcatStrings(logBonus, " health from Daron's blessings");
+		Log_CreateTopic(Topic_Health,LOG_NOTE);
+		B_LogEntry(Topic_Health,logBonus);
 		concatText = ConcatStrings(PRINT_Learnhitpoints_MAX,IntToString(1));
 		PrintScreen(concatText,-1,-1,FONT_Screen,2);
 	};

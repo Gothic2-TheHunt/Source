@@ -224,6 +224,12 @@ func void Use_DragonEggDrinkNeoras()
 {
 	Npc_ChangeAttribute(self,ATR_HITPOINTS,HP_Elixier);
 	B_RaiseAttribute(self,ATR_STRENGTH,3);
+	Neoras_Dragon_Egg_Strength_Total_Bonus = Neoras_Dragon_Egg_Strength_Total_Bonus + 3;
+	var string logBonus;
+	logBonus = ConcatStrings("I have now gained a total of ", IntToString(Neoras_Dragon_Egg_Strength_Total_Bonus));
+	logBonus = ConcatStrings(logBonus, " strength from drinking Potions of Dragon Egg Secretion");
+	Log_CreateTopic(Topic_Strength,LOG_NOTE);
+	B_LogEntry(Topic_Strength,logBonus);
 	Snd_Play("DEM_Warn");
 	Neoras_SCUsedDragonEggDrink = TRUE;
 };

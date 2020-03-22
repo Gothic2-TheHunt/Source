@@ -207,6 +207,12 @@ instance ItPo_Perm_STR(C_Item)
 func void UseItPo_Perm_STR()
 {
 	B_RaiseAttribute(self,ATR_STRENGTH,STR_Elixier);
+	Strength_Potion_Total_Bonus = Strength_Potion_Total_Bonus + STR_Elixier;
+	var string logBonus;
+	logBonus = ConcatStrings("I have now gained a total of ", IntToString(Strength_Potion_Total_Bonus));
+	logBonus = ConcatStrings(logBonus, " strength from drinking Elixirs of Strength");
+	Log_CreateTopic(Topic_Strength,LOG_NOTE);
+	B_LogEntry(Topic_Strength,logBonus);
 };
 
 
@@ -233,6 +239,12 @@ instance ItPo_Perm_DEX(C_Item)
 func void UseItPo_Perm_DEX()
 {
 	B_RaiseAttribute(self,ATR_DEXTERITY,DEX_Elixier);
+	Dexterity_Potion_Total_Bonus = Dexterity_Potion_Total_Bonus + DEX_Elixier;
+	var string logBonus;
+	logBonus = ConcatStrings("I have now gained a total of ", IntToString(Dexterity_Potion_Total_Bonus));
+	logBonus = ConcatStrings(logBonus, " dexterity from drinking Elixirs of Dexterity");
+	Log_CreateTopic(Topic_Dexterity,LOG_NOTE);
+	B_LogEntry(Topic_Dexterity,logBonus);
 };
 
 instance ItPo_Perm_Health(C_Item)
@@ -259,6 +271,12 @@ func void UseItPo_Perm_Health()
 {
 	B_RaiseAttribute(self,ATR_HITPOINTS_MAX,HPMax_Elixier);
 	Npc_ChangeAttribute(self,ATR_HITPOINTS,HPMax_Elixier);
+	Health_Potion_Total_Bonus = Health_Potion_Total_Bonus + HPMax_Elixier;
+	var string logBonus;
+	logBonus = ConcatStrings("I have now gained a total of ", IntToString(Health_Potion_Total_Bonus));
+	logBonus = ConcatStrings(logBonus, " health from drinking Essences/Elixirs of Life");
+	Log_CreateTopic(Topic_Health,LOG_NOTE);
+	B_LogEntry(Topic_Health,logBonus);
 };
 
 
@@ -286,6 +304,13 @@ func void UseItPo_Perm_LittleHealth()
 {
 	B_RaiseAttribute(self,ATR_HITPOINTS_MAX,HPMax_LittleElixier);
 	Npc_ChangeAttribute(self,ATR_HITPOINTS,HPMax_LittleElixier);
+	Npc_ChangeAttribute(self,ATR_HITPOINTS,HPMax_Elixier);
+	Health_Potion_Total_Bonus = Health_Potion_Total_Bonus + HPMax_LittleElixier;
+	var string logBonus;
+	logBonus = ConcatStrings("I have now gained a total of ", IntToString(Health_Potion_Total_Bonus));
+	logBonus = ConcatStrings(logBonus, " health from drinking Essences/Elixirs of Life");
+	Log_CreateTopic(Topic_Health,LOG_NOTE);
+	B_LogEntry(Topic_Health,logBonus);
 };
 
 
@@ -313,6 +338,12 @@ func void UseItPo_Perm_Mana()
 {
 	B_RaiseAttribute(self,ATR_MANA_MAX,ManaMax_Elixier);
 	Npc_ChangeAttribute(self,ATR_MANA,ManaMax_Elixier);
+	Mana_Potion_Total_Bonus = Mana_Potion_Total_Bonus + ManaMax_Elixier;
+	var string logBonus;
+	logBonus = ConcatStrings("I have now gained a total of ", IntToString(Mana_Potion_Total_Bonus));
+	logBonus = ConcatStrings(logBonus, " mana from drinking Essences/Elixirs of Spirit");
+	Log_CreateTopic(Topic_Mana,LOG_NOTE);
+	B_LogEntry(Topic_Mana,logBonus);
 };
 
 
@@ -367,10 +398,22 @@ func void UseItPo_MegaDrink()
 	if(self.attribute[ATR_STRENGTH] < self.attribute[ATR_DEXTERITY])
 	{
 		B_RaiseAttribute(self,ATR_DEXTERITY,STRorDEX_MegaDrink);
+		Embarla_Firgasto_Dexterity_Total_Bonus = Embarla_Firgasto_Dexterity_Total_Bonus + STRorDEX_MegaDrink;
+		var string logBonus;
+		logBonus = ConcatStrings("I have now gained a total of ", IntToString(Embarla_Firgasto_Dexterity_Total_Bonus));
+		logBonus = ConcatStrings(logBonus, " dexterity from drinking Embarla Firgasto");
+		Log_CreateTopic(Topic_Dexterity,LOG_NOTE);
+		B_LogEntry(Topic_Dexterity,logBonus);
 	}
 	else
 	{
 		B_RaiseAttribute(self,ATR_STRENGTH,STRorDEX_MegaDrink);
+		Embarla_Firgasto_Strength_Total_Bonus = Embarla_Firgasto_Strength_Total_Bonus + STRorDEX_MegaDrink;
+		var string logBonus;
+		logBonus = ConcatStrings("I have now gained a total of ", IntToString(Embarla_Firgasto_Strength_Total_Bonus));
+		logBonus = ConcatStrings(logBonus, " strength from drinking Embarla Firgasto");
+		Log_CreateTopic(Topic_Strength,LOG_NOTE);
+		B_LogEntry(Topic_Strength,logBonus);
 	};
 	Npc_ChangeAttribute(self,ATR_MANA,-ATR_MANA);
 	Snd_Play("DEM_Warn");

@@ -44,6 +44,12 @@ func void Use_Shellflesh()
 		if(Shellfish_Bonus == 15)
 		{
 			B_RaiseAttribute(self,ATR_HITPOINTS_MAX,1);
+			Shellfish_Total_Bonus = Shellfish_Total_Bonus + 1;
+			var string concatText;
+			concatText = ConcatStrings("I have now gained a total of ", IntToString(Shellfish_Total_Bonus));
+			concatText = ConcatStrings(concatText, " health from eating Clam meat");
+			Log_CreateTopic(Topic_Health,LOG_NOTE);
+			B_LogEntry(Topic_Health,concatText);
 			Snd_Play("LevelUp");
 			Shellfish_Bonus = 0;
 		};
@@ -78,6 +84,12 @@ func void UseRum()
 		if(Rum_Bonus == 22)
 		{
 			B_RaiseAttribute(self,ATR_MANA_MAX,1);
+			Rum_Total_Bonus = Rum_Total_Bonus + 1;
+			var string concatText;
+			concatText = ConcatStrings("I have now gained a total of ", IntToString(Rum_Total_Bonus));
+			concatText = ConcatStrings(concatText, " mana from drinking Rum");
+			Log_CreateTopic(Topic_Mana,LOG_NOTE);
+			B_LogEntry(Topic_Mana,concatText);
 			Snd_Play("LevelUp");
 			Rum_Bonus = 0;
 		};
@@ -133,6 +145,11 @@ func void UseLouHammer()
 	if(Hammer_Once == FALSE)
 	{
 		B_RaiseAttribute(self,ATR_MANA_MAX,Mana_LousHammer);
+		var string concatText;
+		concatText = ConcatStrings("I have now gained a total of ", IntToString(Mana_LousHammer));
+		concatText = ConcatStrings(concatText, " mana from drinking Lou's Hammer");
+		Log_CreateTopic(Topic_Mana,LOG_NOTE);
+		B_LogEntry(Topic_Mana,concatText);
 		Hammer_Once = TRUE;
 	};
 };
@@ -233,7 +250,19 @@ instance ItFo_Addon_FireStew(C_Item)
 func void Use_FireStew()
 {
 	B_RaiseAttribute(self,ATR_STRENGTH,STR_FireStew);
-	Npc_ChangeAttribute(self,ATR_HITPOINTS_MAX,HP_FireStew);
+	B_RaiseAttribute(self,ATR_HITPOINTS_MAX,HP_FireStew);
+	Firestew_Strength_Total_Bonus = Firestew_Strength_Total_Bonus + STR_FireStew;
+	Firestew_Health_Total_Bonus = Firestew_Health_Total_Bonus + HP_FireStew;
+	var string concatText;
+	concatText = ConcatStrings("I have now gained a total of ", IntToString(Firestew_Strength_Total_Bonus));
+	concatText = ConcatStrings(concatText, " strength from eating Fire strips");
+	Log_CreateTopic(Topic_Strength,LOG_NOTE);
+	B_LogEntry(Topic_Strength,concatText);
+	var string concatText2;
+	concatText2 = ConcatStrings("I have now gained a total of ", IntToString(Firestew_Health_Total_Bonus));
+	concatText2 = ConcatStrings(concatText2, " health from eating Fire strips");
+	Log_CreateTopic(Topic_Health,LOG_NOTE);
+	B_LogEntry(Topic_Health,concatText2);
 	PrintScreen("Strength and life energy increased!",-1,34,FONT_ScreenSmall,2);
 };
 
@@ -261,6 +290,12 @@ func void Use_MeatSoup()
 	var string concatText;
 	concatText = ConcatStrings(NAME_Bonus_Str,IntToString(STR_MeatSoup));
 	B_RaiseAttribute(self,ATR_STRENGTH,STR_MeatSoup);
+	Meatsoup_Total_Bonus = Meatsoup_Total_Bonus + STR_MeatSoup;
+	var string concatText2;
+	concatText2 = ConcatStrings("I have now gained a total of ", IntToString(Meatsoup_Total_Bonus));
+	concatText2 = ConcatStrings(concatText2, " strength from eating Meat stew");
+	Log_CreateTopic(Topic_Strength,LOG_NOTE);
+	B_LogEntry(Topic_Strength,concatText2);
 	PrintScreen(concatText,-1,34,FONT_ScreenSmall,2);
 };
 
