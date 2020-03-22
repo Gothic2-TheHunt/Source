@@ -38,7 +38,8 @@ func void B_GiveTradeInv_Canthar(var C_Npc slf)
 		CreateInvItems(slf,ItRw_Bolt,100);
 		CreateInvItems(slf,ItMw_Piratensaebel,2);
 		CreateInvItems(slf,ItMw_Nagelkeule2,2);
-		CreateInvItems(slf,ItMW_Addon_Hacker_2h_02,2);		
+		CreateInvItems(slf,ItMW_Addon_Hacker_2h_02,2);
+		CreateInvItems(slf,ItMw_Addon_PIR2hAxe,2);
 		CreateInvItems(slf,ItMw_Schwert,2);
 		CreateInvItems(slf,ItMW_Addon_Hacker_1h_01,2);
 		Canthar_ItemsGiven_Chapter_2 = TRUE;

@@ -36,6 +36,7 @@ func void B_GiveTradeInv_Hakon(var C_Npc slf)
 		CreateInvItems(slf,ItBe_Addon_Prot_EDGE,1);
 		CreateInvItems(slf,ItMw_Schwert2,2);
 		CreateInvItems(slf,ItMw_Steinbrecher,2);
+		CreateInvItems(slf,ItMw_Addon_PIR2hAxe,2);
 		CreateInvItems(slf,ItMw_Doppelaxt,2);
 		CreateInvItems(slf,ItMw_Nagelkeule2,2);
 		CreateInvItems(slf,ItMi_Gold,100);

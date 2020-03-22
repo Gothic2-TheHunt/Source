@@ -30,6 +30,7 @@ func void B_GiveTradeInv_Sarah(var C_Npc slf)
 		CreateInvItems(slf,ItRw_Arrow,100);
 		CreateInvItems(slf,ItMw_Schwert,2);
 		CreateInvItems(slf,ItMw_Streitaxt1,2);
+		CreateInvItems(slf,ItMw_Addon_PIR2hSword,2);
 		CreateInvItems(slf,ItMw_Bartaxt,2);
 		CreateInvItems(slf,ItMw_Spicker,2);
 		CreateInvItems(slf,ItMw_Zweihaender2,2);
