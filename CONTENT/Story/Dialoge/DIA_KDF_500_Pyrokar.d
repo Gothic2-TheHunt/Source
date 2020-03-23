@@ -738,11 +738,11 @@ func void DIA_Pyrokar_SPELLS_Info()
 		Info_AddChoice(DIA_Pyrokar_SPELLS,B_BuildLearnString(NAME_SPL_MassDeath,B_GetLearnCostTalent(other,NPC_TALENT_RUNES,SPL_MassDeath)),DIA_Pyrokar_SPELLS_MassDeath);
 		abletolearn = abletolearn + 1;
 	};
-	if(PLAYER_TALENT_RUNES[SPL_Shrink] == FALSE)
-	{
-		Info_AddChoice(DIA_Pyrokar_SPELLS,B_BuildLearnString(NAME_SPL_Shrink,B_GetLearnCostTalent(other,NPC_TALENT_RUNES,SPL_Shrink)),DIA_Pyrokar_SPELLS_Shrink);
-		abletolearn = abletolearn + 1;
-	};
+	//if(PLAYER_TALENT_RUNES[SPL_Shrink] == FALSE)
+	//{
+	//	Info_AddChoice(DIA_Pyrokar_SPELLS,B_BuildLearnString(NAME_SPL_Shrink,B_GetLearnCostTalent(other,NPC_TALENT_RUNES,SPL_Shrink)),DIA_Pyrokar_SPELLS_Shrink);
+	//	abletolearn = abletolearn + 1;
+	//};
 	if(abletolearn < 1)
 	{
 		AI_Output(self,other,"DIA_Pyrokar_SPELLS_11_01");	//There is nothing more that I could teach you.

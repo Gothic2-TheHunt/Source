@@ -370,6 +370,10 @@ func void DIA_Addon_Nefarius_ADW_Runen_5()
 	{
 		Info_AddChoice(DIA_Addon_Nefarius_ADW_Runen,B_BuildLearnString(NAME_SPL_WaterFist,B_GetLearnCostTalent(other,NPC_TALENT_RUNES,SPL_WaterFist)),DIA_Addon_Nefarius_ADW_Runen_Circle_4_SPL_Waterfist);
 	};
+	if(PLAYER_TALENT_RUNES[SPL_Shrink] == FALSE)
+	{
+		Info_AddChoice(DIA_Addon_Nefarius_ADW_Runen,B_BuildLearnString(NAME_SPL_Shrink,B_GetLearnCostTalent(other,NPC_TALENT_RUNES,SPL_Shrink)),DIA_Addon_Nefarius_ADW_Runen_Circle_6_SPL_Shrink);
+	};
 };
 
 func void DIA_Addon_Nefarius_ADW_Runen_6()
@@ -391,10 +395,6 @@ func void DIA_Addon_Nefarius_ADW_Runen_6()
 	if(PLAYER_TALENT_RUNES[SPL_ArmyOfDarkness] == FALSE)
 	{
 		Info_AddChoice(DIA_Addon_Nefarius_ADW_Runen,B_BuildLearnString(NAME_SPL_ArmyOfDarkness,B_GetLearnCostTalent(other,NPC_TALENT_RUNES,SPL_ArmyOfDarkness)),DIA_Addon_Nefarius_ADW_Runen_Circle_6_SPL_ArmyOfDarkness);
-	};
-	if(PLAYER_TALENT_RUNES[SPL_Shrink] == FALSE)
-	{
-		Info_AddChoice(DIA_Addon_Nefarius_ADW_Runen,B_BuildLearnString(NAME_SPL_Shrink,B_GetLearnCostTalent(other,NPC_TALENT_RUNES,SPL_Shrink)),DIA_Addon_Nefarius_ADW_Runen_Circle_6_SPL_Shrink);
 	};
 };
 

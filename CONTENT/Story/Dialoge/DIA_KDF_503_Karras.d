@@ -271,6 +271,11 @@ func void DIA_Karras_TEACH_Info()
 		Info_AddChoice(DIA_Karras_TEACH,B_BuildLearnString(NAME_SPL_SummonDemon,B_GetLearnCostTalent(other,NPC_TALENT_RUNES,SPL_SummonDemon)),DIA_Karras_TEACH_SummonDemon);
 		abletolearn = abletolearn + 1;
 	};
+	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 5) && (PLAYER_TALENT_RUNES[SPL_Shrink] == FALSE))
+	{
+		Info_AddChoice(DIA_Karras_TEACH,B_BuildLearnString(NAME_SPL_Shrink,B_GetLearnCostTalent(other,NPC_TALENT_RUNES,SPL_Shrink)),DIA_Karras_TEACH_Shrink);
+		abletolearn = abletolearn + 1;
+	};
 	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 6) && (PLAYER_TALENT_RUNES[SPL_ArmyOfDarkness] == FALSE))
 	{
 		Info_AddChoice(DIA_Karras_TEACH,B_BuildLearnString(NAME_SPL_ArmyOfDarkness,B_GetLearnCostTalent(other,NPC_TALENT_RUNES,SPL_ArmyOfDarkness)),DIA_Karras_TEACH_ArmyOfDarkness);
@@ -314,6 +319,11 @@ func void DIA_Karras_TEACH_SummonGolem()
 func void DIA_Karras_TEACH_SummonDemon()
 {
 	B_TeachPlayerTalentRunes(self,other,SPL_SummonDemon);
+};
+
+func void DIA_Karras_TEACH_Shrink()
+{
+	B_TeachPlayerTalentRunes(self,other,SPL_Shrink);
 };
 
 func void DIA_Karras_TEACH_ArmyOfDarkness()
