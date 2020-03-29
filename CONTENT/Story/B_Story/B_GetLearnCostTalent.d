@@ -397,7 +397,7 @@ func int B_GetLearnCostTalent(var C_Npc oth,var int talent,var int skill)
 		}
 		else if(skill == SPL_SummonWolf)
 		{
-			kosten = 4;
+			kosten = 5;
 		}
 		else if(skill == SPL_WindFist)
 		{
@@ -425,7 +425,7 @@ func int B_GetLearnCostTalent(var C_Npc oth,var int talent,var int skill)
 		}
 		else if(skill == SPL_LightningFlash)
 		{
-			kosten = 5;
+			kosten = 10;
 		}
 		else if(skill == SPL_ChargeFireball)
 		{
@@ -433,7 +433,7 @@ func int B_GetLearnCostTalent(var C_Npc oth,var int talent,var int skill)
 		}
 		else if(skill == SPL_SummonSkeleton)
 		{
-			kosten = 5;
+			kosten = 8;
 		}
 		else if(skill == SPL_Fear)
 		{
@@ -441,15 +441,15 @@ func int B_GetLearnCostTalent(var C_Npc oth,var int talent,var int skill)
 		}
 		else if(skill == SPL_IceCube)
 		{
-			kosten = 5;
+			kosten = 10;
 		}
 		else if(skill == SPL_Thunderstorm)
 		{
-			kosten = 5;
+			kosten = 10;
 		}
 		else if(skill == SPL_Geyser)
 		{
-			kosten = 5;
+			kosten = 10;
 		}
 		else if(skill == SPL_ChargeZap)
 		{
@@ -473,7 +473,7 @@ func int B_GetLearnCostTalent(var C_Npc oth,var int talent,var int skill)
 		}
 		else if(skill == SPL_Firestorm)
 		{
-			kosten = 5;
+			kosten = 10;
 		}
 		else if(skill == SPL_IceWave)
 		{

@@ -45,13 +45,13 @@ func int B_TeachMagicCircle(var C_Npc slf,var C_Npc oth,var int circle)
 	if(circle == 5)
 	{
 		PrintScreen(PRINT_LearnCircle_5,-1,-1,FONT_Screen,2);
-		B_LogEntry(TOPIC_TalentMagicCircle,"The spells of the 5th Circle are: Large Fire Storm, Ice Wave, Summon Demon and Heal Heavy Wounds.");
+		B_LogEntry(TOPIC_TalentMagicCircle,"The spells of the 5th Circle are: Large Fire Storm, Ice Wave, Summon Demon and Heal Heavy Wounds and Shrink Monster.");
 		return TRUE;
 	};
 	if(circle == 6)
 	{
 		PrintScreen(PRINT_LearnCircle_6,-1,-1,FONT_Screen,2);
-		B_LogEntry(TOPIC_TalentMagicCircle,"The spells of the 6th Circle are: Rain of Fire, Breath of Death, Wave of Death, Army of Darkness and Shrink Monster.");
+		B_LogEntry(TOPIC_TalentMagicCircle,"The spells of the 6th Circle are: Rain of Fire, Breath of Death, Wave of Death and Army of Darkness.");
 		return TRUE;
 	};
 };

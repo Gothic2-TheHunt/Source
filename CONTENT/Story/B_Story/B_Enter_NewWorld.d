@@ -937,10 +937,10 @@ func void B_ENTER_NEWWORLD_Kapitel_3()
 		Wld_InsertNpc(Snapper,"NW_PASS_06");
 		Wld_InsertNpc(Snapper,"NW_PASS_06");
 		Wld_InsertNpc(Snapper,"NW_PASS_06");
-		Wld_InsertNpc(Warg,"NW_PASS_SECRET_14");
+		Wld_InsertNpc(Razor,"NW_PASS_11");
+		Wld_InsertNpc(Razor,"NW_PASS_11");
+		Wld_InsertNpc(Razor,"NW_PASS_11");
 		Wld_InsertNpc(Warg,"NW_PASS_SECRET_15");
-		Wld_InsertNpc(Warg,"NW_PASS_SECRET_15");
-		Wld_InsertNpc(Warg,"NW_PASS_SECRET_16");
 		Wld_InsertNpc(Warg,"NW_PASS_SECRET_17");
 		Wld_InsertNpc(Gobbo_Warrior,"NW_PASS_GRAT_04");
 		Wld_InsertNpc(Gobbo_Warrior,"NW_PASS_GRAT_05");

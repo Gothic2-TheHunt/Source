@@ -97,7 +97,7 @@ func int B_TeachPlayerTalentRunes(var C_Npc slf,var C_Npc oth,var int spell)
 	{
 		PLAYER_TALENT_RUNES[SPL_Light] = TRUE;
 		CreateInvItems(ScrollTrader,ItSc_Light,1);
-		B_LogEntry(TOPIC_TalentRunes,"Ingredients for the rune ´light´: 1 gold piece.");
+		B_LogEntry(TOPIC_TalentRunes,"Ingredients for the rune ´Light´: 1 gold piece.");
 	};
 	if(spell == SPL_Firebolt)
 	{
@@ -115,13 +115,13 @@ func int B_TeachPlayerTalentRunes(var C_Npc slf,var C_Npc oth,var int spell)
 	{
 		PLAYER_TALENT_RUNES[SPL_LightHeal] = TRUE;
 		CreateInvItems(ScrollTrader,ItSc_LightHeal,1);
-		B_LogEntry(TOPIC_TalentRunes,"Ingredients for the rune ´Heal Light Wounds´:1 Healing Plant.");
+		B_LogEntry(TOPIC_TalentRunes,"Ingredients for the rune ´Heal Light Wounds´: 1 Healing Plant.");
 	};
 	if(spell == SPL_SummonGoblinSkeleton)
 	{
 		PLAYER_TALENT_RUNES[SPL_SummonGoblinSkeleton] = TRUE;
 		CreateInvItems(ScrollTrader,ItSc_SumGobSkel,1);
-		B_LogEntry(TOPIC_TalentRunes,"Ingredients for the rune ´Create Goblin Skeleton´:1 Goblinbone.");
+		B_LogEntry(TOPIC_TalentRunes,"Ingredients for the rune ´Create Goblin Skeleton´: 1 Goblinbone.");
 	};
 	if(spell == SPL_InstantFireball)
 	{
@@ -145,7 +145,7 @@ func int B_TeachPlayerTalentRunes(var C_Npc slf,var C_Npc oth,var int spell)
 	{
 		PLAYER_TALENT_RUNES[SPL_WindFist] = TRUE;
 		CreateInvItems(ScrollTrader,ItSc_Windfist,1);
-		B_LogEntry(TOPIC_TalentRunes,"Ingredients for the rune ´Wind Fist´:1 Coal.");
+		B_LogEntry(TOPIC_TalentRunes,"Ingredients for the rune ´Wind Fist´: 1 Coal.");
 	};
 	if(spell == SPL_Sleep)
 	{
@@ -157,7 +157,7 @@ func int B_TeachPlayerTalentRunes(var C_Npc slf,var C_Npc oth,var int spell)
 	{
 		PLAYER_TALENT_RUNES[SPL_MediumHeal] = TRUE;
 		CreateInvItems(ScrollTrader,ItSc_MediumHeal,1);
-		B_LogEntry(TOPIC_TalentRunes,"Ingredients for the rune ´Heal Medium Wounds´:1 Healing Herb.");
+		B_LogEntry(TOPIC_TalentRunes,"Ingredients for the rune ´Heal Medium Wounds´: 1 Healing Herb.");
 	};
 	if(spell == SPL_LightningFlash)
 	{
@@ -235,13 +235,13 @@ func int B_TeachPlayerTalentRunes(var C_Npc slf,var C_Npc oth,var int spell)
 	{
 		PLAYER_TALENT_RUNES[SPL_FullHeal] = TRUE;
 		CreateInvItems(ScrollTrader,ItSc_FullHeal,1);
-		B_LogEntry(TOPIC_TalentRunes,"Ingredients for the rune ´Heal Heavy Wounds´ 1 Heilwurzel");
+		B_LogEntry(TOPIC_TalentRunes,"Ingredients for the rune ´Heal Heavy Wounds´: 1 Healing Root");
 	};
 	if(spell == SPL_Firerain)
 	{
 		PLAYER_TALENT_RUNES[SPL_Firerain] = TRUE;
 		CreateInvItems(ScrollTrader,ItSc_Firerain,1);
-		B_LogEntry(TOPIC_TalentRunes,"Ingredients for the rune ´Rain of Fire´: 1 Pitch and 1 Tongue of a Fire Lizard.");
+		B_LogEntry(TOPIC_TalentRunes,"Ingredients for the rune ´Rain of Fire´: 1 Pitch, 1 Sulfur and 1 Tongue of a Fire Lizard.");
 	};
 	if(spell == SPL_BreathOfDeath)
 	{
@@ -253,19 +253,19 @@ func int B_TeachPlayerTalentRunes(var C_Npc slf,var C_Npc oth,var int spell)
 	{
 		PLAYER_TALENT_RUNES[SPL_MassDeath] = TRUE;
 		CreateInvItems(ScrollTrader,ItSc_MassDeath,1);
-		B_LogEntry(TOPIC_TalentRunes,"Ingredients for the rune ´Wave of Death´: 1 Skeletonbone and 1 Black Perl");
+		B_LogEntry(TOPIC_TalentRunes,"Ingredients for the rune ´Wave of Death´: 1 Skeleton bone and 1 Black Perl");
 	};
 	if(spell == SPL_ArmyOfDarkness)
 	{
 		PLAYER_TALENT_RUNES[SPL_ArmyOfDarkness] = TRUE;
 		CreateInvItems(ScrollTrader,ItSc_ArmyOfDarkness,1);
-		B_LogEntry(TOPIC_TalentRunes,"Ingredients for the rune ´Army of Darkness´: 1 Skeletonbone, 1 Black Perl, 1 Heart of a Stonegolem and 1 Heart of a Demon. ");
+		B_LogEntry(TOPIC_TalentRunes,"Ingredients for the rune ´Army of Darkness´: 1 Skeleton bone, 1 Black Perl, 1 Heart of a Stonegolem and 1 Heart of a Demon.");
 	};
 	if(spell == SPL_Shrink)
 	{
 		PLAYER_TALENT_RUNES[SPL_Shrink] = TRUE;
 		CreateInvItems(ScrollTrader,ItSc_Shrink,1);
-		B_LogEntry(TOPIC_TalentRunes,"Ingredients for the rune ´Shrink Monster´: 1 Goblinbone and 1 Trolltooth");
+		B_LogEntry(TOPIC_TalentRunes,"Ingredients for the rune ´Shrink Monster´: 1 Goblin bone and 1 Troll tooth");
 	};
 	if(spell == SPL_Whirlwind)
 	{
