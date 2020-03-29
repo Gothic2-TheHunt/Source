@@ -1192,9 +1192,8 @@ func void Startup_Surface()
 	Wld_InsertNpc(Giant_Bug,"OW_SCAVENGER_CAVE3_SPAWN");
 	Wld_InsertNpc(Giant_Bug,"OW_SCAVENGER_TREE_SPAWN");
 	Wld_InsertNpc(Gobbo_Black,"OW_MOLERAT_CAVE_SPAWN");
-	Wld_InsertNpc(Gobbo_Black,"SPAWN_OW_MOLERAT_CAVE1_OC");
-	Wld_InsertNpc(Gobbo_Black,"SPAWN_OW_MOLERAT_CAVE1_OC");
-	Wld_InsertNpc(Gobbo_Black,"SPAWN_OW_MOLERAT_CAVE1_OC");
+	Wld_InsertNpc(Shadowbeast,"SPAWN_OW_MOLERAT_CAVE1_OC");
+	Wld_InsertNpc(Shadowbeast,"SPAWN_OW_MOLERAT_CAVE1_OC_01");
 	Wld_InsertNpc(Lurker,"SPAWN_OW_BLOODFLY_C3");
 	Wld_InsertNpc(Lurker,"SPAWN_OW_BLOODFLY_C3");
 	Wld_InsertNpc(Lurker,"SPAWN_OW_BLOODFLY_12");
@@ -1533,6 +1532,8 @@ func void Startup_Surface()
 	Wld_InsertNpc(Draconian,"PATH_CASTLE_TO_WATERFALL");
 	Wld_InsertNpc(Draconian,"PATH_CASTLE_TO_WATERFALL");
 	Wld_InsertNpc(Draconian,"PATH_CASTLE_TO_WATERFALL");
+	Wld_InsertNpc(DragonSnapper,"OW_ORC_LOOKOUT_03");
+	Wld_InsertNpc(DragonSnapper,"OW_ORC_LOOKOUT_03");
 };
 
 func void INIT_SUB_Surface()
