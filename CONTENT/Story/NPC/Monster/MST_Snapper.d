@@ -11,10 +11,10 @@ prototype Mst_Default_Snapper(C_Npc)
 	attribute[ATR_HITPOINTS] = 190;
 	attribute[ATR_MANA_MAX] = 0;
 	attribute[ATR_MANA] = 0;
-	protection[PROT_BLUNT] = 60;
+	protection[PROT_BLUNT] = 65;
 	protection[PROT_EDGE] = 80;
-	protection[PROT_POINT] = 70;
-	protection[PROT_FIRE] = 25;
+	protection[PROT_POINT] = 80;
+	protection[PROT_FIRE] = 35;
 	protection[PROT_FLY] = 50;
 	protection[PROT_MAGIC] = 10;
 	damagetype = DAM_EDGE;

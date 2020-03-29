@@ -16,7 +16,7 @@ prototype Mst_Default_DragonSnapper(C_Npc)
 	protection[PROT_POINT] = 130;
 	protection[PROT_FIRE] = 100;
 	protection[PROT_FLY] = 70;
-	protection[PROT_MAGIC] = 40;
+	protection[PROT_MAGIC] = 65;
 	damagetype = DAM_EDGE;
 	fight_tactic = FAI_SNAPPER;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;

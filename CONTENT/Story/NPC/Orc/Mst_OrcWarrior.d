@@ -15,9 +15,9 @@ prototype Mst_Default_OrcWarrior(C_Npc)
 	protection[PROT_BLUNT] = 145;
 	protection[PROT_EDGE] = 150;
 	protection[PROT_POINT] = 130;
-	protection[PROT_FIRE] = 25;
+	protection[PROT_FIRE] = 70;
 	protection[PROT_FLY] = 70;
-	protection[PROT_MAGIC] = 25;
+	protection[PROT_MAGIC] = 40;
 	HitChance[NPC_TALENT_1H] = 60;
 	HitChance[NPC_TALENT_2H] = 60;
 	HitChance[NPC_TALENT_BOW] = 60;

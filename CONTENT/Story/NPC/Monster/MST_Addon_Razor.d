@@ -16,13 +16,14 @@ prototype Mst_Default_Razor(C_Npc)
 	protection[PROT_POINT] = 100;
 	protection[PROT_FIRE] = 65;
 	protection[PROT_FLY] = 75;
-	protection[PROT_MAGIC] = 20;
+	protection[PROT_MAGIC] = 35;
 	damagetype = DAM_EDGE;
 	fight_tactic = FAI_SNAPPER;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
 	senses_range = 3000;
 	aivar[AIV_MM_FollowTime] = 10;
 	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar[AIV_MM_Packhunter] = TRUE;
 	start_aistate = ZS_MM_AllScheduler;
 	aivar[AIV_MM_RestStart] = OnlyRoutine;
 };

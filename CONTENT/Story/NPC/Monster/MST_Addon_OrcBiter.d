@@ -23,6 +23,7 @@ prototype Mst_Default_OrcBiter(C_Npc)
 	senses_range = 3000;
 	aivar[AIV_MM_FollowTime] = 10;
 	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar[AIV_MM_Packhunter] = TRUE;
 	start_aistate = ZS_MM_AllScheduler;
 	aivar[AIV_MM_RestStart] = OnlyRoutine;
 };

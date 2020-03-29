@@ -14,10 +14,10 @@ prototype Mst_Default_OrcElite(C_Npc)
 	attribute[ATR_MANA] = 0;
 	protection[PROT_BLUNT] = 170;
 	protection[PROT_EDGE] = 185;
-	protection[PROT_POINT] = 150;
-	protection[PROT_FIRE] = 75;
+	protection[PROT_POINT] = 160;
+	protection[PROT_FIRE] = 100;
 	protection[PROT_FLY] = 80;
-	protection[PROT_MAGIC] = 50;
+	protection[PROT_MAGIC] = 70;
 	HitChance[NPC_TALENT_1H] = 100;
 	HitChance[NPC_TALENT_2H] = 100;
 	HitChance[NPC_TALENT_BOW] = 100;
