@@ -178,11 +178,11 @@ func void B_Udar_TeachNoMore2()
 
 func void DIA_Udar_Teach_CROSSBOW_1()
 {
-	B_TeachFightTalentPercent(self,other,NPC_TALENT_CROSSBOW,1,40);
-	if(other.aivar[REAL_TALENT_CROSSBOW] >= 40)
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_CROSSBOW,1,90);
+	if(other.aivar[REAL_TALENT_CROSSBOW] >= 90)
 	{
 		B_Udar_TeachNoMore1();
-		if(Npc_GetTalentSkill(other,NPC_TALENT_CROSSBOW) == 1)
+		if(Npc_GetTalentSkill(other,NPC_TALENT_CROSSBOW) == 2)
 		{
 			B_Udar_TeachNoMore2();
 		};
@@ -192,11 +192,11 @@ func void DIA_Udar_Teach_CROSSBOW_1()
 
 func void DIA_Udar_Teach_CROSSBOW_5()
 {
-	B_TeachFightTalentPercent(self,other,NPC_TALENT_CROSSBOW,5,40);
-	if(other.aivar[REAL_TALENT_CROSSBOW] >= 40)
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_CROSSBOW,5,90);
+	if(other.aivar[REAL_TALENT_CROSSBOW] >= 90)
 	{
 		B_Udar_TeachNoMore1();
-		if(Npc_GetTalentSkill(other,NPC_TALENT_CROSSBOW) == 1)
+		if(Npc_GetTalentSkill(other,NPC_TALENT_CROSSBOW) == 2)
 		{
 			B_Udar_TeachNoMore2();
 		};

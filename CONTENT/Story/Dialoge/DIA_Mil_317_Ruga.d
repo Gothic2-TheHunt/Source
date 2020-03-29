@@ -173,7 +173,7 @@ func void DIA_Ruga_Teach_Info()
 
 func void DIA_Ruga_Teach_Back()
 {
-	if(other.aivar[REAL_TALENT_CROSSBOW] >= 90)
+	if(other.aivar[REAL_TALENT_CROSSBOW] >= 80)
 	{
 		AI_Output(self,other,"DIA_Ruga_Teach_11_00");	//There is nothing more that I could teach you. It is time that you found yourself another teacher.
 		DIA_Ruga_Teach_permanent = TRUE;
@@ -183,7 +183,7 @@ func void DIA_Ruga_Teach_Back()
 
 func void DIA_Ruga_Teach_1H_1()
 {
-	B_TeachFightTalentPercent(self,other,NPC_TALENT_CROSSBOW,1,90);
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_CROSSBOW,1,80);
 	Info_ClearChoices(DIA_Ruga_Teach);
 	Info_AddChoice(DIA_Ruga_Teach,Dialog_Back,DIA_Ruga_Teach_Back);
 	Info_AddChoice(DIA_Ruga_Teach,B_BuildLearnString(PRINT_LearnCrossBow1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW,1)),DIA_Ruga_Teach_1H_1);
@@ -192,7 +192,7 @@ func void DIA_Ruga_Teach_1H_1()
 
 func void DIA_Ruga_Teach_1H_5()
 {
-	B_TeachFightTalentPercent(self,other,NPC_TALENT_CROSSBOW,5,90);
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_CROSSBOW,5,80);
 	Info_ClearChoices(DIA_Ruga_Teach);
 	Info_AddChoice(DIA_Ruga_Teach,Dialog_Back,DIA_Ruga_Teach_Back);
 	Info_AddChoice(DIA_Ruga_Teach,B_BuildLearnString(PRINT_LearnCrossBow1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW,1)),DIA_Ruga_Teach_1H_1);

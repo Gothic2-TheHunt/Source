@@ -940,7 +940,7 @@ func void DIA_Addon_Henry_Teach_Back()
 	{
 		B_Henry_CommentFightSkill();
 	}
-	else if(other.HitChance[NPC_TALENT_2H] >= 90)
+	else if(other.HitChance[NPC_TALENT_2H] >= 70)
 	{
 		AI_Output(self,other,"DIA_Addon_Henry_Teach_Back_04_00");	//You're getting really good.
 	};
@@ -949,7 +949,7 @@ func void DIA_Addon_Henry_Teach_Back()
 
 func void DIA_Addon_Henry_Teach_CB_1()
 {
-	B_TeachFightTalentPercent(self,other,NPC_TALENT_CROSSBOW,1,50);
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_CROSSBOW,1,60);
 	Info_ClearChoices(DIA_Addon_Henry_Teach);
 	Info_AddChoice(DIA_Addon_Henry_Teach,Dialog_Back,DIA_Addon_Henry_Teach_Back);
 	Info_AddChoice(DIA_Addon_Henry_Teach,B_BuildLearnString(PRINT_Learn2h1,B_GetLearnCostTalent(other,NPC_TALENT_2H,1)),DIA_Addon_Henry_Teach_2H_1);
@@ -960,7 +960,7 @@ func void DIA_Addon_Henry_Teach_CB_1()
 
 func void DIA_Addon_Henry_Teach_CB_5()
 {
-	B_TeachFightTalentPercent(self,other,NPC_TALENT_CROSSBOW,5,50);
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_CROSSBOW,5,60);
 	Info_ClearChoices(DIA_Addon_Henry_Teach);
 	Info_AddChoice(DIA_Addon_Henry_Teach,Dialog_Back,DIA_Addon_Henry_Teach_Back);
 	Info_AddChoice(DIA_Addon_Henry_Teach,B_BuildLearnString(PRINT_Learn2h1,B_GetLearnCostTalent(other,NPC_TALENT_2H,1)),DIA_Addon_Henry_Teach_2H_1);
@@ -971,7 +971,7 @@ func void DIA_Addon_Henry_Teach_CB_5()
 
 func void DIA_Addon_Henry_Teach_2H_1()
 {
-	B_TeachFightTalentPercent(self,other,NPC_TALENT_2H,1,60);
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_2H,1,70);
 	Info_ClearChoices(DIA_Addon_Henry_Teach);
 	Info_AddChoice(DIA_Addon_Henry_Teach,Dialog_Back,DIA_Addon_Henry_Teach_Back);
 	Info_AddChoice(DIA_Addon_Henry_Teach,B_BuildLearnString(PRINT_Learn2h1,B_GetLearnCostTalent(other,NPC_TALENT_2H,1)),DIA_Addon_Henry_Teach_2H_1);
@@ -982,7 +982,7 @@ func void DIA_Addon_Henry_Teach_2H_1()
 
 func void DIA_Addon_Henry_Teach_2H_5()
 {
-	B_TeachFightTalentPercent(self,other,NPC_TALENT_2H,5,60);
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_2H,5,70);
 	Info_ClearChoices(DIA_Addon_Henry_Teach);
 	Info_AddChoice(DIA_Addon_Henry_Teach,Dialog_Back,DIA_Addon_Henry_Teach_Back);
 	Info_AddChoice(DIA_Addon_Henry_Teach,B_BuildLearnString(PRINT_Learn2h1,B_GetLearnCostTalent(other,NPC_TALENT_2H,1)),DIA_Addon_Henry_Teach_2H_1);

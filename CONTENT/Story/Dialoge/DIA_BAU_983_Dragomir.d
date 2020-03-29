@@ -265,7 +265,7 @@ func void DIA_Dragomir_Teach_Info()
 
 func void DIA_Dragomir_Teach_Back()
 {
-	if(other.aivar[REAL_TALENT_CROSSBOW] >= 70)
+	if(other.aivar[REAL_TALENT_CROSSBOW] >= 40)
 	{
 		AI_Output(self,other,"DIA_Dragomir_Teach_12_00");	//I can't teach you anything more. It's time you looked for another teacher.
 		DIA_Dragomir_Teach_permanent = TRUE;
@@ -275,7 +275,7 @@ func void DIA_Dragomir_Teach_Back()
 
 func void DIA_Dragomir_Teach_1H_1()
 {
-	B_TeachFightTalentPercent(self,other,NPC_TALENT_CROSSBOW,1,70);
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_CROSSBOW,1,40);
 	Info_ClearChoices(DIA_Dragomir_Teach);
 	Info_AddChoice(DIA_Dragomir_Teach,Dialog_Back,DIA_Dragomir_Teach_Back);
 	Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossBow1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW,1)),DIA_Dragomir_Teach_1H_1);
@@ -284,7 +284,7 @@ func void DIA_Dragomir_Teach_1H_1()
 
 func void DIA_Dragomir_Teach_1H_5()
 {
-	B_TeachFightTalentPercent(self,other,NPC_TALENT_CROSSBOW,5,70);
+	B_TeachFightTalentPercent(self,other,NPC_TALENT_CROSSBOW,5,40);
 	Info_ClearChoices(DIA_Dragomir_Teach);
 	Info_AddChoice(DIA_Dragomir_Teach,Dialog_Back,DIA_Dragomir_Teach_Back);
 	Info_AddChoice(DIA_Dragomir_Teach,B_BuildLearnString(PRINT_LearnCrossBow1,B_GetLearnCostTalent(other,NPC_TALENT_CROSSBOW,1)),DIA_Dragomir_Teach_1H_1);
