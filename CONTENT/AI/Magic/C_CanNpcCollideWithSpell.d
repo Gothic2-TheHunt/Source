@@ -227,7 +227,7 @@ func int C_CanNpcCollideWithSpell(var int spellType)
 		{
 			return COLL_APPLYHALVEDAMAGE;
 		};
-		if((self.guild == GIL_STONEGOLEM) || (self.guild == GIL_SUMMONED_GOLEM) || (self.guild == GIL_DEMON) || (self.guild == GIL_SUMMONED_DEMON) || (self.guild == GIL_TROLL) || (self.guild == GIL_DRAGON) || (self.aivar[AIV_MM_REAL_ID] == ID_UNDEADLORD))
+		if((self.guild == GIL_STONEGOLEM) || (self.guild == GIL_SUMMONED_GOLEM) || (self.guild == GIL_DEMON) || (self.guild == GIL_SUMMONED_DEMON) || (self.guild == GIL_TROLL) || (self.guild == GIL_DRAGON) || (self.aivar[AIV_MM_REAL_ID] == ID_UNDEADLORD) || self == Raven)
 		{
 			return COLL_APPLYDAMAGE;
 		};
