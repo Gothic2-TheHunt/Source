@@ -47,6 +47,8 @@ func void B_GiveTradeInv_Khaled(var C_Npc slf)
 		CreateInvItems(slf,ItRw_Bow_M_01,2);
 		CreateInvItems(slf,ItMi_Nugget,1);
 		CreateInvItems(slf,ItRw_Crossbow_M_02,2);
+		CreateInvItems(slf,ItBe_Addon_Prot_EDGE,1);
+		CreateInvItems(slf,ItBe_Addon_Prot_EdgPoi,1);
 		CreateInvItems(slf,ItRw_Bow_M_03,2);
 		Khaled_ItemsGiven_Chapter_2 = TRUE;
 	};
@@ -56,7 +58,6 @@ func void B_GiveTradeInv_Khaled(var C_Npc slf)
 		CreateInvItems(slf,ItMw_Streitaxt2,2);
 		CreateInvItems(slf,ItMw_Zweihaender4,2);
 		//CreateInvItems(slf,ItMw_Barbarenstreitaxt,2);
-		CreateInvItems(slf,ItMw_Berserkeraxt,2);
 		CreateInvItems(slf,ItMw_Streitkolben,2);
 		CreateInvItems(slf,ItRw_Arrow,70);
 		CreateInvItems(slf,ItMw_Stinger,2);
@@ -72,10 +73,9 @@ func void B_GiveTradeInv_Khaled(var C_Npc slf)
 	{
 		CreateInvItems(slf,ItMi_Gold,700);
 		CreateInvItems(slf,ItMiSwordraw,1);
+		CreateInvItems(slf,ItMw_Berserkeraxt,2);
 		CreateInvItems(slf,ItRw_Arrow,180);
 		CreateInvItems(slf,ItRw_Bolt,160);
-		CreateInvItems(slf,ItBe_Addon_Prot_EDGE,1);
-		CreateInvItems(slf,ItBe_Addon_Prot_EdgPoi,1);
 		CreateInvItems(slf,ItMi_Nugget,2);
 		Khaled_ItemsGiven_Chapter_4 = TRUE;
 	};

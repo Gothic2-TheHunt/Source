@@ -48,14 +48,15 @@ func void B_GiveTradeInv_Canthar(var C_Npc slf)
 	{
 		CreateInvItems(slf,ItMi_Gold,100);
 		CreateInvItems(slf,ItRw_Bolt,150);
+		CreateInvItems(slf,ItMw_Kriegshammer2,2);
 		CreateInvItems(slf,ItMw_Streitkolben,2);
 		CreateInvItems(slf,ItMw_Zweihaender3,2);
-		CreateInvItems(slf,ItMw_Krummschwert,2);
 		Canthar_ItemsGiven_Chapter_3 = TRUE;
 	};
 	if((Kapitel >= 4) && (Canthar_ItemsGiven_Chapter_4 == FALSE))
 	{
 		CreateInvItems(slf,ItMi_Gold,150);
+		CreateInvItems(slf,ItMw_Krummschwert,2);
 		CreateInvItems(slf,ItRw_Bolt,100);
 		Canthar_ItemsGiven_Chapter_4 = TRUE;
 	};

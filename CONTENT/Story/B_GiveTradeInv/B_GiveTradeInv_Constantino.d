@@ -38,6 +38,7 @@ func void B_GiveTradeInv_Constantino(var C_Npc slf)
 		CreateInvItems(slf,ItPl_Health_Herb_03,1);
 		CreateInvItems(slf,ItPl_Mana_Herb_02,3);
 		CreateInvItems(slf,ItPo_Health_02,2);
+		CreateInvItems(slf,ItPl_Perm_Herb,1);
 		CreateInvItems(slf,ItPo_Speed,2);
 		CreateInvItems(slf,ItPl_Mushroom_01,2);
 		CreateInvItems(slf,ItPl_Mushroom_02,1);
@@ -54,7 +55,6 @@ func void B_GiveTradeInv_Constantino(var C_Npc slf)
 		CreateInvItems(slf,ItPo_Health_02,2);
 		CreateInvItems(slf,ItPo_Health_03,1);
 		CreateInvItems(slf,ItPo_Mana_01,2);
-		CreateInvItems(slf,ItPl_Perm_Herb,1);
 		CreateInvItems(slf,ItPl_Strength_Herb_01,1);
 		CreateInvItems(slf,ItPo_Speed,1);
 		CreateInvItems(slf,ItPl_Health_Herb_01,7);
