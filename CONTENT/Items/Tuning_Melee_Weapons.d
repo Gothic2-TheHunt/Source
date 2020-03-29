@@ -238,6 +238,7 @@ const int Value_Quarhodron = 1200;
 const int Damage_ElBastardo = 120;
 const int Damage_Betty = 135;
 const int Condition_ElBastardo = 110;
+const int Condition_Betty = 120;
 const int Range_ElBastardo = 100;
 const int Value_ElBastardo = 1500;
 const int Value_Betty = 1300;

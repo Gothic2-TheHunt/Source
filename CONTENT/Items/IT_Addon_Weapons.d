@@ -521,7 +521,7 @@ instance ItMw_Addon_Betty(C_Item)
 	damagetype = DAM_EDGE;
 	range = Range_ElBastardo;
 	cond_atr[2] = ATR_DEXTERITY;
-	cond_value[2] = Condition_ElBastardo;
+	cond_value[2] = Condition_Betty;
 	visual = "ItMw_065_1h_sword_bastard_03.3DS";
 	description = name;
 	text[2] = NAME_Damage;
