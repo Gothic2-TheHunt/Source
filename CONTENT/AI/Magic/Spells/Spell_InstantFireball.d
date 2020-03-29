@@ -1,5 +1,5 @@
 
-const int SPL_COST_InstantFireball = 12;
+const int SPL_COST_InstantFireball = 14;
 const int SPL_DAMAGE_InstantFireball = 75;
 
 instance Spell_InstantFireball(C_Spell_Proto)

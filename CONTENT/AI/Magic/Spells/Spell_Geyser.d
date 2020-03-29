@@ -1,5 +1,5 @@
 
-const int SPL_Cost_Geyser = 55;
+const int SPL_Cost_Geyser = 60;
 const int SPL_DAMAGE_Geyser = 250;
 
 instance Spell_Geyser(C_Spell_Proto)

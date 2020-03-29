@@ -6,7 +6,7 @@ const int SPL_PYRO_DAMAGE_PER_SEC = 20;
 
 instance Spell_Pyrokinesis(C_Spell_Proto)
 {
-	time_per_mana = 25;
+	time_per_mana = 20;
 	damage_per_level = SPL_Damage_Firestorm;
 	damagetype = DAM_FIRE;
 	canTurnDuringInvest = TRUE;

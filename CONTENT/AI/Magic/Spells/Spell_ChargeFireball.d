@@ -5,7 +5,7 @@ const int SPL_Damage_ChargeFireball = 100;
 
 instance Spell_ChargeFireball(C_Spell_Proto)
 {
-	time_per_mana = 20;
+	time_per_mana = 15;
 	damage_per_level = SPL_Damage_ChargeFireball;
 	damagetype = DAM_FIRE;
 	canTurnDuringInvest = TRUE;

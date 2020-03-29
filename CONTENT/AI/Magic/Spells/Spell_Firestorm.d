@@ -1,5 +1,5 @@
 
-const int SPL_Cost_InstantFireStorm = 22;
+const int SPL_Cost_InstantFireStorm = 35;
 const int SPL_Damage_InstantFireStorm = 125;
 
 instance Spell_Firestorm(C_Spell_Proto)

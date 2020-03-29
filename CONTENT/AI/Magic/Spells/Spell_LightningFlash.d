@@ -1,5 +1,5 @@
 
-const int SPL_Cost_LightningFlash = 20;
+const int SPL_Cost_LightningFlash = 24;
 const int SPL_Damage_LightningFlash = 160;
 const int SPL_ZAPPED_DAMAGE_PER_SEC = 2;
 const int SPL_TIME_SHORTZAPPED = 1;

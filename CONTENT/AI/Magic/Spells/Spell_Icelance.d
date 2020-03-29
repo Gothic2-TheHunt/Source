@@ -1,5 +1,5 @@
 
-const int SPL_Cost_Icelance = 15;
+const int SPL_Cost_Icelance = 18;
 const int SPL_DAMAGE_Icelance = 100;
 
 instance Spell_Icelance(C_Spell_Proto)

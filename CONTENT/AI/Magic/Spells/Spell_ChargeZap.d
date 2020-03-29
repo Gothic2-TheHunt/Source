@@ -6,7 +6,7 @@ const int SPL_TIME_ZAPPED = 2;
 
 instance Spell_ChargeZap(C_Spell_Proto)
 {
-	time_per_mana = 30;
+	time_per_mana = 25;
 	damage_per_level = SPL_Damage_ChargeZap;
 	damagetype = DAM_MAGIC;
 	canTurnDuringInvest = TRUE;
