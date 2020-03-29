@@ -728,7 +728,7 @@ instance DIA_PC_Psionic_PICKPOCKET(C_Info)
 
 func int DIA_PC_Psionic_PICKPOCKET_Condition()
 {
-	return C_Beklauen(76,20);
+	return C_Beklauen(76,45);
 };
 
 func void DIA_PC_Psionic_PICKPOCKET_Info()

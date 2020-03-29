@@ -314,10 +314,6 @@ func void DIA_Addon_Nefarius_ADW_Runen_3()
 	{
 		Info_AddChoice(DIA_Addon_Nefarius_ADW_Runen,B_BuildLearnString(NAME_SPL_IceCube,B_GetLearnCostTalent(other,NPC_TALENT_RUNES,SPL_IceCube)),DIA_Addon_Nefarius_ADW_Runen_Circle_3_SPL_IceCube);
 	};
-	if(PLAYER_TALENT_RUNES[SPL_Geyser] == FALSE)
-	{
-		Info_AddChoice(DIA_Addon_Nefarius_ADW_Runen,B_BuildLearnString(NAME_SPL_Geyser,B_GetLearnCostTalent(other,NPC_TALENT_RUNES,SPL_Geyser)),DIA_Addon_Nefarius_ADW_Runen_Circle_3_SPL_Geyser);
-	};
 };
 
 func void DIA_Addon_Nefarius_ADW_Runen_4()
@@ -343,6 +339,10 @@ func void DIA_Addon_Nefarius_ADW_Runen_4()
 	if(PLAYER_TALENT_RUNES[SPL_ChargeFireball] == FALSE)
 	{
 		Info_AddChoice(DIA_Addon_Nefarius_ADW_Runen,B_BuildLearnString(NAME_SPL_ChargeFireball,B_GetLearnCostTalent(other,NPC_TALENT_RUNES,SPL_ChargeFireball)),DIA_Addon_Nefarius_ADW_Runen_Circle_4_SPL_ChargeFireball);
+	};
+	if(PLAYER_TALENT_RUNES[SPL_Geyser] == FALSE)
+	{
+		Info_AddChoice(DIA_Addon_Nefarius_ADW_Runen,B_BuildLearnString(NAME_SPL_Geyser,B_GetLearnCostTalent(other,NPC_TALENT_RUNES,SPL_Geyser)),DIA_Addon_Nefarius_ADW_Runen_Circle_3_SPL_Geyser);
 	};
 };
 

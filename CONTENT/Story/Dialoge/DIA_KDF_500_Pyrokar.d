@@ -769,10 +769,10 @@ func void DIA_Pyrokar_SPELLS_MassDeath()
 	B_TeachPlayerTalentRunes(self,other,SPL_MassDeath);
 };
 
-func void DIA_Pyrokar_SPELLS_Shrink()
-{
-	B_TeachPlayerTalentRunes(self,other,SPL_Shrink);
-};
+//func void DIA_Pyrokar_SPELLS_Shrink()
+//{
+//	B_TeachPlayerTalentRunes(self,other,SPL_Shrink);
+//};
 
 
 instance DIA_Pyrokar_Parlan(C_Info)
