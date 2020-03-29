@@ -8,12 +8,12 @@ instance BDT_1090_Addon_Raven(Npc_Default)
 	flags = 0;
 	npcType = npctype_main;
 	level = 50;
-	attribute[ATR_STRENGTH] = 50;
-	attribute[ATR_DEXTERITY] = 50;
+	attribute[ATR_STRENGTH] = 100;
+	attribute[ATR_DEXTERITY] = 100;
 	attribute[ATR_MANA_MAX] = 100;
 	attribute[ATR_MANA] = 100;
-	attribute[ATR_HITPOINTS_MAX] = 500;
-	attribute[ATR_HITPOINTS] = 500;
+	attribute[ATR_HITPOINTS_MAX] = 1000;
+	attribute[ATR_HITPOINTS] = 1000;
 	aivar[AIV_IgnoresArmor] = TRUE;
 	aivar[AIV_EnemyOverride] = TRUE;
 	attribute[ATR_MANA_MAX] = 666666;
@@ -29,7 +29,7 @@ instance BDT_1090_Addon_Raven(Npc_Default)
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Arrogance.mds");
 	B_GiveNpcTalents(self);
-	B_SetFightSkills(self,90);
+	B_SetFightSkills(self,75);
 	daily_routine = Rtn_Start_1090;
 };
 
