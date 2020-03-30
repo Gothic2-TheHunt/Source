@@ -2105,13 +2105,16 @@ instance DIA_Pyrokar_PICKPOCKET(C_Info)
 	condition = DIA_Pyrokar_PICKPOCKET_Condition;
 	information = DIA_Pyrokar_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = Pickpocket_120;
+	description = Pickpocket_140;
 };
 
 
 func int DIA_Pyrokar_PICKPOCKET_Condition()
 {
-	return C_Beklauen(115,500);
+	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) == 1) && (self.aivar[AIV_PlayerHasPickedMyPocket] == FALSE) && (other.attribute[ATR_DEXTERITY] >= (148 - Theftdiff)))
+	{
+		return TRUE;
+	};
 };
 
 func void DIA_Pyrokar_PICKPOCKET_Info()
@@ -2123,8 +2126,27 @@ func void DIA_Pyrokar_PICKPOCKET_Info()
 
 func void DIA_Pyrokar_PICKPOCKET_DoIt()
 {
-	B_Beklauen();
-	Info_ClearChoices(DIA_Pyrokar_PICKPOCKET);
+	if(other.attribute[ATR_DEXTERITY] >= 148 && other.Guild == GIL_KDF)
+	{
+		CreateInvItems(self,ItMi_RuneBlank,1);
+		B_GiveInvItems(self,other,ItMi_RuneBlank,1);
+		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
+		B_GiveThiefXP();
+		Info_ClearChoices(DIA_Pyrokar_PICKPOCKET);
+	}
+	else if(other.attribute[ATR_DEXTERITY] >= 148)
+	{
+		B_GiveInvItems(self,other,ItMi_Gold,230);
+		self.aivar[AIV_PlayerHasPickedMyPocket] = TRUE;
+		B_GiveThiefXP();
+		Info_ClearChoices(DIA_Pyrokar_PICKPOCKET);
+	}
+	else
+	{
+		B_ResetThiefLevel();
+		AI_StopProcessInfos(self);
+		B_Attack(self,other,AR_Theft,1);
+	};
 };
 
 func void DIA_Pyrokar_PICKPOCKET_BACK()

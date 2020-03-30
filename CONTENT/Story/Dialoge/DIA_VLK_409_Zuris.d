@@ -49,7 +49,7 @@ func void DIA_Zuris_PICKPOCKET_Info()
 
 func void DIA_Zuris_PICKPOCKET_DoIt()
 {
-	if(other.attribute[ATR_DEXTERITY] >= 47)
+	if(other.attribute[ATR_DEXTERITY] >= 67)
 	{
 		CreateInvItems(self,ItPo_Perm_Health,1);
 		B_GiveInvItems(self,other,ItPo_Perm_Health,1);
