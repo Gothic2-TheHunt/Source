@@ -10,6 +10,7 @@ const int Am_ProtEdge2 = 15;
 const int Value_Am_ProtMage = 700;
 const int Am_ProtMage = 10;
 const int Value_Am_ProtMage02 = 1000;
+const int Value_Am_Prot_BlackEye_Mis = 1250;
 const int Am_ProtMage2 = 15;
 const int Value_Am_ProtPoint = 750;
 const int Am_ProtPoint = 10;
