@@ -3,6 +3,7 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 {
 	var int dK_rnd;
 	var int dK_Mega;
+	var int dK_normal;
 	if((slf.npcType == NPCTYPE_FRIEND) && Npc_IsPlayer(oth) && (oth.guild < GIL_SEPERATOR_HUM))
 	{
 		if((slf.guild == GIL_KDF) || (slf.aivar[AIV_MagicUser] == MAGIC_ALWAYS))
@@ -87,12 +88,13 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 			};
 			if(slf.aivar[AIV_SelectSpell] < 9)
 			{
-				if(Kapitel <= 3)
+				dK_normal = Hlp_Random(100);
+				if(Kapitel <= 3 && dK_normal < 60)
 				{
 					B_ReadySpell(slf,SPL_InstantFireball,SPL_COST_InstantFireball);
 					return TRUE;		
 				}
-				else if(Kapitel <= 4)
+				else if(Kapitel <= 4 && dK_normal < 90)
 				{
 					B_ReadySpell(slf,SPL_Deathbolt,SPL_COST_Deathbolt);
 					return TRUE;
@@ -105,12 +107,13 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 			}
 			else if(slf.aivar[AIV_SelectSpell] < 20)
 			{
-				if(Kapitel <= 3)
+				dK_normal = Hlp_Random(100);
+				if(Kapitel <= 3 && dK_normal < 50)
 				{
 					B_ReadySpell(slf,SPL_Icebolt,SPL_COST_Icebolt);
 					return TRUE;			
 				}
-				else if(Kapitel <= 4)
+				else if(Kapitel <= 4 && dK_normal < 90)
 				{
 					B_ReadySpell(slf,SPL_IceLance,SPL_Cost_Icelance);
 					return TRUE;
@@ -125,22 +128,22 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 			{
 				slf.aivar[AIV_SelectSpell] = 21;
 				dK_Mega = Hlp_Random(100);
-				if(dK_Mega <= 2)
+				if(dK_Mega <= 4)
 				{
 					B_ReadySpell(slf,SPL_Firerain,SPL_Cost_Firerain);
 					return TRUE;
 				}
-				else if(dK_Mega <= 5)
+				else if(dK_Mega <= 12)
 				{
 					B_ReadySpell(slf,SPL_Thunderstorm,SPL_Cost_Thunderstorm);
 					return TRUE;
 				}
-				else if(dK_Mega <= 10)
+				else if(dK_Mega <= 25)
 				{
 					B_ReadySpell(slf,SPL_Geyser,SPL_Cost_Geyser);
 					return TRUE;
 				}
-				else if(dK_Mega <= 25)
+				else if(dK_Mega <= 50)
 				{
 					B_ReadySpell(slf,SPL_WaterFist,SPL_Cost_Waterfist);
 					return TRUE;
