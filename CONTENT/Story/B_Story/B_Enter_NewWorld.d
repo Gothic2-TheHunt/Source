@@ -94,8 +94,8 @@ func void B_ENTER_NEWWORLD_Kapitel_2()
 		Wld_InsertNpc(Gobbo_Black,"NW_FARM1_CITYWALL_FOREST_16");
 		Wld_InsertNpc(Gobbo_Warrior,"NW_FARM1_CITYWALL_FOREST_16");
 		Wld_InsertNpc(BDT_10311_Addon_RangerBandit_M,"NW_FARM1_BANDITS_CAVE_07");
-		Wld_InsertNpc(BDT_1027_Bandit_H,"NW_FARM1_BANDITS_CAVE_07");
-		Wld_InsertNpc(BDT_10307_Addon_RangerBandit_M,"NW_FARM1_BANDITS_CAVE_03");
+		Wld_InsertNpc(BDT_10003_Addon_Bandit_H,"NW_FARM1_BANDITS_CAVE_07");
+		Wld_InsertNpc(BDT_10002_Addon_Bandit_M,"NW_FARM1_BANDITS_CAVE_03");
 		Wld_InsertNpc(Wolf,"NW_FARM1_CITYWALL_RIGHT_02");
 		Wld_InsertNpc(Wolf,"NW_FARM1_CITYWALL_RIGHT_02");
 		Wld_InsertNpc(Waran,"NW_FARM1_OUT_09");
@@ -512,11 +512,11 @@ func void B_ENTER_NEWWORLD_Kapitel_2()
 		Wld_InsertNpc(Keiler,"NW_CITY_SMFOREST_03_M");
 		//Wld_InsertNpc(BDT_10305_Addon_RangerBandit_L,"NW_FARM2_TO_TAVERN_RANGERBANDITS_01");
 		Wld_InsertNpc(BDT_1000_Bandit_L,"NW_CITY_SMFOREST_07");
-		Wld_InsertNpc(BDT_1026_Bandit_H,"NW_CITY_SMFOREST_07");
+		Wld_InsertNpc(BDT_10003_Addon_Bandit_H,"NW_CITY_SMFOREST_07");
 		Wld_InsertNpc(BDT_1002_Bandit_L,"NW_CITY_SMFOREST_BANDIT_02");
 		Wld_InsertNpc(BDT_1011_Bandit_M,"NW_CITY_SMFOREST_BANDIT_02");
 		Wld_InsertNpc(BDT_1009_Bandit_L,"NW_FOREST_CAVE1_IN_04");
-		Wld_InsertNpc(BDT_1026_Bandit_H,"NW_FOREST_CAVE1_IN_05");
+		Wld_InsertNpc(BDT_10003_Addon_Bandit_H,"NW_FOREST_CAVE1_IN_05");
 		Wld_InsertNpc(BDT_1011_Bandit_M,"NW_FOREST_CAVE1_IN_06");
 		Wld_InsertNpc(BDT_1011_Bandit_M,"NW_FOREST_CAVE1_IN_06");
 		
@@ -761,15 +761,15 @@ func void B_ENTER_NEWWORLD_Kapitel_3()
 		
 		// Lobart Farm
 		Wld_InsertNpc(OrcBiter,"NW_FARM1_OUT_13");
-		Wld_InsertNpc(OrcBiter,"NW_FARM1_OUT_15");
-		Wld_InsertNpc(OrcBiter,"NW_FARM1_OUT_15");
+		Wld_InsertNpc(OrcBiter,"NW_FARM1_OUT_13");
+		Wld_InsertNpc(OrcBiter,"NW_FARM1_OUT_13");
 		Wld_InsertNpc(Bloodfly,"NW_FARM1_CITYWALL_02_B");
 		Wld_InsertNpc(Bloodfly,"NW_FARM1_CITYWALL_02_B");
 		Wld_InsertNpc(Snapper,"NW_FARM1_CITYWALL_05");
 		Wld_InsertNpc(Snapper,"NW_FARM1_CITYWALL_05");
-		Wld_InsertNpc(BDT_1025_Bandit_H,"NW_FARM1_BANDITS_CAVE_08");
-		Wld_InsertNpc(BDT_10101_Addon_TowerBandit,"NW_FARM1_BANDITS_CAVE_07");
-		Wld_InsertNpc(BDT_1027_Bandit_H,"NW_FARM1_BANDITS_CAVE_02");
+		Wld_InsertNpc(BDT_10003_Addon_Bandit_H,"NW_FARM1_BANDITS_CAVE_08");
+		Wld_InsertNpc(BDT_10002_Addon_Bandit_M,"NW_FARM1_BANDITS_CAVE_07");
+		Wld_InsertNpc(BDT_10003_Addon_Bandit_H,"NW_FARM1_BANDITS_CAVE_02");
 		Wld_InsertNpc(StoneGolem,"NW_FARM1_OUT_09_M");
 		Wld_InsertNpc(Sheep,"NW_FARM1_PATH_CITY_SHEEP_11");
 		Wld_InsertNpc(Sheep,"NW_FARM1_PATH_CITY_SHEEP_11");
@@ -1368,8 +1368,7 @@ func void B_ENTER_NEWWORLD_Kapitel_4()
 		
 		// Lobart Farm
 		Wld_InsertNpc(OrcBiter_Strong,"NW_FARM1_OUT_13");
-		Wld_InsertNpc(OrcBiter_Strong,"NW_FARM1_OUT_15");
-		Wld_InsertNpc(OrcBiter_Strong,"NW_FARM1_OUT_15");
+		Wld_InsertNpc(OrcBiter_Strong,"NW_FARM1_OUT_13");
 		Wld_InsertNpc(Razor,"NW_FARM1_CITYWALL_05");
 		Wld_InsertNpc(Razor,"NW_FARM1_CITYWALL_05");
 		Wld_InsertNpc(Razor,"NW_FARM1_CITYWALL_05");
@@ -1470,12 +1469,12 @@ func void B_ENTER_NEWWORLD_Kapitel_4()
 		// Wld_InsertNpc(Keiler,"NW_FARM3_PATH_12_MONSTER_03");
 		Wld_InsertNpc(Skeleton,"NW_BIGFARM_LAKE_03_MOVEMENT5");
 		Wld_InsertNpc(Skeleton,"NW_BIGFARM_LAKE_03_MOVEMENT5");
-		Wld_InsertNpc(BDT_1026_Bandit_H,"NW_FARM4_WOOD_RANGERBANDITS_04");
-		Wld_InsertNpc(BDT_1027_Bandit_H,"NW_FARM4_WOOD_RANGERBANDITS_03");
-		Wld_InsertNpc(BDT_1025_Bandit_H,"NW_FARM4_WOOD_RANGERBANDITS_03");
-		Wld_InsertNpc(BDT_1027_Bandit_H,"NW_FARM4_WOOD_RANGERBANDITS_04");
-		Wld_InsertNpc(BDT_1025_Bandit_H,"NW_FARM4_WOOD_RANGERBANDITS_05");
-		Wld_InsertNpc(BDT_1026_Bandit_H,"NW_FARM4_WOOD_RANGERBANDITS_05");
+		Wld_InsertNpc(BDT_10003_Addon_Bandit_H,"NW_FARM4_WOOD_RANGERBANDITS_04");
+		Wld_InsertNpc(BDT_10001_Addon_Bandit_L,"NW_FARM4_WOOD_RANGERBANDITS_03");
+		Wld_InsertNpc(BDT_10001_Addon_Bandit_L,"NW_FARM4_WOOD_RANGERBANDITS_03");
+		Wld_InsertNpc(BDT_10002_Addon_Bandit_M,"NW_FARM4_WOOD_RANGERBANDITS_04");
+		Wld_InsertNpc(BDT_10001_Addon_Bandit_L,"NW_FARM4_WOOD_RANGERBANDITS_05");
+		Wld_InsertNpc(BDT_10002_Addon_Bandit_M,"NW_FARM4_WOOD_RANGERBANDITS_05");
 		Wld_InsertNpc(Sheep,"NW_BIGFARM_SHEEP1_02");
 		Wld_InsertNpc(Sheep,"NW_BIGFARM_SHEEP1_03");
 		Wld_InsertNpc(Sheep,"NW_BIGFARM_SHEEP2_03");
@@ -1512,8 +1511,6 @@ func void B_ENTER_NEWWORLD_Kapitel_4()
 		Wld_InsertNpc(OrcBiter_Strong,"NW_LIGHTHOUSE_HILL_04");
 		Wld_InsertNpc(OrcBiter_Strong,"NW_LIGHTHOUSE_HILL_04");
 		Wld_InsertItem(ITPL_DEX_HERB_01,"FP_LIGHTHOUSE_HERB_01");
-		Wld_InsertNpc(Bloodhound,"NW_FOREST_CAVE1_IN_04");
-		Wld_InsertNpc(Bloodhound,"NW_FOREST_CAVE1_IN_06");
 		Wld_InsertNpc(OrcElite_Roam,"FP_ROAM_MEDIUMFOREST_KAP3_29");
 		Wld_InsertNpc(OrcElite_Roam,"FP_ROAM_MEDIUMFOREST_KAP3_32");
 		Wld_InsertNpc(FireWaran,"FP_ROAM_FISHERMAN_04");
