@@ -1,9 +1,6 @@
 
 func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 {
-	var int dK_rnd;
-	var int dK_Mega;
-	var int dK_normal;
 	if((slf.npcType == NPCTYPE_FRIEND) && Npc_IsPlayer(oth) && (oth.guild < GIL_SEPERATOR_HUM))
 	{
 		if((slf.guild == GIL_KDF) || (slf.aivar[AIV_MagicUser] == MAGIC_ALWAYS))
@@ -66,12 +63,12 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 		{
 			CreateInvItems(slf,ItRu_Waterfist,1);
 		};
-		if(Npc_HasItems(slf,ItRu_Skull) == 0)
-		{
-			CreateInvItems(slf,ItRu_Skull,1);
-		};
 		if(Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(DMT_1299_OberDementor_DI))
 		{
+			if(Npc_HasItems(slf,ItRu_Skull) == 0)
+			{
+				CreateInvItems(slf,ItRu_Skull,1);
+			};
 			B_ReadySpell(slf,SPL_Skull,SPL_Cost_Skull);
 			return TRUE;
 		}
@@ -81,20 +78,25 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 			{
 				return TRUE;
 			};
+			
+			var int dK_rnd;
+			var int dK_Mega;
+			var int spellroll;
 			if(slf.aivar[AIV_SelectSpell] <= 0)
 			{
-				dK_rnd = Hlp_Random(20);
+				spellroll = Hlp_Random(100);
+				dK_rnd = Hlp_Random(17);
+				dK_Mega = Hlp_Random(100);
 				slf.aivar[AIV_SelectSpell] += dK_rnd;
 			};
-			if(slf.aivar[AIV_SelectSpell] < 9)
+			if(slf.aivar[AIV_SelectSpell] < 8)
 			{
-				dK_normal = Hlp_Random(100);
-				if(Kapitel <= 3 && dK_normal < 60)
+				if(spellroll < 55 && Kapitel <= 3)
 				{
 					B_ReadySpell(slf,SPL_InstantFireball,SPL_COST_InstantFireball);
 					return TRUE;		
 				}
-				else if(Kapitel <= 4 && dK_normal < 90)
+				else if(spellroll < 85 && Kapitel <= 4)
 				{
 					B_ReadySpell(slf,SPL_Deathbolt,SPL_COST_Deathbolt);
 					return TRUE;
@@ -105,15 +107,14 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 					return TRUE;
 				};
 			}
-			else if(slf.aivar[AIV_SelectSpell] < 20)
+			else if(slf.aivar[AIV_SelectSpell] < 16)
 			{
-				dK_normal = Hlp_Random(100);
-				if(Kapitel <= 3 && dK_normal < 50)
+				if(spellroll < 50 && Kapitel <= 3)
 				{
 					B_ReadySpell(slf,SPL_Icebolt,SPL_COST_Icebolt);
 					return TRUE;			
 				}
-				else if(Kapitel <= 4 && dK_normal < 90)
+				else if(spellroll < 85 && Kapitel <= 4)
 				{
 					B_ReadySpell(slf,SPL_IceLance,SPL_Cost_Icelance);
 					return TRUE;
@@ -124,11 +125,9 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 					return TRUE;
 				};
 			}
-			else if(slf.aivar[AIV_SelectSpell] == 20)
+			else if(slf.aivar[AIV_SelectSpell] < 17)
 			{
-				slf.aivar[AIV_SelectSpell] = 21;
-				dK_Mega = Hlp_Random(100);
-				if(dK_Mega <= 4)
+				if(dK_Mega <= 3)
 				{
 					B_ReadySpell(slf,SPL_Firerain,SPL_Cost_Firerain);
 					return TRUE;
@@ -138,12 +137,12 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 					B_ReadySpell(slf,SPL_Thunderstorm,SPL_Cost_Thunderstorm);
 					return TRUE;
 				}
-				else if(dK_Mega <= 25)
+				else if(dK_Mega <= 33)
 				{
 					B_ReadySpell(slf,SPL_Geyser,SPL_Cost_Geyser);
 					return TRUE;
 				}
-				else if(dK_Mega <= 50)
+				else if(dK_Mega <= 60)
 				{
 					B_ReadySpell(slf,SPL_WaterFist,SPL_Cost_Waterfist);
 					return TRUE;
@@ -154,8 +153,11 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 					return TRUE;
 				};
 			}
-			else if(slf.aivar[AIV_SelectSpell] == 22)
+			else
 			{
+				spellroll = Hlp_Random(100);
+				dK_rnd = Hlp_Random(17);
+				dK_Mega = Hlp_Random(100);
 				slf.aivar[AIV_SelectSpell] = 0;
 			};
 		};
@@ -314,10 +316,11 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 
 		if(Npc_GetDistToNpc(slf,oth) > FIGHT_DIST_DRAGON_MAGIC)
 		{
+			var int dragonspellswamp;
 			if(slf.aivar[AIV_SelectSpell] <= 0)
 			{
-				dK_rnd = Hlp_Random(20);
-				slf.aivar[AIV_SelectSpell] += dK_rnd;
+				dragonspellswamp = Hlp_Random(20);
+				slf.aivar[AIV_SelectSpell] += dragonspellswamp;
 			};
 			if(slf.aivar[AIV_SelectSpell] <= 2)
 			{
@@ -334,14 +337,13 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 				B_ReadySpell(slf,SPL_IceLance,SPL_Cost_Icelance);
 				return TRUE;
 			}
-			else if(slf.aivar[AIV_SelectSpell] == 21)
+			else if(slf.aivar[AIV_SelectSpell] >= 21)
 			{
+				dragonspellswamp = Hlp_Random(20);
 				slf.aivar[AIV_SelectSpell] = 0;
 			};
 
 			return TRUE;
-			// B_ReadySpell(slf,SPL_Thunderstorm,SPL_Cost_Thunderstorm);
-			// return TRUE;
 		}
 		else
 		{
@@ -366,6 +368,14 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 		{
 			CreateInvItems(slf,ItRu_Icelance,1);
 		};
+		if(Npc_HasItems(slf,ItRu_LightningFlash) == 0)
+		{
+			CreateInvItems(slf,ItRu_LightningFlash,1);
+		};
+		if(Npc_HasItems(slf,ItRu_Thunderstorm) == 0)
+		{
+			CreateInvItems(slf,ItRu_Thunderstorm,1);
+		};
 		
 		if(Npc_IsDrawingWeapon(slf))
 		{
@@ -374,34 +384,54 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 		
 		if(Npc_GetDistToNpc(slf,oth) > FIGHT_DIST_DRAGON_MAGIC)
 		{
+			var int dragonspellrock;
 			if(slf.aivar[AIV_SelectSpell] <= 0)
 			{
-				dK_rnd = Hlp_Random(20);
-				slf.aivar[AIV_SelectSpell] += dK_rnd;
+				dragonspellrock = Hlp_Random(25);
+				slf.aivar[AIV_SelectSpell] += dragonspellrock;
 			};
 			if(slf.aivar[AIV_SelectSpell] <= 1)
+			{
+				B_ReadySpell(slf,SPL_Thunderstorm,SPL_Cost_Thunderstorm);
+				return TRUE;
+			}
+			else if(slf.aivar[AIV_SelectSpell] <= 2)
 			{
 				B_ReadySpell(slf,SPL_Geyser,SPL_Cost_Geyser);
 				return TRUE;
 			}
-			else if(slf.aivar[AIV_SelectSpell] <= 10)
+			else if(slf.aivar[AIV_SelectSpell] <= 12)
 			{
 				B_ReadySpell(slf,SPL_Deathbolt,SPL_COST_Deathbolt);
 				return TRUE;
 			}
-			else if(slf.aivar[AIV_SelectSpell] <= 20)
+			else if(slf.aivar[AIV_SelectSpell] <= 13)
+			{
+				B_ReadySpell(slf,SPL_LightningFlash,SPL_Cost_LightningFlash);
+				return TRUE;
+			}
+			else if(slf.aivar[AIV_SelectSpell] <= 17)
 			{
 				B_ReadySpell(slf,SPL_IceLance,SPL_Cost_Icelance);
 				return TRUE;
 			}
-			else if(slf.aivar[AIV_SelectSpell] == 21)
+			else if(slf.aivar[AIV_SelectSpell] <= 18)
 			{
+				B_ReadySpell(slf,SPL_Geyser,SPL_Cost_Geyser);
+				return TRUE;
+			}
+			else if(slf.aivar[AIV_SelectSpell] <= 25)
+			{
+				B_ReadySpell(slf,SPL_IceLance,SPL_Cost_Icelance);
+				return TRUE;
+			}
+			else if(slf.aivar[AIV_SelectSpell] >= 26)
+			{
+				dragonspellrock = Hlp_Random(25);
 				slf.aivar[AIV_SelectSpell] = 0;
 			};
 			
 			return TRUE;
-			// B_ReadySpell(slf,SPL_Thunderstorm,SPL_Cost_Thunderstorm);
-			// return TRUE;
 		}
 		else
 		{
@@ -422,6 +452,14 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 		{
 			CreateInvItems(slf,ItRu_Geyser,1);
 		};
+		if(Npc_HasItems(slf,ItRu_Firestorm) == 0)
+		{
+			CreateInvItems(slf,ItRu_Firestorm,1);
+		};
+		if(Npc_HasItems(slf,ItRu_Firerain) == 0)
+		{
+			CreateInvItems(slf,ItRu_Firerain,1);
+		};
 		
 		if(Npc_IsDrawingWeapon(slf))
 		{
@@ -430,19 +468,40 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 		
 		if(Npc_GetDistToNpc(slf,oth) > FIGHT_DIST_DRAGON_MAGIC)
 		{
+			var int dragonspellfire;
 			if(slf.aivar[AIV_SelectSpell] <= 0)
 			{
-				dK_rnd = Hlp_Random(20);
-				slf.aivar[AIV_SelectSpell] += dK_rnd;
+				dragonspellfire = Hlp_Random(20);
+				slf.aivar[AIV_SelectSpell] += dragonspellfire;
 			};
-			if(slf.aivar[AIV_SelectSpell] <= 2)
+			if(slf.aivar[AIV_SelectSpell] <= 1)
+			{
+				B_ReadySpell(slf,SPL_Firerain,SPL_Cost_Firerain);
+				return TRUE;
+			}
+			else if(slf.aivar[AIV_SelectSpell] <= 8)
+			{
+				B_ReadySpell(slf,SPL_Deathball,SPL_COST_Deathball);
+				return TRUE;
+			}
+			else if(slf.aivar[AIV_SelectSpell] <= 10)
+			{
+				B_ReadySpell(slf,SPL_Firestorm,SPL_COST_Firestorm);
+				return TRUE;
+			}
+			else if(slf.aivar[AIV_SelectSpell] <= 14)
+			{
+				B_ReadySpell(slf,SPL_Deathbolt,SPL_COST_Deathbolt);
+				return TRUE;
+			}
+			else if(slf.aivar[AIV_SelectSpell] <= 16)
 			{
 				B_ReadySpell(slf,SPL_Geyser,SPL_Cost_Geyser);
 				return TRUE;
 			}
-			else if(slf.aivar[AIV_SelectSpell] <= 7)
+			else if(slf.aivar[AIV_SelectSpell] <= 17)
 			{
-				B_ReadySpell(slf,SPL_Deathball,SPL_COST_Deathball);
+				B_ReadySpell(slf,SPL_Firestorm,SPL_COST_Firestorm);
 				return TRUE;
 			}
 			else if(slf.aivar[AIV_SelectSpell] <= 20)
@@ -450,14 +509,13 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 				B_ReadySpell(slf,SPL_Deathbolt,SPL_COST_Deathbolt);
 				return TRUE;
 			}
-			else if(slf.aivar[AIV_SelectSpell] == 21)
+			else if(slf.aivar[AIV_SelectSpell] >= 21)
 			{
+				dragonspellfire = Hlp_Random(20);
 				slf.aivar[AIV_SelectSpell] = 0;
 			};
 			
 			return TRUE;
-			// B_ReadySpell(slf,SPL_Thunderstorm,SPL_Cost_Thunderstorm);
-			// return TRUE;
 		}
 		else
 		{
@@ -483,6 +541,14 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 		{
 			CreateInvItems(slf,ItRu_Icelance,1);
 		};
+		if(Npc_HasItems(slf,ItRu_LightningFlash) == 0)
+		{
+			CreateInvItems(slf,ItRu_LightningFlash,1);
+		};
+		if(Npc_HasItems(slf,ItRu_Geyser) == 0)
+		{
+			CreateInvItems(slf,ItRu_Geyser,1);
+		};
 		
 		if(Npc_IsDrawingWeapon(slf))
 		{
@@ -491,19 +557,35 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 			
 		if(Npc_GetDistToNpc(slf,oth) > FIGHT_DIST_DRAGON_MAGIC)
 		{
+			var int dragonspellice;
 			if(slf.aivar[AIV_SelectSpell] <= 0)
 			{
-				dK_rnd = Hlp_Random(30);
-				slf.aivar[AIV_SelectSpell] += dK_rnd;
+				dragonspellice = Hlp_Random(30);
+				slf.aivar[AIV_SelectSpell] += dragonspellice;
 			};
-			if(slf.aivar[AIV_SelectSpell] <= 2)
+			if(slf.aivar[AIV_SelectSpell] <= 4)
+			{
+				B_ReadySpell(slf,SPL_Deathbolt,SPL_COST_Deathbolt);
+				return TRUE;
+			}
+			else if(slf.aivar[AIV_SelectSpell] <= 5)
 			{
 				B_ReadySpell(slf,SPL_IceCube,SPL_Cost_IceCube);
 				return TRUE;
 			}
-			else if(slf.aivar[AIV_SelectSpell] <= 8)
+			else if(slf.aivar[AIV_SelectSpell] <= 6)
+			{
+				B_ReadySpell(slf,SPL_Geyser,SPL_Cost_Geyser);
+				return TRUE;
+			}
+			else if(slf.aivar[AIV_SelectSpell] <= 9)
 			{
 				B_ReadySpell(slf,SPL_Deathball,SPL_COST_Deathball);
+				return TRUE;
+			}
+			else if(slf.aivar[AIV_SelectSpell] <= 10)
+			{
+				B_ReadySpell(slf,SPL_LightningFlash,SPL_Cost_LightningFlash);
 				return TRUE;
 			}
 			else if(slf.aivar[AIV_SelectSpell] <= 20)
@@ -511,13 +593,29 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 				B_ReadySpell(slf,SPL_IceLance,SPL_Cost_Icelance);
 				return TRUE;
 			}
-			else if(slf.aivar[AIV_SelectSpell] <= 30)
+			else if(slf.aivar[AIV_SelectSpell] <= 21)
+			{
+				B_ReadySpell(slf,SPL_Geyser,SPL_Cost_Geyser);
+				return TRUE;
+			}
+			else if(slf.aivar[AIV_SelectSpell] <= 24)
 			{
 				B_ReadySpell(slf,SPL_Deathbolt,SPL_COST_Deathbolt);
 				return TRUE;
 			}
+			else if(slf.aivar[AIV_SelectSpell] <= 26)
+			{
+				B_ReadySpell(slf,SPL_LightningFlash,SPL_Cost_LightningFlash);
+				return TRUE;
+			}
+			else if(slf.aivar[AIV_SelectSpell] <= 30)
+			{
+				B_ReadySpell(slf,SPL_Deathball,SPL_COST_Deathball);
+				return TRUE;
+			}
 			else if(slf.aivar[AIV_SelectSpell] >= 31)
 			{
+				dragonspellice = Hlp_Random(30);
 				slf.aivar[AIV_SelectSpell] = 0;
 			};
 			
@@ -547,10 +645,11 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 		
 		if(Npc_GetDistToNpc(slf,oth) > FIGHT_DIST_DRAGON_MAGIC)
 		{		
+			var int dragonspelldeath;
 			if(slf.aivar[AIV_SelectSpell] <= 0)
 			{
-				dK_rnd = Hlp_Random(20);
-				slf.aivar[AIV_SelectSpell] += dK_rnd;
+				dragonspelldeath = Hlp_Random(20);
+				slf.aivar[AIV_SelectSpell] += dragonspelldeath;
 			};
 			if(slf.aivar[AIV_SelectSpell] <= 3)
 			{
@@ -574,6 +673,7 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 			}
 			else if(slf.aivar[AIV_SelectSpell] >= 21)
 			{
+				dragonspelldeath = Hlp_Random(20);
 				slf.aivar[AIV_SelectSpell] = 0;
 			};
 			
@@ -597,16 +697,31 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 		
 		if(Npc_GetDistToNpc(slf,oth) > FIGHT_DIST_MELEE)
 		{
-			if(Kapitel <= 3)
+			if(slf.aivar[AIV_SelectSpell] <= 0)
+			{
+				dK_rnd = Hlp_Random(20);
+				slf.aivar[AIV_SelectSpell] += dK_rnd;
+			};
+			if(Kapitel <= 2)
 			{
 				B_ReadySpell(slf,SPL_InstantFireball,SPL_COST_InstantFireball);
 				return TRUE;
 			}
-			else if(Kapitel <= 4)
+			else if(Kapitel <= 3 && slf.aivar[AIV_SelectSpell] >= 8 && slf.aivar[AIV_SelectSpell] <= 20)
+			{
+				B_ReadySpell(slf,SPL_InstantFireball,SPL_COST_InstantFireball);
+				return TRUE;
+			}
+			else if(Kapitel <= 4 && slf.aivar[AIV_SelectSpell] <= 20)
 			{
 				B_ReadySpell(slf,SPL_Deathbolt,SPL_COST_Deathbolt);
 				return TRUE;
+			}
+			else if(slf.aivar[AIV_SelectSpell] >= 21)
+			{
+				slf.aivar[AIV_SelectSpell] = 0;
 			};
+			
 			return TRUE;
 		}
 		else

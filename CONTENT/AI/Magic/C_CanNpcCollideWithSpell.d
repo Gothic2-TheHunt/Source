@@ -9,6 +9,29 @@ const int COLL_DONTKILL = 32;
 
 func int C_CanNpcCollideWithSpell(var int spellType)
 {
+	//All area spells don't really get checked here though, so Firerain and Thunderstorm always hit everything
+	if((other.guild == GIL_DMT) && (self.guild == GIL_DMT) && (spellType == SPL_Firestorm || spellType == SPL_Firerain || spellType == SPL_Thunderstorm))
+	{
+		return COLL_DONOTHING;
+	};
+	if(other.guild == GIL_DRAGON)
+	{
+		if((spellType == SPL_Firerain) || (spellType == SPL_Thunderstorm) || (spellType == SPL_Geyser))
+		{
+			if(self.guild == GIL_DRAGON)
+			{
+				return COLL_DONOTHING;
+			};
+			//else if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(hero))
+			//{
+			//	return COLL_APPLYHALVEDAMAGE;
+			//};
+		};
+		if((spellType == SPL_Firestorm) && (self.guild == GIL_DRAGON))
+		{
+			return COLL_DONOTHING;
+		};
+	};
 	if(spellType == SPL_Whirlwind)
 	{
 		if(C_NpcIsDown(self) || C_BodyStateContains(self,BS_SWIM) || C_BodyStateContains(self,BS_DIVE) || (self.guild == GIL_STONEGOLEM) || (self.guild == GIL_ICEGOLEM) || (self.guild == GIL_FIREGOLEM) || (self.guild == GIL_SUMMONED_GOLEM) || (self.guild == GIL_DEMON) || (self.guild == GIL_SUMMONED_DEMON) || (self.guild == GIL_TROLL) || (self.guild == GIL_SUMMONED_GOLEM) || (self.guild == GIL_DRAGON) || (self.guild == GIL_Stoneguardian) || (self.flags == NPC_FLAG_IMMORTAL) || (self.guild == GIL_SHADOWBEAST) || (self.guild == GIL_Gargoyle))
@@ -153,42 +176,6 @@ func int C_CanNpcCollideWithSpell(var int spellType)
 		};
 		return COLL_APPLYDAMAGE | COLL_DONTKILL;
 	};
-	if(other.guild == GIL_DMT)
-	{
-		if((spellType == SPL_Firerain) || (spellType == SPL_Thunderstorm))
-		{
-			if(self.guild == GIL_DMT)
-			{
-				return COLL_DONOTHING;
-			}
-			else if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(hero))
-			{
-				return COLL_APPLYHALVEDAMAGE;
-			};
-		};
-		if((spellType == SPL_Firestorm) && (self.guild == GIL_DMT))
-		{
-			return COLL_DONOTHING;
-		};
-	};
-	if(other.guild == GIL_DRAGON)
-	{
-		if((spellType == SPL_Firerain) || (spellType == SPL_Thunderstorm) || (spellType == SPL_Geyser))
-		{
-			if(self.guild == GIL_DRAGON)
-			{
-				return COLL_DONOTHING;
-			}
-			else if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(hero))
-			{
-				return COLL_APPLYHALVEDAMAGE;
-			};
-		};
-		if((spellType == SPL_Firestorm) && (self.guild == GIL_DRAGON))
-		{
-			return COLL_DONOTHING;
-		};
-	};
 	if((spellType == SPL_ChargeFireball) || (spellType == SPL_InstantFireball) || (spellType == SPL_Firerain) || (spellType == SPL_Firebolt) || (spellType == SPL_Firestorm) || (spellType == SPL_Pyrokinesis) || (spellType == SPL_Deathbolt) || (spellType == SPL_Deathball))
 	{
 		if(C_NpcIsDown(self) || C_BodyStateContains(self,BS_SWIM) || C_BodyStateContains(self,BS_DIVE))
@@ -235,7 +222,7 @@ func int C_CanNpcCollideWithSpell(var int spellType)
 	};
 	if((spellType == SPL_LightningFlash) || (spellType == SPL_Zap) || (spellType == SPL_ChargeZap))
 	{
-		return COLL_APPLYDAMAGE;
+		//return COLL_APPLYDAMAGE;
 		if(C_NpcIsDown(self))
 		{
 			return COLL_DONOTHING;
