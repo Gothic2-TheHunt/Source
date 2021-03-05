@@ -21,6 +21,10 @@ func void B_MM_AssessDamage()
 			return;
 		};
 	};
+	if((self.guild == GIL_DRAGON && other.guild == gil_summoned_demon))
+	{
+		Npc_ChangeAttribute(self,ATR_HITPOINTS,30);
+	};
 	if((self.guild == GIL_Stoneguardian) && (self.aivar[AIV_EnemyOverride] == TRUE))
 	{
 		b_awake_stoneguardian(self);

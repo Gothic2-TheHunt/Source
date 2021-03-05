@@ -48,13 +48,13 @@ instance Summoned_Demon(Mst_Default_Demon)
 	aivar[AIV_MM_REAL_ID] = id_summoned_demon;
 	aivar[AIV_SummonPoints] = 7;
 	level = 0;
-	attribute[ATR_STRENGTH] = 275;
-	attribute[ATR_HITPOINTS_MAX] = 620;
-	attribute[ATR_HITPOINTS] = 620;
+	attribute[ATR_STRENGTH] = 220;
+	attribute[ATR_HITPOINTS_MAX] = 530;
+	attribute[ATR_HITPOINTS] = 530;
 	protection[PROT_BLUNT] = 135;
 	protection[PROT_EDGE] = 135;
 	protection[PROT_POINT] = 135;
-	protection[PROT_FIRE] = 90;
+	protection[PROT_FIRE] = 80;
 	protection[PROT_FLY] = 100;
 	protection[PROT_MAGIC] = 75;
 	noFocus = FALSE;
