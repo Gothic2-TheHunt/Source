@@ -36,7 +36,7 @@ func int ZS_MagicFreeze()
 
 func int ZS_MagicFreeze_Loop()
 {
-	if(Npc_GetStateTime(self) > SPL_TIME_FREEZE)
+	if(Npc_GetStateTime(self) > SPL_TIME_FREEZE || (self.aivar[AIV_MM_REAL_ID] == ID_UNDEADLORD) || self == Raven)
 	{
 		B_StopMagicFreeze();
 		return LOOP_END;

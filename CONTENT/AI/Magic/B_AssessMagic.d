@@ -35,9 +35,15 @@ func void B_AssessMagic()
 	};
 	if((Npc_GetLastHitSpellID(self) == SPL_IceCube) || (Npc_GetLastHitSpellID(self) == SPL_IceWave))
 	{
-		Npc_ClearAIQueue(self);
-		B_ClearPerceptions(self);
-		AI_StartState(self,ZS_MagicFreeze,0,"");
+		if((self.guild != GIL_DRAGON && self.guild != GIL_ICEGOLEM && self.aivar[AIV_MM_REAL_ID] != ID_UNDEADLORD))
+		{
+			Npc_ClearAIQueue(self);
+			B_ClearPerceptions(self);
+			AI_StartState(self,ZS_MagicFreeze,0,"");
+		};
+		//Npc_ClearAIQueue(self);
+		//B_ClearPerceptions(self);
+		//AI_StartState(self,ZS_MagicFreeze,0,"");
 		return;
 	};
 	if(Npc_GetLastHitSpellID(self) == SPL_LightningFlash)
@@ -72,8 +78,13 @@ func void B_AssessMagic()
 	};
 	if(Npc_GetLastHitSpellID(self) == SPL_Firerain)
 	{
-		Npc_ClearAIQueue(self);
-		AI_StartState(self,ZS_MagicBurnShort,0,"");
+		if((self.guild != GIL_DRAGON && self.guild != GIL_FIREGOLEM))
+		{
+			Npc_ClearAIQueue(self);
+			AI_StartState(self,ZS_MagicBurnShort,0,"");
+		};
+		//Npc_ClearAIQueue(self);
+		//AI_StartState(self,ZS_MagicBurnShort,0,"");
 		return;
 	};
 };
