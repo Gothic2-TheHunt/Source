@@ -110,7 +110,7 @@ instance The_Challenger(Mst_Skeleton_Lord)
 	protection[PROT_MAGIC] = 200;
 	fight_tactic = FAI_HUMAN_PERFECT;
 	B_SetVisuals_Skeleton_Lord();
-	EquipItem(self,ItMw_Berserkeraxt);
+	EquipItem(self,ItMw_Barbarenstreitaxt);
 	CreateInvItems(self,ItMi_Gold,1000);
 	CreateInvItems(self,ItPo_Perm_DEX,1);
 	CreateInvItems(self,ItPo_Perm_STR,1);
