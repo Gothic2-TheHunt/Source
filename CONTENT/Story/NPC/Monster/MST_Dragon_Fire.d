@@ -12,11 +12,11 @@ prototype Mst_Default_Dragon_Fire(C_Npc)
 	attribute[ATR_HITPOINTS] = 2800;
 	attribute[ATR_MANA_MAX] = 1000;
 	attribute[ATR_MANA] = 1000;
-	protection[PROT_BLUNT] = 155;
+	protection[PROT_BLUNT] = 170;
 	protection[PROT_EDGE] = 160;
-	protection[PROT_POINT] = 150;
+	protection[PROT_POINT] = 170;
 	protection[PROT_FIRE] = IMMUNE;
-	protection[PROT_FLY] = 100;
+	protection[PROT_FLY] = 110;
 	protection[PROT_MAGIC] = 100;
 	damagetype = DAM_FIRE | DAM_FLY;
 	damage[DAM_INDEX_FIRE] = 159;

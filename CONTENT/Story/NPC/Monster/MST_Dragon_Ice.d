@@ -12,7 +12,7 @@ prototype Mst_Default_Dragon_Ice(C_Npc)
 	attribute[ATR_HITPOINTS] = 3000;
 	attribute[ATR_MANA_MAX] = 1000;
 	attribute[ATR_MANA] = 1000;
-	protection[PROT_BLUNT] = 145;
+	protection[PROT_BLUNT] = 170;
 	protection[PROT_EDGE] = 200;
 	protection[PROT_POINT] = 200;
 	protection[PROT_FIRE] = 175;

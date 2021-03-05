@@ -8,11 +8,11 @@ prototype Mst_Default_Dragon_Swamp(C_Npc)
 	bodyStateInterruptableOverride = TRUE;
 	attribute[ATR_STRENGTH] = 200;
 	attribute[ATR_DEXTERITY] = 200;
-	attribute[ATR_HITPOINTS_MAX] = 2200;
-	attribute[ATR_HITPOINTS] = 2200;
+	attribute[ATR_HITPOINTS_MAX] = 2300;
+	attribute[ATR_HITPOINTS] = 2300;
 	attribute[ATR_MANA_MAX] = 1000;
 	attribute[ATR_MANA] = 1000;
-	protection[PROT_BLUNT] = 185;
+	protection[PROT_BLUNT] = 165;
 	protection[PROT_EDGE] = 145;
 	protection[PROT_POINT] = 130;
 	protection[PROT_FIRE] = 100;
