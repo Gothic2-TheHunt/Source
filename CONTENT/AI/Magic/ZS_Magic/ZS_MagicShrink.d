@@ -113,7 +113,7 @@ func int ZS_MagicShrink_Loop()
 		}
 		else
 		{
-			self.protection[PROT_BLUNT] = (self.protection[PROT_BLUNT] * 3) / 10;
+			self.protection[PROT_BLUNT] = (self.protection[PROT_BLUNT] * 4) / 10;
 		};	
 		
 		if(self.protection[PROT_EDGE] == IMMUNE)
@@ -122,7 +122,7 @@ func int ZS_MagicShrink_Loop()
 		}
 		else
 		{
-			self.protection[PROT_EDGE] = (self.protection[PROT_EDGE] * 3) / 10;
+			self.protection[PROT_EDGE] = (self.protection[PROT_EDGE] * 4) / 10;
 		};	
 		
 		if(self.protection[PROT_FIRE] == IMMUNE)
@@ -143,7 +143,7 @@ func int ZS_MagicShrink_Loop()
 		}
 		else
 		{
-			self.protection[PROT_POINT] = (self.protection[PROT_POINT] * 3) / 10;
+			self.protection[PROT_POINT] = (self.protection[PROT_POINT] * 4) / 10;
 		};
 		
 		self.aivar[AIV_MM_ShrinkState] = 14;
