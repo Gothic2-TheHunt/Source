@@ -1,5 +1,5 @@
 
-const int SPL_Cost_SummonGuardian = 60;
+const int SPL_Cost_SummonGuardian = 65;
 
 instance Spell_SummonGuardian(C_Spell_Proto)
 {

@@ -1,5 +1,5 @@
 
-const int SPL_Cost_SummonDemon = 120;
+const int SPL_Cost_SummonDemon = 140;
 
 instance Spell_SummonDemon(C_Spell_Proto)
 {

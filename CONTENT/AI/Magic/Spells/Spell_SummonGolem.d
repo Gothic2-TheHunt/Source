@@ -1,5 +1,5 @@
 
-const int SPL_Cost_SummonGolem = 80;
+const int SPL_Cost_SummonGolem = 90;
 
 instance Spell_SummonGolem(C_Spell_Proto)
 {

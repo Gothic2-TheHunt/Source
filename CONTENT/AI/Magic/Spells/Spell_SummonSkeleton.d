@@ -1,5 +1,5 @@
 
-const int SPL_Cost_SummonSkeleton = 60;
+const int SPL_Cost_SummonSkeleton = 65;
 
 instance Spell_SummonSkeleton(C_Spell_Proto)
 {

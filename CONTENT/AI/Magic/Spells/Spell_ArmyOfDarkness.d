@@ -1,5 +1,5 @@
 
-const int SPL_Cost_ArmyOfDarkness = 150;
+const int SPL_Cost_ArmyOfDarkness = 160;
 
 instance Spell_ArmyOfDarkness(C_Spell_Proto)
 {
