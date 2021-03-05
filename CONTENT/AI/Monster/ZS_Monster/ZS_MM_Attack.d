@@ -92,7 +92,7 @@ func int ZS_MM_Attack_Loop()
 				self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS_MAX];
 			};
 		};
-		if(self.aivar[AIV_DragonTimer] == 350)
+		if(self.aivar[AIV_DragonTimer] == 300)
 		{
 			AI_Standup(self);
 			AI_PlayAni(self,"T_WARN");
