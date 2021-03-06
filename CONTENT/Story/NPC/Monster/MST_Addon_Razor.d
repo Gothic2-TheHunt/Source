@@ -20,9 +20,10 @@ prototype Mst_Default_Razor(C_Npc)
 	damagetype = DAM_EDGE;
 	fight_tactic = FAI_SNAPPER;
 	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
-	senses_range = 3000;
-	aivar[AIV_MM_FollowTime] = 10;
+	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
+	aivar[AIV_MM_FollowTime] = FOLLOWTIME_MEDIUM;
 	aivar[AIV_MM_FollowInWater] = TRUE;
+	aivar[AIV_MM_ThreatenBeforeAttack] = TRUE;
 	aivar[AIV_MM_Packhunter] = TRUE;
 	start_aistate = ZS_MM_AllScheduler;
 	aivar[AIV_MM_RestStart] = OnlyRoutine;
