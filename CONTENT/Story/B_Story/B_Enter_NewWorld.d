@@ -70,6 +70,10 @@ func void B_ENTER_NEWWORLD_Kapitel_2()
 		Wld_InsertItem(ItMi_Addon_Shell_02,"FP_FIREBEACH_SHELLSPAWN_03");
 		
 		// Lobart Farm
+		Wld_InsertNpc(Scavenger,"NW_FARM1_CITYWALL_RIGHT_04");
+		Wld_InsertNpc(Scavenger,"NW_FARM1_CITYWALL_RIGHT_04");
+		Wld_InsertNpc(Bloodfly,"FP_LOBART_LEDGE_01");
+		Wld_InsertNpc(Bloodfly,"FP_LOBART_LEDGE_01");
 		Wld_InsertNpc(Bloodfly,"NW_FARM1_PATH_SPAWN_02");
 		Wld_InsertNpc(Bloodfly,"NW_FARM1_PATH_SPAWN_02");
 		Wld_InsertNpc(Wolf,"NW_FARM1_PATH_SPAWN_07");
@@ -661,10 +665,10 @@ func void B_ENTER_NEWWORLD_Kapitel_2()
 		Wld_InsertNpc(Lurker,"NW_TROLLAREA_PATH_75");
 		Wld_InsertNpc(Molerat,"NW_FOREST_PATH_62_02");
 		Wld_InsertNpc(Molerat,"NW_FOREST_PATH_62_02");
-		Wld_InsertNpc(Wolf,"NW_FARM1_PATH_CITY_10_B");
-		Wld_InsertNpc(Wolf,"NW_FARM1_PATH_CITY_SHEEP_04");
-		Wld_InsertNpc(Wolf,"NW_FARM1_PATH_CITY_SHEEP_04");
-		Wld_InsertNpc(Giant_Bug,"NW_FARM1_PATH_SPAWN_07");
+		//Wld_InsertNpc(Wolf,"NW_FARM1_PATH_CITY_10_B");
+		Wld_InsertNpc(Wolf,"NW_FARM1_PATH_CITY_14");
+		Wld_InsertNpc(Wolf,"NW_FARM1_PATH_CITY_14");
+		//Wld_InsertNpc(Giant_Bug,"NW_FARM1_PATH_SPAWN_07");
 		Wld_InsertNpc(Bloodfly,"FP_ROAM_CITY_TO_FOREST_34");
 		Wld_InsertNpc(Bloodfly,"FP_ROAM_CITY_TO_FOREST_36");
 		Wld_InsertNpc(Scavenger,"NW_TAVERNE_BIGFARM_MONSTER_01");
@@ -760,9 +764,11 @@ func void B_ENTER_NEWWORLD_Kapitel_3()
 		Wld_InsertNpc(FireWaran,"FP_ROAM_FIREBEACH_01");
 		
 		// Lobart Farm
-		Wld_InsertNpc(OrcBiter,"NW_FARM1_OUT_13");
-		Wld_InsertNpc(OrcBiter,"NW_FARM1_OUT_13");
-		Wld_InsertNpc(OrcBiter,"NW_FARM1_OUT_13");
+		//Wld_InsertNpc(OrcBiter,"NW_FARM1_OUT_13");
+		//Wld_InsertNpc(OrcBiter,"NW_FARM1_OUT_13");
+		//Wld_InsertNpc(OrcBiter,"NW_FARM1_OUT_13");
+		Wld_InsertNpc(OrcBiter,"NW_FARM1_CITYWALL_RIGHT_04");
+		Wld_InsertNpc(OrcBiter,"NW_FARM1_CITYWALL_RIGHT_04");
 		Wld_InsertNpc(Bloodfly,"NW_FARM1_CITYWALL_02_B");
 		Wld_InsertNpc(Bloodfly,"NW_FARM1_CITYWALL_02_B");
 		Wld_InsertNpc(Snapper,"NW_FARM1_CITYWALL_05");
@@ -1031,8 +1037,6 @@ func void B_ENTER_NEWWORLD_Kapitel_3()
 		Wld_InsertNpc(Warg,"NW_CITY_TO_FOREST_04_09");
 		Wld_InsertNpc(Warg,"NW_CITY_TO_FOREST_04_09");
 		Wld_InsertNpc(Shadowbeast,"NW_FARM2_TO_TAVERN_09_MONSTER4");
-		Wld_InsertNpc(OrcBiter_Strong,"NW_FARM1_CITYWALL_RIGHT_04");
-		Wld_InsertNpc(OrcBiter_Strong,"NW_FARM1_CITYWALL_RIGHT_04");
 		Wld_InsertNpc(Keiler,"NW_CITY_TO_LIGHTHOUSE_13_MONSTER");
 		Wld_InsertNpc(Keiler,"NW_CITY_TO_LIGHTHOUSE_13_MONSTER");
 		Wld_InsertNpc(Keiler,"NW_CITY_TO_LIGHTHOUSE_13_MONSTER");
@@ -1305,6 +1309,8 @@ func void B_ENTER_NEWWORLD_Kapitel_3()
 			B_StartOtherRoutine(Hilda,"KRANK");
 			if(Npc_IsDead(Vino) == FALSE)
 			{
+				Vino.attribute[ATR_HITPOINTS_MAX] = 600;
+				Vino.attribute[ATR_HITPOINTS] = 600;
 				B_StartOtherRoutine(Vino,"OBESESSIONRITUAL");
 				CreateInvItems(Vino,ITWR_DementorObsessionBook_MIS,1);
 				Vino_isAlive_Kap3 = TRUE;
@@ -1367,8 +1373,8 @@ func void B_ENTER_NEWWORLD_Kapitel_4()
 		Wld_InsertNpc(FireWaran,"FP_ROAM_FIREBEACH_01");
 		
 		// Lobart Farm
-		Wld_InsertNpc(OrcBiter_Strong,"NW_FARM1_OUT_13");
-		Wld_InsertNpc(OrcBiter_Strong,"NW_FARM1_OUT_13");
+		//Wld_InsertNpc(OrcBiter_Strong,"NW_FARM1_OUT_13");
+		//Wld_InsertNpc(OrcBiter_Strong,"NW_FARM1_OUT_13");
 		Wld_InsertNpc(Razor,"NW_FARM1_CITYWALL_05");
 		Wld_InsertNpc(Razor,"NW_FARM1_CITYWALL_05");
 		Wld_InsertNpc(Razor,"NW_FARM1_CITYWALL_05");
