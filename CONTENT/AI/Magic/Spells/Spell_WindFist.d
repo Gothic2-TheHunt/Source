@@ -9,9 +9,10 @@ instance Spell_WindFist(C_Spell_Proto)
 	damage_per_level = SPL_Damage_Windfist;
 	damagetype = DAM_FLY;
 	canTurnDuringInvest = TRUE;
-	targetCollectAlgo = TARGET_COLLECT_FOCUS_FALLBACK_NONE;
+	targetCollectAlgo = TARGET_COLLECT_NONE;
 	targetCollectRange = 1250;
 	targetCollectType = TARGET_TYPE_NPCS;
+	isMultiEffect = 1;
 };
 
 
