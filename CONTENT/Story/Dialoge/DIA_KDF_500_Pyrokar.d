@@ -1728,7 +1728,7 @@ func void DIA_Pyrokar_BUCHIRDORATH_Info()
 	Wld_InsertNpc(Xardas_DT_Demon4,"FP_ROAM_NW_XARDASTOWER_DEMON_04");
 	Wld_InsertNpc(Xardas_DT_Demon5,"FP_ROAM_NW_XARDASTOWER_DEMON_05");
 	Wld_InsertNpc(Xardas_DT_DemonLord,"FP_ROAM_NW_XARDASTOWER_DEMONLORD_01");
-	if(ReceivedXardasRobes == FALSE && (other.guild == GIL_KDF))
+	if((ReceivedXardasRobes == FALSE) && (hero.guild == GIL_KDF))
 	{
 		Wld_InsertItem(ITAR_Xardas,"FP_ITEM_XARDAS_05");
 	};

@@ -1102,7 +1102,7 @@ instance DIA_Xardas_Robe(C_Info)
 
 func int DIA_Xardas_Robe_Condition()
 {
-	if((Kapitel == 5) && (other.guild == GIL_KDF))
+	if((Kapitel == 5) && (other.guild == GIL_KDF) && (ReceivedXardasRobes == FALSE))
 	{
 		return TRUE;
 	};
