@@ -24,6 +24,7 @@ instance BAU_984_Niclas(Npc_Default)
 func void Rtn_Start_984()
 {
 	TA_Sit_Bench(8,0,23,0,"NW_CITY_JAEGER_SIT");
-	TA_Sit_Bench(23,0,8,0,"NW_CITY_JAEGER_SIT");
+	TA_Cook_Pan(23,0,2,0,"NW_CITY_JAEGER_SIT");
+	TA_Sit_Bench(2,0,8,0,"NW_CITY_JAEGER_SIT");
 };
 

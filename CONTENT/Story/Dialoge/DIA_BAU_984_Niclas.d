@@ -82,7 +82,7 @@ func void DIA_Niclas_HaveALook_No()
 func void DIA_Niclas_HaveALook_Yes()
 {
 	AI_Output(other,self,"DIA_Niclas_HaveALook_Yes_15_00");	//Yes, gladly.
-	AI_Output(self,other,"DIA_Niclas_HaveALook_Yes_03_01");	//Here, the finest leg of molerat. According to my own recipe.
+	//AI_Output(self,other,"DIA_Niclas_HaveALook_Yes_03_01");	//Here, the finest leg of molerat. According to my own recipe.
 	B_GiveInvItems(self,other,ItFoMutton,1);
 	Info_ClearChoices(DIA_Niclas_HaveALook);
 };
@@ -164,6 +164,37 @@ func void DIA_Niclas_CanTeachMe_Info()
 	AI_Output(self,other,"DIA_Niclas_CanTeachMe_03_01");	//Why not. I could show you how to handle a bow.
 	Log_CreateTopic(TOPIC_Teacher,LOG_NOTE);
 	B_LogEntry(TOPIC_Teacher,"Niclas can show me how to improve my skill with the bow.");
+};
+
+instance DIA_Niclas_Bonus(C_Info)
+{
+	npc = BAU_984_Niclas;
+	nr = 2;
+	condition = DIA_Niclas_Bonus_Condition;
+	information = DIA_Niclas_Bonus_Info;
+	permanent = FALSE;
+	important = TRUE;
+};
+
+
+func int DIA_Niclas_Bonus_Condition()
+{
+	if(Npc_IsInState(self,ZS_Talk) && Wld_IsTime(23,0,2,0))
+	{
+		return TRUE;
+	};
+};
+
+func void DIA_Niclas_Bonus_Info()
+{
+	AI_Output(other,self,"DIA_Addon_Snaf_Cook_15_00");	//What's on the menu?
+	AI_Output(self,other,"DIA_Niclas_HaveALook_Yes_03_01");	//Here, the finest leg of molerat. According to my own recipe.
+	B_RaiseAttribute(self,ATR_HITPOINTS_MAX,4);
+	var string logBonus;
+	logBonus = ConcatStrings("I have now gained a total of ", IntToString(4));
+	logBonus = ConcatStrings(logBonus, " health from eating Niclas's special recepy cooked meat.");
+	Log_CreateTopic(Topic_Health,LOG_NOTE);
+	B_LogEntry(Topic_Health,logBonus);
 };
 
 

@@ -323,8 +323,9 @@ func void DIA_Nagur_Deal_Info()
 		{
 			CreateInvItems(VLK_431_Kardif,ItFo_Apple,3);
 			CreateInvItems(VLK_431_Kardif,ItFo_Cheese,2);
-			CreateInvItems(VLK_431_Kardif,ItFo_Bread,2);
-			CreateInvItems(VLK_431_Kardif,ItFo_Booze,2);
+			CreateInvItems(VLK_431_Kardif,ItFo_Bread,4);
+			CreateInvItems(VLK_431_Kardif,ItFo_Sausage,1);
+			CreateInvItems(VLK_431_Kardif,ItFo_Booze,3);
 		};
 		B_GivePlayerXP(XP_Nagur_Bote);
 		DIA_Nagur_Deal_permanent = TRUE;

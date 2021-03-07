@@ -216,6 +216,13 @@ func void DIA_Attila_Willkommen_Info()
 	AI_Output(self,other,"DIA_Attila_Willkommen_09_03");	//Some benefactors have become aware of your loyalty. And they are offering you a chance. So use it.
 	AI_Output(other,self,"DIA_Attila_Willkommen_15_04");	//Hey, just tell me why you're here.
 	AI_Output(self,other,"DIA_Attila_Willkommen_09_05");	//I have a gift for you. Everything else is up to you, stranger. (laughs quietly)
+	B_RaiseAttribute(other,ATR_DEXTERITY,1);
+	var string logBonus;
+	logBonus = ConcatStrings("I have now gained a total of ", IntToString(1));
+	logBonus = ConcatStrings(logBonus, " dexterity for remaining loyal to the Thieves.");
+	Log_CreateTopic(Topic_Dexterity,LOG_NOTE);
+	B_LogEntry(Topic_Dexterity,logBonus);
+	Snd_Play("LEVELUP");
 	B_GiveInvItems(self,other,ItKe_ThiefGuildKey_MIS,1);
 	Attila_Key = TRUE;
 	AI_StopProcessInfos(self);
