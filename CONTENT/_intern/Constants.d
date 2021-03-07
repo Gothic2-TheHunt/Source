@@ -5,6 +5,14 @@ const string FONT_Book = "FONT_10_BOOK.TGA";
 const string FONT_BookHeadline = "FONT_20_BOOK.TGA";
 
 const int SPL_Cost_Scroll = 5;
+const int SPL_Cost_Scroll_Circle1 = 5;
+const int SPL_Cost_Scroll_Circle2 = 10;
+const int SPL_Cost_Scroll_Circle3 = 20;
+const int SPL_Cost_Scroll_Circle4 = 35;
+const int SPL_Cost_Scroll_Circle5 = 50;
+const int SPL_Cost_Scroll_Circle6 = 75;
+const int SPL_Cost_Scroll_FireRain = 100;
+const int SPL_Cost_Scroll_MasDeath = 150;
 const int ATR_HITPOINTS = 0;
 const int ATR_HITPOINTS_MAX = 1;
 const int ATR_MANA = 2;
@@ -654,9 +662,9 @@ const int NPC_TALENT_ALCHEMY = 15;
 const int NPC_TALENT_TAKEANIMALTROPHY = 16;
 const int NPC_TALENT_FOREIGNLANGUAGE = 17;
 const int NPC_TALENT_WISPDETECTOR = 18;
-const int NPC_TALENT_C = 19;
-const int NPC_TALENT_D = 20;
-const int NPC_TALENT_E = 21;
+const int NPC_TALENT_REALSTRENGTH		= 19;
+const int NPC_TALENT_REALDEXTERITY		= 20;
+const int NPC_TALENT_REALMANA			= 21;
 const int NPC_TALENT_MAX = 22;
 
 var int player_talent_runes[MAX_SPELL];

@@ -57,7 +57,7 @@ instance Crypt_Skeleton_Lord(Mst_Skeleton_Lord)
 	protection[PROT_FIRE] = 25;
 	protection[PROT_FLY] = 150;
 	protection[PROT_MAGIC] = 50;
-	fight_tactic = FAI_HUMAN_PERFECT;
+	fight_tactic = FAI_HUMAN_MASTER;
 	B_SetVisuals_Skeleton_Lord();
 	EquipItem(self,ItMw_Drachenschneide);
 	CreateInvItems(self,ItMi_EnchantedSkull_02,1);
@@ -85,7 +85,7 @@ instance Skeleton_Lord_Archol(Mst_Skeleton_Lord)
 	protection[PROT_FIRE] = 50;
 	protection[PROT_FLY] = 150;
 	protection[PROT_MAGIC] = 50;
-	fight_tactic = FAI_HUMAN_PERFECT;
+	fight_tactic = FAI_HUMAN_MASTER;
 	B_SetVisuals_Skeleton_Lord();
 	CreateInvItems(self,ItMi_Gold,650);
 	CreateInvItems(self,ItKe_EVT_UNDEAD_01,1);
@@ -108,7 +108,7 @@ instance The_Challenger(Mst_Skeleton_Lord)
 	protection[PROT_FIRE] = 200;
 	protection[PROT_FLY] = 200;
 	protection[PROT_MAGIC] = 200;
-	fight_tactic = FAI_HUMAN_PERFECT;
+	fight_tactic = FAI_HUMAN_MASTER;
 	B_SetVisuals_Skeleton_Lord();
 	EquipItem(self,ItMw_Barbarenstreitaxt);
 	CreateInvItems(self,ItMi_Gold,1000);
