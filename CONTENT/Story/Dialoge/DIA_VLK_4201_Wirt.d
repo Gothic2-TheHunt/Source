@@ -78,7 +78,7 @@ func int DIA_Wirt_Hallo_Condition()
 func void DIA_Wirt_Hallo_Info()
 {
 	var int randy;
-	randy = Hlp_Random(2);
+	randy = Hlp_Random(3);
 	AI_Output(self,other,"DIA_Wirt_Hallo_14_00");	//Hey, come closer. Take a break and have a sip of cool beer.
 	if(self.aivar[AIV_TalkedToPlayer] == FALSE)
 	{
@@ -99,7 +99,8 @@ func void DIA_Wirt_Hallo_Info()
 	else if(randy == 2)
 	{
 		AI_Output(self,other,"DIA_Wirt_Hallo_14_04");	//You can say what you want about Khorinis, but our 'Dark Paladine' is simply the best in all of Myrtana.
-		AI_StopProcessInfos(self);
+		B_GiveInvItems(self,other,ItFo_Beer,1);
+		//AI_StopProcessInfos(self);
 	};
 };
 
