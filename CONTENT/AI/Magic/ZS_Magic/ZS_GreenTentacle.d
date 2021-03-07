@@ -54,7 +54,6 @@ func int ZS_Greententacle()
 			AI_PlayAniBS(self,"T_STAND_2_FREEZE_VICTIM",BS_UNCONSCIOUS);
 		};
 	};
-	return 0;
 };
 
 func int ZS_Greententacle_Loop()

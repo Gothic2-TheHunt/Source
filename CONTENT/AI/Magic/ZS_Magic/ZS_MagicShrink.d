@@ -31,7 +31,6 @@ func int ZS_MagicShrink()
 		AI_StandupQuick(self);
 	};
 	self.aivar[AIV_MM_ShrinkState] = 0;
-	return 0;
 };
 
 func int ZS_MagicShrink_Loop()

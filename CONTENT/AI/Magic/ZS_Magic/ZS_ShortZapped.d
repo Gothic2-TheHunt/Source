@@ -11,11 +11,8 @@ func void B_StopShortZapped()
 	}
 	else
 	{
-		Npc_SetTarget(self,other);
-		B_ClearPerceptions(self);
-		AI_StartState(self,ZS_MM_Attack,0,"");
-		// Npc_SetTempAttitude(self,ATT_HOSTILE);
-		// AI_ContinueRoutine(self);
+		Npc_SetTempAttitude(self,ATT_HOSTILE);
+		AI_ContinueRoutine(self);
 	};
 };
 
@@ -34,7 +31,6 @@ func int ZS_ShortZapped()
 	{
 		AI_PlayAni(self,"T_STAND_2_LIGHTNING_VICTIM");
 	};
-	return 0;
 };
 
 func int ZS_ShortZapped_Loop()
@@ -43,7 +39,6 @@ func int ZS_ShortZapped_Loop()
 	{
 		B_StopShortZapped();
 	};
-	return LOOP_CONTINUE;
 };
 
 func void ZS_ShortZapped_End()

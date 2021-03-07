@@ -44,7 +44,6 @@ func int ZS_MagicBurn()
 	{
 		AI_StandupQuick(self);
 	};
-	return 0;
 };
 
 func int ZS_MagicBurn_Loop()

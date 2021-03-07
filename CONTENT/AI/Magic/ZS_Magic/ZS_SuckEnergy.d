@@ -33,7 +33,6 @@ func int ZS_SuckEnergy()
 	AI_Standup(self);
 	self.aivar[AIV_SuckEnergyStateTime] = 1;
 	Temp_SuckEnergy_DistToPlayer = Npc_GetDistToPlayer(self);
-	return 0;
 };
 
 func int ZS_SuckEnergy_Loop()

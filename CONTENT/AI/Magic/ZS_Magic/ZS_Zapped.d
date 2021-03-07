@@ -11,11 +11,8 @@ func void B_StopZapped()
 	}
 	else
 	{
-		Npc_SetTarget(self,other);
-		B_ClearPerceptions(self);
-		AI_StartState(self,ZS_MM_Attack,0,"");
-		// Npc_SetTempAttitude(self,ATT_HOSTILE);
-		// AI_ContinueRoutine(self);
+		Npc_SetTempAttitude(self,ATT_HOSTILE);
+		AI_ContinueRoutine(self);
 	};
 };
 
@@ -34,28 +31,22 @@ func int ZS_Zapped()
 	{
 		AI_PlayAni(self,"T_STAND_2_LIGHTNING_VICTIM");
 	};
-	return 0;
 };
 
 func int ZS_Zapped_Loop()
 {
-	if(Npc_GetStateTime(self) > SPL_TIME_ZAPPED)
+	if(Npc_GetStateTime(self) >= 1)
 	{
-		B_StopZapped();
+		Npc_SetStateTime(self,0);
+		B_MagicHurtNpc(other,self,SPL_ZAPPED_DAMAGE_PER_SEC);
+		if(self.attribute[ATR_HITPOINTS] <= 0)
+		{
+			Npc_ClearAIQueue(self);
+			AI_Standup(self);
+			return LOOP_END;
+		};
+		return LOOP_CONTINUE;
 	};
-	return LOOP_CONTINUE;
-	// if(Npc_GetStateTime(self) >= 1)
-	// {
-		// Npc_SetStateTime(self,0);
-		// B_MagicHurtNpc(other,self,SPL_ZAPPED_DAMAGE_PER_SEC);
-		// if(self.attribute[ATR_HITPOINTS] <= 0)
-		// {
-			// Npc_ClearAIQueue(self);
-			// AI_Standup(self);
-			// return LOOP_END;
-		// };
-		// return LOOP_CONTINUE;
-	// };
 };
 
 func void ZS_Zapped_End()

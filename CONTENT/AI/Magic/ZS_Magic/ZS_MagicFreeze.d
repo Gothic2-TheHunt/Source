@@ -31,7 +31,6 @@ func int ZS_MagicFreeze()
 		AI_PlayAniBS(self,"T_STAND_2_FREEZE_VICTIM",BS_UNCONSCIOUS);
 	};
 	self.aivar[AIV_FreezeStateTime] = 0;
-	return 0;
 };
 
 func int ZS_MagicFreeze_Loop()

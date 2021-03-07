@@ -4,7 +4,6 @@ func int B_StopMagicFlee()
 	Npc_PercDisable(self,PERC_ASSESSDAMAGE);
 	Npc_SetTarget(self,other);
 	AI_StartState(self,ZS_Flee,0,"");
-	return 0;
 };
 
 func void ZS_MagicFlee()
@@ -50,7 +49,6 @@ func int ZS_MagicFlee_Loop()
 		Npc_ClearAIQueue(self);
 		B_StopMagicFlee();
 	};
-	return 0;
 };
 
 func void ZS_MagicFlee_End()

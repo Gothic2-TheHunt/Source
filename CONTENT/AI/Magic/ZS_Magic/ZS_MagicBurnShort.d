@@ -48,7 +48,6 @@ func int ZS_MagicBurnShort()
 	{
 		Npc_PlayAni(self,"S_FIRE_VICTIM");
 	};
-	return 0;
 };
 
 func int ZS_MagicBurnShort_Loop()

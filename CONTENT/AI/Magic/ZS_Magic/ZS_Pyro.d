@@ -31,7 +31,6 @@ func int ZS_Pyro()
 	{
 		AI_PlayAni(self,"T_STAND_2_LIGHTNING_VICTIM");
 	};
-	return 0;
 };
 
 func int ZS_Pyro_Loop()

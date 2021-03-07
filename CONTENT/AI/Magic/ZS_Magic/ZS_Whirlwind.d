@@ -33,7 +33,6 @@ func int ZS_Whirlwind()
 		AI_PlayAniBS(self,"T_STAND_2_WHIRLWIND_VICTIM",BS_UNCONSCIOUS);
 	};
 	self.aivar[AIV_WhirlwindStateTime] = 0;
-	return 0;
 };
 
 func int ZS_Whirlwind_Loop()

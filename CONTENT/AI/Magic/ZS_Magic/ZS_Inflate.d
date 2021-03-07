@@ -31,7 +31,6 @@ func int ZS_Inflate()
 		AI_PlayAniBS(self,"T_STAND_2_INFLATE_VICTIM",BS_UNCONSCIOUS);
 	};
 	self.aivar[AIV_InflateStateTime] = 0;
-	return 0;
 };
 
 func int ZS_Inflate_Loop()

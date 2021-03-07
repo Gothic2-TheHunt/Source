@@ -33,7 +33,6 @@ func int ZS_Swarm()
 		AI_PlayAniBS(self,"T_STAND_2_SWARM_VICTIM",BS_UNCONSCIOUS);
 	};
 	self.aivar[AIV_SwarmStateTime] = 0;
-	return 0;
 };
 
 func int ZS_Swarm_Loop()
