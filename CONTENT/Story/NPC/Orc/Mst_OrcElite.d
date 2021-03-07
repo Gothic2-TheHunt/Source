@@ -45,14 +45,6 @@ instance OrcElite_Roam(Mst_Default_OrcElite)
 	aivar[AIV_MM_RoamStart] = OnlyRoutine;
 };
 
-instance OrcElite_Roam2(Mst_Default_OrcElite)
-{
-	B_SetVisuals_OrcElite();
-	EquipItem(self,ItMw_2H_OrcSword_02);
-	EquipItem(self,ItRw_CT_Crossbow_03);
-	start_aistate = ZS_MM_AllScheduler;
-	aivar[AIV_MM_RoamStart] = OnlyRoutine;
-};
 
 instance OrcElite_Rest(Mst_Default_OrcElite)
 {
@@ -72,7 +64,6 @@ instance OrkElite_AntiPaladinOrkOberst(Mst_Default_OrcElite)
 	B_SetVisuals_OrcElite();
 	EquipItem(self,ItMw_Schlachtaxt);
 	CreateInvItems(self,ItRi_OrcEliteRing,1);
-	CreateInvItems(self,ITRW_CT_CROSSBOW_03,1);
 	CreateInvItems(self,ItWr_Map_Orcelite_MIS,1);
 	CreateInvItems(self,ItRu_PalFullHeal,1);
 	start_aistate = ZS_MM_AllScheduler;

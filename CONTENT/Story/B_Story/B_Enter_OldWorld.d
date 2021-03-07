@@ -250,7 +250,7 @@ func void B_ENTER_OLDWORLD_Kapitel_4()
 		Wld_InsertNpc(NONE_110_Urshak,"WP_INTRO_FALL");
 		Wld_InsertNpc(Warg,"OC3");
 		Wld_InsertNpc(OrcWarrior_Roam,"OW_SCAVENGER_SPAWN_TREE");
-		Wld_InsertNpc(OrcElite_Roam2,"OW_SCAVENGER_SPAWN_TREE");
+		Wld_InsertNpc(OrcElite_Roam,"OW_SCAVENGER_SPAWN_TREE");
 		Wld_InsertNpc(OrcWarrior_Roam,"OC4");
 		Wld_InsertNpc(OrcWarrior_Roam,"SPAWN_OW_SCAVENGER_AL_ORC");
 		Wld_InsertNpc(OrcWarrior_Roam,"OC5");
@@ -264,7 +264,7 @@ func void B_ENTER_OLDWORLD_Kapitel_4()
 		Wld_InsertNpc(OrcWarrior_Roam,"OW_PATH_103");
 		Wld_InsertNpc(OrcWarrior_Roam,"FP_ROAM_OW_WARAN_ORC_01");
 		Wld_InsertNpc(OrcWarrior_Roam,"FP_ROAM_OW_WARAN_ORC_04");
-		Wld_InsertNpc(OrcElite_Roam2,"OW_NEWMINE_02");
+		Wld_InsertNpc(OrcElite_Roam,"OW_NEWMINE_02");
 		Wld_InsertNpc(OrcShaman_Sit,"OW_NEWMINE_10");
 		Wld_InsertNpc(OrcElite_Roam,"OW_NEWMINE_11");
 		Wld_InsertNpc(OrcShaman_Sit,"OW_NEWMINE_11");
@@ -285,7 +285,7 @@ func void B_ENTER_OLDWORLD_Kapitel_4()
 		Wld_InsertNpc(OrcWarrior_Roam,"OC9");
 		Wld_InsertNpc(Warg,"FP_ROAM_ORK_OC_28");
 		Wld_InsertNpc(OrcElite_Roam,"FP_ROAM_ORK_OC_16");
-		Wld_InsertNpc(OrcElite_Roam2,"FP_ROAM_ORK_OC_13");
+		Wld_InsertNpc(OrcElite_Roam,"FP_ROAM_ORK_OC_13");
 		Wld_InsertNpc(OrcElite_Roam,"FP_ROAM_ORK_OC_10");
 		Wld_InsertNpc(OrcElite_Roam,"FP_ROAM_ORK_OC_09");
 		Wld_InsertNpc(OrcWarrior_Roam,"FP_CAMPFIRE_ORK_OC_17");
@@ -320,7 +320,7 @@ func void B_ENTER_OLDWORLD_Kapitel_4()
 		Wld_InsertNpc(Warg,"FP_ROAM_ORK_OC_01");
 		Wld_InsertNpc(OrcElite_Roam,"FP_ROAM_ORK_OC_23");
 		Wld_InsertNpc(Warg,"FP_ROAM_ORK_OC_24");
-		Wld_InsertNpc(OrcElite_Roam2,"FP_ROAM_WARG_OC_11");
+		Wld_InsertNpc(OrcElite_Roam,"FP_ROAM_WARG_OC_11");
 		Wld_InsertNpc(Warg,"FP_ROAM_ORK_OC_12");
 		Wld_InsertNpc(OrcElite_Roam,"FP_ROAM_ORK_OC_06");
 		Wld_InsertNpc(Warg,"FP_ROAM_ORK_OC_05");
@@ -512,7 +512,7 @@ func void B_ENTER_OLDWORLD_Kapitel_5()
 		
 		Wld_InsertNpc(Warg,"OC3");
 		Wld_InsertNpc(OrcWarrior_Roam,"OW_SCAVENGER_SPAWN_TREE");
-		Wld_InsertNpc(OrcElite_Roam2,"OW_SCAVENGER_SPAWN_TREE");
+		Wld_InsertNpc(OrcElite_Roam,"OW_SCAVENGER_SPAWN_TREE");
 		Wld_InsertNpc(OrcWarrior_Roam,"OC4");
 		Wld_InsertNpc(OrcWarrior_Roam,"SPAWN_OW_SCAVENGER_AL_ORC");
 		Wld_InsertNpc(OrcWarrior_Roam,"OC5");
@@ -526,7 +526,7 @@ func void B_ENTER_OLDWORLD_Kapitel_5()
 		Wld_InsertNpc(OrcWarrior_Roam,"OW_PATH_103");
 		Wld_InsertNpc(OrcWarrior_Roam,"FP_ROAM_OW_WARAN_ORC_01");
 		Wld_InsertNpc(OrcWarrior_Roam,"FP_ROAM_OW_WARAN_ORC_04");
-		Wld_InsertNpc(OrcElite_Roam2,"OW_NEWMINE_02");
+		Wld_InsertNpc(OrcElite_Roam,"OW_NEWMINE_02");
 		Wld_InsertNpc(OrcShaman_Sit,"OW_NEWMINE_10");
 		Wld_InsertNpc(OrcElite_Roam,"OW_NEWMINE_11");
 		Wld_InsertNpc(OrcShaman_Sit,"OW_NEWMINE_11");
@@ -547,7 +547,7 @@ func void B_ENTER_OLDWORLD_Kapitel_5()
 		Wld_InsertNpc(OrcWarrior_Roam,"OC9");
 		Wld_InsertNpc(Warg,"FP_ROAM_ORK_OC_28");
 		Wld_InsertNpc(OrcElite_Roam,"FP_ROAM_ORK_OC_16");
-		Wld_InsertNpc(OrcElite_Roam2,"FP_ROAM_ORK_OC_13");
+		Wld_InsertNpc(OrcElite_Roam,"FP_ROAM_ORK_OC_13");
 		Wld_InsertNpc(OrcElite_Roam,"FP_ROAM_ORK_OC_10");
 		Wld_InsertNpc(OrcElite_Roam,"FP_ROAM_ORK_OC_09");
 		Wld_InsertNpc(OrcWarrior_Roam,"FP_CAMPFIRE_ORK_OC_17");
@@ -582,7 +582,7 @@ func void B_ENTER_OLDWORLD_Kapitel_5()
 		Wld_InsertNpc(Warg,"FP_ROAM_ORK_OC_01");
 		Wld_InsertNpc(OrcElite_Roam,"FP_ROAM_ORK_OC_23");
 		Wld_InsertNpc(Warg,"FP_ROAM_ORK_OC_24");
-		Wld_InsertNpc(OrcElite_Roam2,"FP_ROAM_WARG_OC_11");
+		Wld_InsertNpc(OrcElite_Roam,"FP_ROAM_WARG_OC_11");
 		Wld_InsertNpc(Warg,"FP_ROAM_ORK_OC_12");
 		Wld_InsertNpc(OrcElite_Roam,"FP_ROAM_ORK_OC_06");
 		Wld_InsertNpc(Warg,"FP_ROAM_ORK_OC_05");
