@@ -46,18 +46,18 @@ func void B_AssessMagic()
 		//AI_StartState(self,ZS_MagicFreeze,0,"");
 		return;
 	};
-	if(Npc_GetLastHitSpellID(self) == SPL_LightningFlash)
-	{
-		Npc_ClearAIQueue(self);
-		B_ClearPerceptions(self);
-		AI_StartState(self,ZS_ShortZapped,0,"");
-		return;
-	};
+	//if(Npc_GetLastHitSpellID(self) == SPL_LightningFlash)
+	//{
+	//	Npc_ClearAIQueue(self);
+	//	B_ClearPerceptions(self);
+	//	AI_StartState(self,ZS_MagicFreeze,0,"");
+	//	return;
+	//};
 	if(Npc_GetLastHitSpellID(self) == SPL_ChargeZap)
 	{
 		Npc_ClearAIQueue(self);
 		B_ClearPerceptions(self);
-		AI_StartState(self,ZS_Zapped,0,"");
+		AI_StartState(self,ZS_ShortZapped,0,"");
 		return;
 	};
 	if(Npc_GetLastHitSpellID(self) == SPL_Fear)

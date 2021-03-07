@@ -190,10 +190,6 @@ func int C_CanNpcCollideWithSpell(var int spellType)
 		{
 			return COLL_APPLYDOUBLEDAMAGE;
 		};
-		// if((self.guild == GIL_BLOODFLY) || (self.guild == GIL_WOLF)  || (self.guild == GIL_GIANT_BUG) || (self.guild == GIL_SCAVENGER) || (self.guild == GIL_MOLERAT) || (self.guild == GIL_GOBBO) || (self.guild == GIL_SWAMPGOLEM) || (self.guild == GIL_Giant_Rat) || (self.guild == GIL_SHADOWBEAST) || (self.guild == GIL_HARPY))
-		// {
-			// return COLL_APPLYDOUBLEDAMAGE;
-		// };
 		if((self.guild == GIL_STONEGOLEM) || (self.guild == GIL_SUMMONED_GOLEM) || (self.guild == GIL_DEMON) || (self.guild == GIL_SUMMONED_DEMON) || (self.guild == GIL_TROLL) || (self.guild == GIL_DRAGON))
 		{
 			return COLL_APPLYDAMAGE;
@@ -222,7 +218,6 @@ func int C_CanNpcCollideWithSpell(var int spellType)
 	};
 	if((spellType == SPL_LightningFlash) || (spellType == SPL_Zap) || (spellType == SPL_ChargeZap))
 	{
-		//return COLL_APPLYDAMAGE;
 		if(C_NpcIsDown(self))
 		{
 			return COLL_DONOTHING;

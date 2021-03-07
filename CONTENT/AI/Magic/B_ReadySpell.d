@@ -23,3 +23,4 @@ func void B_ReadySpell(var C_Npc slf,var int spell,var int mana)
 	};
 	AI_ReadySpell(slf,spell,mana);
 };
+
