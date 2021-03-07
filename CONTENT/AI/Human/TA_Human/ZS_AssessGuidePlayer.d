@@ -65,6 +65,5 @@ func int ZS_Guide_Player_Loop()
 
 func int ZS_Guide_Player_End()
 {
-	return 0;
 };
 

@@ -29,6 +29,5 @@ func int ZS_RunToWP_Loop()
 
 func int ZS_RunToWP_End()
 {
-	return 0;
 };
 
