@@ -6,7 +6,7 @@ func void B_SelectWeapon(var C_Npc slf,var C_Npc oth)
 		return;
 	};
 	if(B_SelectSpell(slf,oth))
-	{	
+	{
 		return;
 	};
 	if(Npc_IsInFightMode(slf,FMODE_MAGIC))
