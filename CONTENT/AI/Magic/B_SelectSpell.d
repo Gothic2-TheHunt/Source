@@ -628,7 +628,7 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 	};
 	if(slf.aivar[AIV_MM_REAL_ID] == ID_DRAGON_UNDEAD)
 	{
-		Npc_ClearAIQueue(self);
+		//Npc_ClearAIQueue(self);
 		if(Npc_HasItems(slf,ItRu_Deathball) == 0)
 		{
 			CreateInvItems(slf,ItRu_Deathball,1);
@@ -637,7 +637,23 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 		{
 			CreateInvItems(slf,ItRu_Geyser,1);
 		};
-		
+		if(Npc_HasItems(slf,ItRu_MassDeath) == 0)
+		{
+			CreateInvItems(slf,ItRu_MassDeath,1);
+		};
+		if(Npc_HasItems(slf,ItRu_BeliarsRage) == 0)
+		{
+			CreateInvItems(slf,ItRu_BeliarsRage,1);
+		};
+		if(Npc_HasItems(slf,ItRu_LightningFlash) == 0)
+		{
+			CreateInvItems(slf,ItRu_LightningFlash,1);
+		};
+		if(Npc_HasItems(slf,ItRu_Waterfist) == 0)
+		{
+			CreateInvItems(slf,ItRu_Waterfist,1);
+		};
+
 		if(Npc_IsDrawingWeapon(slf))
 		{
 			return TRUE;
@@ -648,10 +664,15 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 			var int dragonspelldeath;
 			if(slf.aivar[AIV_SelectSpell] <= 0)
 			{
-				dragonspelldeath = Hlp_Random(20);
+				dragonspelldeath = Hlp_Random(30);
 				slf.aivar[AIV_SelectSpell] += dragonspelldeath;
 			};
-			if(slf.aivar[AIV_SelectSpell] <= 3)
+			if(slf.aivar[AIV_SelectSpell] <= 1)
+			{
+				B_ReadySpell(slf,SPL_MassDeath,SPL_Cost_MassDeath);
+				return TRUE;
+			}
+			else if(slf.aivar[AIV_SelectSpell] <= 3)
 			{
 				B_ReadySpell(slf,SPL_Geyser,SPL_Cost_Geyser);
 				return TRUE;
@@ -661,19 +682,49 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 				B_ReadySpell(slf,SPL_Deathball,SPL_COST_Deathball);
 				return TRUE;
 			}
-			else if(slf.aivar[AIV_SelectSpell] <= 14)
+			else if(slf.aivar[AIV_SelectSpell] <= 11)
 			{
 				B_ReadySpell(slf,SPL_Geyser,SPL_Cost_Geyser);
 				return TRUE;
 			}
-			else if(slf.aivar[AIV_SelectSpell] <= 20)
+			else if(slf.aivar[AIV_SelectSpell] <= 12)
+			{
+				B_ReadySpell(slf,SPL_Energyball,SPL_Cost_Energyball);
+				return TRUE;
+			}
+			else if(slf.aivar[AIV_SelectSpell] <= 17)
+			{
+				B_ReadySpell(slf,SPL_WaterFist,SPL_Cost_Waterfist);
+				return TRUE;
+			}
+			else if(slf.aivar[AIV_SelectSpell] <= 19)
+			{
+				B_ReadySpell(slf,SPL_LightningFlash,SPL_Cost_LightningFlash);
+				return TRUE;
+			}
+			else if(slf.aivar[AIV_SelectSpell] <= 26)
 			{
 				B_ReadySpell(slf,SPL_Deathball,SPL_COST_Deathball);
 				return TRUE;
 			}
-			else if(slf.aivar[AIV_SelectSpell] >= 21)
+			else if(slf.aivar[AIV_SelectSpell] <= 27)
 			{
-				dragonspelldeath = Hlp_Random(20);
+				B_ReadySpell(slf,SPL_Energyball,SPL_Cost_Energyball);
+				return TRUE;
+			}
+			else if(slf.aivar[AIV_SelectSpell] <= 28)
+			{
+				B_ReadySpell(slf,SPL_Geyser,SPL_Cost_Geyser);
+				return TRUE;
+			}
+			else if(slf.aivar[AIV_SelectSpell] <= 30)
+			{
+				B_ReadySpell(slf,SPL_LightningFlash,SPL_Cost_LightningFlash);
+				return TRUE;
+			}
+			else if(slf.aivar[AIV_SelectSpell] >= 31)
+			{
+				dragonspelldeath = Hlp_Random(30);
 				slf.aivar[AIV_SelectSpell] = 0;
 			};
 			
@@ -694,31 +745,37 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 		{
 			CreateInvItems(slf,ItRu_Deathbolt,1);
 		};
+		if(Npc_HasItems(slf,ItRu_Deathball) == 0)
+		{
+			CreateInvItems(slf,ItRu_Deathball,1);
+		};
 		
 		if(Npc_GetDistToNpc(slf,oth) > FIGHT_DIST_MELEE)
 		{
+			var int shamanspellroll;
 			if(slf.aivar[AIV_SelectSpell] <= 0)
 			{
-				dK_rnd = Hlp_Random(20);
-				slf.aivar[AIV_SelectSpell] += dK_rnd;
+				shamanspellroll = Hlp_Random(20);
+				slf.aivar[AIV_SelectSpell] += shamanspellroll;
 			};
-			if(Kapitel <= 2)
+			if((slf.aivar[AIV_SelectSpell] <= 1) && (Kapitel >= 3))
 			{
-				B_ReadySpell(slf,SPL_InstantFireball,SPL_COST_InstantFireball);
+				B_ReadySpell(slf,SPL_Deathball,SPL_COST_Deathball);
 				return TRUE;
 			}
-			else if(Kapitel <= 3 && slf.aivar[AIV_SelectSpell] >= 8 && slf.aivar[AIV_SelectSpell] <= 20)
-			{
-				B_ReadySpell(slf,SPL_InstantFireball,SPL_COST_InstantFireball);
-				return TRUE;
-			}
-			else if(Kapitel <= 4 && slf.aivar[AIV_SelectSpell] <= 20)
+			else if((slf.aivar[AIV_SelectSpell] <= 5) && (Kapitel >= 2))
 			{
 				B_ReadySpell(slf,SPL_Deathbolt,SPL_COST_Deathbolt);
 				return TRUE;
 			}
+			else if(slf.aivar[AIV_SelectSpell] <= 20)
+			{
+				B_ReadySpell(slf,SPL_InstantFireball,SPL_COST_InstantFireball);
+				return TRUE;
+			}
 			else if(slf.aivar[AIV_SelectSpell] >= 21)
 			{
+				shamanspellroll = Hlp_Random(20);
 				slf.aivar[AIV_SelectSpell] = 0;
 			};
 			

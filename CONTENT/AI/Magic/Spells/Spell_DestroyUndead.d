@@ -1,5 +1,5 @@
 
-const int SPL_Cost_DESTROYUNDEAD = 60;
+const int SPL_Cost_DESTROYUNDEAD = 70;
 const int SPL_Damage_DESTROYUNDEAD = 900;
 
 instance Spell_DestroyUndead(C_Spell_Proto)

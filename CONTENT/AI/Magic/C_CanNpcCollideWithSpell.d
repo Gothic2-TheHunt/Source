@@ -240,7 +240,7 @@ func int C_CanNpcCollideWithSpell(var int spellType)
 	{
 		if(C_NpcIsUndead(self))
 		{
-			if(self.aivar[AIV_MM_REAL_ID] == ID_UNDEADLORD)
+			if((self.guild == GIL_DRAGON) || (self.aivar[AIV_MM_REAL_ID] == ID_UNDEADLORD))
 			{
 				return COLL_APPLYHALVEDAMAGE;
 			};
@@ -265,6 +265,10 @@ func int C_CanNpcCollideWithSpell(var int spellType)
 		if(self.aivar[AIV_MM_REAL_ID] == ID_UNDEADLORD)
 		{
 			return COLL_DONOTHING;
+		};
+		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(hero))
+		{
+			return COLL_APPLYHALVEDAMAGE;
 		};
 		// if(self.guild == GIL_DRAGON)
 		// {

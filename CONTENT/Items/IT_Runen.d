@@ -1053,7 +1053,7 @@ instance ItRu_MasterOfDisaster(C_Item)
 	count[0] = mag_circle;
 	text[1] = NAME_Manakosten;
 	count[1] = SPL_COST_MasterOfDisaster;
-	text[2] = NAME_Dam_Holy;
+	text[2] = NAME_Dam_Magic;
 	count[2] = SPL_DAMAGE_MasterOfDisaster;
 	text[5] = NAME_Value;
 	count[5] = value;
