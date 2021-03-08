@@ -1,6 +1,6 @@
 
 const int SPL_Cost_Fear = 50;
-const int SPL_TIME_Fear = 5;
+const int SPL_TIME_Fear = 1;
 
 instance Spell_Fear(C_Spell_Proto)
 {
@@ -28,6 +28,9 @@ func int Spell_Logic_Fear(var int manaInvested)
 
 func void Spell_Cast_Fear()
 {
+	Npc_ClearAIQueue(self);
+	B_ClearPerceptions(self);
+	Npc_SetTarget(self,other);
 	AI_SetNpcsToState(self,ZS_MagicFlee,1000);
 	if(Npc_GetActiveSpellIsScroll(self))
 	{

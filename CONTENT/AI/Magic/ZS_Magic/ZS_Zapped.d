@@ -2,8 +2,8 @@
 func void B_StopZapped()
 {
 	Npc_PercEnable(self,PERC_ASSESSMAGIC,B_AssessMagic);
-	Npc_ClearAIQueue(self);
-	AI_Standup(self);
+	//Npc_ClearAIQueue(self);
+	//AI_Standup(self);
 	if(self.guild < GIL_SEPERATOR_HUM)
 	{
 		B_AssessDamage();
@@ -27,18 +27,24 @@ func int ZS_Zapped()
 	{
 		AI_StandupQuick(self);
 	};
-	if(self.guild < GIL_SEPERATOR_HUM)
-	{
-		AI_PlayAni(self,"T_STAND_2_LIGHTNING_VICTIM");
-	};
+	
+	AI_PlayAni(self,"T_STAND_2_LIGHTNING_VICTIM");
 };
 
 func int ZS_Zapped_Loop()
 {
-	if(Npc_GetStateTime(self) >= 1)
+	//if(Npc_GetStateTime(self) >= 1)
+	if(Npc_GetStateTime(self) > SPL_TIME_SHORTZAPPED)
 	{
-		Npc_SetStateTime(self,0);
 		B_MagicHurtNpc(other,self,SPL_ZAPPED_DAMAGE_PER_SEC);
+		B_StopZapped();
+		return LOOP_END;
+	}
+	else
+	{
+		//Npc_SetStateTime(self,0);
+		//B_MagicHurtNpc(other,self,SPL_ZAPPED_DAMAGE_PER_SEC);
+		AI_PlayAni(self,"T_STAND_2_LIGHTNING_VICTIM");
 		if(self.attribute[ATR_HITPOINTS] <= 0)
 		{
 			Npc_ClearAIQueue(self);
