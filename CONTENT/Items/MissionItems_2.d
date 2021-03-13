@@ -587,7 +587,7 @@ instance ItMi_GiantPearl(C_Item)
 
 instance ItWr_Cassia_Pearls_MIS(C_Item)
 {
-	name = "Farmer's Pearls Notice";
+	name = "Giant Pearls Note";
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 0;
@@ -595,7 +595,7 @@ instance ItWr_Cassia_Pearls_MIS(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = Use_CassiaPearls_Notice;
 	scemeName = "MAP";
-	description = "Details about the Farmer's Pearls Thief quest.";
+	description = "Cassia's details about the giant pearls.";
 };
 
 
@@ -610,11 +610,12 @@ func void Use_CassiaPearls_Notice()
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLines(nDocID,0,"I found an old book, that mentioned a story about a landowner who lived on Khorinis.");
-	Doc_PrintLines(nDocID,0,"The story sais the landowner had found a giant oyster with 3 perfect giant pearls inside it.");
-	Doc_PrintLines(nDocID,0,"When he died he split his land between his 3 sons and gave each of them a giant pearl.");
-	Doc_PrintLines(nDocID,0,"It might seem like a fairy tale, but I have reason to beleive the current farmers around Khorinis might be connected.");
+	Doc_PrintLines(nDocID,0,"In the story, the landowner found a giant oyster with 3 perfect giant pearls inside it.");
+	Doc_PrintLines(nDocID,0,"Right before he died he split his land between his 3 sons and gave each of them a giant pearl.");
+	Doc_PrintLines(nDocID,0,"It might seem like a fairy tale, but I have reasons to beleive the current farmers around Khorinis might be connected.");
+	Doc_PrintLines(nDocID,0,"Still for them to have not been stolen yet, they'll probably be stashed somewhere not easily accessible.");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Search the farms around Khorinis and if you happen to find the 3 giant pearls return them to me.");
+	Doc_PrintLines(nDocID,0,"Search the farms around Khorinis and if you happen to find the 3 giant pearls return them to me, I'll find a buyer.");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,1,"               Cassia");
 	Doc_SetFont(nDocID,0,FONT_Book);
@@ -629,7 +630,7 @@ instance ItAm_Water_MIS(C_Item)
 	mainflag = ITEM_KAT_MAGIC;
 	flags = ITEM_AMULET;
 	value = 0;
-	visual = "ItAm_Hp_01.3ds";
+	visual = "ItAm_Mana_01.3ds";
 	visual_skin = 0;
 	material = MAT_METAL;
 	on_equip = Equip_ItAm_Water_MIS;
@@ -653,7 +654,7 @@ func void UnEquip_ItAm_Water_MIS()
 
 instance ItWr_Cassia_Water_MIS(C_Item)
 {
-	name = "Hanging Water Notice";
+	name = "Necklaces of Water Note";
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 0;
@@ -661,7 +662,7 @@ instance ItWr_Cassia_Water_MIS(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = Use_CassiaWater_Notice;
 	scemeName = "MAP";
-	description = "Details about the Hanging Water Thief quest.";
+	description = "Cassia's details about the water necklaces";
 };
 
 

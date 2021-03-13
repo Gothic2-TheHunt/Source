@@ -835,7 +835,7 @@ instance DIA_Cassia_Notices(C_Info)
 	condition = DIA_Cassia_Notices_Condition;
 	information = DIA_Cassia_Notices_Info;
 	permanent = TRUE;
-	description = "Have you got a job for me? (Notices)";
+	description = "Have you got a job for me?";
 };
 
 
@@ -858,20 +858,45 @@ func void DIA_Cassia_Notices_Info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Cassia_Belohnung_16_01");	//What's your choice?
+		var int available_quests; 
 		Info_ClearChoices(DIA_Cassia_Notices);
-		Info_AddChoice(DIA_Cassia_Notices,"Take Sunken Gold Notice",DIA_Cassia_Notices_Gold);
-		if(MIS_CassiaGold == LOG_SUCCESS) 
+		Info_AddChoice(DIA_Cassia_Notices,"Maybe later ...(BACK)",DIA_Cassia_Notices_BACK);
+		if(MIS_CassiaGold == 0) 
+		{
+			Info_AddChoice(DIA_Cassia_Notices,"Find Gold Doubloons (Take Note)",DIA_Cassia_Notices_Gold);
+			available_quests = available_quests + 1;
+		};
+		if((MIS_CassiaGold == LOG_SUCCESS) && (MIS_CassiaSilver == 0)) 
 		{
 			Info_AddChoice(DIA_Cassia_Notices,"Take Larius's Silverware Notice",DIA_Cassia_Notices_Silver);
+			available_quests = available_quests + 1;
 		};
-		Info_AddChoice(DIA_Cassia_Notices,"Take Farmer's Pearls Notice",DIA_Cassia_Notices_Pearls);
-		if(MIS_CassiaPearls == LOG_SUCCESS && EnterADW_Kapitel2 == TRUE) 
+		if(MIS_CassiaPearls == 0) 
+		{
+			Info_AddChoice(DIA_Cassia_Notices,"Take Farmer's Pearls Notice",DIA_Cassia_Notices_Pearls);
+			available_quests = available_quests + 1;
+		};
+		if((MIS_CassiaPearls == LOG_SUCCESS) && (MIS_CassiaWater == 0) && (EnterADW_Kapitel2 == TRUE)) 
 		{
 			Info_AddChoice(DIA_Cassia_Notices,"Take Hanging Water Notice",DIA_Cassia_Notices_Water);
+			available_quests = available_quests + 1;
 		};
-
+		
+		if(available_quests == 0) 
+		{
+			AI_Output(self,other,"DIA_Cassia_abgeben_16_04");	//There's nothing else I have to do for you - but you can learn from me at any time. Moreover, there's enough on this island just waiting for a taker. (smiles)
+			Info_ClearChoices(DIA_Cassia_Notices);
+		}
+		else 
+		{
+			AI_Output(self,other,"DIA_Cassia_Belohnung_16_01");	//What's your choice?
+		};
 	};
+};
+
+func void DIA_Cassia_Notices_BACK()
+{
+	Info_ClearChoices(DIA_Cassia_Notices);
 };
 
 func void DIA_Cassia_Notices_Gold()
@@ -892,7 +917,7 @@ instance DIA_Cassia_GoldReward(C_Info)
 	condition = DIA_Cassia_GoldReward_Condition;
 	information = DIA_Cassia_GoldReward_Info;
 	permanent = FALSE;
-	description = "(Give gold doubloons)I've come to pick up my reward.";
+	description = "(Give gold doubloons)";
 };
 
 
@@ -907,8 +932,9 @@ func int DIA_Cassia_GoldReward_Condition()
 func void DIA_Cassia_GoldReward_Info()
 {
 	B_GiveInvItems(other,self,ItMi_GoldDoubloon,5);
-	AI_Output(other,self,"DIA_Cassia_Belohnung_15_00");	//I've come to pick up my reward.
+	//AI_Output(other,self,"DIA_Cassia_Belohnung_15_00");	//I've come to pick up my reward.
 	AI_Output(self,other,"DIA_Cassia_abgeben_16_02");	//Good work. I've found a buyer in the meantime.
+	AI_Output(self,other,"DIA_Cassia_abgeben_16_03");	//You can have your reward now. Thanks for doing that for me.
 	B_GiveInvItems(self,other,ItMi_Gold,125);
 	MIS_CassiaGold = LOG_SUCCESS;
 	B_GivePlayerXP(XP_CassiaGold);
@@ -923,7 +949,7 @@ func void DIA_Cassia_Notices_Silver()
 	MIS_CassiaSilver = LOG_Running;
 	Log_CreateTopic(Topic_CassiaSilver,LOG_MISSION);
 	Log_SetTopicStatus(Topic_CassiaSilver,LOG_Running);
-	B_LogEntry(Topic_CassiaSilver,"Cassia wants me to find Larius's Silverware. There is a good chance the thief would have sold it off somewhere outside the city walls. It probably won't be that hard to find, not many people have use for cutlery these days. The set consists of a: plate, dish, chalice and a candle holder.");
+	B_LogEntry(Topic_CassiaSilver,"Cassia wants me to find Larius's Silverware. There is a good chance the thief would have sold it off somewhere outside the city walls. It probably won't be that hard to find, not many people have use for fancy cutlery these days. The set consists of a: plate, dish, chalice and a candle holder.");
 };
 
 instance DIA_Cassia_SilverReward(C_Info)
@@ -933,7 +959,7 @@ instance DIA_Cassia_SilverReward(C_Info)
 	condition = DIA_Cassia_SilverReward_Condition;
 	information = DIA_Cassia_SilverReward_Info;
 	permanent = FALSE;
-	description = "(Give Larius's Silverware)I've come to pick up my reward.";
+	description = "(Give Larius's Silverware)";
 };
 
 
@@ -951,8 +977,9 @@ func void DIA_Cassia_SilverReward_Info()
 	B_GiveInvItems(other,self,ItMi_LariusSilverPlate,1);
 	B_GiveInvItems(other,self,ItMi_LariusSilverChalice,1);
 	B_GiveInvItems(other,self,ItMi_LariusSilverCandleHolder,1);
-	AI_Output(other,self,"DIA_Cassia_Belohnung_15_00");	//I've come to pick up my reward.
+	//AI_Output(other,self,"DIA_Cassia_Belohnung_15_00");	//I've come to pick up my reward.
 	AI_Output(self,other,"DIA_Cassia_abgeben_16_02");	//Good work. I've found a buyer in the meantime.
+	AI_Output(self,other,"DIA_Cassia_abgeben_16_03");	//You can have your reward now. Thanks for doing that for me.
 	B_GiveInvItems(self,other,ItMi_Gold,250);
 	MIS_CassiaSilver = LOG_SUCCESS;
 	B_GivePlayerXP(XP_CassiaSilver);
@@ -967,7 +994,7 @@ func void DIA_Cassia_Notices_Pearls()
 	MIS_CassiaPearls = LOG_Running;
 	Log_CreateTopic(Topic_CassiaPearls,LOG_MISSION);
 	Log_SetTopicStatus(Topic_CassiaPearls,LOG_Running);
-	B_LogEntry(Topic_CassiaPearls,"Cassia wants me to find 3 giant pearls. According to the information they've been passed in some Farmer families on Khorinis.");
+	B_LogEntry(Topic_CassiaPearls,"Cassia wants me to find 3 giant pearls. According to the information they've been passed down in the farmer families of Khorinis. I should be very thorough in my search, as they'll probably be very well hidden.");
 };
 
 instance DIA_Cassia_PearlsReward(C_Info)
@@ -977,7 +1004,7 @@ instance DIA_Cassia_PearlsReward(C_Info)
 	condition = DIA_Cassia_PearlsReward_Condition;
 	information = DIA_Cassia_PearlsReward_Info;
 	permanent = FALSE;
-	description = "(Give giant pearls)I've come to pick up my reward.";
+	description = "(Give giant pearls)";
 };
 
 
@@ -994,9 +1021,10 @@ func void DIA_Cassia_PearlsReward_Info()
 	B_GiveInvItems(other,self,ItMi_GiantPearl,3);
 	MIS_CassiaPearls = LOG_SUCCESS;
 	B_GivePlayerXP(XP_CassiaPearls);
-	AI_Output(other,self,"DIA_Cassia_Belohnung_15_00");	//I've come to pick up my reward.
-	AI_Output(self,other,"DIA_Cassia_Belohnung_16_01");	//What's your choice?
-	//AI_Output(self,other,"DIA_Cassia_abgeben_16_02");	//Good work. I've found a buyer in the meantime.
+	//AI_Output(other,self,"DIA_Cassia_Belohnung_15_00");	//I've come to pick up my reward.
+	//AI_Output(self,other,"DIA_Cassia_Belohnung_16_01");	//What's your choice?
+	AI_Output(self,other,"DIA_Cassia_abgeben_16_02");	//Good work. I've found a buyer in the meantime.
+	AI_Output(self,other,"DIA_Cassia_abgeben_16_03");	//You can have your reward now. Thanks for doing that for me.
 	Info_ClearChoices(DIA_Cassia_PearlsReward);
 	Info_AddChoice(DIA_Cassia_PearlsReward,"300 pieces of gold.",DIA_Cassia_PearlsReward_Gold);
 	Info_AddChoice(DIA_Cassia_PearlsReward,"1 Essence of Life, 1 Essence of Healing",DIA_Cassia_PearlsReward_Potion);
@@ -1044,7 +1072,7 @@ instance DIA_Cassia_WaterReward(C_Info)
 	condition = DIA_Cassia_WaterReward_Condition;
 	information = DIA_Cassia_WaterReward_Info;
 	permanent = FALSE;
-	description = "(Give necklaces of water)I've come to pick up my reward.";
+	description = "(Give necklaces of water)";
 };
 
 
@@ -1061,9 +1089,10 @@ func void DIA_Cassia_WaterReward_Info()
 	B_GiveInvItems(other,self,ItAm_Water_MIS,3);
 	MIS_CassiaWater = LOG_SUCCESS;
 	B_GivePlayerXP(XP_CassiaWater);
-	AI_Output(other,self,"DIA_Cassia_Belohnung_15_00");	//I've come to pick up my reward.
-	AI_Output(self,other,"DIA_Cassia_Belohnung_16_01");	//What's your choice?
-	//AI_Output(self,other,"DIA_Cassia_abgeben_16_02");	//Good work. I've found a buyer in the meantime.
+	//AI_Output(other,self,"DIA_Cassia_Belohnung_15_00");	//I've come to pick up my reward.
+	//AI_Output(self,other,"DIA_Cassia_Belohnung_16_01");	//What's your choice?
+	AI_Output(self,other,"DIA_Cassia_abgeben_16_02");	//Good work. I've found a buyer in the meantime.
+	AI_Output(self,other,"DIA_Cassia_abgeben_16_03");	//You can have your reward now. Thanks for doing that for me.
 	Info_ClearChoices(DIA_Cassia_WaterReward);
 	Info_AddChoice(DIA_Cassia_WaterReward,"400 pieces of gold.",DIA_Cassia_WaterReward_Gold);
 	Info_AddChoice(DIA_Cassia_WaterReward,"1 Elixir of Life, 1 Elixir of Healing",DIA_Cassia_WaterReward_Potion);

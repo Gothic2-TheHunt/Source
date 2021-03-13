@@ -1258,7 +1258,7 @@ instance ItMi_GoldDoubloon(C_Item)
 
 instance ItWr_Cassia_Gold_MIS(C_Item)
 {
-	name = "Sunken Gold Notice";
+	name = "Gold Doubloons Note";
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 0;
@@ -1266,7 +1266,7 @@ instance ItWr_Cassia_Gold_MIS(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = Use_CassiaGold_Notice;
 	scemeName = "MAP";
-	description = "Details about the Sunken Gold Thief quest.";
+	description = "Cassia's details about the Gold Doubloons.";
 };
 
 
@@ -1280,11 +1280,11 @@ func void Use_CassiaGold_Notice()
 	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"We received a tip about the pirate ship the paladins sunk right off the coast.");
+	Doc_PrintLines(nDocID,0,"We received a tip about the pirate ship, that the paladins sunk, right off the coast.");
 	Doc_PrintLines(nDocID,0,"It had raided the merchant ship 'Santa Rosa', which carried gold doubloons minted in honor of King Rhobar's wedding.");
 	Doc_PrintLines(nDocID,0,"Some of the coins have started turning up around the Harbor district.");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"Find at least 5 coins and return them to me.");
+	Doc_PrintLines(nDocID,0,"If you find 5 gold doubloons, return them to me and I'll reward you.");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,1,"               Cassia");
 	Doc_SetFont(nDocID,0,FONT_Book);
@@ -1347,7 +1347,7 @@ instance ItMi_LariusSilverCandleHolder(C_Item)
 
 instance ItWr_Cassia_Silver_MIS(C_Item)
 {
-	name = "Larius's Silverware Notice";
+	name = "Larius's Silverware Note";
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 0;
@@ -1355,7 +1355,7 @@ instance ItWr_Cassia_Silver_MIS(C_Item)
 	material = MAT_LEATHER;
 	on_state[0] = Use_CassiaSilver_Notice;
 	scemeName = "MAP";
-	description = "Details about the Larius's Silverware Thief quest.";
+	description = "Cassia's details about Larius's silverware";
 };
 
 
@@ -1373,9 +1373,10 @@ func void Use_CassiaSilver_Notice()
 	Doc_PrintLines(nDocID,0,"However the silverware was stolen a few years ago, the poor sod who nicked it was probably thrown inside the barrier, before he could sell it.");
 	Doc_PrintLines(nDocID,0,"With the collapse of the barrier however, there is a good chance the silverware will have resurfaced.");
 	Doc_PrintLines(nDocID,0,"Of course, he won't be stupid enough to try to sell it in the city, so you should look for it outside the city walls.");
-	Doc_PrintLines(nDocID,0,"It probably won't be that hard to find, not many people have use for cutlery these days.");
+	Doc_PrintLines(nDocID,0,"It probably won't be that hard to find, not many people have use for fancy cutlery these days.");
+	Doc_PrintLines(nDocID,0,"There should be a: plate, dish, chalice and a candle holder.");
 	Doc_PrintLine(nDocID,0,"");
-	Doc_PrintLines(nDocID,0,"If you find the entire set bring it to me. There should be a: plate, dish, chalice and a candle holder.");
+	Doc_PrintLines(nDocID,0,"If you find the entire set bring it to me, it will fetch a decent price.");
 	Doc_PrintLine(nDocID,0,"");
 	Doc_PrintLine(nDocID,1,"               Cassia");
 	Doc_SetFont(nDocID,0,FONT_Book);
