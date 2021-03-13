@@ -37,6 +37,10 @@ func void B_CloseTopics_Mattes()
 	B_CloseTopic(TOPIC_Baltram,MIS_Baltram_ScoutAkil,0,6);
 	B_CloseTopic(Topic_CassiaRing,MIS_CassiaRing,0,6);
 	B_CloseTopic(Topic_CassiaKelche,MIS_CassiaKelche,0,6);
+	B_CloseTopic(Topic_CassiaGold,MIS_CassiaGold,0,6);
+	B_CloseTopic(Topic_CassiaSilver,MIS_CassiaSilver,0,6);
+	B_CloseTopic(Topic_CassiaPearls,MIS_CassiaPearls,0,6);
+	B_CloseTopic(Topic_CassiaWater,MIS_CassiaWater,0,6);
 	B_CloseTopic(Topic_RamirezSextant,0,Ramirez_Sextant,6);
 	B_CloseTopic(TOPIC_Ignaz,MIS_Ignaz_Charm,0,6);
 	B_CloseTopic(TOPIC_AlrikSchwert,MIS_Alrik_Sword,0,6);

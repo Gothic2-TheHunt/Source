@@ -102,3 +102,7 @@ const string Topic_BabosDocs = "Documents";
 const string TOPIC_Wolf_BringCrawlerPlates = "The Crawler Armor";
 const string TOPIC_HelpDiegoNW = "Diego's Gold";
 const string TOPIC_DiegosResidence = "Diego's Business";
+const string Topic_CassiaGold = "The Sunken Gold";
+const string Topic_CassiaSilver = "Larius's Silver";
+const string Topic_CassiaPearls = "Farmer's Pearls";
+const string Topic_CassiaWater = "Hanging Water";

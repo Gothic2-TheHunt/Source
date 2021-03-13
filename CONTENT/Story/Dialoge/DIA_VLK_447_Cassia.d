@@ -828,3 +828,273 @@ func void DIA_Cassia_Belohnung_Ring()
 	Info_ClearChoices(DIA_Cassia_Belohnung);
 };
 
+instance DIA_Cassia_Notices(C_Info)
+{
+	npc = VLK_447_Cassia;
+	nr = 3;
+	condition = DIA_Cassia_Notices_Condition;
+	information = DIA_Cassia_Notices_Info;
+	permanent = TRUE;
+	description = "Have you got a job for me? (Notices)";
+};
+
+
+func int DIA_Cassia_Notices_Condition()
+{
+	if((MIS_CassiaKelche == LOG_Running) || (MIS_CassiaKelche == LOG_SUCCESS))
+	{
+		return TRUE;
+	};
+};
+
+func void DIA_Cassia_Notices_Info()
+{
+	AI_Output(other,self,"DIA_Cassia_Blutkelche_15_00");	//Have you got a job for me?
+	if(PETZCOUNTER_City_Theft > 0)
+	{
+		AI_Output(self,other,"DIA_Cassia_Blutkelche_16_01");	//Not as long as you're wanted in town as a thief.
+		AI_Output(self,other,"DIA_Cassia_Blutkelche_16_02");	//Clear that up - pay your penalty or get rid of the witnesses, I don't care, just as long as you clear it up.
+		AI_StopProcessInfos(self);
+	}
+	else
+	{
+		AI_Output(self,other,"DIA_Cassia_Belohnung_16_01");	//What's your choice?
+		Info_ClearChoices(DIA_Cassia_Notices);
+		Info_AddChoice(DIA_Cassia_Notices,"Take Sunken Gold Notice",DIA_Cassia_Notices_Gold);
+		if(MIS_CassiaGold == LOG_SUCCESS) 
+		{
+			Info_AddChoice(DIA_Cassia_Notices,"Take Larius's Silverware Notice",DIA_Cassia_Notices_Silver);
+		};
+		Info_AddChoice(DIA_Cassia_Notices,"Take Farmer's Pearls Notice",DIA_Cassia_Notices_Pearls);
+		if(MIS_CassiaPearls == LOG_SUCCESS && EnterADW_Kapitel2 == TRUE) 
+		{
+			Info_AddChoice(DIA_Cassia_Notices,"Take Hanging Water Notice",DIA_Cassia_Notices_Water);
+		};
+
+	};
+};
+
+func void DIA_Cassia_Notices_Gold()
+{
+	B_GiveInvItems(self,other,ItWr_Cassia_Gold_MIS,1);
+	AI_Output(self,other,"DIA_Cassia_Blutkelche_16_08");	//Bring them to me. In the meantime, I'll try to find a buyer for them.
+	Info_ClearChoices(DIA_Cassia_Notices);
+	MIS_CassiaGold = LOG_Running;
+	Log_CreateTopic(Topic_CassiaGold,LOG_MISSION);
+	Log_SetTopicStatus(Topic_CassiaGold,LOG_Running);
+	B_LogEntry(Topic_CassiaGold,"Cassia wants me to find 5 gold doubloons from the Pirate ship that sunk nearby. Apparently, they've started appearing in the Harbor district.");
+};
+
+instance DIA_Cassia_GoldReward(C_Info)
+{
+	npc = VLK_447_Cassia;
+	nr = 2;
+	condition = DIA_Cassia_GoldReward_Condition;
+	information = DIA_Cassia_GoldReward_Info;
+	permanent = FALSE;
+	description = "(Give gold doubloons)I've come to pick up my reward.";
+};
+
+
+func int DIA_Cassia_GoldReward_Condition()
+{
+	if((MIS_CassiaGold == LOG_Running) && (Npc_HasItems(other,ItMi_GoldDoubloon) >= 5))
+	{
+		return TRUE;
+	};
+};
+
+func void DIA_Cassia_GoldReward_Info()
+{
+	B_GiveInvItems(other,self,ItMi_GoldDoubloon,5);
+	AI_Output(other,self,"DIA_Cassia_Belohnung_15_00");	//I've come to pick up my reward.
+	AI_Output(self,other,"DIA_Cassia_abgeben_16_02");	//Good work. I've found a buyer in the meantime.
+	B_GiveInvItems(self,other,ItMi_Gold,125);
+	MIS_CassiaGold = LOG_SUCCESS;
+	B_GivePlayerXP(XP_CassiaGold);
+	Info_ClearChoices(DIA_Cassia_GoldReward);
+};
+
+func void DIA_Cassia_Notices_Silver()
+{
+	B_GiveInvItems(self,other,ItWr_Cassia_Silver_MIS,1);
+	AI_Output(self,other,"DIA_Cassia_Blutkelche_16_08");	//Bring them to me. In the meantime, I'll try to find a buyer for them.
+	Info_ClearChoices(DIA_Cassia_Notices);
+	MIS_CassiaSilver = LOG_Running;
+	Log_CreateTopic(Topic_CassiaSilver,LOG_MISSION);
+	Log_SetTopicStatus(Topic_CassiaSilver,LOG_Running);
+	B_LogEntry(Topic_CassiaSilver,"Cassia wants me to find Larius's Silverware. There is a good chance the thief would have sold it off somewhere outside the city walls. It probably won't be that hard to find, not many people have use for cutlery these days. The set consists of a: plate, dish, chalice and a candle holder.");
+};
+
+instance DIA_Cassia_SilverReward(C_Info)
+{
+	npc = VLK_447_Cassia;
+	nr = 2;
+	condition = DIA_Cassia_SilverReward_Condition;
+	information = DIA_Cassia_SilverReward_Info;
+	permanent = FALSE;
+	description = "(Give Larius's Silverware)I've come to pick up my reward.";
+};
+
+
+func int DIA_Cassia_SilverReward_Condition()
+{
+	if((MIS_CassiaSilver == LOG_Running) && (Npc_HasItems(other,ItMi_LariusSilverCup) >= 1) && (Npc_HasItems(other,ItMi_LariusSilverPlate) >= 1) && (Npc_HasItems(other,ItMi_LariusSilverChalice) >= 1) && (Npc_HasItems(other,ItMi_LariusSilverCandleHolder) >= 1))
+	{
+		return TRUE;
+	};
+};
+
+func void DIA_Cassia_SilverReward_Info()
+{
+	B_GiveInvItems(other,self,ItMi_LariusSilverCup,1);
+	B_GiveInvItems(other,self,ItMi_LariusSilverPlate,1);
+	B_GiveInvItems(other,self,ItMi_LariusSilverChalice,1);
+	B_GiveInvItems(other,self,ItMi_LariusSilverCandleHolder,1);
+	AI_Output(other,self,"DIA_Cassia_Belohnung_15_00");	//I've come to pick up my reward.
+	AI_Output(self,other,"DIA_Cassia_abgeben_16_02");	//Good work. I've found a buyer in the meantime.
+	B_GiveInvItems(self,other,ItMi_Gold,250);
+	MIS_CassiaSilver = LOG_SUCCESS;
+	B_GivePlayerXP(XP_CassiaSilver);
+	Info_ClearChoices(DIA_Cassia_SilverReward);
+};
+
+func void DIA_Cassia_Notices_Pearls()
+{
+	B_GiveInvItems(self,other,ItWr_Cassia_Pearls_MIS,1);
+	AI_Output(self,other,"DIA_Cassia_Blutkelche_16_08");	//Bring them to me. In the meantime, I'll try to find a buyer for them.
+	Info_ClearChoices(DIA_Cassia_Notices);
+	MIS_CassiaPearls = LOG_Running;
+	Log_CreateTopic(Topic_CassiaPearls,LOG_MISSION);
+	Log_SetTopicStatus(Topic_CassiaPearls,LOG_Running);
+	B_LogEntry(Topic_CassiaPearls,"Cassia wants me to find 3 giant pearls. According to the information they've been passed in some Farmer families on Khorinis.");
+};
+
+instance DIA_Cassia_PearlsReward(C_Info)
+{
+	npc = VLK_447_Cassia;
+	nr = 2;
+	condition = DIA_Cassia_PearlsReward_Condition;
+	information = DIA_Cassia_PearlsReward_Info;
+	permanent = FALSE;
+	description = "(Give giant pearls)I've come to pick up my reward.";
+};
+
+
+func int DIA_Cassia_PearlsReward_Condition()
+{
+	if((MIS_CassiaPearls == LOG_Running) && (Npc_HasItems(other,ItMi_GiantPearl) >= 3))
+	{
+		return TRUE;
+	};
+};
+
+func void DIA_Cassia_PearlsReward_Info()
+{
+	B_GiveInvItems(other,self,ItMi_GiantPearl,3);
+	MIS_CassiaPearls = LOG_SUCCESS;
+	B_GivePlayerXP(XP_CassiaPearls);
+	AI_Output(other,self,"DIA_Cassia_Belohnung_15_00");	//I've come to pick up my reward.
+	AI_Output(self,other,"DIA_Cassia_Belohnung_16_01");	//What's your choice?
+	//AI_Output(self,other,"DIA_Cassia_abgeben_16_02");	//Good work. I've found a buyer in the meantime.
+	Info_ClearChoices(DIA_Cassia_PearlsReward);
+	Info_AddChoice(DIA_Cassia_PearlsReward,"300 pieces of gold.",DIA_Cassia_PearlsReward_Gold);
+	Info_AddChoice(DIA_Cassia_PearlsReward,"1 Essence of Life, 1 Essence of Healing",DIA_Cassia_PearlsReward_Potion);
+	Info_AddChoice(DIA_Cassia_PearlsReward,"1 Scroll of Summon Golem",DIA_Cassia_PearlsReward_Scroll);
+};
+
+func void DIA_Cassia_PearlsReward_Gold()
+{
+	AI_Output(other,self,"DIA_Cassia_Belohnung_15_02");	//Give me the gold.
+	B_GiveInvItems(self,other,ItMi_Gold,300);
+	Info_ClearChoices(DIA_Cassia_PearlsReward);
+};
+
+func void DIA_Cassia_PearlsReward_Potion()
+{
+	AI_Output(other,self,"DIA_Cassia_Belohnung_15_03");	//Give me the potions.
+	B_GiveInvItems(self,other,ItPo_Perm_LittleHealth,1);
+	B_GiveInvItems(self,other,ItPo_Health_01,1);
+	Info_ClearChoices(DIA_Cassia_PearlsReward);
+};
+
+func void DIA_Cassia_PearlsReward_Scroll()
+{
+	//AI_Output(other,self,"DIA_Cassia_Belohnung_15_04");	//Give me the ring.
+	AI_Output(other,self,"DIA_Dyrian_Scroll_Yes_15_00");    //All right, give me the spell scroll.
+	B_GiveInvItems(self,other,ItSc_SumGol,1);
+	Info_ClearChoices(DIA_Cassia_PearlsReward);
+};
+
+func void DIA_Cassia_Notices_Water()
+{
+	B_GiveInvItems(self,other,ItWr_Cassia_Water_MIS,1);
+	AI_Output(self,other,"DIA_Cassia_Blutkelche_16_08");	//Bring them to me. In the meantime, I'll try to find a buyer for them.
+	Info_ClearChoices(DIA_Cassia_Notices);
+	MIS_CassiaWater = LOG_Running;
+	Log_CreateTopic(Topic_CassiaWater,LOG_MISSION);
+	Log_SetTopicStatus(Topic_CassiaWater,LOG_Running);
+	B_LogEntry(Topic_CassiaWater,"Cassia wants me to find 3 Necklaces of Water, they should be in possesion of the Water mages. However the mages are too watchful to pickpocket the necklaces off them, I'll need to come up with a way to distract each one, before I can grab their necklace.");
+};
+
+instance DIA_Cassia_WaterReward(C_Info)
+{
+	npc = VLK_447_Cassia;
+	nr = 2;
+	condition = DIA_Cassia_WaterReward_Condition;
+	information = DIA_Cassia_WaterReward_Info;
+	permanent = FALSE;
+	description = "(Give necklaces of water)I've come to pick up my reward.";
+};
+
+
+func int DIA_Cassia_WaterReward_Condition()
+{
+	if((MIS_CassiaWater == LOG_Running) && (Npc_HasItems(other,ItAm_Water_MIS) >= 3))
+	{
+		return TRUE;
+	};
+};
+
+func void DIA_Cassia_WaterReward_Info()
+{
+	B_GiveInvItems(other,self,ItAm_Water_MIS,3);
+	MIS_CassiaWater = LOG_SUCCESS;
+	B_GivePlayerXP(XP_CassiaWater);
+	AI_Output(other,self,"DIA_Cassia_Belohnung_15_00");	//I've come to pick up my reward.
+	AI_Output(self,other,"DIA_Cassia_Belohnung_16_01");	//What's your choice?
+	//AI_Output(self,other,"DIA_Cassia_abgeben_16_02");	//Good work. I've found a buyer in the meantime.
+	Info_ClearChoices(DIA_Cassia_WaterReward);
+	Info_AddChoice(DIA_Cassia_WaterReward,"400 pieces of gold.",DIA_Cassia_WaterReward_Gold);
+	Info_AddChoice(DIA_Cassia_WaterReward,"1 Elixir of Life, 1 Elixir of Healing",DIA_Cassia_WaterReward_Potion);
+	Info_AddChoice(DIA_Cassia_WaterReward,"1 Scroll of Shrink",DIA_Cassia_WaterReward_Scroll);
+};
+
+func void DIA_Cassia_WaterReward_Gold()
+{
+	AI_Output(other,self,"DIA_Cassia_Belohnung_15_02");	//Give me the gold.
+	B_GiveInvItems(self,other,ItMi_Gold,400);
+	Info_ClearChoices(DIA_Cassia_WaterReward);
+};
+
+func void DIA_Cassia_WaterReward_Potion()
+{
+	AI_Output(other,self,"DIA_Cassia_Belohnung_15_03");	//Give me the potions.
+	B_GiveInvItems(self,other,ItPo_Perm_Health,1);
+	B_GiveInvItems(self,other,ItPo_Health_03,1);
+	Info_ClearChoices(DIA_Cassia_WaterReward);
+};
+
+func void DIA_Cassia_WaterReward_Scroll()
+{
+	//AI_Output(other,self,"DIA_Cassia_Belohnung_15_04");	//Give me the ring.
+	AI_Output(other,self,"DIA_Dyrian_Scroll_Yes_15_00");    //All right, give me the spell scroll.
+	B_GiveInvItems(self,other,ItSc_Shrink,1);
+	Info_ClearChoices(DIA_Cassia_WaterReward);
+};
+
+
+
+
+
+

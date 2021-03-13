@@ -1242,3 +1242,145 @@ instance ItRw_DragomirsArmbrust_MIS(C_Item)
 	count[5] = value;
 };
 
+instance ItMi_GoldDoubloon(C_Item)
+{
+	name = "Gold Doubloon";
+	mainflag = ITEM_KAT_NONE;
+	flags = ITEM_MULTI | ITEM_MISSION;
+	value = 0;
+	visual = "ItMi_OldCoin.3DS";
+	material = MAT_METAL;
+	description = name;
+	text[5] = NAME_Value;
+	count[5] = value;
+	inv_zbias = INVCAM_ENTF_MISC2_STANDARD;
+};
+
+instance ItWr_Cassia_Gold_MIS(C_Item)
+{
+	name = "Sunken Gold Notice";
+	mainflag = ITEM_KAT_DOCS;
+	flags = ITEM_MISSION;
+	value = 0;
+	visual = "ItWr_Scroll_01.3DS";
+	material = MAT_LEATHER;
+	on_state[0] = Use_CassiaGold_Notice;
+	scemeName = "MAP";
+	description = "Details about the Sunken Gold Thief quest.";
+};
+
+
+func void Use_CassiaGold_Notice()
+{
+	var int nDocID;
+	nDocID = Doc_Create();
+	Doc_SetPages(nDocID,1);
+	Doc_SetPage(nDocID,0,"letters.TGA",0);
+	Doc_SetFont(nDocID,-1,FONT_Book);
+	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLines(nDocID,0,"We received a tip about the pirate ship the paladins sunk right off the coast.");
+	Doc_PrintLines(nDocID,0,"It had raided the merchant ship 'Santa Rosa', which carried gold doubloons minted in honor of King Rhobar's wedding.");
+	Doc_PrintLines(nDocID,0,"Some of the coins have started turning up around the Harbor district.");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLines(nDocID,0,"Find at least 5 coins and return them to me.");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,1,"               Cassia");
+	Doc_SetFont(nDocID,0,FONT_Book);
+	Doc_PrintLine(nDocID,0,"");
+	Doc_SetMargins(nDocID,-1,200,50,50,50,1);
+	Doc_Show(nDocID);
+};
+
+instance ItMi_LariusSilverCup(C_Item)
+{
+	name = "Larius's Silver Chalice";
+	mainflag = ITEM_KAT_NONE;
+	flags = ITEM_MULTI;
+	value = Value_SilverCup;
+	visual = "ItMi_SilverCup.3DS";
+	material = MAT_METAL;
+	description = name;
+	text[5] = NAME_Value;
+	count[5] = value;
+};
+
+instance ItMi_LariusSilverPlate(C_Item)
+{
+	name = "Larius's Silver Plate";
+	mainflag = ITEM_KAT_NONE;
+	flags = ITEM_MULTI;
+	value = Value_SilverPlate;
+	visual = "ItMi_SilverPlate.3DS";
+	material = MAT_METAL;
+	description = name;
+	text[5] = NAME_Value;
+	count[5] = value;
+};
+
+instance ItMi_LariusSilverChalice(C_Item)
+{
+	name = "Larius's Silver Dish";
+	mainflag = ITEM_KAT_NONE;
+	flags = ITEM_MULTI;
+	value = Value_SilverChalice;
+	visual = "ItMi_SilverChalice.3DS";
+	material = MAT_METAL;
+	description = name;
+	text[5] = NAME_Value;
+	count[5] = value;
+};
+
+instance ItMi_LariusSilverCandleHolder(C_Item)
+{
+	name = "Larius's Silver Candlestick";
+	mainflag = ITEM_KAT_NONE;
+	flags = ITEM_MULTI;
+	value = Value_SilverCandleHolder;
+	visual = "ItMi_SilverCandleHolder.3DS";
+	material = MAT_METAL;
+	description = name;
+	text[5] = NAME_Value;
+	count[5] = value;
+};
+
+instance ItWr_Cassia_Silver_MIS(C_Item)
+{
+	name = "Larius's Silverware Notice";
+	mainflag = ITEM_KAT_DOCS;
+	flags = ITEM_MISSION;
+	value = 0;
+	visual = "ItWr_Scroll_01.3DS";
+	material = MAT_LEATHER;
+	on_state[0] = Use_CassiaSilver_Notice;
+	scemeName = "MAP";
+	description = "Details about the Larius's Silverware Thief quest.";
+};
+
+
+func void Use_CassiaSilver_Notice()
+{
+	var int nDocID;
+	nDocID = Doc_Create();
+	Doc_SetPages(nDocID,1);
+	Doc_SetPage(nDocID,0,"letters.TGA",0);
+	Doc_SetFont(nDocID,-1,FONT_Book);
+	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLines(nDocID,0,"When Larius became the Governor, he had an exquisite set of silverware made.");
+	Doc_PrintLines(nDocID,0,"However the silverware was stolen a few years ago, the poor sod who nicked it was probably thrown inside the barrier, before he could sell it.");
+	Doc_PrintLines(nDocID,0,"With the collapse of the barrier however, there is a good chance the silverware will have resurfaced.");
+	Doc_PrintLines(nDocID,0,"Of course, he won't be stupid enough to try to sell it in the city, so you should look for it outside the city walls.");
+	Doc_PrintLines(nDocID,0,"It probably won't be that hard to find, not many people have use for cutlery these days.");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLines(nDocID,0,"If you find the entire set bring it to me. There should be a: plate, dish, chalice and a candle holder.");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,1,"               Cassia");
+	Doc_SetFont(nDocID,0,FONT_Book);
+	Doc_PrintLine(nDocID,0,"");
+	Doc_SetMargins(nDocID,-1,200,50,50,50,1);
+	Doc_Show(nDocID);
+};
+

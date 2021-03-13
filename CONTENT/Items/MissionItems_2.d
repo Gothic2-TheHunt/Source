@@ -571,3 +571,122 @@ func void UnEquip_ItRi_Tengron()
 	};
 };
 
+instance ItMi_GiantPearl(C_Item)
+{
+	name = "Giant Pearl";
+	mainflag = ITEM_KAT_NONE;
+	flags = ITEM_MULTI;
+	value = 120;
+	visual = "ItMi_WhitePearl_01.3ds";
+	material = MAT_STONE;
+	description = name;
+	text[5] = NAME_Value;
+	count[5] = value;
+	inv_zbias = INVCAM_ENTF_MISC_STANDARD;
+};
+
+instance ItWr_Cassia_Pearls_MIS(C_Item)
+{
+	name = "Farmer's Pearls Notice";
+	mainflag = ITEM_KAT_DOCS;
+	flags = ITEM_MISSION;
+	value = 0;
+	visual = "ItWr_Scroll_01.3DS";
+	material = MAT_LEATHER;
+	on_state[0] = Use_CassiaPearls_Notice;
+	scemeName = "MAP";
+	description = "Details about the Farmer's Pearls Thief quest.";
+};
+
+
+func void Use_CassiaPearls_Notice()
+{
+	var int nDocID;
+	nDocID = Doc_Create();
+	Doc_SetPages(nDocID,1);
+	Doc_SetPage(nDocID,0,"letters.TGA",0);
+	Doc_SetFont(nDocID,-1,FONT_Book);
+	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLines(nDocID,0,"I found an old book, that mentioned a story about a landowner who lived on Khorinis.");
+	Doc_PrintLines(nDocID,0,"The story sais the landowner had found a giant oyster with 3 perfect giant pearls inside it.");
+	Doc_PrintLines(nDocID,0,"When he died he split his land between his 3 sons and gave each of them a giant pearl.");
+	Doc_PrintLines(nDocID,0,"It might seem like a fairy tale, but I have reason to beleive the current farmers around Khorinis might be connected.");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLines(nDocID,0,"Search the farms around Khorinis and if you happen to find the 3 giant pearls return them to me.");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,1,"               Cassia");
+	Doc_SetFont(nDocID,0,FONT_Book);
+	Doc_PrintLine(nDocID,0,"");
+	Doc_SetMargins(nDocID,-1,200,50,50,50,1);
+	Doc_Show(nDocID);
+};
+
+instance ItAm_Water_MIS(C_Item)
+{
+	name = NAME_Amulett;
+	mainflag = ITEM_KAT_MAGIC;
+	flags = ITEM_AMULET;
+	value = 0;
+	visual = "ItAm_Hp_01.3ds";
+	visual_skin = 0;
+	material = MAT_METAL;
+	on_equip = Equip_ItAm_Water_MIS;
+	on_unequip = UnEquip_ItAm_Water_MIS;
+	wear = WEAR_EFFECT;
+	effect = "SPELLFX_ITEMGLIMMER";
+	description = "Necklace of Water";
+	text[1] = "This beautiful amulet is adorned by a single pure aquamarine.";
+	text[5] = NAME_Value;
+	count[5] = value;
+	inv_zbias = INVCAM_ENTF_AMULETTE_STANDARD;
+};
+
+func void Equip_ItAm_Water_MIS()
+{
+};
+
+func void UnEquip_ItAm_Water_MIS()
+{
+};
+
+instance ItWr_Cassia_Water_MIS(C_Item)
+{
+	name = "Hanging Water Notice";
+	mainflag = ITEM_KAT_DOCS;
+	flags = ITEM_MISSION;
+	value = 0;
+	visual = "ItWr_Scroll_01.3DS";
+	material = MAT_LEATHER;
+	on_state[0] = Use_CassiaWater_Notice;
+	scemeName = "MAP";
+	description = "Details about the Hanging Water Thief quest.";
+};
+
+
+func void Use_CassiaWater_Notice()
+{
+	var int nDocID;
+	nDocID = Doc_Create();
+	Doc_SetPages(nDocID,1);
+	Doc_SetPage(nDocID,0,"letters.TGA",0);
+	Doc_SetFont(nDocID,-1,FONT_Book);
+	Doc_SetMargins(nDocID,-1,50,50,50,50,1);
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLines(nDocID,0,"I found the journal of an old Water mage in my books, it mentioned an old ritual of the Water mages.");
+	Doc_PrintLines(nDocID,0,"It said that sometimes when a Water mage has a vision of Adanos, he will begin making a special necklace.");
+	Doc_PrintLines(nDocID,0,"The necklace is said to be simple, but adorned with a single aquamarine as pure as the morning dew.");
+	Doc_PrintLines(nDocID,0,"I really want to get a hold of 3 such necklaces, however stealing from a Water mage's neck, will be no simple feat.");
+	Doc_PrintLines(nDocID,0,"I fear unless the mages are pretty distracted they will easily notice any brazen attempt to take the necklace from them.");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLines(nDocID,0,"Still if you do manage to find 3 necklaces, I'll make it worth your while.");
+	Doc_PrintLine(nDocID,0,"");
+	Doc_PrintLine(nDocID,1,"               Cassia");
+	Doc_SetFont(nDocID,0,FONT_Book);
+	Doc_PrintLine(nDocID,0,"");
+	Doc_SetMargins(nDocID,-1,200,50,50,50,1);
+	Doc_Show(nDocID);
+};
+
