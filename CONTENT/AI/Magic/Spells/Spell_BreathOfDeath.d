@@ -1,13 +1,16 @@
 
 const int SPL_Cost_BreathOfDeath = 70;
-const int SPL_Damage_BreathOfDeath = 400;
+const int SPL_Damage_BreathOfDeath = 250;
 
 instance Spell_BreathOfDeath(C_Spell_Proto)
 {
 	time_per_mana = 0;
 	damage_per_level = SPL_Damage_BreathOfDeath;
+	targetCollectAlgo = TARGET_COLLECT_NONE;
 	targetCollectRange = 1250;
-	damagetype = DAM_FLY;
+	targetCollectType = TARGET_TYPE_NPCS;
+	isMultiEffect = 1;
+	damagetype = DAM_BARRIER;
 };
 
 
