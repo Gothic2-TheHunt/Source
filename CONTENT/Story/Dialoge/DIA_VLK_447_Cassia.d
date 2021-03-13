@@ -838,14 +838,16 @@ instance DIA_Cassia_Notices(C_Info)
 	description = "Have you got a job for me?";
 };
 
+var int DIA_Cassia_Notices_Permanent;
 
 func int DIA_Cassia_Notices_Condition()
 {
-	if((MIS_CassiaKelche == LOG_Running) || (MIS_CassiaKelche == LOG_SUCCESS))
+	if((DIA_Cassia_Notices_Permanent == FALSE) && ((MIS_CassiaKelche == LOG_Running) || (MIS_CassiaKelche == LOG_SUCCESS)))
 	{
 		return TRUE;
 	};
 };
+
 
 func void DIA_Cassia_Notices_Info()
 {
@@ -858,32 +860,28 @@ func void DIA_Cassia_Notices_Info()
 	}
 	else
 	{
-		var int available_quests; 
 		Info_ClearChoices(DIA_Cassia_Notices);
 		Info_AddChoice(DIA_Cassia_Notices,"Maybe later ...(BACK)",DIA_Cassia_Notices_BACK);
 		if(MIS_CassiaGold == 0) 
 		{
 			Info_AddChoice(DIA_Cassia_Notices,"Find Gold Doubloons (Take Note)",DIA_Cassia_Notices_Gold);
-			available_quests = available_quests + 1;
 		};
 		if((MIS_CassiaGold == LOG_SUCCESS) && (MIS_CassiaSilver == 0)) 
 		{
 			Info_AddChoice(DIA_Cassia_Notices,"Find Larius's Silverware (Take Note)",DIA_Cassia_Notices_Silver);
-			available_quests = available_quests + 1;
 		};
 		if(MIS_CassiaPearls == 0) 
 		{
 			Info_AddChoice(DIA_Cassia_Notices,"Find giant pearls (Take Note)",DIA_Cassia_Notices_Pearls);
-			available_quests = available_quests + 1;
 		};
 		if((MIS_CassiaPearls == LOG_SUCCESS) && (MIS_CassiaWater == 0) && (EnterADW_Kapitel2 == TRUE)) 
 		{
 			Info_AddChoice(DIA_Cassia_Notices,"Find water necklaces (Take Note)",DIA_Cassia_Notices_Water);
-			available_quests = available_quests + 1;
 		};
 		
-		if(available_quests == 0) 
+		if((MIS_CassiaGold == LOG_SUCCESS) && (MIS_CassiaSilver == LOG_SUCCESS) && (MIS_CassiaPearls == LOG_SUCCESS) && (MIS_CassiaWater == LOG_SUCCESS))
 		{
+			DIA_Cassia_Notices_Permanent = TRUE;
 			AI_Output(self,other,"DIA_Cassia_abgeben_16_04");	//There's nothing else I have to do for you - but you can learn from me at any time. Moreover, there's enough on this island just waiting for a taker. (smiles)
 			Info_ClearChoices(DIA_Cassia_Notices);
 		}
@@ -977,12 +975,40 @@ func void DIA_Cassia_SilverReward_Info()
 	B_GiveInvItems(other,self,ItMi_LariusSilverPlate,1);
 	B_GiveInvItems(other,self,ItMi_LariusSilverChalice,1);
 	B_GiveInvItems(other,self,ItMi_LariusSilverCandleHolder,1);
+	MIS_CassiaSilver = LOG_SUCCESS;
+	B_GivePlayerXP(XP_CassiaSilver);
 	//AI_Output(other,self,"DIA_Cassia_Belohnung_15_00");	//I've come to pick up my reward.
 	AI_Output(self,other,"DIA_Cassia_abgeben_16_02");	//Good work. I've found a buyer in the meantime.
 	AI_Output(self,other,"DIA_Cassia_abgeben_16_03");	//You can have your reward now. Thanks for doing that for me.
+	Info_ClearChoices(DIA_Cassia_SilverReward);
+	Info_AddChoice(DIA_Cassia_SilverReward,"250 pieces of gold.",DIA_Cassia_SilverReward_Gold);
+	Info_AddChoice(DIA_Cassia_SilverReward,"1 Essence of Life, 1 Essence of Healing",DIA_Cassia_SilverReward_Potion);
+	Info_AddChoice(DIA_Cassia_SilverReward,"1 Scroll of Ice Block, 1 Scroll of Transform into Lurker",DIA_Cassia_SilverReward_Scroll);
+	//B_GiveInvItems(self,other,ItMi_Gold,300);
+};
+
+func void DIA_Cassia_SilverReward_Gold()
+{
+	AI_Output(other,self,"DIA_Cassia_Belohnung_15_02");	//Give me the gold.
 	B_GiveInvItems(self,other,ItMi_Gold,250);
-	MIS_CassiaSilver = LOG_SUCCESS;
-	B_GivePlayerXP(XP_CassiaSilver);
+	Info_ClearChoices(DIA_Cassia_SilverReward);
+};
+
+func void DIA_Cassia_SilverReward_Potion()
+{
+	AI_Output(other,self,"DIA_Cassia_Belohnung_15_03");	//Give me the potions.
+	B_GiveInvItems(self,other,ItPo_Perm_LittleHealth,1);
+	B_GiveInvItems(self,other,ItPo_Health_01,1);
+	Info_ClearChoices(DIA_Cassia_SilverReward);
+};
+
+func void DIA_Cassia_SilverReward_Scroll()
+{
+	//AI_Output(other,self,"DIA_Cassia_Belohnung_15_04");	//Give me the ring.
+	//AI_Output(other,self,"DIA_Dyrian_Scroll_Yes_15_00");    //All right, give me the spell scroll.
+	AI_Output(other,self,"DIA_Orlan_Wein_Okay_15_00");	//All right, sounds fair enough. Give me those spell scrolls.
+	B_GiveInvItems(self,other,ItSc_TrfLurker,1);
+	B_GiveInvItems(self,other,ItSc_IceCube,1);
 	Info_ClearChoices(DIA_Cassia_SilverReward);
 };
 
@@ -1027,8 +1053,8 @@ func void DIA_Cassia_PearlsReward_Info()
 	AI_Output(self,other,"DIA_Cassia_abgeben_16_03");	//You can have your reward now. Thanks for doing that for me.
 	Info_ClearChoices(DIA_Cassia_PearlsReward);
 	Info_AddChoice(DIA_Cassia_PearlsReward,"300 pieces of gold.",DIA_Cassia_PearlsReward_Gold);
-	Info_AddChoice(DIA_Cassia_PearlsReward,"1 Essence of Life, 1 Essence of Healing",DIA_Cassia_PearlsReward_Potion);
-	Info_AddChoice(DIA_Cassia_PearlsReward,"1 Scroll of Summon Golem",DIA_Cassia_PearlsReward_Scroll);
+	Info_AddChoice(DIA_Cassia_PearlsReward,"1 Essence of Life, 2 Speed Potions",DIA_Cassia_PearlsReward_Potion);
+	Info_AddChoice(DIA_Cassia_PearlsReward,"2 Scroll of Summon Skeleton",DIA_Cassia_PearlsReward_Scroll);
 };
 
 func void DIA_Cassia_PearlsReward_Gold()
@@ -1042,15 +1068,16 @@ func void DIA_Cassia_PearlsReward_Potion()
 {
 	AI_Output(other,self,"DIA_Cassia_Belohnung_15_03");	//Give me the potions.
 	B_GiveInvItems(self,other,ItPo_Perm_LittleHealth,1);
-	B_GiveInvItems(self,other,ItPo_Health_01,1);
+	B_GiveInvItems(self,other,ItPo_Speed,2);
 	Info_ClearChoices(DIA_Cassia_PearlsReward);
 };
 
 func void DIA_Cassia_PearlsReward_Scroll()
 {
 	//AI_Output(other,self,"DIA_Cassia_Belohnung_15_04");	//Give me the ring.
-	AI_Output(other,self,"DIA_Dyrian_Scroll_Yes_15_00");    //All right, give me the spell scroll.
-	B_GiveInvItems(self,other,ItSc_SumGol,1);
+	//AI_Output(other,self,"DIA_Dyrian_Scroll_Yes_15_00");    //All right, give me the spell scroll.
+	AI_Output(other,self,"DIA_Orlan_Wein_Okay_15_00");	//All right, sounds fair enough. Give me those spell scrolls.
+	B_GiveInvItems(self,other,ItSc_SumSkel,2);
 	Info_ClearChoices(DIA_Cassia_PearlsReward);
 };
 
@@ -1094,7 +1121,7 @@ func void DIA_Cassia_WaterReward_Info()
 	AI_Output(self,other,"DIA_Cassia_abgeben_16_02");	//Good work. I've found a buyer in the meantime.
 	AI_Output(self,other,"DIA_Cassia_abgeben_16_03");	//You can have your reward now. Thanks for doing that for me.
 	Info_ClearChoices(DIA_Cassia_WaterReward);
-	Info_AddChoice(DIA_Cassia_WaterReward,"400 pieces of gold.",DIA_Cassia_WaterReward_Gold);
+	Info_AddChoice(DIA_Cassia_WaterReward,"450 pieces of gold.",DIA_Cassia_WaterReward_Gold);
 	Info_AddChoice(DIA_Cassia_WaterReward,"1 Elixir of Life, 1 Elixir of Healing",DIA_Cassia_WaterReward_Potion);
 	Info_AddChoice(DIA_Cassia_WaterReward,"1 Scroll of Shrink",DIA_Cassia_WaterReward_Scroll);
 };
@@ -1102,7 +1129,7 @@ func void DIA_Cassia_WaterReward_Info()
 func void DIA_Cassia_WaterReward_Gold()
 {
 	AI_Output(other,self,"DIA_Cassia_Belohnung_15_02");	//Give me the gold.
-	B_GiveInvItems(self,other,ItMi_Gold,400);
+	B_GiveInvItems(self,other,ItMi_Gold,450);
 	Info_ClearChoices(DIA_Cassia_WaterReward);
 };
 

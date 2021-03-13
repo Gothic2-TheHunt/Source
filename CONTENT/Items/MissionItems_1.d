@@ -1248,7 +1248,7 @@ instance ItMi_GoldDoubloon(C_Item)
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI | ITEM_MISSION;
 	value = 0;
-	visual = "ItMi_OldCoin.3DS";
+	visual = "ItMi_Gold.3DS";
 	material = MAT_METAL;
 	description = name;
 	text[5] = NAME_Value;
