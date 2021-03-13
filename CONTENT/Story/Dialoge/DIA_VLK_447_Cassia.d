@@ -868,17 +868,17 @@ func void DIA_Cassia_Notices_Info()
 		};
 		if((MIS_CassiaGold == LOG_SUCCESS) && (MIS_CassiaSilver == 0)) 
 		{
-			Info_AddChoice(DIA_Cassia_Notices,"Take Larius's Silverware Notice",DIA_Cassia_Notices_Silver);
+			Info_AddChoice(DIA_Cassia_Notices,"Find Larius's Silverware (Take Note)",DIA_Cassia_Notices_Silver);
 			available_quests = available_quests + 1;
 		};
 		if(MIS_CassiaPearls == 0) 
 		{
-			Info_AddChoice(DIA_Cassia_Notices,"Take Farmer's Pearls Notice",DIA_Cassia_Notices_Pearls);
+			Info_AddChoice(DIA_Cassia_Notices,"Find giant pearls (Take Note)",DIA_Cassia_Notices_Pearls);
 			available_quests = available_quests + 1;
 		};
 		if((MIS_CassiaPearls == LOG_SUCCESS) && (MIS_CassiaWater == 0) && (EnterADW_Kapitel2 == TRUE)) 
 		{
-			Info_AddChoice(DIA_Cassia_Notices,"Take Hanging Water Notice",DIA_Cassia_Notices_Water);
+			Info_AddChoice(DIA_Cassia_Notices,"Find water necklaces (Take Note)",DIA_Cassia_Notices_Water);
 			available_quests = available_quests + 1;
 		};
 		
